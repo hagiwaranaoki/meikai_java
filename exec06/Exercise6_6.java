@@ -1,7 +1,14 @@
 package exec06;
 import java.util.Scanner;
 public class Exercise6_6 {
-
+	/*
+	 * 関数名:main
+	 * 概要:配列内の点数の合計、平均、最高、最低それぞれの点数を出力
+	 * 引数:なし
+	 * 戻り値:なし
+	 * 作成者:hagiwara
+	 * 作成日:2023/04/02
+	 */
 	public static void main(String[] args) {
 		// Scannerオブジェクトを作成
 		Scanner scanner = new Scanner(System.in);
