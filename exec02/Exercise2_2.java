@@ -1,7 +1,14 @@
 package exec02;
 
 public class Exercise2_2 {
-
+	/*
+	 * 関数名:main
+	 * 概要:三つのint型変数を用いて合計と平均を求める
+	 * 引数:なし
+	 * 戻り値:なし
+	 * 作成者:hagiwara
+	 * 作成日:2023/04/01
+	 */
 	public static void main(String[] args) {
 		int x; //int型の整数xを定義
 		int y; //int型の整数yを定義

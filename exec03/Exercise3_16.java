@@ -2,6 +2,14 @@ package exec03;
 //java.utilパッケージからScannerクラスをインポート
 import java.util.Scanner;
 public class Exercise3_16 {
+	/*
+	 * 関数名:main
+	 * 概要:三つの整数値を昇順にソート
+	 * 引数:なし
+	 * 戻り値:なし
+	 * 作成者:hagiwara
+	 * 作成日:2023/04/01
+	 */
 	public static void main(String[] args) {
 		// Scannerオブジェクトを作成
 		Scanner scanner = new Scanner(System.in);

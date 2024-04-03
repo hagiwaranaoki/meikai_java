@@ -3,6 +3,14 @@ package exec05;
 import java.util.Scanner;
 
 public class Exercise5_5 {
+	/*
+	 * 関数名:main
+	 * 概要:三つの整数値の合計と平均（キャスト演算子を使用）を表示する
+	 * 引数:なし
+	 * 戻り値:なし
+	 * 作成者:hagiwara
+	 * 作成日:2023/04/02
+	 */
   public static void main(String[] args) {
     // Scannerクラスのインスタンスを作成し、scannerという名前をつける
     Scanner scanner = new Scanner(System.in);

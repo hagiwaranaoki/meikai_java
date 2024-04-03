@@ -3,7 +3,14 @@ package exec03;
 import java.util.Scanner;
 
 public class Exercise3_15 {
-
+	/*
+	 * 関数名:main
+	 * 概要:二つの整数値を降順にソートする
+	 * 引数:なし
+	 * 戻り値:なし
+	 * 作成者:hagiwara
+	 * 作成日:2023/04/01
+	 */
 	public static void main(String[] args) {
 	    // Scannerオブジェクトを作成し、ユーザーからの入力を読み取る
 	    Scanner scanner = new Scanner(System.in);

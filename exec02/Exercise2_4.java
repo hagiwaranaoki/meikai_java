@@ -4,6 +4,14 @@ package exec02;
 import java.util.Scanner;
 
 public class Exercise2_4 {
+	/*
+	 * 関数名:main
+	 * 概要:コンソールに入力された値に対して加減する
+	 * 引数:なし
+	 * 戻り値:なし
+	 * 作成者:hagiwara
+	 * 作成日:2023/04/01
+	 */
 	public static void main(String[] args) {
 		// Scannerクラスの変数を定義
 		Scanner scanner = new Scanner(System.in);

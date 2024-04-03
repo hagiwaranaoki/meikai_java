@@ -4,6 +4,14 @@ package exec04;
 import java.util.Scanner;
 
 public class Exercise4_8 {
+	/*
+	 * 関数名:main
+	 * 概要:整数値の桁数を調べる
+	 * 引数:なし
+	 * 戻り値:なし
+	 * 作成者:hagiwara
+	 * 作成日:2023/04/01
+	 */
   public static void main(String[] args) {
     // Scannerオブジェクトを作成
     Scanner scanner = new Scanner(System.in);

@@ -3,6 +3,14 @@ package exec03;
 import java.util.Scanner;
 
 public class Exercise3_13 {
+	/*
+	 * 関数名:main
+	 * 概要:三つの整数の中央値を求める
+	 * 引数:なし
+	 * 戻り値:なし
+	 * 作成者:hagiwara
+	 * 作成日:2023/04/01
+	 */
 	public static void main(String[] main) {
 		//Scannerクラスの変数を定義
 		Scanner scanner = new Scanner(System.in);

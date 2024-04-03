@@ -3,6 +3,14 @@ package exec03;
 import java.util.Scanner;
 
 public class Exercise3_2 {
+	/*
+	 * 関数名:main
+	 * 概要:約数の判別を行うメソッド
+	 * 引数:なし
+	 * 戻り値:なし
+	 * 作成者:hagiwara
+	 * 作成日:2023/04/01
+	 */
 	public static void main(String[] args) {
 		// scannerクラスの変数を定義
 		Scanner scanner = new Scanner(System.in);

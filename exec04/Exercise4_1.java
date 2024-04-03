@@ -4,6 +4,14 @@ package exec04;
 import java.util.Scanner;
 
 public class Exercise4_1 {
+	/*
+	 * 関数名:main
+	 * 概要:読み込んだ整数値の符号を何度でも判別する
+	 * 引数:なし
+	 * 戻り値:なし
+	 * 作成者:hagiwara
+	 * 作成日:2023/04/01
+	 */
 	public static void main(String[] args) {
 		 // Scannerオブジェクトを作成
 		 Scanner scanner = new Scanner(System.in);
@@ -13,26 +21,25 @@ public class Exercise4_1 {
 		
 		 // do-whileループを開始
 		 do {
-		   		// ユーザーに月を入力するように指示
-			 		System.out.print("季節を求めます。\n何月ですか:");
+		   		// ユーザーに整数値を入力するように指示
+			 		System.out.print("整数値:");
 		
-			 		// ユーザーからの月の入力を読み取る
-			 		int month = scanner.nextInt();
+			 		// ユーザーからの整数値の入力を読み取る
+			 		int number= scanner.nextInt();
 		
-			 		// 月に基づいて季節を表示
-			 		if (month >= 3 && month <= 5) {
-			 			// 月が3から5の場合、"春"を表示
-			 			System.out.println("それは春です。");
-		 } else if (month >= 6 && month <= 8) {
-			 // 月が6から8の場合、"夏"を表示
-		     System.out.println("それは夏です。");
-		 } else if (month >= 9 && month <= 11) {
-	     	// 月が9から11の場合、"秋"を表示
-	     	System.out.println("それは秋です。");
-	   } else if (month == 12 || month == 1 || month == 2) {
-	     	// 月が12、1、2の場合、"冬"を表示
-	     	System.out.println("それは冬です。");
-	   }
+			 		// 整数値が正の場合
+			 		if (number > 0) {
+			 			// 文字列出力
+			 			System.out.println("その値は正です。");
+			 			//整数値が負の場合
+			 		} else if (number < 0) {
+			 			// 文字列出力
+			 			System.out.println("その値は負です。");
+			 			// 整数値が0の場合
+			 		} else {
+			 			// 文字列出力
+			 			System.out.println("その値は0です。");
+			 		}
 		
 			 // ユーザーにもう一度実行するかどうかを尋ねる
 		   System.out.print("もう一度？ 1・・・Yes / 0・・・No:");

@@ -4,6 +4,14 @@ package exec03;
 import java.util.Random;
 
 public class Exercise3_17 {
+	/*
+	 * 関数名:main
+	 * 概要:乱数に基づいてグー、チョキ、パーを表示する
+	 * 引数:なし
+	 * 戻り値:なし
+	 * 作成者:hagiwara
+	 * 作成日:2023/04/01
+	 */
 	public static void main(String[] args) {
 		// Randomオブジェクトを作成
 		Random random = new Random();

@@ -4,6 +4,14 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Exercise4_27 {
+	/*
+	 * 関数名:main
+	 * 概要:制限回数ありの乱数数当てゲーム
+	 * 引数:なし
+	 * 戻り値:なし
+	 * 作成者:hagiwara
+	 * 作成日:2023/04/02
+	 */
   public static void main(String[] args) {
     // Randomクラスのインスタンスを作成し、randomという名前をつける
     Random random = new Random();

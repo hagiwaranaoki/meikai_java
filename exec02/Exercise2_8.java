@@ -5,6 +5,14 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Exercise2_8 {
+	/*
+	 * 関数名:main
+	 * 概要:コンソールで受け取った値の±5の乱数を生成するメソッド
+	 * 引数:なし
+	 * 戻り値:なし
+	 * 作成者:hagiwara
+	 * 作成日:2023/04/01
+	 */
 	public static void main(String[] args) {
 		// Scannerクラスの変数を定義
 		Scanner scanner = new Scanner(System.in);

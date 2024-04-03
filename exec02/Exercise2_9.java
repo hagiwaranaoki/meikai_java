@@ -3,6 +3,14 @@ package exec02;
 import java.util.Random;
 
 public class Exercise2_9 {
+	/*
+	 * 関数名:main
+	 * 概要:正負の0.0~10.0の実数値と、正の0.0~10.0の実数値を作成する
+	 * 引数:なし
+	 * 戻り値:なし
+	 * 作成者:hagiwara
+	 * 作成日:2023/04/01
+	 */
 	public static void main(String[] args) {
 		// Randomクラスの変数を定義
 		Random random = new Random();

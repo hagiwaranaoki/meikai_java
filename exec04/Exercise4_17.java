@@ -4,6 +4,14 @@ package exec04;
 import java.util.Scanner;
 
 public class Exercise4_17 {
+	/*
+	 * 関数名:main
+	 * 概要:読み込んだ整数値のすべての約数を表示し、約数の個数を表示する
+	 * 引数:なし
+	 * 戻り値:なし
+	 * 作成者:hagiwara
+	 * 作成日:2023/04/01
+	 */
   public static void main(String[] args) {
     // Scannerオブジェクトを作成
     Scanner scanner = new Scanner(System.in);

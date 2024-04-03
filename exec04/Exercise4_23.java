@@ -3,6 +3,14 @@ package exec04;
 import java.util.Scanner;
 
 public class Exercise4_23 {
+	/*
+	 * 関数名:main
+	 * 概要:n段の数字ピラミッドを表示する
+	 * 引数:なし
+	 * 戻り値:なし
+	 * 作成者:hagiwara
+	 * 作成日:2023/04/01
+	 */
   public static void main(String[] args) {
     // Scannerクラスのインスタンスを作成し、scannerという名前をつける
     Scanner scanner = new Scanner(System.in);

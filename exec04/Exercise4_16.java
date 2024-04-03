@@ -4,6 +4,14 @@ package exec04;
 import java.util.Scanner;
 
 public class Exercise4_16 {
+	/*
+	 * 関数名:main
+	 * 概要:アスタリスクを入力の数値分表示し、5つごとに改行を入れる
+	 * 引数:なし
+	 * 戻り値:なし
+	 * 作成者:hagiwara
+	 * 作成日:2023/04/01
+	 */
   public static void main(String[] args) {
     // Scannerオブジェクトを作成し
     Scanner scanner = new Scanner(System.in);

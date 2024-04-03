@@ -1,7 +1,14 @@
 package exec02;
 
 public class Exercise2_1 {
-
+	/*
+	 * 関数名:main
+	 * 概要:int型の変数に少数を入れた際のテスト
+	 * 引数:なし
+	 * 戻り値:なし
+	 * 作成者:hagiwara
+	 * 作成日:2023/04/01
+	 */
 	public static void main(String[] args) {
 		int x;// 変数xを定義
 		int y;// 変数yを定義

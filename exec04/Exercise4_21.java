@@ -3,6 +3,14 @@ package exec04;
 import java.util.Scanner;
 
 public class Exercise4_21 {
+	/*
+	 * 関数名:main
+	 * 概要:左上、右下、右上が直角の三角形を表示
+	 * 引数:なし
+	 * 戻り値:なし
+	 * 作成者:hagiwara
+	 * 作成日:2023/04/01
+	 */
   public static void main(String[] args) {
     // Scannerクラスのインスタンスを作成し、scannerという名前をつける
     Scanner scanner = new Scanner(System.in);

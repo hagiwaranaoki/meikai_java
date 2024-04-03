@@ -4,6 +4,14 @@ package exec03;
 import java.util.Scanner;
 
 public class Exercise3_11 {
+	/*
+	 * 関数名:main
+	 * 概要:二つの整数値の値の差が10以下かどうかを調べる
+	 * 引数:なし
+	 * 戻り値:なし
+	 * 作成者:hagiwara
+	 * 作成日:2023/04/01
+	 */
 	public static void main(String[] main) {
 		// Scannerクラスの変数を定義
 		Scanner scanner = new Scanner(System.in);

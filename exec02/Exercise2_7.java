@@ -3,6 +3,14 @@ package exec02;
 import java.util.Random;
 
 public class Exercise2_7 {
+	/*
+	 * 関数名:main
+	 * 概要:乱数を使って1桁の正負の整数値、二桁の正の整数値を求めるメソッド
+	 * 引数:なし
+	 * 戻り値:なし
+	 * 作成者:hagiwara
+	 * 作成日:2023/04/01
+	 */
 	public static void main(String[] args) {
 		// Randomクラスの変数を定義
 		Random random = new Random();

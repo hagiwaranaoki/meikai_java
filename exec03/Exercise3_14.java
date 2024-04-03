@@ -2,6 +2,14 @@ package exec03;
 // Scannerライブラリの呼び出し
 import java.util.Scanner;
 public class Exercise3_14 {
+	/*
+	 * 関数名:main
+	 * 概要:二つの値の大小を調べる
+	 * 引数:なし
+	 * 戻り値:なし
+	 * 作成者:hagiwara
+	 * 作成日:2023/04/01
+	 */
 
 	public static void main(String[] args) {
 		// Scannerクラスの変数を定義
@@ -43,6 +51,7 @@ public class Exercise3_14 {
 			// 改行ありで文字列を出力
 			System.out.println("二つの値は同じです。");
 		}
+		scanner.close();
 	}
 
 }

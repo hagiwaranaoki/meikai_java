@@ -1,6 +1,14 @@
 package exec05;
 
 public class Exercise5_7 {
+	/*
+	 * 関数名:main
+	 * 概要:0.0から1.0まで0.001おきに、その値と、その値の2乗を表示する
+	 * 引数:なし
+	 * 戻り値:なし
+	 * 作成者:hagiwara
+	 * 作成日:2023/04/02
+	 */
   public static void main(String[] args) {
     // ヘッダーを表示
     System.out.println("float\tfloat^2");

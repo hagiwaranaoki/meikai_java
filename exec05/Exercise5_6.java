@@ -1,6 +1,15 @@
 package exec05;
 
 public class Exercise5_6 {
+	/*
+	 * 関数名:main
+	 * 概要:float型の変数を0.0から1.0まで0.001ずつ増やしていく様子とint型の変数
+	 			を0から1000までインクリメントした値を1000で割った値を求める様子を横に並べて表示する
+	 * 引数:なし
+	 * 戻り値:なし
+	 * 作成者:hagiwara
+	 * 作成日:2023/04/02
+	 */
   public static void main(String[] args) {
     // ヘッダーを表示
     System.out.println("float\tint");
