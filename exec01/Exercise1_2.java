@@ -7,7 +7,7 @@ public class Exercise1_2 {
 	 * 引数:なし
 	 * 戻り値:なし
 	 * 作成者:hagiwara
-	 * 作成日:2023/04/01
+	 * 作成日:2024/04/01
 	 */
 	public static void main(String[] args) {
 		//コンソール名前を一行に一文字ずつ出力

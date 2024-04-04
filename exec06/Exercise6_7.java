@@ -10,7 +10,7 @@ public class Exercise6_7 {
 	 * 引数:なし
 	 * 戻り値:なし
 	 * 作成者:hagiwara
-	 * 作成日:2023/04/03
+	 * 作成日:2024/04/03
 	 */
 	public static void main(String[] args) {
 		// Randomオブジェクト作成

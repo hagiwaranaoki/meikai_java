@@ -1,13 +1,13 @@
 package exec06;
 import java.util.Scanner;
-public class Exerrcise6_5 {
+public class Exercise6_5 {
 	/*
 	 * 関数名:main
 	 * 概要:配列の要素数と個々の要素の値を読み込み、各要素の値を表示
 	 * 引数:なし
 	 * 戻り値:なし
 	 * 作成者:hagiwara
-	 * 作成日:2023/04/02
+	 * 作成日:2024/04/03
 	 */
 	public static void main(String[] args) {
 		// Scannerクラスのインスタンスを作成し、scannerという名前をつける

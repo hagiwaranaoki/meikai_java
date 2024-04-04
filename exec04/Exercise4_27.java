@@ -10,7 +10,7 @@ public class Exercise4_27 {
 	 * 引数:なし
 	 * 戻り値:なし
 	 * 作成者:hagiwara
-	 * 作成日:2023/04/02
+	 * 作成日:2024/04/02
 	 */
   public static void main(String[] args) {
     // Randomクラスのインスタンスを作成し、randomという名前をつける
