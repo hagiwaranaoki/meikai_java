@@ -24,16 +24,16 @@ public class Exercise2_6 {
 		
 		// 文字列を改行なしで出力
 		System.out.print("底辺:");
-		// double型の変数triangleBottomの値をコンソールで受け付け
+		// 三角形の底辺の値をコンソールで受け付け
 		double triangleBottom = standardInput.nextDouble();
 		// 文字列を改行なしで出力
 		System.out.print("高さ:");
-		// double型の変数triangleHeightの値をコンソールで受け付け
+		// 三角形の高さの値をコンソールで受け付け
 		double triangleHeight = standardInput.nextDouble();
 		
 		// 三角形の面積を出力
 		System.out.println("面積は" + ((triangleBottom * triangleHeight) / 2) + "です。");
-		
+		// scannerの受付を終了
 		standardInput.close();
   }
 }

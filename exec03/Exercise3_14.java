@@ -19,27 +19,27 @@ public class Exercise3_14 {
 
 	public static void main(String[] args) {
 		// Scannerクラスの変数を定義
-		Scanner scanner = new Scanner(System.in);
+		Scanner standardInput = new Scanner(System.in);
 		
 		// 改行せずに文字列を出力
 		System.out.print("整数a:");
-		// int型の変数aにコンソールから値を受け付け
-		int a = scanner.nextInt();
+		// 整数aにコンソールから値を受け付け
+		int a = standardInput.nextInt();
 		
 		// 改行せずに文字列を出力
 		System.out.print("整数b:");
-		// int型の変数bにコンソールから値を受け付け
-		int b = scanner.nextInt();
+		// 整数bにコンソールから値を受け付け
+		int b = standardInput.nextInt();
 		
-		// int型の変数minimumValueを定義
+		// 最小値を初期化
 		int minimumValue = 0;
-		// int型の変数maximumValueを定義
+		// 最大値を初期化
 		int maximumValue = 0;
-		// aよりbのほうが大きいとき
+		// 整数aより整数bのほうが大きいとき
 		if (a < b) {
-			// minimumValueにaを代入
+			// 最小値にaを代入
 			minimumValue = a;
-			// maximumValueにbを代入
+			// 最大値にbを代入
 			maximumValue = b;
 			// 改行ありで文字列を出力
 			System.out.println("小さいほうの値は" + minimumValue + "です。");
@@ -47,19 +47,21 @@ public class Exercise3_14 {
 			System.out.println("大きいほうの値は" + maximumValue + "です。");
 			// bよりaのほうが大きいとき
 		} else if (b < a) {
-			// minimumValueにbを代入
+			// 最小値にbを代入
 			minimumValue = b;
-			// maximumValueにaを代入
+			// 最大値にaを代入
 			maximumValue = a;
 			// 改行ありで文字列を出力
 			System.out.println("小さいほうの値は" + minimumValue + "です。");
 			// 改行ありで文字列を出力
 			System.out.println("大きいほうの値は" + maximumValue + "です。");
+			// 二つの値が等しいとき
 		} else {
 			// 改行ありで文字列を出力
 			System.out.println("二つの値は同じです。");
 		}
-		scanner.close();
+		//scannerを閉じる
+		standardInput.close();
 	}
 
 }

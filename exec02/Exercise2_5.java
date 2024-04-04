@@ -21,12 +21,12 @@ public class Exercise2_5 {
 		Scanner standardInput = new Scanner(System.in);
 		// 文字列を改行なしで出力
 		System.out.print("xの値:");
-		// double型の変数xの値をコンソールで受け付け
+		// double型の少数を持った実数値の値をコンソールで受け付け
 		double x = standardInput.nextDouble();
 
 		// 文字列を改行なしで出力
 		System.out.print("yの値:");
-		// int型の変数yの値をコンソールで受け付け
+		// int型の整数値yの値をコンソールで受け付け
 		double y = standardInput.nextDouble();
 		
 		//xとyの合計値を出力

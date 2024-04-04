@@ -23,13 +23,13 @@ public class Exercise2_4 {
 		Scanner standardInput = new Scanner(System.in);
 		// 文字列を改行なしで出力
 		System.out.print("整数値:");
-		// int型の変数firstNumberの値をコンソールで受け付け
-		int firstNumber = standardInput.nextInt();
-		// firstNumberに10を加えた値を改行ありでコンソールに出力
-		System.out.println("10を加えた値は" + (firstNumber + 10) + "です。");
-		// firstNumberから10を引いた値を改行ありでコンソールに出力
-		System.out.println("10を減じた値は" + (firstNumber - 10) + "です。");
-		// scannerの受付を終了
+		// 一つ目の数値の変数を定義し、コンソールで受け付け
+		int integerNumber = standardInput.nextInt();
+		//  一つ目の数値に10を加えた値を改行ありでコンソールに出力
+		System.out.println("10を加えた値は" + (integerNumber + 10) + "です。");
+		//  一つ目の数値から10を引いた値を改行ありでコンソールに出力
+		System.out.println("10を減じた値は" + (integerNumber - 10) + "です。");
+		// 入力の受付を終了
 		standardInput.close();
 	}
 }

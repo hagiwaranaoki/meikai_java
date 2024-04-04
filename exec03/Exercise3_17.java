@@ -29,15 +29,15 @@ public class Exercise3_17 {
 		// 乱数が0の場合
 		if (randomNumber == 0) {
 			// "グー"を表示
-		  System.out.println("グー");
-		  // 乱数が1の場合
+			System.out.println("グー");
+			// 乱数が1の場合
 		} else if (randomNumber == 1) {
-		  // "チョキ"を表示
-		  System.out.println("チョキ");
-		  // 乱数が2の場合
+			// "チョキ"を表示
+			System.out.println("チョキ");
+			// 乱数が2の場合
 		} else {
-		  // "パー"を表示
-		  System.out.println("パー");
+			// "パー"を表示
+			System.out.println("パー");
 		}
 	}
 }

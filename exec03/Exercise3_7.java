@@ -22,25 +22,25 @@ public class Exercise3_7 {
 		Scanner standardInput = new Scanner(System.in);
 		// 改行なしで文字列を出力
 		System.out.print("整数値：");
-		// int型の変数numberにコンソールから値を受け付け
+		// 入力された整数値をコンソールで受け付け
 		int integerNumber = standardInput.nextInt();
 		
-		// numberが0より大きいとき
+		// 入力された整数値が0より大きいとき
 		if (integerNumber > 0) {
-			// numberが3で割り切れるとき
+			// 入力された整数値が3で割り切れるとき
 			if (integerNumber % 3 == 0) {
 				// 文字列を改行ありで出力
 				System.out.println("その値は3で割り切れます。");
-				// integerNumberが3で割って1余るとき
+				// 入力された整数値が3で割って1余るとき
 			} else if (integerNumber % 3 == 1) {
 				// 文字列を改行ありで出力
 				System.out.println("その値を3で割った余りは1です。");
-				// integerNumberが3で割って2余るとき
+				// 入力された整数値が3で割って2余るとき
 			} else {
 				// 文字列を改行ありで出力
 				System.out.println("その値を3で割った余りは2です。");
 			}
-			// integerNumberが0より小さいまたは等しいとき
+			// 入力された整数値が0より小さいまたは等しいとき
 		} else {
 			// 文字列を改行ありで出力
 			System.out.println("正でない値が入力されました。");

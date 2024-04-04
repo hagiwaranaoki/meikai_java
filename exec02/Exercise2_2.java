@@ -16,18 +16,18 @@ public class Exercise2_2 {
 	 * 作成日:2024/04/01
 	 */
 	public static void main(String[] args) {
-		// int型の整数firstNumberを定義し、firstNumberに63を代入
+		// 一つ目の数字を定義し、firstNumberに63を代入
 		int firstNumber = 63;
-		// int型の整数secondNumberを定義し、secondNumberに18を代入
+		// 二つ目の数字を定義し、secondNumberに18を代入
 		int secondNumber = 18;
-		// int型の整数ThirdNumberを定義し、thirdNumberに50を代入
+		// 三つ目の数字を定義し、thirdNumberに50を代入
 		int thirdNumber = 50;
 		
 		// 三つの値の合計値をコンソールに出力
 		System.out.println("合計は" + (firstNumber + secondNumber + thirdNumber) + "です。");
 		// 三つの値の平均値をコンソールに出力
 		System.out.println("平均は" + (firstNumber + secondNumber + thirdNumber) / 3 + "です。");
-
+		
 	}
 
 }

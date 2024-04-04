@@ -19,37 +19,39 @@ public class Exercise3_13 {
 	 */
 	public static void main(String[] main) {
 		//Scannerクラスの変数を定義
-		Scanner scanner = new Scanner(System.in);
+		Scanner standardInput = new Scanner(System.in);
+
 		// 文字列を改行なしで出力
-		System.out.print("整数a：");
-		// int型の変数aにコンソールから値を受け付け
-		int a = scanner.nextInt();
+		System.out.print("一つ目の整数：");
+		// 一つ目の整数の値をコンソールで受け付け
+		int firstNumber = standardInput.nextInt();
 		// 文字列を改行なしで出力
-		System.out.print("整数b：");
-		// int型の変数bにコンソールから値を受け付け
-		int b = scanner.nextInt();
+		System.out.print("二つ目の整数：");
+		// 二つ目の整数の値をコンソールで受け付け
+		int secondNumber = standardInput.nextInt();
 		// 文字列を改行なしで出力
-		System.out.print("整数c：");
-		// int型の変数cにコンソールから値を受け付け
-		int c = scanner.nextInt();
-		//int型の変数middleを定義
+		System.out.print("三つ目の整数：");
+		// 三つ目の整数の値をコンソールで受け付け
+		int thirdNumber = standardInput.nextInt();
+
+		//中央値の変数を定義
 		int middleValue = 0;
-		// c>=a>=bのときまたはc<=a<=bのとき
-		if ((a >= b && a <= c) || (a <= b && a >= c)) {
-			// middleValueにaを代入
-			middleValue = a;
-		// a<=b<=cのときまたはc<=b<=aのとき
-		} else if ((b >= a && b <= c) || (b <= a && b >= c)) {
-			// middleValueにbを代入
-			middleValue = b;
-			//それ以外の場合（cが中央の場合)
+		// 一つ目の整数が中央に来る
+		if ((firstNumber >= secondNumber && firstNumber <= thirdNumber) || (firstNumber <= secondNumber && firstNumber >= thirdNumber)) {
+			// middleValueに一つ目の整数を代入
+			middleValue = firstNumber;
+		// 二つ目の整数が中央に来る
+		} else if ((secondNumber >= firstNumber && secondNumber <= thirdNumber) || (secondNumber <= firstNumber && secondNumber >= thirdNumber)) {
+			// middleValueに二つ目の整数を代入
+			middleValue = secondNumber;
+			//それ以外の場合（三つ目の整数が中央の場合)
 		} else {
-			// middleValueにcを代入
-			middleValue = c;
+			// middleValueに三つ目の整数を代入
+			middleValue = thirdNumber;
 		}
 		// 中央値を出力
 		System.out.println("中央値は" + middleValue + "です。");
 		//scannerの受付を終了
-		scanner.close();
+		standardInput.close();
 	}
 }

@@ -23,9 +23,9 @@ public class Exercise3_6 {
 		
 		// 改行なしで出力
 		System.out.print("整数値：");
-		// int型の変数にコンソールからの値を受け付け
+		// 整数値をコンソールで受け付け
 		int integerNumber = standardInput.nextInt();
-		// integerNumberが0より大きいとき
+		// 整数値が0より大きいとき
 		if (integerNumber > 0) {
 			// integerNumberが10で割り切れるとき
 			if (integerNumber % 10 == 0) {

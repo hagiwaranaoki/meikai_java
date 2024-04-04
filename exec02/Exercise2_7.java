@@ -24,18 +24,18 @@ public class Exercise2_7 {
 		// ランダム用の定数を定義
 		final int RANDAM_RANGE = 9;
 		
-		// 1~9の正の整数値を変数randomPlusに代入
+		// 1~9の正の整数値を乱数で生成
 		int randomPlus = randomVariable.nextInt(RANDAM_RANGE) + 1;
-		// 1~9の負の整数値をminusに代入
+		// 1~9の負の整数値を乱数で生成
 		int randomMinus = (randomVariable.nextInt(RANDAM_RANGE) + 1) * -1;
-		// 10~99の正の整数値をdoubleDigitPlusに代入
+		// 10~99の正の整数値を乱数で生成
 		int doubleDigitPlus = randomVariable.nextInt((RANDAM_RANGE * 10)) + 10;
 		
-		// randomPlusの値を出力
+		// 1~9の正の整数値の値を出力
 		System.out.println("1桁の正の整数値は" + randomPlus + "です。");
-		// minusの値を出力
+		// 1~9の負の整数値の値を出力
 		System.out.println("1桁の負の整数値は" + randomMinus + "です。");
-		// doubleDigitPlusの値を出力
+		// 10~99の正の整数値の値を出力
 		System.out.println("2桁の正の整数値は" + doubleDigitPlus + "です。");
 	}
 }

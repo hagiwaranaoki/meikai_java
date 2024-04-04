@@ -24,16 +24,16 @@ public class Exercise3_11 {
 		
 		// 文字列を改行なしで出力
 		System.out.print("整数A：");
-		// int型の変数aにコンソールから値を受け付け
+		// 整数Aの値をコンソールから受け付け
 		int a = standardInput.nextInt();
 		// 文字列を改行なしで出力
 		System.out.print("整数B：");
-		// int型の変数bにコンソールから値を受け付け
+		//  整数Bの値をコンソールから受け付け
 		int b = standardInput.nextInt();
 		
-		// bよりaのほうが大きければnumberにa-bの値を代入、逆であればb-aの値を代入
+		// 整数Bより整数Aのほうが大きければ整数A-整数Bの値を代入、逆であれば整数B-整数Aの値を代入
 		int integerNumber = a > b ? a - b : b - a;
-		// numberの値が10以下の時
+		// 整数値が10以下の時
 		if (integerNumber <= 10) {
 			// 文字列を改行ありで出力
 			System.out.println("それらの差は10以下です。");

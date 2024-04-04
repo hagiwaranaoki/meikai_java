@@ -22,15 +22,15 @@ public class Exercise3_10 {
 		Scanner standardInput = new Scanner(System.in);
 		
 		// 文字列を改行せずに出力
-		System.out.print("整数a：");
-		// int型の変数aにコンソールから値を受け付け
-		int a = standardInput.nextInt();
+		System.out.print("一つ目の整数：");
+		// 一つ目の整数をコンソールから受け付け
+		int firstNumber = standardInput.nextInt();
 		// 文字列を改行せずに出力
-		System.out.print("整数b：");
-		// int型の変数bにコンソールから値を受け付け
-		int b = standardInput.nextInt();
-		// a>bであればa-bをして、逆であればb-a、同じであればa-bをする
-		System.out.println("値の差は" + (a > b ? a - b : b - a) + "です。");
+		System.out.print("二つ目の整数：");
+		// 二つ目の整数をコンソールから受け付け
+		int secondNumber = standardInput.nextInt();
+		// 一つ目の整数 > 二つ目の整数であれば一つ目の整数-二つ目の整数をして、逆であれば二つ目の整数、同じであれば一つ目の整数ー二つ目の整数をする
+		System.out.println("値の差は" + (firstNumber > secondNumber ? firstNumber - secondNumber : secondNumber - firstNumber) + "です。");
 		// standardInputの受付を終了する
 		standardInput.close();
 	}

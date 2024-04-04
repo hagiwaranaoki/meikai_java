@@ -23,21 +23,21 @@ public class Exercise3_5 {
 		
 		// 文字列を改行なしで出力
 		System.out.print("整数値：");
-		// int型の変数にコンソールで値を受け付け
+		// 整数値をコンソールで受け付け
 		int integerNumber =standardInput.nextInt();
 		
-		// integerNumberが0より大きいとき
+		// 入力された整数値が0より大きいとき
 		if (integerNumber > 0) {
-			// integerNumberが5で割り切れるとき
+			// 入力された整数値が5で割り切れるとき
 			if (integerNumber % 5 == 0) {
 				// 文字列を改行ありで出力
 				System.out.println("その値は5で割り切れます。");
-				// integerNumberが5で割り切れないとき
+				// 入力された整数値が5で割り切れないとき
 			} else {
 				// 文字列を改行ありで出力
 				System.out.println("その値は5で割り切れません。");
 			}
-			// integerNumberが0より下または0の時
+			// 入力された整数値が0より下または0の時
 		} else {
 			// 文字列を改行ありで出力
 			System.out.println("正でない値が入力されました。");

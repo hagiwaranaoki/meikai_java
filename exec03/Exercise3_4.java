@@ -23,12 +23,12 @@ public class Exercise3_4 {
 		
 		// 文字列を改行なしで出力
 		System.out.print("aの値：");
-		// double型の変数aにコンソールから値を受け付け
+		// aの値をコンソールで受け付け
 		double a = standardInput.nextDouble();
 		
 		// 文字列を改行なしで出力
 		System.out.print("bの値：");
-		// double型の変数bにコンソールから値を受け付け
+		// bの値をコンソールで受け付け
 		double b = standardInput.nextDouble();
 		
 		// bよりaのほうが大きいとき

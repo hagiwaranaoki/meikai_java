@@ -22,12 +22,12 @@ public class Exercise3_1 {
 		Scanner standardInput = new Scanner(System.in);
 		// 文字列を改行せずに出力
 		System.out.print("整数値：");
-		// int型の文字列absoluteValueをコンソールで受け付け
+		// 整数値をコンソールで受け付け
 		int absoluteValue = standardInput.nextInt();
 		
-		// もしabsoluteValueが0より小さい（負の値）ならば
+		// もし入力された整数値が0より小さい（負の値）ならば
 		if (absoluteValue < 0) {
-			// absoluteValueを正の値にする
+			// 整数値を正の値にする
 			absoluteValue *= -1;
 		}
 		// 文字列を改行ありで出力

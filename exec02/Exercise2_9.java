@@ -26,21 +26,21 @@ public class Exercise2_9 {
 		// 狭い乱数の範囲用の定数を定義
 		final int RANDOM_RANGE_MINIMUM = 2;
 		
-		// 0.0~1.0の実数値をランダムに代入
+		// 0.0~1.0の実数値をランダムに生成
 		double firstNumber = randomVariable.nextDouble();
-		// 0.0~10.0の実数値をランダムに代入
+		// 0.0~10.0の実数値をランダムに生成
 		double secondNumber = randomVariable.nextDouble(RANDOM_RANGE);
-		// 0.0~1.0の実数値をランダムに代入
+		// 0.0~1.0の実数値をランダムに生成
 		double thirdNumber = randomVariable.nextDouble();
-		// 0か1の整数値をランダムに代入
+		// 0か1の整数値をランダムに生成
 		int randomNumber = randomVariable.nextInt(RANDOM_RANGE_MINIMUM);
-		// double3から0または1を引いた値をdouble3として上書き
+		// 三つ目の実数値から0または1を引いた数を三つ目の実数値として使用
 		thirdNumber = thirdNumber - randomNumber;
-		// double1の値を出力
+		// 一つ目の実数値を出力
 		System.out.println("0.0以上1.0未満の実数値：" + firstNumber + "です。");
-		// double2の値を出力
+		// 二つ目の実数値を出力
 		System.out.println("0.0以上10.0未満の実数値：" + secondNumber + "です。");
-		// double3の値を出力
+		// 三つ目の実数値を出力
 		System.out.println("-1.0以上1.0未満の実数値：" + thirdNumber + "です。");
 	}
 }

@@ -22,16 +22,16 @@ public class Exercise3_9 {
 		Scanner standardInput = new Scanner(System.in);
 		
 		// 文字列を改行なしで出力
-		System.out.print("整数a：");
-		// double型の実数値aにコンソールからの値を受け付け
-		double a = standardInput.nextDouble();
+		System.out.print("一つ目の実数値：");
+		// 一つ目の実数値実数値にコンソールからの値を受け付け
+		double firstNumber = standardInput.nextDouble();
 		// 文字列を改行なしで出力
-		System.out.print("整数b：");
-		// double型の実数値bにコンソールからの値を受け付け
-		double b = standardInput.nextDouble();
+		System.out.print("二つ目の実数値：");
+		// 二つ目の実数値の値をコンソールで受け付け
+		double secondNumber = standardInput.nextDouble();
 		
-		// a>bg成り立てばaを返し、成り立たなければbを返す
-		System.out.println("大きいほうの値は" + (a > b ? a : b) + "です。");
+		// 一つ目の整数 > 二つ目の整数が成り立てば一つ目の整数を返し、成り立たなければ二つ目の整数を返す
+		System.out.println("大きいほうの値は" + (firstNumber > secondNumber ? firstNumber : secondNumber) + "です。");
 		// scannerの受付を終了
 		standardInput.close();
 	}

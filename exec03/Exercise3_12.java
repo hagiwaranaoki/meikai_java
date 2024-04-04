@@ -22,28 +22,28 @@ public class Exercise3_12 {
 		Scanner standardInput = new Scanner(System.in);
 		
 		// 文字列を改行なしで出力
-		System.out.print("整数a：");
-		// int型の変数aにコンソールから値を受け付け
-		int a = standardInput.nextInt();
+		System.out.print("一つ目の整数：");
+		// 一つ目の整数の値をコンソールで受け付け
+		int firstNumber = standardInput.nextInt();
 		// 文字列を改行なしで出力
-		System.out.print("整数b：");
-		// int型の変数bにコンソールから値を受け付け
-		int b = standardInput.nextInt();
+		System.out.print("二つ目の整数：");
+		// 二つ目の整数の値をコンソールで受け付け
+		int secondNumber = standardInput.nextInt();
 		// 文字列を改行なしで出力
-		System.out.print("整数c：");
-		// int型の変数cにコンソールから値を受け付け
-		int c = standardInput.nextInt();
+		System.out.print("三つ目の整数：");
+		// 三つ目の整数の値をコンソールで受け付け
+		int thirdNumber = standardInput.nextInt();
 		
 		//int型の変数minimumValueにaを代入
-		int minimumValue = a;
+		int minimumValue = firstNumber;
 		// bよりもminimumValueが大きいとき
-		if (b < minimumValue)
+		if (secondNumber < minimumValue)
 			// minimumValueにbを代入
-			minimumValue = b;
+			minimumValue = secondNumber;
 		// cよりもminimumValueが大きいとき
-		if (c < minimumValue)
+		if (thirdNumber < minimumValue)
 			// minimumValueにcを代入
-			minimumValue = c;
+			minimumValue = thirdNumber;
 		// 最小値を出力
 		System.out.println("最小値は" + minimumValue + "です。");
 		// standardInputの受付を終了

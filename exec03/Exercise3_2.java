@@ -22,12 +22,12 @@ public class Exercise3_2 {
 		
 		// 文字列を改行なしで出力
 		System.out.print("整数A：");
-		// int型の整数aにコンソールから値を受け付け
+		// 整数Aの値をコンソールで受け付け
 		int a = standardInput.nextInt();
 		
 		// 文字列を改行なしで出力
 		System.out.print("整数B：");
-		// int型の整数bにコンソールから値を受け付け
+		// 整数Bの値をコンソールで受け付け
 		int b = standardInput.nextInt();
 		
 		// a/bの余りが0の時

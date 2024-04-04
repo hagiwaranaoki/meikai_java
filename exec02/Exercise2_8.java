@@ -28,13 +28,13 @@ public class Exercise2_8 {
 
 		// 文字列を改行なしで出力
 		System.out.print("整数値：");
-		// int型の整数xをコンソールで受け付け
+		// 整数値をコンソールで受け付け
 		int integerNumber = standardInput.nextInt();
-		// -5~5の値をランダムにrandomPlusMinusに代入
+		// -5~5の値を乱数で生成
 		int randomPlusMinus = randomVariable.nextInt(RANDOM_RANGE) - 5;
-		// integerNumberの±5の乱数を出力
+		// 入力された整数値の±5の乱数を出力
 		System.out.println("その値の±5の乱数を生成しました。それは" + (integerNumber + randomPlusMinus) + "です。");
-		// standardInputの受付を終了
+		// 入力の受付を終了
 		standardInput.close();
 	}
 }

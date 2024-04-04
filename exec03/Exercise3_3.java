@@ -22,21 +22,22 @@ public class Exercise3_3 {
 		
 		// 改行なしで文字列を出力
 		System.out.print("整数値：");
-		// int型の整数numberにコンソールから値を受け付け
+		// 整数値をコンソールで受け付け
 		int integerNumber = standardInput.nextInt();
 		
-		// integerNumberが0より大きい時
-		if (integerNumber > 0)
+		// 入力された整数値が0より大きい時
+		if (integerNumber > 0){
 			// 文字列を出力
 			System.out.println("その値は正です。");
-		// integerNumberが0より小さい時
-		else if (integerNumber < 0)
+			// 入力された整数値が0より小さい時
+		} else if (integerNumber < 0) {
 			// 文字列を出力
 			System.out.println("その値は負です。");
-		// integerNumberが0の時
-		else if (integerNumber == 0)
+			// 入力された整数値が0の時
+		} else if (integerNumber == 0) {
 			// 文字列を出力
 			System.out.println("その値は0です。");
+		}
 		// standardInputの受付を終了
 		standardInput.close();
 	}
