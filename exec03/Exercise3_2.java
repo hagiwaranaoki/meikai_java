@@ -35,9 +35,9 @@ public class Exercise3_2 {
       // 文字列を改行ありで出力
       System.out.println("整数A,Bともに正の整数を入力してください。");
       // b が0の時
-    } else if (b == 0) {
+    } else if (b == 0 || a == 0) {
       // 文字列を改行ありで出力
-      System.out.println("Bが0では約数を求めることができません");
+      System.out.println("A,Bともに0より大きい数字で入力してください");
       // a/bの余りが0の時
     } else if (a % b == 0) {// 修正
       // 文字列を改行ありで出力
