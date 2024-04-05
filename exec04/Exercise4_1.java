@@ -21,6 +21,10 @@ public class Exercise4_1 {
 	public static void main(String[] args) {
 		// Scannerオブジェクトを作成
 		Scanner standardInput = new Scanner(System.in);
+		// ユーザーがリトライするときの定数
+		final int USER_RETRY = 1;
+		// ユーザーがリトライしないときの定数
+		final int USER_NOT_RETRY = 0;
 	
 		// ユーザーが繰り返し処理を続けるかどうかを制御する変数を定義
 		int userRetry = 0;
@@ -31,14 +35,14 @@ public class Exercise4_1 {
 			System.out.print("整数値:");
 		
 			// ユーザーからの整数値の入力を読み取る
-			int IntegerNumber= standardInput.nextInt();
+			int integerNumber= standardInput.nextInt();
 		
 			// 整数値が正の場合
-			if (IntegerNumber > 0) {
+			if (integerNumber > 0) {
 				// 文字列出力
 				System.out.println("その値は正です。");
 				//整数値が負の場合
-			} else if (IntegerNumber < 0) {
+			} else if (integerNumber < 0) {
 				// 文字列出力
 				System.out.println("その値は負です。");
 				// 整数値が0の場合
@@ -52,9 +56,21 @@ public class Exercise4_1 {
 	
 			// ユーザーからの入力を読み取る
 			userRetry = standardInput.nextInt();
-	
+			// 0,1以外が入力された場合
+			if (userRetry > USER_RETRY || userRetry < USER_NOT_RETRY) {
+				// do-whileループを開始
+				do {
+					// 文字列出力
+					System.out.println("0,1以外の数値が入力されました。");
+					// 文字列出力
+					System.out.print("もう一度？ 1・・・Yes / 0・・・No:");
+					// ユーサーからの入力を読み取る
+					userRetry = standardInput.nextInt();
+					// 0,1以外であれば続行
+				} while (userRetry > USER_RETRY || userRetry < USER_NOT_RETRY);
+			}
 			// ユーザーが1を入力した場合、ループを続ける
-		} while (userRetry == 1);
+		} while (userRetry == USER_RETRY);
 		// scannerの受付を終了
 		standardInput.close();
 	}

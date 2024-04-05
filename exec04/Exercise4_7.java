@@ -32,8 +32,14 @@ public class Exercise4_7 {
 
     // カウンタがアスタリスクを表示したい個数より小さい間、ループ
     while (asteriskCounter < numberOfSymbols) {
-      // 記号文字を表示
-      System.out.print('*');
+    	// アスタリスクを表示したい個数よりカウンタが1つ小さい場合
+    	if (asteriskCounter < numberOfSymbols -1) {
+    		// 記号文字を表示
+    		System.out.print("*+");
+    		// カウンタとアスタリスクを表示したい回数が同じの場合
+    	} else {
+    		System.out.print('*');
+    	}
 
       // カウンタをインクリメント
       asteriskCounter++;

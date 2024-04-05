@@ -39,13 +39,13 @@ public class Exercise4_4 {
 
     // 入力された数値から0までカウントダウン
     while (countdownNumber >= 0) {
-      // countdownNumberの値を表示
+      // カウントダウンを表示
       System.out.println(countdownNumber);
-      // countdownNumberから-1
+      // カウントダウンから-1
       countdownNumber--;
     }
 
-    // while文が終了した時点でのcountdownNumberの値を表示
+    // while文が終了した時点でのカウントダウンの値を表示
     System.out.println("while文が終了した時点でのcountdownNumberの値は " + countdownNumber + " です");
 
     // standardInputの受付を終了

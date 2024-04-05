@@ -24,7 +24,7 @@ public class Exercise4_5 {
 
     // ユーザーにカウントダウンの開始を告げる
     System.out.println("カウントダウンします");
-    // int型の変数xを定義
+    // カウントダウン用の変数xを定義（教科書）
     int x;
     // 繰り返し
     do {
@@ -34,12 +34,12 @@ public class Exercise4_5 {
       x = standardInput.nextInt();
       // 0以下なら繰り返す
     } while (x <= 0);
-    // xが0以上の時繰り返す
+    // カウントダウンが0以上の時繰り返す
     while (x >= 0) {
       // -が先に処理されるため、最初は1少ない状態に始まり、-1で終わる
       System.out.println(--x);
     }
-    // standardInputの受付を終了
+    // scannerの受付を終了
     standardInput.close();
   }
 }
