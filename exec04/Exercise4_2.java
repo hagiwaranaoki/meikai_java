@@ -29,19 +29,19 @@ public class Exercise4_2 {
 		//10～99の乱数を生成してランダム用の変数に代入
 		int randomVariable=randomValue.nextInt(RANDOM_RANGE)+10;
 		//Scannerクラスのインスタンスを作成
-		Scanner scannerInt=new Scanner(System.in);
+		Scanner standardInput=new Scanner(System.in);
 		//数当てゲームの開始表示
 		System.out.println("数当てゲーム開始！");
 		//数を当てる範囲を表示
 		System.out.println("10～99の数を当ててください。");
 		//入力された値を受け取る変数を宣言
-		int inputValue;
+		int inputValue = 0;
 		//後判定ループ文
 		do {
 			//整数の入力を促す
 			System.out.print("いくつかな:");
 			//インスタンスから入力された値を受け取る
-			inputValue=scannerInt.nextInt();
+			inputValue=standardInput.nextInt();
 			//入力された値が乱数より大きい場合
 			if(inputValue>randomVariable) {
 				//ヒントを表示
