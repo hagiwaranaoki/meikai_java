@@ -24,7 +24,6 @@ public class Exercise6_14 {
 		//Randomクラスのインスタンスを作成
 		Random randomGeneration=new Random();
 		//Scannerクラスのインスタンスを作成
-		//引数:標準入力System.in
 		Scanner scanInput=new Scanner(System.in);
 		//月の範囲を格納する定数を宣言
 		final int MONTH_RANGE=12;
@@ -35,8 +34,10 @@ public class Exercise6_14 {
 		
 		//問題を提示
 		System.out.println("英語の月名を入力してください。\nなお、先頭は大文字で、２文字目以降は小文字とします。");
-		//リトライ用と連続を避けるための変数を宣言
-		int retryValue=0,previousValue=0;
+		//リトライ用の変数を宣言
+		int retryValue=0;
+		// 連続を避けるための変数を定義
+		int previousValue=0;
 		//後判定ループ文
 		do {
 			//乱数を生成して月の値を格納する変数に代入

@@ -20,8 +20,10 @@ public class Exercise6_18 {
 	public static void main(String[] args) {
 		//Scannerクラスのインスタンスを作成
 		Scanner standardInput=new Scanner(System.in);
-		//変数を宣言
-		int lineNumber=0,columnNumber=0;
+		//列番号を宣言
+		int lineNumber=0;
+		//行番号を宣言
+		int columnNumber=0;
 		//後判定ループ文
 		do {
 			//整数の入力を促す

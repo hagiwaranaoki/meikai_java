@@ -34,8 +34,10 @@ public class Exercise4_25_17 {
 		//正の数が入力されたらループ抜け
 		}while(addNumber<=0);
 		
-		//カウントと合計値を格納する変数を宣言
-		int countValue=0,totalValue=0;
+		//カウントを格納する変数を宣言
+		int countValue=0;
+		// 合計値を格納する変数を宣言
+		int totalValue=0;
 		//平均値を格納する変数を宣言
 		double averageValue=0;
 		//ラベル付きfor文

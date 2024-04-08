@@ -22,7 +22,6 @@ public class Exercise6_7 {
 		//Randomクラスのインスタンスを作成
 		Random randomGeneration=new Random();
 		//Scannerクラスのインスタンスを作成
-		//引数:標準入力System.in
 		Scanner scanInteger=new Scanner(System.in);
 		//要素数を格納する変数をfinalで宣言
 		final int ELMENT_COUNT=12;

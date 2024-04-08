@@ -22,7 +22,7 @@ public class Exercise4_21_b {
 		//表示する三角形の趣旨を説明
 		System.out.println("右下直角の三角形を表示します。");
 		//入力値を代入する変数を宣言
-		int inputValue;
+		int inputValue = 0;
 		//後判定ループ文
 		do {
 			//整数の入力を促す

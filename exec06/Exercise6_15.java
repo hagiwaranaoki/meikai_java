@@ -36,8 +36,10 @@ public class Exercise6_15 {
 		
 		//問題を提示
 		System.out.println("英語の曜日名を小文字で入力してください。");
-		//リトライ用と連続を避けるための変数を宣言
-		int retryValue=0,previousValue=0;
+		//リトライ用の変数を宣言
+		int retryValue=0;
+		// 連続を避けるための変数を宣言
+		int previousValue=0;
 		//後判定ループ文
 		do {
 			//0～6の乱数を生成して曜日を格納する変数を代入

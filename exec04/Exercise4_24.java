@@ -19,7 +19,6 @@ public class Exercise4_24 {
 	 */
   public static void main(String[] args) {
 		//Scannerクラスのインスタンスを作成
-		//引数:標準入力System.in
 		Scanner scannerInteger=new Scanner(System.in);
 		
 		//入力値を代入する変数を宣言

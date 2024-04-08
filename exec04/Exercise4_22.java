@@ -22,7 +22,7 @@ public class Exercise4_22 {
 		//Scannerクラスのインスタンスを作成
 		Scanner scannerInteger=new Scanner(System.in);
 		//入力値を代入する変数を宣言
-		int inputValue;
+		int inputValue = 0;
 		
 		//概要説明を表示
 		System.out.println("n段のピラミッドを作成します。");

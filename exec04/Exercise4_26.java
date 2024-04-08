@@ -25,8 +25,12 @@ public class Exercise4_26 {
 		int inputValue=0;
     // 加算数を代入する変数を宣言
     int addNumber=0;
-		//カウントと合計値と負の数の個数を格納する変数を宣言して初期化
-		int countValue=0,minusCount=0,totalValue=0;
+		// カウントを格納する変数を宣言して初期化
+		int countValue=0;
+		// 合計値を格納する変数を宣言して初期化
+		int minusCount=0;
+		// 負の数の個数を格納する変数を初期化
+		int totalValue=0;
 		
 		//後判定ループ文
 		do {

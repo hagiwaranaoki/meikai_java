@@ -20,10 +20,14 @@ public class Exercise6_16 {
 	public static void main(String[] args) {
 		//Scannerクラスのインスタンスを作成
 		Scanner scanInteger=new Scanner(System.in);
-		//行列の値を格納する定数を宣言
-		final int FIRST_ARRAY_LINE=4,FIRST_ARRAY_COLUMN=3;
-		//行列の値を格納する定数を宣言
-		final int SECOND_ARRAY_LINE=3,SECOND_ARRAY_COLUMN=4;
+		//最初の配列の行の定数を定義
+		final int FIRST_ARRAY_LINE=4;
+		// 最初の配列の列の定数を定義
+		final int FIRST_ARRAY_COLUMN=3;
+		// 二つ目の配列の行の定数を定義
+		final int SECOND_ARRAY_LINE=3;
+		// 二つ目の配列の列の定数を定義
+		final int SECOND_ARRAY_COLUMN=4;
 		
 		//4行3列の配列を宣言
 		int[][] firstArray=new int[FIRST_ARRAY_LINE][FIRST_ARRAY_COLUMN];
@@ -32,8 +36,10 @@ public class Exercise6_16 {
 		//行列の積を格納する配列を宣言
 		int[][] productArray=new int[FIRST_ARRAY_LINE][SECOND_ARRAY_COLUMN];
 		
-		//行カウント/列カウント用変数を宣言
-		int lineCount=0,columnCount=0;
+		//行カウント用変数を宣言
+		int lineCount=0;
+		//列カウント用変数を宣言
+		int columnCount=0;
 		
 		//行カウントが４になったらループ抜け
 		for(lineCount=0;lineCount<FIRST_ARRAY_LINE;lineCount++) {

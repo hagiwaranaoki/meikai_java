@@ -32,8 +32,10 @@ public class Exercise6_19 {
 		}while(classNumber<=0);
 		//点数を格納する配列を宣言
 		int[][] scoreArray=new int[classNumber][];
-		//点数と学生の総合計を格納する変数を宣言
-		int allTotal=0,allStudent=0;
+		//点数の総合計を格納する変数を宣言
+		int allTotal=0;
+		// 学生の総合計を格納する変数を宣言
+		int allStudent=0;
 		//クラスカウントがクラス数と等しくなればループ抜け
 		for(int classCount=0;classCount<classNumber;classCount++) {
 			//生徒数の変数を宣言
