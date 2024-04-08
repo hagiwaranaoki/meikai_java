@@ -25,6 +25,17 @@ public class Exercise4_9 {
 
     // ユーザーからnの入力を読み取る
     int n = standardInput.nextInt();
+    
+    // 0以下の数値が入力されたとき
+    if (n <= 0) {
+	    //後判定ループ文
+			do {
+				System.out.print("nには正の整数値を入力してください：");
+				//インスタンスから入力された値を受け取る
+				n=standardInput.nextInt();
+			//正の数が入力されたらループ抜け
+			}while(n<=0);
+		}
 
     // 積を計算するための変数を定義
     long productNumber = 1;

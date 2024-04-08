@@ -21,12 +21,24 @@ public class Exercise4_8 {
   public static void main(String[] args) {
     // Scannerオブジェクトを作成
     Scanner standardInput = new Scanner(System.in);
-    
-    // ユーザーに整数値を入力するように指示
-    System.out.print("整数値：");
 
     // ユーザーからの入力を読み取る
-    int integerNumber = standardInput.nextInt();
+    int integerNumber = 0;
+    // ユーザーに整数値を入力するように指示
+		System.out.print("整数値：");
+		//インスタンスから入力された値を受け取る
+		integerNumber=standardInput.nextInt();
+		// 0以下の数値が入力されたとき
+		if (integerNumber <= 0) {
+	    //後判定ループ文
+			do {
+				// 文字列出力
+				System.out.print("正の整数値を入力してください：");
+				//インスタンスから入力された値を受け取る
+				integerNumber=standardInput.nextInt();
+			//正の数が入力されたらループ抜け
+			}while(integerNumber<=0);
+		}
 
     // 桁数を計算するための変数を初期化
     int digitCount = 0;
