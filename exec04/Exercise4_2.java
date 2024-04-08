@@ -25,9 +25,11 @@ public class Exercise4_2 {
 		Random randomValue=new Random();
 		// 乱数の範囲用の定数
 		final int RANDOM_RANGE = 90;
+		// 乱数の最小値の定数を定義
+		final int MINIMUM_RANGE = 10;
 		
 		//10～99の乱数を生成してランダム用の変数に代入
-		int randomVariable=randomValue.nextInt(RANDOM_RANGE)+10;
+		int randomVariable=randomValue.nextInt(RANDOM_RANGE)+MINIMUM_RANGE;
 		//Scannerクラスのインスタンスを作成
 		Scanner standardInput=new Scanner(System.in);
 		//数当てゲームの開始表示

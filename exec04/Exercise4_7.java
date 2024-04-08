@@ -21,33 +21,35 @@ public class Exercise4_7 {
     // Scannerオブジェクトを作成
     Scanner standardInput = new Scanner(System.in);
 
-    // ユーザーに何個の記号文字を表示するか尋ねる
-    System.out.print("何個*を表示しますか：");
+    //入力値を代入する変数を宣言
+		int inputValue = 0;
+		//後判定ループ文
+		do {
+			//整数の入力を促す
+			System.out.print("何個表示しますか:");
+			//インスタンスから入力された値を受け取る
+			inputValue=standardInput.nextInt();
+		//正の数が入力されたらループ抜け
+		}while(inputValue<=0);
 
-    // ユーザーからのアスタリスクを表示したい個数の入力を読み取る
-    int numberOfSymbols = standardInput.nextInt();
-
-    // カウンタ変数を初期化
-    int asteriskCounter = 0;
-
-    // カウンタがアスタリスクを表示したい個数より小さい間、ループ
-    while (asteriskCounter < numberOfSymbols) {
-    	// アスタリスクを表示したい個数よりカウンタが1つ小さい場合
-    	if (asteriskCounter < numberOfSymbols -1) {
-    		// 記号文字を表示
-    		System.out.print("*+");
-    		// カウンタとアスタリスクを表示したい回数が同じの場合
-    	} else {
-    		System.out.print('*');
-    	}
-
-      // カウンタをインクリメント
-      asteriskCounter++;
-    }
-
-    // 改行
-    System.out.println();
-    // scannerの受付を終了
-    standardInput.close();
-  }
+		
+		//出力用の変数を宣言して初期化
+		int outputValue=0;
+		
+		//前判定ループ文
+		//出力用の変数が入力値と等しくなったらループ抜け
+		while(inputValue>outputValue) {
+			//偶数の場合
+			if(outputValue%2==0) {
+				//*を表示
+				System.out.print('*');
+			//奇数の場合
+			}else {
+				//+を表示
+				System.out.print('+');
+			}
+			//出力用の変数をインクリメント
+			outputValue++;
+		}
+	}
 }

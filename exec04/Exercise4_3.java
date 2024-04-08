@@ -29,8 +29,10 @@ public class Exercise4_3 {
 		System.out.print("整数値2:");
 		//インスタンスから入力された値を受け取る
 		int secondNumber=standardInput.nextInt();
-		//出力用と大きい値を格納する変数を宣言して初期化
-		int outputValue=0,maximumValue=0;
+		//出力用の値を格納する変数を宣言して初期化
+		int outputValue=0;
+		// 大きい値を格納する変数を宣言して初期化
+		int maximumValue=0;
 		
 		//最初に入力された整数のほうが小さい場合
 		if (firstNumber<secondNumber) {
