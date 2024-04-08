@@ -18,28 +18,28 @@ public class Exercise4_17 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/02
 	 */
-  public static void main(String[] args) {
+	public static void main(String[] args) {
 		//Scannerクラスのインスタンスを作成
-		Scanner scannerInteger=new Scanner(System.in);
+		Scanner scannerInteger = new Scanner(System.in);
 		//整数の入力を促す
 		System.out.print("整数値:");
 		//インスタンスから入力された値を受け取る
-		int inputValue=scannerInteger.nextInt();
+		int inputValue = scannerInteger.nextInt();
 		//約数の個数を表示するための変数を宣言して初期化
-		int outputValue=0;
-		
+		int outputValue = 0;
+
 		//カウントが入力値を超えたらループ抜け
-		for(int countValue=1;countValue<=inputValue;countValue++) {
+		for (int countValue = 1; countValue <= inputValue; countValue++) {
 			//カウント用変数の値が入力値の約数である場合
-			if(inputValue%countValue==0) {
+			if (inputValue % countValue == 0) {
 				//約数の値を表示
 				System.out.println(countValue);
 				//約数の個数をインクリメント
 				outputValue++;
 			}
-		
+
 		}
 		//約数の個数を表示
-		System.out.println("約数は"+outputValue+"個です。");
+		System.out.println("約数は" + outputValue + "個です。");
 	}
 }

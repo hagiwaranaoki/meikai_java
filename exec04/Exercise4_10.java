@@ -18,28 +18,28 @@ public class Exercise4_10 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/02
 	 */
-  public static void main(String[] args) {
-    // Scannerオブジェクトを作成
-    Scanner standardInput = new Scanner(System.in);
+	public static void main(String[] args) {
+		// Scannerオブジェクトを作成
+		Scanner standardInput = new Scanner(System.in);
 
-    // ユーザーに何個のアスタリスクを表示するか尋ねる
-    System.out.print("何個*を表示しますか：");
+		// ユーザーに何個のアスタリスクを表示するか尋ねる
+		System.out.print("何個*を表示しますか：");
 
-    // ユーザーからの入力を読み取る
-    int numberOfAsterisks = standardInput.nextInt();
+		// ユーザーからの入力を読み取る
+		int numberOfAsterisks = standardInput.nextInt();
 
-    // ユーザーから入力があった値だけアスタリスクを描画する
-    for (int counter = 0; counter < numberOfAsterisks; counter++) {
-      // アスタリスクを表示
-      System.out.print('*');
-    }
+		// ユーザーから入力があった値だけアスタリスクを描画する
+		for (int counter = 0; counter < numberOfAsterisks; counter++) {
+			// アスタリスクを表示
+			System.out.print('*');
+		}
 
-    // ユーザーが表示したいアスタリスクの個数が1以上の場合、改行
-    if (numberOfAsterisks >= 1) {
-      // 改行する
-      System.out.println();
-    }
-    // scannerの受付を終了
-    standardInput.close();
-  }
+		// ユーザーが表示したいアスタリスクの個数が1以上の場合、改行
+		if (numberOfAsterisks >= 1) {
+			// 改行する
+			System.out.println();
+		}
+		// scannerの受付を終了
+		standardInput.close();
+	}
 }
