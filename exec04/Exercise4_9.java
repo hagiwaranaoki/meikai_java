@@ -32,6 +32,7 @@ public class Exercise4_9 {
 		if (n <= 0) {
 			//後判定ループ文
 			do {
+				// 正の文字列を入力するように促す
 				System.out.print("nには正の整数値を入力してください：");
 				//インスタンスから入力された値を受け取る
 				n = standardInput.nextInt();
