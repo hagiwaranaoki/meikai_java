@@ -29,7 +29,7 @@ public class Exercise4_16 {
 		//インスタンスから入力された値を受け取る
 		inputValue = scannerInteger.nextInt();
 		// 入力された値が0以下の場合
-		if (inputValue <= 0)
+		if (inputValue <= 0) {
 			//後判定ループ文
 			do {
 				//整数の入力を促す
@@ -38,6 +38,7 @@ public class Exercise4_16 {
 				inputValue = scannerInteger.nextInt();
 				//正の数が入力されたらループ抜け
 			} while (inputValue <= 0);
+		}
 
 		//カウントが入力値を超えたらループ抜け
 		for (int countValue = 1; countValue <= inputValue; countValue++) {

@@ -76,11 +76,11 @@ public class Exercise4_15 {
 				// int型として扱う
 				int formatStandardWeight = (int) standardWeight;
 				//身長と標準体重を出力
-				System.out.println(countValue + "    " + formatStandardWeight);
+				System.out.println(countValue + "   " + formatStandardWeight);
 				//小数点がある場合
 			} else {
 				//身長と標準体重を出力
-				System.out.println(countValue + "    " + standardWeight);
+				System.out.println(countValue + "   " + standardWeight);
 			}
 		}
 	}
