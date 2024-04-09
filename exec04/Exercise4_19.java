@@ -26,6 +26,32 @@ public class Exercise4_19 {
 		int inputValue = 0;
 		// リトライ用変数
 		int userRetry = 0;
+		// 1月の定数
+		final int JANUARY_MONTH = 1;
+		// 2月の定数
+		final int FEBRUARY_MONTH = 2;
+		// 3月の定数
+		final int MARCH_MONTH = 3;
+		// 4月の定数
+		final int APRIL_MONTH = 4;
+		// 5月の定数
+		final int MAY_MONTH = 5;
+		// 6月の定数
+		final int JUNE_MONTH = 6;
+		// 7月の定数
+		final int JULY_MONTH = 7;
+		// 8月の定数
+		final int AUGUST_MONTH = 8;
+		// 9月の定数
+		final int SEPTEMBER_MONTH = 9;
+		// 10月の定数
+		final int OCTOBER_MONTH = 10;
+		// 11月の定数
+		final int NOVEMBER_MONTH = 11;
+		// 12月の定数
+		final int DECEMBER_MONTH = 12;
+		
+		final int USER_RETRY = 1;
 
 		//後判定ループ文
 		do {
@@ -36,27 +62,27 @@ public class Exercise4_19 {
 				//インスタンスから入力された値を受け取る
 				inputValue = scannerInteger.nextInt();
 				//入力値が1～12の場合ループ抜け
-			} while (inputValue < 1 || inputValue > 12);
+			} while (inputValue < JANUARY_MONTH || inputValue > DECEMBER_MONTH);
 
 			//入力値の場合分け
 			switch (inputValue) {
 			//3～5の場合
-			case 3, 4, 5:
+			case MARCH_MONTH, APRIL_MONTH, MAY_MONTH:
 				System.out.println("季節は春です。");
 				//繰り返し終了
 				break;
 			//6～8の場合
-			case 6, 7, 8:
+			case JUNE_MONTH, JULY_MONTH, AUGUST_MONTH:
 				System.out.println("季節は夏です。");
 				//繰り返し終了
 				break;
 			//9～11の場合
-			case 9, 10, 11:
+			case SEPTEMBER_MONTH, OCTOBER_MONTH, NOVEMBER_MONTH:
 				System.out.println("季節は秋です。");
 				//繰り返し終了
 				break;
 			//12～2の場合
-			case 12, 1, 2:
+			case DECEMBER_MONTH, JANUARY_MONTH, FEBRUARY_MONTH:
 				System.out.println("季節は冬です。");
 				//繰り返し終了
 				break;
@@ -66,6 +92,6 @@ public class Exercise4_19 {
 			//インスタンスから入力された値を受け取る
 			userRetry = scannerInteger.nextInt();
 			//1以外の数値が入力された場合ループ抜け
-		} while (userRetry == 1);
+		} while (userRetry == USER_RETRY);
 	}
 }
