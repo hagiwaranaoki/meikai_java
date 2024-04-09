@@ -45,7 +45,7 @@ public class Exercise4_13 {
 
 		// 1からnまでの和を計算
 		for (int i = 1; i <= n; i++) {
-			// 合計にiを足す
+			// 合計を足していく
 			integerSum += i;
 		}
 

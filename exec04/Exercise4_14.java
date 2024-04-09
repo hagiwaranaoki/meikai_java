@@ -45,14 +45,14 @@ public class Exercise4_14 {
 
 		// 1からnまでの和を計算
 		for (int i = 1; i <= n; i++) {
-			// 合計にiを足す
+			// 合計を足していく
 			integerSum += i;
 			// 合計の式を出力
 			if (i > 1) {
 				// + を出力
 				System.out.print(" + ");
 			}
-			// iを出力
+			// 式の値を出力
 			System.out.print(i);
 		}
 

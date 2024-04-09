@@ -35,14 +35,27 @@ public class Exercise4_15 {
 			startValue = scannerInteger.nextInt();
 			//正の値が入力されたらループ抜け
 		} while (startValue < 0);
+
 		//後判定ループ文
 		do {
 			//整数の入力を促す
 			System.out.print("何cmまで:");
 			//インスタンスから入力された値を受け取る
 			lastValue = scannerInteger.nextInt();
+			// ゴール身長のほうが小さい場合
+			if (startValue > lastValue) {
+				// 後判定ループ文
+				do {
+					// 文字列出力
+					System.out.print("一つ目に入力した身長より大きい身長を入力してください：");
+					//インスタンスから入力された値を受け取る
+					lastValue = scannerInteger.nextInt();
+					// スタート身長よりゴール身長が大きくなれば抜け出す
+				} while (lastValue < startValue);
+			}
 			//正の値が入力されたらループ抜け
 		} while (lastValue < 0);
+
 		//後判定ループ文
 		do {
 			//整数の入力を促す
@@ -54,12 +67,21 @@ public class Exercise4_15 {
 
 		//表題を表示
 		System.out.println("身長  標準体重");
-		//スタート身長の値を代入したカウント用変数にeveryValueをインクリメント
 		//カウント用変数がゴール身長の値を超えたらループ抜け
 		for (int countValue = startValue; countValue <= lastValue; countValue = countValue + everyValue) {
-			//身長と標準体重を入力
-			System.out.println(countValue + "    " + (countValue - 100) * 0.9);
+			// 標準体重を計算
+			double standardWeight = (countValue - 100) * 0.9;
+			// 小数点がない場合
+			if (standardWeight % 1 == 0) {
+				// int型として扱う
+				int formatStandardWeight = (int) standardWeight;
+				//身長と標準体重を出力
+				System.out.println(countValue + "    " + formatStandardWeight);
+				//小数点がある場合
+			} else {
+				//身長と標準体重を出力
+				System.out.println(countValue + "    " + standardWeight);
+			}
 		}
-
 	}
 }

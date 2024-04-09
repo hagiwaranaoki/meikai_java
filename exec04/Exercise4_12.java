@@ -24,9 +24,16 @@ public class Exercise4_12 {
 
 		// ユーザーに正の整数値を入力するように指示
 		System.out.print("正の整数値：");
-
 		// ユーザーからの整数値の入力を読み取り
 		int integerNumber = standardInput.nextInt();
+		
+		if (integerNumber <= 0) {
+			do {
+				// 文字列出力
+				System.out.print("正の整数値を入力してください：");
+				integerNumber = standardInput.nextInt();
+			} while(integerNumber < 0);
+		}
 
 		// 0から受け取った整数値までカウントアップ
 		for (int i = 0; i <= integerNumber; i++) {

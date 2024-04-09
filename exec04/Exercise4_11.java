@@ -4,7 +4,7 @@ package exec04;
 import java.util.Scanner;
 
 /*
- * クラス名:Exercise4_10
+ * クラス名:Exercise4_11
  * 概要:正の整数値を0までカウントする
  * 作成者:N.Hagiwara
  * 作成日:2024/04/04
@@ -41,7 +41,7 @@ public class Exercise4_11 {
 		}
 		// カウントダウンが0以上の時繰り返す
 		for (int i = countdownNumber; i >= 0; i--) {
-			// iを表示
+			// カウントダウンを表示
 			System.out.println(i);
 		}
 	}
