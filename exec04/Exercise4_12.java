@@ -28,6 +28,7 @@ public class Exercise4_12 {
 		int integerNumber = standardInput.nextInt();
 		// 0以下の場合
 		if (integerNumber <= 0) {
+			// 後判定ループ文
 			do {
 				// 文字列出力
 				System.out.print("正の整数値を入力してください：");
