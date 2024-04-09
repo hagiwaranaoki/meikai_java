@@ -50,7 +50,7 @@ public class Exercise4_19 {
 		final int NOVEMBER_MONTH = 11;
 		// 12月の定数
 		final int DECEMBER_MONTH = 12;
-		
+		// ユーザーがやり直す用の定数
 		final int USER_RETRY = 1;
 
 		//後判定ループ文
