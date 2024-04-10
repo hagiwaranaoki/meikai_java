@@ -1,4 +1,5 @@
 package exec04;
+
 // Scannerクラスのインポート
 import java.util.Scanner;
 
@@ -17,10 +18,10 @@ public class Exercise4_24 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/02
 	 */
-  public static void main(String[] args) {
+	public static void main(String[] args) {
 		//Scannerクラスのインスタンスを作成
-		Scanner scannerInteger=new Scanner(System.in);
-		
+		Scanner scannerInteger = new Scanner(System.in);
+
 		//入力値を代入する変数を宣言
 		int inputValue = 0;
 		//概要説明を表示
@@ -30,27 +31,27 @@ public class Exercise4_24 {
 			//整数の入力を促す
 			System.out.print("正の整数値:");
 			//インスタンスから入力された値を受け取る
-			inputValue=scannerInteger.nextInt();
-		//正の数が入力されたらループ抜け
-		}while(inputValue<=0);
-		
+			inputValue = scannerInteger.nextInt();
+			//正の数が入力されたらループ抜け
+		} while (inputValue <= 0);
+
 		//カウント用変数を宣言
-		int countValue=0;
+		int countValue = 0;
 		//カウントが入力値を超えたらループ抜け
-		for(countValue=2;countValue<inputValue;countValue++) {
+		for (countValue = 1; countValue < inputValue; countValue++) {
 			//カウントで入力値を割り切れた場合
-			if(inputValue%countValue==0) {
+			if (inputValue % countValue == 0) {
 				//素数でないことを表示
-				System.out.println(inputValue+"は素数ではありません。");
+				System.out.println(inputValue + "は素数ではありません。");
 				//ループ抜け
 				break;
 			}
-		}	
-		//入力値が最後まで割り切れなかった場合
-		if(countValue==inputValue) {
-			//素数であることを表示
-			System.out.println(inputValue+"は素数です。");
 		}
-		
+		//入力値が最後まで割り切れなかった場合
+		if (countValue == inputValue) {
+			//素数であることを表示
+			System.out.println(inputValue + "は素数です。");
+		}
+
 	}
 }

@@ -41,7 +41,7 @@ public class Exercise4_25_17 {
 		// 合計値を格納する変数を宣言
 		int totalValue = 0;
 		//カウントが加算数を超えたらループ抜け
-		for (countValue = 0; countValue < addNumber; countValue++) {
+		for (countValue = 0.0; countValue < addNumber; countValue++) {
 			//後判定ループ文
 			do {
 				//整数の入力を促す
@@ -62,9 +62,18 @@ public class Exercise4_25_17 {
 		}
 		//合計値を表示
 		System.out.println("合計は" + totalValue + "です。");
-		//平均を求めてdouble型変数に代入
-		double averageValue = totalValue / countValue;
-		//平均値を表示
-		System.out.println("平均は" + averageValue + "です。");
+		// 平均値の入力を受け付け
+		double averageValue = 0.0;
+		// カウントが0より上の時
+		if (countValue > 0) {
+			//平均を求めてdouble型変数に代入
+			averageValue = totalValue / countValue;
+			//平均値を表示
+			System.out.println("平均は" + averageValue + "です。");
+			// カウントが0以下の時
+		} else {
+			//平均値を表示
+			System.out.println("平均は" + averageValue + "です。");
+		}
 	}
 }

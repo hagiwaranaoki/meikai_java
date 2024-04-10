@@ -37,12 +37,12 @@ public class Exercise4_27 {
 		System.out.println("0~99の数を当ててください。");
 
 		// 制限回数を設定
-		int consoleLimit = 10;
+		final int CONSOLE_LIMIT = 10;
 
 		// 入力された数値を格納する変数を定義
 		int integerNumber = 0;
 		// 制限回数だけループを実行
-		for (int i = 0; i < consoleLimit; i++) {
+		for (int i = 0; i < CONSOLE_LIMIT; i++) {
 			// 文字列出力
 			System.out.print("いくつかな：");
 			// ユーザーからの入力を整数として受け取る
@@ -65,11 +65,9 @@ public class Exercise4_27 {
 			}
 
 			// 制限回数に達した場合、正解を表示してゲームを終了
-			if (i == consoleLimit - 1) {
+			if (i == CONSOLE_LIMIT - 1) {
 				// 出力
 				System.out.println("制限回数に達しました。正解は" + randomNumber + "でした。");
-				//for分を抜け出す
-				break;
 			}
 		}
 	}

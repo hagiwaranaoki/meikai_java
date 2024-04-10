@@ -23,8 +23,10 @@ public class Exercise4_25_18 {
 		Scanner scannerInteger = new Scanner(System.in);
 		//加算する説明を表示
 		System.out.println("整数を加算します。");
-		//入力値と加算数を代入する変数を宣言
-		int inputValue = 0, addNumber = 0;
+		//入力値を代入する変数を宣言
+		int inputValue = 0;
+		// 加算数を代入する変数を宣言
+		int addNumber = 0;
 		//後判定ループ文
 		do {
 			//整数の入力を促す
@@ -41,7 +43,7 @@ public class Exercise4_25_18 {
 		//平均値を格納する変数を宣言
 		double averageValue = 0.0;
 		//カウントが加算数を超えたらループ抜け
-		for (countValue = 1; countValue <= addNumber; countValue++) {
+		for (countValue = 0.0; countValue < addNumber; countValue++) {
 
 			//後判定ループ文
 			do {
@@ -67,9 +69,16 @@ public class Exercise4_25_18 {
 		}
 		//合計値を表示
 		System.out.println("合計は" + totalValue + "です。");
-		//平均を求めてdouble型変数に代入
-		averageValue = totalValue / countValue;
-		//平均値を表示
-		System.out.println("平均は" + averageValue + "です。");
+		// カウントが0より大きいとき
+		if (countValue > 0) {
+			//平均を求めてdouble型変数に代入
+			averageValue = totalValue / countValue;
+			//平均値を表示
+			System.out.println("平均は" + averageValue + "です。");
+			// カウントが0以下の時
+		} else {
+			//平均値を表示
+			System.out.println("平均は" + averageValue + "です。");
+		}
 	}
 }

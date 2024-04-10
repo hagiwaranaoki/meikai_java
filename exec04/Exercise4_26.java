@@ -62,18 +62,19 @@ public class Exercise4_26 {
 			//入力された整数を合計値に足しこむ
 			totalValue += inputValue;
 		}
-		//合計値を表示
-		System.out.println("合計は" + totalValue + "です。");
+
 		// カウントが0より上な場合
 		if ((countValue - minusCount) > 0) {
 			// マイナスを除いて平均を計算
 			double averageValue = totalValue / (countValue - minusCount);
+			//合計値を表示
+			System.out.println("合計は" + totalValue + "です。");
 			//平均値を表示
 			System.out.println("平均は" + averageValue + "です。");
 			// マイナスを除いたカウントが0の時
 		} else {
-			//平均値を表示
-			System.out.println("平均は" + 0.0 + "です。");
+			//文字列出力
+			System.out.println("加算する数値はありませんでした。");
 		}
 	}
 }
