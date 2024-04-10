@@ -32,7 +32,7 @@ public class Exercise4_24 {
 			//インスタンスから入力された値を受け取る
 			inputValue=scannerInteger.nextInt();
 		//正の数が入力されたらループ抜け
-		}while(inputValue<=1);
+		}while(inputValue<=0);
 		
 		//カウント用変数を宣言
 		int countValue=0;
