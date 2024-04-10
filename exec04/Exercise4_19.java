@@ -66,25 +66,25 @@ public class Exercise4_19 {
 
 			//入力値の場合分け
 			switch (inputValue) {
-			//3～5の場合
+			//3月～5月の場合
 			case MARCH_MONTH, APRIL_MONTH, MAY_MONTH:
 				// 春を知らせる
 				System.out.println("季節は春です。");
 				//繰り返し終了
 				break;
-			//6～8の場合
+			//6月～8月の場合
 			case JUNE_MONTH, JULY_MONTH, AUGUST_MONTH:
 				// 夏を知らせる
 				System.out.println("季節は夏です。");
 				//繰り返し終了
 				break;
-			//9～11の場合
+			//9月～11月の場合
 			case SEPTEMBER_MONTH, OCTOBER_MONTH, NOVEMBER_MONTH:
 				// 秋を知らせる
 				System.out.println("季節は秋です。");
 				//繰り返し終了
 				break;
-			//12～2の場合
+			//12月～2月の場合
 			case DECEMBER_MONTH, JANUARY_MONTH, FEBRUARY_MONTH:
 				// 冬を知らせる
 				System.out.println("季節は冬です。");
