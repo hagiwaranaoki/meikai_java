@@ -22,19 +22,16 @@ public class Exercise5_1 {
 		// Scannerクラスのインスタンスを作成
 		Scanner standardInput = new Scanner(System.in);
 
-		// ユーザーに10進整数を入力するように促す
-		System.out.print("10進整数を入力してください：");
-		// ユーザーからの入力を整数として受け取る
-		int decimalNumber = standardInput.nextInt();
+		//メッセージを表示
+		System.out.println("入力された値を8進数と16進数で表示します。");
+		//整数の入力を促す
+		System.out.print("整数値:");
+		//インスタンスから入力された値を受け取る
+		int inputValue = standardInput.nextInt();
 
-		// 10進整数を8進数に変換
-		String octalNumber = Integer.toOctalString(decimalNumber);
-		// 8進整数を出力
-		System.out.println("8進数では " + octalNumber + " です。");
-
-		// 10進整数を16進数に変換
-		String hexadecimalNumber = Integer.toHexString(decimalNumber);
-		// 16進整数を出力
-		System.out.println("16進数では " + hexadecimalNumber + " です。");
+		//8進数で入力値を表示
+		System.out.printf("8進数では%oです。\n", inputValue);
+		//16進数で入力値を表示
+		System.out.printf("16進数では%xです。", inputValue);
 	}
 }

@@ -18,20 +18,20 @@ public class Exercise5_6 {
 	 * 作成日:2024/04/03
 	 */
 	public static void main(String[] args) {
-		// ヘッダーを表示
-		System.out.println("float\tint");
-		// 点線を表示
-		System.out.println("--------------------");
-
-		// float型の変数を0.0から1.0まで0.001ずつ増やす
-		for (float f = 0.0f; f <= 1.0f; f += 0.001f) {
-			// int型の変数を0から1000までインクリメント
-			int incrementNumber = (int) (f * 1000);
-			// 1000で割る
-			double divideThousand = incrementNumber / 1000.0;
-
-			// float型の変数と計算結果を表示
-			System.out.printf("%f\t%f\n", f, divideThousand);
+		//float側の合計を格納するfloat型の変数を宣言
+		float floatTotal = 0.000F;
+		// 1000の定数
+		final int THOUSAND_NUMBER = 1000;
+		//表題を表示
+		System.out.println("    float\t\t\t\t int\n----------------------------------");
+		//int側のカウント用変数の値が1000を超えたらループ抜け
+		for (int integerCount = 0; integerCount <= THOUSAND_NUMBER; integerCount++) {
+			//int側のカウント用変数を1000で割り商をキャストしてint側の合計用の変数に格納
+			float integerTotal = (float) integerCount / THOUSAND_NUMBER;
+			//float側とint側の合計値をそれぞれ表示
+			System.out.printf(String.format("%.10f", floatTotal) + "\t\t" + String.format("%.10f", integerTotal) + "\n");
+			//float側の合計値をインクリメント
+			floatTotal = floatTotal + 0.001F;
 		}
 	}
 }

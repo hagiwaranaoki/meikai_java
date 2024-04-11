@@ -35,15 +35,14 @@ public class Exercise5_4 {
 		// 三つ目の整数をコンソールで入力待機
 		int thirdNumber = standardInput.nextInt();
 
-		// 三つの整数の合計を計算
-		int sumAll = firstNumber + secondNumber + thirdNumber;
-
-		// 三つの整数の平均を計算（実数として）
-		double tripleAverage = (double) sumAll / 3;
-
-		// 合計を表示
-		System.out.println("合計は" + sumAll + "です。");
-		// 平均を表示
-		System.out.println("平均は" + tripleAverage + "です。");
+		//合計値を表示
+		System.out.println("合計は" + (firstNumber + secondNumber + thirdNumber) + "です。");
+		//double型の変数に平均値を格納
+		double totalValue = (firstNumber + secondNumber + thirdNumber);
+		
+		// 三つの整数値で割るときの定数
+		final int TOTAL_OF_THREE = 3;
+		//平均値を表示
+		System.out.println("平均は" + totalValue / TOTAL_OF_THREE + "です。");
 	}
 }
