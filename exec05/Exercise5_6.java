@@ -23,7 +23,7 @@ public class Exercise5_6 {
 		// 1000の定数
 		final int THOUSAND_NUMBER = 1000;
 		//表題を表示
-		System.out.println("   float\t\t   int\n----------------------------------");
+		System.out.println("   float\t\t   int\n----------------------------");
 		//int側のカウント用変数の値が1000を超えたらループ抜け
 		for (int integerCount = 0; integerCount <= THOUSAND_NUMBER; integerCount++) {
 			//int側のカウント用変数を1000で割り商をキャストしてint側の合計用の変数に格納
