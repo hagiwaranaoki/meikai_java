@@ -45,22 +45,15 @@ public class Exercise4_25_18 {
 		//カウントが加算数を超えたらループ抜け
 		for (countValue = 0.0; countValue < addNumber; countValue++) {
 
-			//後判定ループ文
-			do {
-				//整数の入力を促す
-				System.out.print("整数：");
-				//インスタンスから入力された値を受け取る
-				inputValue = scannerInteger.nextInt();
-
-				//正の数が入力されたらループ抜け
-			} while (inputValue < 0);
+			//整数の入力を促す
+			System.out.print("整数：");
+			//インスタンスから入力された値を受け取る
+			inputValue = scannerInteger.nextInt();
 
 			//合計値が1000を超えた場合
 			if (totalValue + inputValue > 1000 || inputValue > 1000) {
 				//メッセージを表示
 				System.out.println("合計が1000を超えました。\n最後の数値は無視します。");
-				// カウントをデクリメント
-				countValue--;
 				//ループ抜け
 				break;
 			}

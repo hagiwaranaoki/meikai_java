@@ -73,7 +73,7 @@ public class Exercise4_26 {
 			System.out.println("平均は" + averageValue + "です。");
 			// マイナスを除いたカウントが0の時
 		} else {
-			//文字列出力
+			//加算する数値がなかったことを表示
 			System.out.println("加算する数値はありませんでした。");
 		}
 	}

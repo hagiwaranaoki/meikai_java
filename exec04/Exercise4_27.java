@@ -50,11 +50,11 @@ public class Exercise4_27 {
 
 			// 入力値が正解より大きい場合、ヒントを出力
 			if (integerNumber > randomNumber) {
-				// 文字列出力
+				// ヒントの文字列出力
 				System.out.println("もっと小さな数だよ");
 				// 入力値が正解より小さい場合、ヒントを出力
 			} else if (integerNumber < randomNumber) {
-				// 文字列出力
+				// ヒントの字列出力
 				System.out.println("もっと大きな数だよ");
 				// 入力値が正解と一致した場合、ループを抜ける
 			} else if (integerNumber == randomNumber) {
@@ -66,7 +66,7 @@ public class Exercise4_27 {
 
 			// 制限回数に達した場合、正解を表示してゲームを終了
 			if (i == CONSOLE_LIMIT - 1) {
-				// 出力
+				// 制限回数後の正解の文字列出力
 				System.out.println("制限回数に達しました。正解は" + randomNumber + "でした。");
 			}
 		}

@@ -37,8 +37,14 @@ public class Exercise4_24 {
 
 		//カウント用変数を宣言
 		int countValue = 0;
+		
+		// 入力が1だった場合
+		if (inputValue == 1) {
+			//素数でないことを表示
+			System.out.println(inputValue + "は素数ではありません。");
+		}
 		//カウントが入力値を超えたらループ抜け
-		for (countValue = 1; countValue < inputValue; countValue++) {
+		for (countValue = 2; countValue < inputValue; countValue++) {
 			//カウントで入力値を割り切れた場合
 			if (inputValue % countValue == 0) {
 				//素数でないことを表示

@@ -42,14 +42,10 @@ public class Exercise4_25_17 {
 		int totalValue = 0;
 		//カウントが加算数を超えたらループ抜け
 		for (countValue = 0.0; countValue < addNumber; countValue++) {
-			//後判定ループ文
-			do {
-				//整数の入力を促す
-				System.out.print("整数（0で終了）：");
-				//インスタンスから入力された値を受け取る
-				inputValue = scannerInteger.nextInt();
-				//正の数が入力されたらループ抜け
-			} while (inputValue < 0);
+			//整数の入力を促す
+			System.out.print("整数（0で終了）：");
+			//インスタンスから入力された値を受け取る
+			inputValue = scannerInteger.nextInt();
 
 			//０が入力された場合
 			if (inputValue == 0) {
