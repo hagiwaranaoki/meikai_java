@@ -23,13 +23,13 @@ public class Exercise5_6 {
 		// 1000の定数
 		final int THOUSAND_NUMBER = 1000;
 		//表題を表示
-		System.out.println("    float\t\t\t\t int\n----------------------------------");
+		System.out.println("   float\t\t   int\n----------------------------------");
 		//int側のカウント用変数の値が1000を超えたらループ抜け
 		for (int integerCount = 0; integerCount <= THOUSAND_NUMBER; integerCount++) {
 			//int側のカウント用変数を1000で割り商をキャストしてint側の合計用の変数に格納
 			float integerTotal = (float) integerCount / THOUSAND_NUMBER;
 			//float側とint側の合計値をそれぞれ表示
-			System.out.printf(String.format("%.10f", floatTotal) + "\t\t" + String.format("%.10f", integerTotal) + "\n");
+			System.out.printf(String.format("%.7f", floatTotal) + "\t\t" + String.format("%.7f", integerTotal) + "\n");
 			//float側の合計値をインクリメント
 			floatTotal = floatTotal + 0.001F;
 		}
