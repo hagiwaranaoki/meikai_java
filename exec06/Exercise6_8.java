@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class Exercise6_8 {
 	/*
 	 * 関数名:main
-	 * 概要:double型の配列の全要素の合計点と平均点を求める
+	 * 概要:double型の配列の全要素の合計と平均を求める
 	 * 引数:なし
 	 * 戻り値:なし
 	 * 作成者:N.Hagiwara
