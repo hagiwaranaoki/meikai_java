@@ -64,7 +64,7 @@ public class Exercise6_17 {
 
 		//教科ごとの平均
 		//列カウントが科目数と等しくなったらループ抜け
-		for (columnCount = 0; columnCount < 2; columnCount++) {
+		for (columnCount = 0; columnCount < SUBJECT_NUMBER; columnCount++) {
 			//教科ごとの合計を格納する変数を宣言
 			double subjectTotal = 0;
 			//行カウントが学生の人数と等しくなったらループ抜け

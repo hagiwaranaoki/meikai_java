@@ -40,6 +40,10 @@ public class Exercise6_14 {
 		int retryValue = 0;
 		// 連続を避けるための変数を定義
 		int previousValue = 0;
+		// ユーザーがリトライするときの定数
+		final int USER_RETRY = 1;
+		// ユーザーがリトライしないときの定数
+		final int USER_NOT_RETRY = 0;
 		//後判定ループ文
 		do {
 			//乱数を生成して月の値を格納する変数に代入
@@ -67,12 +71,19 @@ public class Exercise6_14 {
 				//連続を避けるための変数に正解した月の値を代入
 				previousValue = monthValue;
 				//リトライメッセージを表示
-				System.out.print("正解です。 もう一度？ 1...Yes/1以外...No:");
+				System.out.print("正解です。 もう一度？ 1...Yes/0...No:");
 			}
 			//インスタンスから入力された値を受け取る
 			retryValue = scanInput.nextInt();
-			//1以外が入力されたらループ抜け
-		} while (retryValue == 1);
+			// 0,1以外を入力されたとき
+			while (retryValue > USER_RETRY || retryValue < USER_NOT_RETRY) {
+				// 0,1を入力するように指示
+				System.out.print("0か1を入力してください:");
+				//インスタンスから入力された値を受け取る
+				retryValue = scanInput.nextInt();
+			}
+			//0が入力されたらループ抜け
+		} while (retryValue == USER_RETRY);
 	}
 
 }

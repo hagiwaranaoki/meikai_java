@@ -29,10 +29,12 @@ public class Exercise6_15 {
 		final int WEEK_RANGE = 7;
 		//曜日の英語表現が格納された配列を宣言
 		String[] weekArray = {
+				// 英語の曜日を配列に入れる
 				"monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"
 		};
 		//表記用に曜日が格納された配列を宣言
 		String[] labelsWeek = {
+				// 曜日を配列に入れる
 				"月", "火", "水", "木", "金", "土", "日"
 		};
 
@@ -42,13 +44,15 @@ public class Exercise6_15 {
 		int retryValue = 0;
 		// 連続を避けるための変数を宣言
 		int previousValue = 0;
-		
+		// リトライするときの定数
 		final int USER_RETRY = 1;
+		// リトライしないときの定数
+		final int USER_NOT_RETRY = 0;
 		//後判定ループ文
 		do {
 			//0～6の乱数を生成して曜日を格納する変数を代入
 			int weekValue = randomValue.nextInt(WEEK_RANGE);
-			////曜日の乱数生成が連続して同じ値の場合
+			//曜日の乱数生成が連続して同じ値の場合
 			if (weekValue == previousValue) {
 				//ループ文の初めに戻る
 				continue;
@@ -71,10 +75,17 @@ public class Exercise6_15 {
 				//連続を避けるための変数に正解した曜日の値を代入
 				previousValue = weekValue;
 				//メッセージを表示
-				System.out.print("正解です。 もう一度？ 1...Yes/1以外...No:");
+				System.out.print("正解です。 もう一度？ 1...Yes/0...No:");
 			}
 			//インスタンスから入力された値を受け取る
 			retryValue = standardInput.nextInt();
+			// 0,1以外を入力されたとき
+			while (retryValue > USER_RETRY || retryValue < USER_NOT_RETRY) {
+				// 0,1を入力するように指示
+				System.out.print("0か1を入力してください:");
+				//インスタンスから入力された値を受け取る
+				retryValue = standardInput.nextInt();
+			}
 			//1以外が入力されたらループ抜け
 		} while (retryValue == USER_RETRY);
 	}

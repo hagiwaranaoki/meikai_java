@@ -45,14 +45,10 @@ public class Exercise6_16 {
 		for (lineCount = 0; lineCount < FIRST_ARRAY_LINE; lineCount++) {
 			//列カウントが３になったらループ抜け
 			for (columnCount = 0; columnCount < FIRST_ARRAY_COLUMN; columnCount++) {
-				//後判定ループ文
-				do {
-					//数値の入力を促す
-					System.out.print("firstArray[" + lineCount + "][" + columnCount + "]=");
-					//インスタンスから入力された値を受け取る
-					firstArray[lineCount][columnCount] = scanInteger.nextInt();
-					//正の数が入力されたらループ抜け
-				} while (firstArray[lineCount][columnCount] < 0);
+				//数値の入力を促す
+				System.out.print("firstArray[" + lineCount + "][" + columnCount + "]=");
+				//インスタンスから入力された値を受け取る
+				firstArray[lineCount][columnCount] = scanInteger.nextInt();
 			}
 		}
 
@@ -60,14 +56,10 @@ public class Exercise6_16 {
 		for (lineCount = 0; lineCount < SECOND_ARRAY_LINE; lineCount++) {
 			//列カウントが4になったらループ抜け
 			for (columnCount = 0; columnCount < SECOND_ARRAY_COLUMN; columnCount++) {
-				//後判定ループ文
-				do {
-					//数値の入力を促す
-					System.out.print("secondArray[" + lineCount + "][" + columnCount + "]=");
-					//インスタンスから入力された値を受け取る
-					secondArray[lineCount][columnCount] = scanInteger.nextInt();
-					//正の数が入力されたらループ抜け
-				} while (secondArray[lineCount][columnCount] < 0);
+				//数値の入力を促す
+				System.out.print("secondArray[" + lineCount + "][" + columnCount + "]=");
+				//インスタンスから入力された値を受け取る
+				secondArray[lineCount][columnCount] = scanInteger.nextInt();
 			}
 		}
 		//カウントが4になったらループ抜け
