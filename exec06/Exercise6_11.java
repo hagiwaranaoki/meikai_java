@@ -47,20 +47,23 @@ public class Exercise6_11 {
 		int searchIndex = 0;
 		//配列名を表示
 		System.out.print("integerArray={ ");
-		//カウントが要素数と等しくなればループ抜け
+		//要素数と同じ回数繰り返し
 		for (countValue = elmentCount - 1; countValue >= 0; countValue--) {
 			//配列に1～10の乱数を生成して代入
 			integerArray[countValue] = randomGeneration.nextInt(RANDOM_RANGE) + 1;
+
 			//配列の最大インデックスからデクリメントして０になったらループ抜け
 			for (searchIndex = elmentCount - 1; searchIndex > 0; searchIndex--) {
 				//異なるインデックスの時に配列に格納された値が一致した場合
 				if (countValue != searchIndex && integerArray[countValue] == integerArray[searchIndex]) {
-					//カウント数をインクリメント
+					//カウント数をインクリメントせずに外側のループを再開
 					countValue++;
+					// 内側のfor文を抜ける
+					break;
 				}
 			}
 		}
-		//カウント数が要素数と等しくなったらループ抜け
+		//要素数と同じ回数繰り返し
 		for (countValue = 0; countValue < elmentCount; countValue++) {
 			//配列の内容を表示
 			System.out.print(integerArray[countValue] + " ");

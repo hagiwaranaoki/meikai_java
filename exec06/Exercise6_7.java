@@ -31,7 +31,7 @@ public class Exercise6_7 {
 		//乱数生成の範囲指定用変数を宣言
 		int RANDOM_RANGE = 10;
 
-		//カウントが入力値と等しくなったらループ抜け
+		//入力値と等しくなったらループ抜け
 		for (int countValue = 0; countValue < ELMENT_COUNT; countValue++) {
 			//配列の全要素を乱数で埋める
 			integerArray[countValue] = randomGeneration.nextInt(RANDOM_RANGE);
@@ -39,7 +39,7 @@ public class Exercise6_7 {
 
 		//メッセージを表示
 		System.out.print("配列integerArrayの全要素の値\n{ ");
-		//カウントが要素数と等しくなったらループ抜け
+		//要素数と同じ回数繰り返し
 		for (int countValue = 0; countValue < ELMENT_COUNT; countValue++) {
 			//配列の値を表示
 			System.out.print(integerArray[countValue] + " ");

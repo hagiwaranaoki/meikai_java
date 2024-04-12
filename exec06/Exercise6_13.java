@@ -38,7 +38,7 @@ public class Exercise6_13 {
 			//インスタンスから入力された値を受け取る
 			elmentCount = standardInput.nextInt();
 			//正の数が入力されたらループ抜け
-		} while (elmentCount < 0);
+		} while (elmentCount <= 0);
 
 		//並べ替え前の配列を宣言
 		int[] beforeArray = new int[elmentCount];
@@ -47,7 +47,7 @@ public class Exercise6_13 {
 
 		//配列を表示
 		System.out.print("beforeArray={");
-		//カウントが要素数と等しくなったらループ抜け
+		//要素数と同じ回数繰り返し
 		for (int countValue = 0; countValue < elmentCount; countValue++) {
 			////要素数分の乱数を生成してシャッフル前の配列に代入
 			beforeArray[countValue] = randomValue.nextInt(RANDOM_RANGE);
@@ -58,7 +58,7 @@ public class Exercise6_13 {
 		System.out.println(" }");
 		//カウントダウン用変数を宣言
 		int countDownValue = elmentCount - 1;
-		//カウントアップが要素数と等しくなったらループ抜け
+		//要素数と同じ回数繰り返し
 		for (int countUpValue = 0; countUpValue < elmentCount; countUpValue++) {
 			//並べ替え前の配列の要素を後ろから並べ替え後の配列に前から格納
 			afterArray[countUpValue] = beforeArray[countDownValue];
@@ -67,7 +67,7 @@ public class Exercise6_13 {
 		}
 		//配列を並び替えたことを知らせるメッセージを表示
 		System.out.print("配列を逆順に並び替えました。\n" + "afterArray={");
-		//カウントが要素数を超えたらループ抜け
+		//カ要素数と同じ回数繰り返し
 		for (int countValue = 0; countValue < elmentCount; countValue++) {
 			//シャッフル後の配列の全要素を表示
 			System.out.print(afterArray[countValue] + " ");

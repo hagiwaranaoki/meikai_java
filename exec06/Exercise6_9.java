@@ -43,16 +43,16 @@ public class Exercise6_9 {
 
 		//int型配列を宣言
 		int[] integerArray = new int[elmentCount];
-		//文字列出力
+		//配列の文字列出力
 		System.out.print("配列 = { ");
 		//カウントが要素数と等しくなればループ抜け
 		for (countValue = 0; countValue < elmentCount; countValue++) {
 			//配列に1～10の乱数を生成して代入
 			integerArray[countValue] = randomValue.nextInt(RANDOM_RANGE) + 1;
-			// 文字列出力
+			// 配列の要素出力
 			System.out.print(integerArray[countValue] + " ");
 		}
-		// 文字列出力
+		// }出力
 		System.out.println("}");
 	}
 

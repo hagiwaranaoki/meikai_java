@@ -21,16 +21,17 @@ public class Exercise6_8 {
 	public static void main(String[] args) {
 		// Scannerオブジェクト作成
 		Scanner standardInput = new Scanner(System.in);
-		// 文字列出力
+		// 要素数の入力を促す
 		System.out.print("要素数：");
 		// int型の数値を受け付ける
 		int integerNumber = standardInput.nextInt();
+		
 
 		// 正の整数が入力されるまで繰り返す
 		while (integerNumber < 1) {
-			// 人数の入力を促す
-			System.out.print("人数は正の整数で入力してください:");
-			// 人数をコンソールから受け取る
+			// 要素数の入力を促す
+			System.out.print("要素数は正の整数で入力してください:");
+			// 要素数をコンソールから受け取る
 			integerNumber = standardInput.nextInt();
 		}
 
@@ -39,7 +40,7 @@ public class Exercise6_8 {
 
 		// 配列に点数を入れていく
 		for (int i = 0; i < pointArray.length; i++) {
-			// 文字列出力
+			// 何要素目の人かを出力
 			System.out.print(i + 1 + "番目：");
 			// 配列に入れる点数を受け付け
 			pointArray[i] = standardInput.nextDouble();

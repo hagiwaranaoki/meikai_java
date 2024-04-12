@@ -49,7 +49,7 @@ public class Exercise6_12 {
 
 		//配列=のメッセージを表示
 		System.out.print("beforeArray={");
-		//カウントが要素数と等しくなったらループ抜け
+		//要素数と同じ回数繰り返し
 		for (int countValue = 0; countValue < elmentCount; countValue++) {
 			////要素数分の乱数を生成してシャッフル前の配列に代入
 			beforeArray[countValue] = randomGeneration.nextInt(RANDOM_RANGE);
@@ -59,7 +59,7 @@ public class Exercise6_12 {
 		//｝を表示
 		System.out.println(" }");
 
-		//カウントが要素数と等しくなればループ抜け
+		//要素数と同じ回数繰り返し
 		for (int countValue = elmentCount - 1; countValue >= 0; countValue--) {
 			//配列に1～10の乱数を生成して代入
 			indexArray[countValue] = randomGeneration.nextInt(elmentCount);
@@ -76,7 +76,7 @@ public class Exercise6_12 {
 		}
 		//メッセージを表示
 		System.out.print("配列をシャッフルしました。\n" + "afterArray={");
-		//カウントが要素数を超えたらループ抜け
+		//要素数と同じ回数繰り返し
 		for (int countValue = 0; countValue < elmentCount; countValue++) {
 			//ランダムなインデックスを格納しているindexArrayをもとにシャッフル前の配列の値をシャッフル後の配列へ代入
 			afterArray[countValue] = beforeArray[indexArray[countValue]];

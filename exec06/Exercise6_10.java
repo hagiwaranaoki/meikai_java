@@ -46,7 +46,7 @@ public class Exercise6_10 {
 		final int ELEMENT_COUNT_TWO = 2;
 		//配列名を表示
 		System.out.print("integerArray={ ");
-		//カウントが要素数と等しくなればループ抜け
+		//要素数と同じ回数繰り返す
 		for (countValue = elmentCount - 1; countValue >= 0; countValue--) {
 			//配列に1～10の乱数を生成して代入
 			integerArray[countValue] = randomValue.nextInt(RANDOM_RANGE) + 1;
@@ -56,7 +56,7 @@ public class Exercise6_10 {
 				countValue++;
 			}
 		}
-		//カウント数が要素数と等しくなったらループ抜け
+		//要素数と同じ回数繰り返し
 		for (countValue = 0; countValue < elmentCount; countValue++) {
 			//配列の内容を表示
 			System.out.print(integerArray[countValue] + " ");
