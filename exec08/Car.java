@@ -6,7 +6,7 @@ package exec08;
  * 作成者:N.Hagiwara
  * 作成日:2024/04/09
  */
-public class Car {
+class Car {
 	// 車の名前を保持するためのフィールド
 	private String name;
 	// 車の幅を保持するためのフィールド
