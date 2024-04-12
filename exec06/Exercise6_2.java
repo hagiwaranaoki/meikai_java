@@ -20,13 +20,17 @@ public class Exercise6_2 {
 		final int ELEMENT_COUNT = 5;
 		// 要素数が5のint型の配列を定義
 		int[] integerArray = new int[ELEMENT_COUNT];
-
-		// intが0になるまで繰り返す
-		for (int i = 5; i > 0; i--) {
-			// 要素数は5なのでi-1から入れる
-			integerArray[i - 1] = i;
-			// 配列の中身を出力
-			System.out.println(integerArray[i - 1]);
+		
+		// 代入用の変数を定義
+		int substitutionValue = 5;
+		//カウントをインクリメントしながらカウントが5になったらループ抜け
+		for (int i = 0; i < ELEMENT_COUNT; i++) {
+			//配列に代入用の変数の値を1つ1つ代入
+			integerArray[i] = substitutionValue;
+			//配列の値を表示
+			System.out.println(integerArray[i]);
+			//代入用の変数の値をデクリメント
+			substitutionValue--;
 		}
 	}
 
