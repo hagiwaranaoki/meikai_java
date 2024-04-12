@@ -37,22 +37,26 @@ public class Exercise6_5 {
 
 		// 配列に要素の値を入れていく
 		for (int i = 0; i < integerArray.length; i++) {
-			// 文字列出力
+			// 何番目の要素か
 			System.out.print("a[" + i + "] = ");
 			// 配列の要素それぞれにコンソールから受け取った値を入れる
 			integerArray[i] = standardInput.nextInt();
 		}
 		// 各要素の値を表示する
 		for (int i = 0; i < integerArray.length; i++) {
-			//最初の要素の場合
-			if (i == 0) {
+			// 要素数が1の場合
+			if (integerArray.length == 1) {
+				// {要素}を出力
+				System.out.print("{" + integerArray[i] + "}");
+				//最初の要素の場合
+			} else if (i == 0) {
 				// {を入れる
 				System.out.print("{" + integerArray[i] + ",");
 				// 最後の要素ではない場合
 			} else if (i < integerArray.length - 1) {
 				// スペースと,を入れる
 				System.out.print(" " + integerArray[i] + ",");
-				//　それ以外の場合
+				// それ以外の場合
 			} else {
 				// 前にスペース、最後に}を入れる
 				System.out.print(" " + integerArray[i] + "}");

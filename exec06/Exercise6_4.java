@@ -43,6 +43,8 @@ public class Exercise6_4 {
 		int[] integerArray = new int[inputValue];
 
 		//カウントが入力値を超えたらループ抜け
+		//ループ変数カウントを0で初期化し、カウントが入力値より小さい間ループを続ける
+		//ループが1回実行されるごとにカウントをインクリメントする
 		for (countValue = 0; countValue < inputValue; countValue++) {
 			//1～10の乱数を生成して配列の各要素に代入
 			integerArray[countValue] = randomGeneration.nextInt(RANDOM_RANGE);
@@ -51,6 +53,8 @@ public class Exercise6_4 {
 		int maximumValue = integerArray[0];
 
 		//カウントが要素数を超えたらループ抜け
+		//ループ変数カウントを1で初期化し、カウントが入力値eより小さい間ループを続ける
+		//ループが1回実行されるごとにカウントをインクリメントする
 		for (countValue = 1; countValue < inputValue; countValue++) {
 			//最大値より配列の値が大きい場合
 			if (maximumValue < integerArray[countValue]) {
@@ -58,9 +62,15 @@ public class Exercise6_4 {
 				maximumValue = integerArray[countValue];
 			}
 		}
-		//配列の最大値を代入した変数heightValueが0になったらループ抜け
+
+		//棒グラフを表示するための外側のforループ（高さ方向）
+		//ループ変数高さを配列の最大値で初期化し、高さが0より大きい間ループを続ける
+		//ループが1回実行されるごとに高さをデクリメントする
 		for (int heightValue = maximumValue; heightValue > 0; heightValue--) {
-			//変数widthValueが要素数の値になったらループ抜け
+			//横幅が要素数の値になったらループ抜け
+			//棒グラフを表示するための内側のforループ（横幅方向）
+			//ループ変数横幅を0で初期化し、横幅が入力値より小さい間ループを続ける
+			//ループが1回実行されるごとに横幅をインクリメントする
 			for (int widthValue = 0; widthValue < inputValue; widthValue++) {
 				//配列の値を下回っている場合
 				if (integerArray[widthValue] >= heightValue) {
@@ -78,16 +88,22 @@ public class Exercise6_4 {
 			System.out.println();
 		}
 		//カウントが要素数を超えたらループ抜け
+		//ループ変数カウントを0で初期化し、カウントが入力値より小さい間ループを続ける
+		//ループが1回実行されるごとにカウントをインクリメントする
 		for (countValue = 0; countValue < inputValue; countValue++) {
 			//-を表示
 			System.out.print("--");
 		}
 		//改行を表示
 		System.out.println();
+		// 余りを出すときの定数
+		final int DIVIDE_VALUE = 10;
 		//カウントが要素数を超えたらループ抜け
+		//ループ変数カウントを0で初期化し、カウントが入力値より小さい間ループを続ける
+		//ループが1回実行されるごとにカウントをインクリメントする
 		for (countValue = 0; countValue < inputValue; countValue++) {
-			//インデックスを10で割った余を表示
-			System.out.print((countValue % 10) + " ");
+			//インデックスを10で割った余りを表示
+			System.out.print((countValue % DIVIDE_VALUE) + " ");
 		}
 	}
 }
