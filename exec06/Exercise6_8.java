@@ -25,7 +25,6 @@ public class Exercise6_8 {
 		System.out.print("要素数：");
 		// int型の数値を受け付ける
 		int integerNumber = standardInput.nextInt();
-		
 
 		// 正の整数が入力されるまで繰り返す
 		while (integerNumber < 1) {
@@ -35,23 +34,15 @@ public class Exercise6_8 {
 			integerNumber = standardInput.nextInt();
 		}
 
-		// 点数を入れる用の配列
+		// 実数値の配列
 		double[] pointArray = new double[integerNumber];
 
-		// 配列に点数を入れていく
+		// 配列に数値を入れていく
 		for (int i = 0; i < pointArray.length; i++) {
-			// 何要素目の人かを出力
+			// 何要素目かを出力
 			System.out.print(i + 1 + "番目：");
-			// 配列に入れる点数を受け付け
+			// 配列に入れる数値を受け付け
 			pointArray[i] = standardInput.nextDouble();
-
-			// 0以上の整数が入力されるまで繰り返す
-			while (pointArray[i] < 0) {
-				// 点数の入力を促す
-				System.out.print("人数は0以上の整数で入力してください:");
-				// 点数をコンソールから受け取る
-				pointArray[i] = standardInput.nextInt();
-			}
 		}
 
 		// 合計値の初期化
@@ -68,10 +59,10 @@ public class Exercise6_8 {
 		// 平均を計算
 		double pointAverage = pointSum / averageCount;
 
-		//合計点を出力
-		System.out.println("合計点：" + pointSum);
-		//平均点を出力
-		System.out.println("平均点：" + pointAverage);
+		//合計値を出力
+		System.out.println("合計値：" + pointSum);
+		//平均値を出力
+		System.out.println("平均値：" + pointAverage);
 	}
 
 }
