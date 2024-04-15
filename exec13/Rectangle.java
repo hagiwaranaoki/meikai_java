@@ -1,12 +1,14 @@
 package exec13;
 
+import exec14.Plane2D;
+
 /*
- * クラス名:VirtLine
+ * クラス名:Rectangle
  * 概要:長方形を表す
  * 作成者:N.Hagiwara
  * 作成日:2024/04/15
  */
-public class Rectangle extends Shape {
+public class Rectangle extends Shape implements Plane2D{
 	// 長方形の幅を表すフィールド
 	private int width;
 	// 長方形の高さを表すフィールド
@@ -58,5 +60,18 @@ public class Rectangle extends Shape {
 			// 改行する
 			System.out.println();
 		}
+	}
+	
+	/*
+	 * 関数名:getArea
+	 * 概要:面積を求める
+	 * 引数:なし
+	 * 戻り値:長方形の面積
+	 * 作成者:N.Hagiwara
+	 * 作成日:2024/04/15
+	 */
+	public int getArea() {
+		// 長方形の面積を返す
+		return width * height;
 	}
 }
