@@ -15,7 +15,7 @@ public class Exercise7_31 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/09
 	 */
-	static int absolute(int x) {
+	public static int absolute(int x) {
 		// xが負の場合
 		if (x < 0) {
 			// 符号の反転
@@ -33,7 +33,7 @@ public class Exercise7_31 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/09
 	 */
-	static long absolute(long x) {
+	public static long absolute(long x) {
 		// xが負の場合
 		if (x < 0) {
 			// 符号を反転
@@ -51,7 +51,7 @@ public class Exercise7_31 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/09
 	 */
-	static float absolute(float x) {
+	public static float absolute(float x) {
 		// xが負の場合
 		if (x < 0) {
 			// 符号を反転
@@ -69,7 +69,7 @@ public class Exercise7_31 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/09
 	 */
-	static double absolute(double x) {
+	public static double absolute(double x) {
 		// xが負の場合
 		if (x < 0) {
 			// 符号を反転

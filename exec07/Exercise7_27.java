@@ -23,7 +23,7 @@ public class Exercise7_27 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/08
 	 */
-	static boolean addMatrix(int[][] x, int[][] y, int[][] z) {
+	public static boolean addMatrix(int[][] x, int[][] y, int[][] z) {
 		//返り値を宣言しfalseを代入
 		boolean returnValue = false;
 		//要素数が等しいか判断
@@ -64,7 +64,7 @@ public class Exercise7_27 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/08
 	 */
-	static int[][] scanMultipleInput() {
+	public static int[][] scanMultipleInput() {
 		//入力値を代入する変数を宣言
 		int lineNumber = 0, columnNumber = 0;
 		//後判定ループ文
@@ -108,7 +108,7 @@ public class Exercise7_27 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/08
 	 */
-	static void outputMultipleArray(int[][] integerArray) {
+	public static void outputMultipleArray(int[][] integerArray) {
 		//カウントが行の要素数と等しくなったらループ抜け
 		for (int i = 0; i < integerArray.length; i++) {
 			//カウントが列の要素数と等しくなったらループ抜け

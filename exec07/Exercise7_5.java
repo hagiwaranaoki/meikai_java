@@ -15,7 +15,7 @@ public class Exercise7_5 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/05
 	 */
-	static void hello() {
+	public static void hello() {
 		// 『こんにちは。』を出力して改行
 		System.out.println("『こんにちは。』");
 	}

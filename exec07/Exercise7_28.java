@@ -21,7 +21,7 @@ public class Exercise7_28 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/08
 	 */
-	static int[][] addMatrix(int[][] x, int[][] y) {
+	public static int[][] addMatrix(int[][] x, int[][] y) {
 		//２つの配列の和を格納する配列を宣言
 		int[][] totalArray = new int[x.length][x[0].length];
 		//カウントが行の要素数と等しくなったらループ抜け
@@ -44,7 +44,7 @@ public class Exercise7_28 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/08
 	 */
-	static int[][] scanMultipleInput() {
+	public static int[][] scanMultipleInput() {
 		// 行を代入する変数を宣言
 		int lineNumber = 0;
 		// 列を代入する変数を宣言
@@ -90,7 +90,7 @@ public class Exercise7_28 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/08
 	 */
-	static int[][] scanMultipleElement(int[][] firstArray) {
+	public static int[][] scanMultipleElement(int[][] firstArray) {
 
 		//入力された要素数をもとに配列を宣言
 		int[][] secondArray = new int[firstArray.length][firstArray[0].length];
@@ -116,7 +116,7 @@ public class Exercise7_28 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/08
 	 */
-	static void outputMultipleArray(int[][] integerArray) {
+	public static void outputMultipleArray(int[][] integerArray) {
 		//カウントが行の要素数と等しくなったらループ抜け
 		for (int i = 0; i < integerArray.length; i++) {
 			//カウントが列の要素数と等しくなったらループ抜け

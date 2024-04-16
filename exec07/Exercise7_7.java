@@ -18,7 +18,7 @@ public class Exercise7_7 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/08
 	 */
-	static void putStars(int n) {
+	public static void putStars(int n) {
 		// putCharsの呼び出し
 		putChars('*', n);
 	}
@@ -32,7 +32,7 @@ public class Exercise7_7 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/08
 	 */
-	static void putChars(char c, int n) {
+	public static void putChars(char c, int n) {
 		//受け取ったint型変数の値をデクリメントしながら値が0より大きい場合
 		while (n-- > 0) {
 			//char型の引数を表示

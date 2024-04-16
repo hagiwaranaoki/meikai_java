@@ -19,7 +19,7 @@ public class Exercise7_17 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/08
 	 */
-	static int linearSearchR(int[] a, int key) {
+	public static int linearSearchR(int[] a, int key) {
 		//戻り値を格納する変数を宣言
 		int returnValue = -1;
 		//カウントが配列の要素数と等しくなったらループ抜け

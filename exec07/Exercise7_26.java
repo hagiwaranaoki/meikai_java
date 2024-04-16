@@ -22,7 +22,7 @@ public class Exercise7_26 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/08
 	 */
-	static int[] arrayInsOf(int[] a, int idx, int x) {
+	public static int[] arrayInsOf(int[] a, int idx, int x) {
 		//配列aの要素数と同じ要素数の配列を宣言
 		int[] returnArray = new int[a.length + 1];
 		//カウントがidxと等しくなったらループ抜け
@@ -49,7 +49,7 @@ public class Exercise7_26 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/08
 	 */
-	static int[] scanInput() {
+	public static int[] scanInput() {
 		//入力値を代入する変数を宣言
 		int elementCount = 0;
 		//後判定ループ文
@@ -81,7 +81,7 @@ public class Exercise7_26 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/08
 	 */
-	static void outputArray(int[] integerArray) {
+	public static void outputArray(int[] integerArray) {
 		// {を表示
 		System.out.print("{ ");
 		//カウントが配列の要素数と等しくなったらループ抜け

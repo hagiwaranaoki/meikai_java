@@ -20,7 +20,7 @@ public class Exercise7_8 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/08
 	 */
-	static int random(int a, int b) {
+	public static int random(int a, int b) {
 		//乱数を格納する変数を宣言
 		int randomValue = a;
 		//Randomクラスのインスタンスを作成

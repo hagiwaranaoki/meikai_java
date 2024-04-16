@@ -15,7 +15,7 @@ public class Exercise7_32 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/09
 	 */
-	static void printBits(byte x) {
+	public static void printBits(byte x) {
 		// byte型というタイトル出力
 		System.out.printf("\nbyte型\n");
 		// 32ビット全てを順に調べる
@@ -33,7 +33,7 @@ public class Exercise7_32 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/09
 	 */
-	static void printBits(short x) {
+	public static void printBits(short x) {
 		// short型というタイトル出力
 		System.out.printf("\nshort型\n");
 		// 32ビット全てを順に調べる
@@ -51,7 +51,7 @@ public class Exercise7_32 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/09
 	 */
-	static void printBits(int x) {
+	public static void printBits(int x) {
 		// int型というタイトル出力
 		System.out.printf("\nint型\n");
 		// 32ビット全てを順に調べる
@@ -69,7 +69,7 @@ public class Exercise7_32 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/09
 	 */
-	static void printBits(long x) {
+	public static void printBits(long x) {
 		// long型というタイトル出力
 		System.out.printf("\nlong型\n");
 		// 32ビット全てを順に調べる

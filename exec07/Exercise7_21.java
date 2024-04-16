@@ -19,7 +19,7 @@ public class Exercise7_21 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/08
 	 */
-	static void outputArray(int[] integerArray) {
+	public static void outputArray(int[] integerArray) {
 		// {を表示
 		System.out.print("{ ");
 		//カウントが配列の要素数と等しくなったらループ抜け
@@ -39,7 +39,7 @@ public class Exercise7_21 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/08
 	 */
-	static int[] scanInput(int judgmentValue) {
+	public static int[] scanInput(int judgmentValue) {
 		//Scannerクラスのインスタンスを作成
 		Scanner scanInteger = new Scanner(System.in);
 		//入力値を代入する変数を宣言
@@ -77,7 +77,7 @@ public class Exercise7_21 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/08
 	 */
-	static void aryExchng(int[] a, int[] b) {
+	public static void aryExchng(int[] a, int[] b) {
 		//要素数を格納する変数を宣言
 		int elementCount = 0;
 		//配列aの要素数が多い場合

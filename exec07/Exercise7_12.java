@@ -21,7 +21,7 @@ public class Exercise7_12 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/08
 	 */
-	static void printBits(int bitValue) {
+	public static void printBits(int bitValue) {
 		//カウントが0を下回ったらループ抜け
 		for (int i = BITS_NUMBER - 1; i >= 0; i--) {
 			//1/0を表示
@@ -39,7 +39,7 @@ public class Exercise7_12 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/08
 	 */
-	static int rRotate(int x, int n) {
+	public static int rRotate(int x, int n) {
 		//rightShiftにxをnビット右シフトした値を代入
 		int rightShift = x >>> n;
 		//leftShiftにxを32-nビット左シフトした値を代入
@@ -58,7 +58,7 @@ public class Exercise7_12 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/08
 	 */
-	static int lRotate(int x, int n) {
+	public static int lRotate(int x, int n) {
 		//rightShiftにxをnビット左シフトした値を代入
 		int leghtShift = x << n;
 		//leghtShiftにxを32-nビット右シフトした値を代入

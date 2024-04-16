@@ -21,7 +21,7 @@ public class Exercise7_14 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/08
 	 */
-	static void printBits(int bitValue) {
+	public static void printBits(int bitValue) {
 		//カウントが0を下回ったらループ抜け
 		for (int i = BITS_NUMBER - 1; i >= 0; i--) {
 			//1/0を表示
@@ -39,7 +39,7 @@ public class Exercise7_14 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/08
 	 */
-	static int exponentiateBitShift(int bitRange) {
+	public static int exponentiateBitShift(int bitRange) {
 		//戻り値を格納する変数を宣言
 		int returnValue = 0;
 		//操作するビット数が１の場合
@@ -72,7 +72,7 @@ public class Exercise7_14 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/08
 	 */
-	static int setN(int x, int pos, int n) {
+	public static int setN(int x, int pos, int n) {
 		//exponentiateBitShiftメソッドを呼び出して返り値をnに代入
 		n = exponentiateBitShift(n);
 		//nをposビット左シフトした値とxの論理和を戻り値に代入
@@ -89,7 +89,7 @@ public class Exercise7_14 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/08
 	 */
-	static int resetN(int x, int pos, int n) {
+	public static int resetN(int x, int pos, int n) {
 		//exponentiateBitShiftメソッドを呼び出して返り値をnに代入
 		n = exponentiateBitShift(n);
 		//nをposビット左シフトした値を反転させた値とxの論理積を戻り値に代入
@@ -106,7 +106,7 @@ public class Exercise7_14 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/08
 	 */
-	static int inverseN(int x, int pos, int n) {
+	public static int inverseN(int x, int pos, int n) {
 		//exponentiateBitShiftメソッドを呼び出して返り値をnに代入
 		n = exponentiateBitShift(n);
 		//nをposビット左シフトした値とxの排他的論理和を戻り値に代入

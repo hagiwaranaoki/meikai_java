@@ -18,7 +18,7 @@ public class Exercise7_22 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/08
 	 */
-	static int[] arrayClone(int[] a) {
+	public static int[] arrayClone(int[] a) {
 		//配列aの要素数と同じ要素数の配列を宣言
 		int[] returnArray = new int[a.length];
 		//カウントがaの要素数と等しくなったらループ抜け
@@ -38,7 +38,7 @@ public class Exercise7_22 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/08
 	 */
-	static int[] scanInput() {
+	public static int[] scanInput() {
 		//Scannerクラスのインスタンスを作成
 		Scanner scanInteger = new Scanner(System.in);
 		//入力値を代入する変数を宣言
@@ -72,7 +72,7 @@ public class Exercise7_22 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/08
 	 */
-	static void outputArray(int[] integerArray) {
+	public static void outputArray(int[] integerArray) {
 		// {を表示
 		System.out.print("{ ");
 		//カウントが配列の要素数と等しくなったらループ抜け

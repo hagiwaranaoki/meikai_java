@@ -17,7 +17,7 @@ public class Exercise7_15 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/08
 	 */
-	static int sumOf(int[] a) {
+	public static int sumOf(int[] a) {
 		//合計値を格納する変数を宣言
 		int totalValue=0;
 		//カウントが配列の要素数と等しくなったらループ抜け

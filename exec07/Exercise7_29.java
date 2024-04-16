@@ -20,7 +20,7 @@ public class Exercise7_29 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/09
 	 */
-	static int[][] aryClone2(int[][] a) {
+	public static int[][] aryClone2(int[][] a) {
 		// 元の配列と同じサイズの新しい配列を作成
 		int[][] answerArray = new int[a.length][a[0].length];
 		//カウントが行の要素数と等しくなったらループ抜け
@@ -43,7 +43,7 @@ public class Exercise7_29 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/09
 	 */
-	static void outputMultipleArray(int[][] integerArray) {
+	public static void outputMultipleArray(int[][] integerArray) {
 		//カウントが行の要素数と等しくなったらループ抜け
 		for (int i = 0; i < integerArray.length; i++) {
 			//カウントが列の要素数と等しくなったらループ抜け
@@ -64,7 +64,7 @@ public class Exercise7_29 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/09
 	 */
-	static int[][] scanMultipleInput() {
+	public static int[][] scanMultipleInput() {
 		// 行を代入する変数を宣言
 		int lineNumber = 0;
 		// 列を代入する変数を宣言

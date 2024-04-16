@@ -18,7 +18,7 @@ public class Exercise7_19 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/08
 	 */
-	static void outputArray(int[] integerArray) {
+	public static void outputArray(int[] integerArray) {
 		// {を表示
 		System.out.print("{ ");
 		//カウントが配列の要素数と等しくなったらループ抜け
@@ -40,7 +40,7 @@ public class Exercise7_19 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/08
 	 */
-	static void aryRmvN(int[] a, int idx, int n) {
+	public static void aryRmvN(int[] a, int idx, int n) {
 		//削除する要素からカウントが要素数-nになったらループ抜け
 		for (int i = idx; i < a.length - n; i++) {
 			//n個前方にずらす

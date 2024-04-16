@@ -18,15 +18,23 @@ public class Exercise7_3 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/05
 	 */
-	static int med(int a, int b, int c) {
+	public static int med(int a, int b, int c) {
 		// 中央値をaで初期化
 		int middleValue = a;
-		// 中央値 <= b <= cまたはc <= b <= 中央値の場合
-		if ((middleValue <= b && b <= c) || (c <= b && b <= middleValue)) {
+		// aとbが同じ値またはbとcが同じ値の場合
+		if (a == b || b == c) {
 			// 中央値をbにする
 			middleValue = b;
-			// 中央値 <= c <= bまたはb<= c <= 中央値の場合
-		} else if ((middleValue <= c && c <= middleValue) || (b <= c && c <= middleValue)) {
+			// aとcが同じ場合
+		} else if (a == c) {
+			// 中央値をcにする
+			middleValue = c;
+			// 中央値よりもbが大きく、bよりもcが大きいまたはbよりも中央値が小さく、cよりもbが大きい場合
+		} else if (((b > middleValue) && (c > b)) || ((b < middleValue) && (c < b))) {
+			// 中央値をbにする
+			middleValue = b;
+			// 中央値よりもcが大きく、cよりもbが大きいまたはcよりも中央値が小さく、bよりもcが大きい場合
+		} else if (((c > middleValue) && (b > c)) || ((c < middleValue) && (b < c))) {
 			// 中央値をcにする
 			middleValue = c;
 		}

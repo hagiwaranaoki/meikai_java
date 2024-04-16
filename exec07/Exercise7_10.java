@@ -23,7 +23,7 @@ public class Exercise7_10 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/08
 	 */
-	static boolean confirmRetry() {
+	public static boolean confirmRetry() {
 		//繰り返すかの判断用の変数を宣言
 		int cont = 0;
 		//後判定ループ文
@@ -48,7 +48,7 @@ public class Exercise7_10 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/08
 	 */
-	static void dividePattern(int x, int y, int z, int patternValue) {
+	public static void dividePattern(int x, int y, int z, int patternValue) {
 		//一つ目の回答を格納する変数を宣言
 		int firstNumber = 0;
 		//二つ目の回答を格納する変数を宣言

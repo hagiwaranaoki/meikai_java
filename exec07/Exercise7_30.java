@@ -20,7 +20,7 @@ public class Exercise7_30 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/09
 	 */
-	static int min(int a, int b) {
+	public static int min(int a, int b) {
 		// aを最小値賭して初期化
 		int minimumValue = a;
 		// aがbより大きい場合
@@ -40,7 +40,7 @@ public class Exercise7_30 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/09
 	 */
-	static int min(int a, int b, int c) {
+	public static int min(int a, int b, int c) {
 		// aを最小値として初期化
 		int minimumValue = a;
 		// bが現在の最小値より小さい場合
@@ -66,7 +66,7 @@ public class Exercise7_30 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/09
 	 */
-	static int min(int[] a) {
+	public static int min(int[] a) {
 		// 配列の最初の要素を最小値とする
 		int minimumValue = a[0];
 		// 配列の全ての要素を順に調べる
@@ -89,7 +89,7 @@ public class Exercise7_30 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/09
 	 */
-	static int[] scanInput(int judgmentValue) {
+	public static int[] scanInput(int judgmentValue) {
 		//入力値を代入する変数を宣言
 		int elementCount = 0;
 		//整数の入力を促す
@@ -128,7 +128,7 @@ public class Exercise7_30 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/08
 	 */
-	static void outputArray(int[] integerArray) {
+	public static void outputArray(int[] integerArray) {
 		// {を表示
 		System.out.print("{ ");
 		//カウントが配列の要素数と等しくなったらループ抜け

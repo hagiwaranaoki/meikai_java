@@ -18,7 +18,7 @@ public class Exercise7_4 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/05
 	 */
-	static int sumUp(int n) {
+	public static int sumUp(int n) {
 		// 合計値を初期化
 		int sumAll = 0;
 		// nと同じ数になるまで繰り返す

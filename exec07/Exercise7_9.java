@@ -18,7 +18,7 @@ public class Exercise7_9 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/08
 	 */
-	static int readPlusInt() {
+	public static int readPlusInt() {
 		//Scannerクラスのインスタンスを作成
 		Scanner scanInteger = new Scanner(System.in);
 		//入力値を代入する変数を宣言

@@ -18,7 +18,7 @@ public class Exercise7_20 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/08
 	 */
-	static void outputArray(int[] integerArray) {
+	public static void outputArray(int[] integerArray) {
 		// {を表示
 		System.out.print("{ ");
 		//カウントが配列の要素数と等しくなったらループ抜け
@@ -40,7 +40,7 @@ public class Exercise7_20 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/08
 	 */
-	static void aryIns(int[] a, int idx, int x) {
+	public static void aryIns(int[] a, int idx, int x) {
 		//要素数-2からデクリメントし挿入するインデックスと等しくなったらループ抜け
 		for (int i = a.length - 2; i >= idx; i--) {
 			//後方に1つずつ要素をずらしていく

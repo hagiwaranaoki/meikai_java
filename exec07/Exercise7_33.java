@@ -18,7 +18,7 @@ public class Exercise7_33 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/09
 	 */
-	static void printArray(int[] a) {
+	public static void printArray(int[] a) {
 		// 配列の全ての要素を順に調べる
 		for (int i = 0; i < a.length; i++) {
 			// 各要素を出力
@@ -36,7 +36,7 @@ public class Exercise7_33 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/09
 	 */
-	static int findMax(int[][] integerArray) {
+	public static int findMax(int[][] integerArray) {
 		// 配列の最初の要素を最大値とする
 		int maximumValue = integerArray[0][0];
 		// 配列の全ての行を順に調べる
@@ -62,7 +62,7 @@ public class Exercise7_33 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/09
 	 */
-	static void printArray(int[][] a) {
+	public static void printArray(int[][] a) {
 		// 配列の最大値を求め、表示のフォーマットを決定するための基準値を決める
 		int temporaryValue = findMax(a);
 		// 表示のフォーマットを決定するための変数で幅を調整する
@@ -104,7 +104,7 @@ public class Exercise7_33 {
 		System.out.print("1次元配列の要素数を入力してください: ");
 		// ユーザーから入力された要素数を取得
 		int integerNumber = standardInput.nextInt();
-		
+
 		// 要素数が0以下の場合
 		if (integerNumber <= 0) {
 			// 後判定ループ文
@@ -116,7 +116,7 @@ public class Exercise7_33 {
 				// 正の整数値が入力されたら抜け出す
 			} while (integerNumber <= 0);
 		}
-		
+
 		// 入力された要素数で1次元配列を作成
 		int[] integerArray = new int[integerNumber];
 		// ユーザーに1次元配列の要素の入力を促す
@@ -144,17 +144,17 @@ public class Exercise7_33 {
 				// 正の整数値が入力されたら抜け出す
 			} while (arrayRows <= 0);
 		}
-		
+
 		// 入力された行数で2次元配列を作成
 		int[][] twoDimensionalArray = new int[arrayRows][];
-		
+
 		// 行数分繰り返し
 		for (int i = 0; i < arrayRows; i++) {
 			// ユーザーに各行の列数の入力を促す
 			System.out.print("行" + (i + 1) + "の列数を入力してください: ");
 			// ユーザーから入力された列数を取得
 			int arrayCols = standardInput.nextInt();
-			
+
 			// 列が0以下の場合
 			if (arrayCols <= 0) {
 				// 後判定ループ文
@@ -166,19 +166,19 @@ public class Exercise7_33 {
 					// 正の整数値が入力されたら抜け出す
 				} while (arrayCols <= 0);
 			}
-			
+
 			// 入力された列数で各行の配列を作成
 			twoDimensionalArray[i] = new int[arrayCols];
 			// ユーザーに各行の要素の入力を促す
 			System.out.println("行" + (i + 1) + "の要素を入力してください:");
-			
+
 			// 列数分繰り返す
 			for (int j = 0; j < arrayCols; j++) {
 				// ユーザーから入力された各要素を配列に格納
 				twoDimensionalArray[i][j] = standardInput.nextInt();
 			}
 		}
-		
+
 		// 二次元配列の全要素を表示する
 		printArray(twoDimensionalArray);
 		// Scannerオブジェクトを閉じる

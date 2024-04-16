@@ -18,7 +18,7 @@ public class Exercise7_2 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/05
 	 */
-	static int min(int a, int b, int c) {
+	public static int min(int a, int b, int c) {
 		// 最小値をaで初期化
 		int minimumVariable = a;
 		// bよりも最小値が大きいとき

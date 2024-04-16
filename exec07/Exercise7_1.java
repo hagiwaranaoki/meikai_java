@@ -18,7 +18,7 @@ public class Exercise7_1 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/05
 	 */
-	static int signOf(int n) {
+	public static int signOf(int n) {
 		// 正、負、0を格納する変数を定義
 		int regularNegative = 0;
 		// 0より小さい場合

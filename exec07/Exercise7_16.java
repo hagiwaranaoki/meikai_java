@@ -18,7 +18,7 @@ public class Exercise7_16 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/08
 	 */
-	static int minOf(int[] a) {
+	public static int minOf(int[] a) {
 		//最小値を格納する変数を宣言
 		int minimumValue = a[0];
 		//カウントが配列の要素数と等しくなったらループ抜け

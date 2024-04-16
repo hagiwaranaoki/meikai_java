@@ -2,7 +2,12 @@ package exec14;
 
 // 図形クラスをインポート
 import exec13.Shape;
-
+/*
+ * クラス名:Parallelogram
+ * 概要:平行四辺形を表す
+ * 作成者:N.Hagiwara
+ * 作成日:2024/04/15
+ */
 public class Parallelogram extends Shape implements Plane2D {
 	// 底辺の幅を表すフィールド
 	private int width;

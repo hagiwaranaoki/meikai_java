@@ -18,7 +18,7 @@ public class Exercise7_6 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/05
 	 */
-	static void printSeason(int m) {
+	public static void printSeason(int m) {
 		//3月の定数
 		final int MONTH_MARCH = 3;
 		//5月の定数

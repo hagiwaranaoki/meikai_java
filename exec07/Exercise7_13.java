@@ -21,7 +21,7 @@ public class Exercise7_13 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/08
 	 */
-	static void printBits(int bitValue) {
+	public static void printBits(int bitValue) {
 		//カウントが0を下回ったらループ抜け
 		for (int i = BITS_NUMBER - 1; i >= 0; i--) {
 			//1/0を表示
@@ -39,7 +39,7 @@ public class Exercise7_13 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/08
 	 */
-	static int set(int x, int pos) {
+	public static int set(int x, int pos) {
 		//1をposビット左シフトした値とxの論理和を戻り値に代入
 		int returnValue = (1 << pos) | x;
 		//戻り値を返す
@@ -54,7 +54,7 @@ public class Exercise7_13 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/08
 	 */
-	static int reset(int x, int pos) {
+	public static int reset(int x, int pos) {
 
 		//1をposビット左シフトした値を反転させた値とxの論理積を戻り値に代入
 		int returnValue = (~(1 << pos)) & x;
@@ -70,7 +70,7 @@ public class Exercise7_13 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/08
 	 */
-	static int inverse(int x, int pos) {
+	public static int inverse(int x, int pos) {
 		//1をposビット左シフトした値とxの排他的論理和を戻り値に代入
 		int returnValue = (1 << pos) ^ x;
 		//戻り値を返す
