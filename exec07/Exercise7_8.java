@@ -47,25 +47,16 @@ public class Exercise7_8 {
 		Scanner scanInteger = new Scanner(System.in);
 		//入力値を代入する変数を宣言
 		int firstNumber = 0;
-		//後判定ループ文
-		do {
-			//整数の入力を促す
-			System.out.print("整数値a:");
-			//インスタンスから入力された値を受け取る
-			firstNumber = scanInteger.nextInt();
-			//正の数が入力されたらループ抜け
-		} while (firstNumber <= 0);
+		System.out.print("整数値a:");
+		//インスタンスから入力された値を受け取る
+		firstNumber = scanInteger.nextInt();
 
 		//入力値を代入する変数を宣言
 		int secondNumber = 0;
-		//後判定ループ文
-		do {
-			//整数の入力を促す
-			System.out.print("整数値b:");
-			//インスタンスから入力された値を受け取る
-			secondNumber = scanInteger.nextInt();
-			//正の数が入力されたらループ抜け
-		} while (secondNumber <= 0);
+		//整数の入力を促す
+		System.out.print("整数値b:");
+		//インスタンスから入力された値を受け取る
+		secondNumber = scanInteger.nextInt();
 		//randomメソッドを呼び出し返り値を表示
 		System.out.println(random(firstNumber, secondNumber));
 	}
