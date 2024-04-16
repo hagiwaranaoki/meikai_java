@@ -11,8 +11,6 @@ import java.util.Scanner;
  * 作成日:2024/04/08
  */
 public class Exercise7_27 {
-	//Scannerクラスのインスタンスを作成
-	static Scanner scanInteger = new Scanner(System.in);
 
 	/*
 	 * 関数名:addMatrix
@@ -65,6 +63,8 @@ public class Exercise7_27 {
 	 * 作成日:2024/04/08
 	 */
 	public static int[][] scanMultipleInput() {
+		//Scannerクラスのインスタンスを作成
+		Scanner scanInteger = new Scanner(System.in);
 		//入力値を代入する変数を宣言
 		int lineNumber = 0, columnNumber = 0;
 		//後判定ループ文

@@ -12,8 +12,6 @@ import java.util.Scanner;
  * 作成日:2024/04/08
  */
 public class Exercise7_10 {
-	//Scannerクラスのインスタンスを作成
-	static Scanner scanInteger = new Scanner(System.in);
 
 	/*
 	 * 関数名:confirmRetry
@@ -24,6 +22,8 @@ public class Exercise7_10 {
 	 * 作成日:2024/04/08
 	 */
 	public static boolean confirmRetry() {
+		//Scannerクラスのインスタンスを作成
+		Scanner scanInteger = new Scanner(System.in);
 		//繰り返すかの判断用の変数を宣言
 		int cont = 0;
 		//後判定ループ文
@@ -49,6 +49,8 @@ public class Exercise7_10 {
 	 * 作成日:2024/04/08
 	 */
 	public static void dividePattern(int x, int y, int z, int patternValue) {
+		//Scannerクラスのインスタンスを作成
+		Scanner scanInteger = new Scanner(System.in);
 		//一つ目の回答を格納する変数を宣言
 		int firstNumber = 0;
 		//二つ目の回答を格納する変数を宣言

@@ -1,4 +1,5 @@
 package exec07;
+
 // Scannerクラスのインポート
 import java.util.Scanner;
 
@@ -19,16 +20,16 @@ public class Exercise7_15 {
 	 */
 	public static int sumOf(int[] a) {
 		//合計値を格納する変数を宣言
-		int totalValue=0;
+		int totalValue = 0;
 		//カウントが配列の要素数と等しくなったらループ抜け
-		for(int i=0;i<a.length;i++) {
+		for (int i = 0; i < a.length; i++) {
 			//各配列の要素の値を合計値に足し込む
-			totalValue=totalValue+a[i];
+			totalValue = totalValue + a[i];
 		}
 		//合計値を返す
 		return totalValue;
 	}
-	
+
 	/*
 	 * 関数名:main
 	 * 概要:要素数と各要素を入力させsumOfメソッドを呼び出す
@@ -39,28 +40,28 @@ public class Exercise7_15 {
 	 */
 	public static void main(String[] args) {
 		//Scannerクラスのインスタンスを作成
-		Scanner scanInteger=new Scanner(System.in);
+		Scanner scanInteger = new Scanner(System.in);
 		//入力値を代入する変数を宣言
-		int elementCount=0;
+		int elementCount = 0;
 		//後判定ループ文
 		do {
 			//整数の入力を促す
 			System.out.print("要素数:");
 			//インスタンスから入力された値を受け取る
-			elementCount=scanInteger.nextInt();
-		//正の数が入力されたらループ抜け
-		}while(elementCount<=0);
+			elementCount = scanInteger.nextInt();
+			//正の数が入力されたらループ抜け
+		} while (elementCount <= 0);
 		//入力された要素数をもとに配列を宣言
-		int[] integerArray=new int[elementCount];
+		int[] integerArray = new int[elementCount];
 		//カウントが要素数と等しくなったらループ抜け
-		for(int i=0;i<integerArray.length;i++) {
+		for (int i = 0; i < integerArray.length; i++) {
 			//配列の要素の入力を促す
-			System.out.print("integerArray["+i+"]=");
+			System.out.print("integerArray[" + i + "]=");
 			//インスタンスから入力された値を受け取る
-			integerArray[i]=(int)scanInteger.nextDouble();
+			integerArray[i] = (int) scanInteger.nextDouble();
 		}
 		//sumOfメソッドを呼び出して表示
-		System.out.println("合計値:"+sumOf(integerArray));
+		System.out.println("合計値:" + sumOf(integerArray));
 
 	}
 

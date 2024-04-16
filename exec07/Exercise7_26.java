@@ -10,8 +10,6 @@ import java.util.Scanner;
 * 作成日:2024/04/08
 */
 public class Exercise7_26 {
-	//Scannerクラスのインスタンスを作成
-	static Scanner scanInteger = new Scanner(System.in);
 
 	/*
 	 * 関数名:arrayInsOf
@@ -50,6 +48,8 @@ public class Exercise7_26 {
 	 * 作成日:2024/04/08
 	 */
 	public static int[] scanInput() {
+		//Scannerクラスのインスタンスを作成
+		Scanner scanInteger = new Scanner(System.in);
 		//入力値を代入する変数を宣言
 		int elementCount = 0;
 		//後判定ループ文
@@ -103,6 +103,8 @@ public class Exercise7_26 {
 	 * 作成日:2024/04/08
 	 */
 	public static void main(String[] args) {
+		//Scannerクラスのインスタンスを作成
+		Scanner scanInteger = new Scanner(System.in);
 		//メッセージを表示
 		System.out.println("配列aから特定のインデックスの値を挿入します。");
 		//scanInputメソッドを呼び出す

@@ -9,8 +9,6 @@ import java.util.Scanner;
  * 作成日:2024/04/09
  */
 public class Exercise7_30 {
-	//Scannerクラスのインスタンスを作成
-	static Scanner scanInteger = new Scanner(System.in);
 
 	/*
 	 * 関数名:min
@@ -90,6 +88,8 @@ public class Exercise7_30 {
 	 * 作成日:2024/04/09
 	 */
 	public static int[] scanInput(int judgmentValue) {
+		//Scannerクラスのインスタンスを作成
+		Scanner scanInteger = new Scanner(System.in);
 		//入力値を代入する変数を宣言
 		int elementCount = 0;
 		//整数の入力を促す
@@ -149,6 +149,8 @@ public class Exercise7_30 {
 	 * 作成日:2024/04/09
 	 */
 	public static void main(String[] args) {
+		//Scannerクラスのインスタンスを作成
+		Scanner scanInteger = new Scanner(System.in);
 		//表示の区別用の変数を宣言
 		final int OUTPUT_COUNT = 1;
 		// 一つ目の整数の入力を促す

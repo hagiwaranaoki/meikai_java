@@ -10,9 +10,6 @@ import java.util.Scanner;
  * 作成日:2024/04/08
  */
 public class Exercise7_12 {
-	//ビット数を格納する定数を宣言
-	final static int BITS_NUMBER = 32;
-
 	/*
 	 * 関数名:printBits
 	 * 概要:受け取った数値をビット表記する
@@ -22,13 +19,15 @@ public class Exercise7_12 {
 	 * 作成日:2024/04/08
 	 */
 	public static void printBits(int bitValue) {
+		//ビット数を格納する定数を宣言
+		final int BITS_NUMBER = 32;
 		//カウントが0を下回ったらループ抜け
 		for (int i = BITS_NUMBER - 1; i >= 0; i--) {
 			//1/0を表示
 			System.out.print(((bitValue >>> i & 1) == 1) ? '1' : '0');
 		}
 		//改行を出力
-		System.out.println("\n");
+		System.out.println();
 	}
 
 	/*
@@ -40,12 +39,12 @@ public class Exercise7_12 {
 	 * 作成日:2024/04/08
 	 */
 	public static int rRotate(int x, int n) {
-		//rightShiftにxをnビット右シフトした値を代入
-		int rightShift = x >>> n;
-		//leftShiftにxを32-nビット左シフトした値を代入
-		int leftShift = x << (BITS_NUMBER - n);
-		//xをnビット右シフトした変数とxを32-nビット左シフトした変数の合計を代入する
-		int returnValue = rightShift + leftShift;
+		//ビット数を格納する定数を宣言
+		final int BITS_NUMBER = 32;
+		//nを32ビットで割った剰余を取得
+		int shiftBits = n % BITS_NUMBER;
+		//xをshiftBitsビット右シフトした変数とxを32-shiftBitsビット左シフトした変数の合計を代入する
+		int returnValue = (x >>> shiftBits) | (x << (BITS_NUMBER - shiftBits));
 		//合計を返す
 		return returnValue;
 	}
@@ -59,12 +58,12 @@ public class Exercise7_12 {
 	 * 作成日:2024/04/08
 	 */
 	public static int lRotate(int x, int n) {
-		//rightShiftにxをnビット左シフトした値を代入
-		int leghtShift = x << n;
-		//leghtShiftにxを32-nビット右シフトした値を代入
-		int rightShift = x >>> (BITS_NUMBER - n);
-		//xをnビット左シフトした変数とxを32-nビット右シフトした変数の合計を代入する
-		int returnValue = leghtShift + rightShift;
+		//ビット数を格納する定数を宣言
+		final int BITS_NUMBER = 32;
+		//nを32ビットで割った剰余を取得
+		int shiftBits = n % BITS_NUMBER;
+		//xをshiftBitsビット左シフトした変数とxを32-shiftBitsビット右シフトした変数の合計を代入する
+		int returnValue = (x << shiftBits) | (x >>> (BITS_NUMBER - shiftBits));
 		//合計を返す
 		return returnValue;
 	}
@@ -79,13 +78,13 @@ public class Exercise7_12 {
 	 */
 	public static void main(String[] args) {
 		//Scannerクラスのインスタンスを作成
-		Scanner scanInteger = new Scanner(System.in);
+		Scanner scanner = new Scanner(System.in);
 		//入力値を代入する変数を宣言
 		int inputValue = 0;
 		//整数の入力を促す
 		System.out.print("整数値:");
 		//インスタンスから入力された値を受け取る
-		inputValue = scanInteger.nextInt();
+		inputValue = scanner.nextInt();
 		//シフトするビット数を格納する変数を宣言
 		int shiftValue = 0;
 		//後判定ループ文
@@ -93,20 +92,25 @@ public class Exercise7_12 {
 			//ビット数の入力を促す
 			System.out.print("シフトするビット数:");
 			//インスタンスから入力された値を受け取る
-			shiftValue = scanInteger.nextInt();
+			shiftValue = scanner.nextInt();
 			//正の数が入力されたらループ抜け
-		} while (shiftValue <= 0 || shiftValue > 32);
+		} while (shiftValue <= 0);
+
 		//入力した値をビット表記にする
+		System.out.print("入力した整数値のビット表記: ");
+		// 現在のビット数を表示
 		printBits(inputValue);
 		//右シフトの結果を表示
 		System.out.println(inputValue + "を右に" + shiftValue + "ビットシフトした値は" + rRotate(inputValue, shiftValue));
 		//右シフトの数値をビット表記にする
+		System.out.print("右シフト後のビット表記:      ");
+		// 右シフトのビットを表示
 		printBits(rRotate(inputValue, shiftValue));
 		//左シフトの結果を表示
 		System.out.println(inputValue + "を左に" + shiftValue + "ビットシフトした値は" + lRotate(inputValue, shiftValue));
 		// 左シフトの結果をビット表記にする
+		System.out.print("左シフト後のビット表記:      ");
+		// 左シフトのビットを表示
 		printBits(lRotate(inputValue, shiftValue));
-
 	}
-
 }

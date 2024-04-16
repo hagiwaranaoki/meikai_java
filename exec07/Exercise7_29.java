@@ -9,8 +9,6 @@ import java.util.Scanner;
  * 作成日:2024/04/09
  */
 public class Exercise7_29 {
-	//Scannerクラスのインスタンスを作成
-	static Scanner scanInteger = new Scanner(System.in);
 
 	/*
 	 * 関数名:aryClone2
@@ -65,6 +63,8 @@ public class Exercise7_29 {
 	 * 作成日:2024/04/09
 	 */
 	public static int[][] scanMultipleInput() {
+		//Scannerクラスのインスタンスを作成
+		Scanner scanInteger = new Scanner(System.in);
 		// 行を代入する変数を宣言
 		int lineNumber = 0;
 		// 列を代入する変数を宣言

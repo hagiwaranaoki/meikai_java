@@ -10,8 +10,6 @@ import java.util.Scanner;
  * 作成日:2024/04/08
  */
 public class Exercise7_28 {
-	//Scannerクラスのインスタンスを作成
-	static Scanner scanInteger = new Scanner(System.in);
 
 	/*
 	 * 関数名:addMatrix
@@ -45,6 +43,8 @@ public class Exercise7_28 {
 	 * 作成日:2024/04/08
 	 */
 	public static int[][] scanMultipleInput() {
+		//Scannerクラスのインスタンスを作成
+		Scanner scanInteger = new Scanner(System.in);
 		// 行を代入する変数を宣言
 		int lineNumber = 0;
 		// 列を代入する変数を宣言
@@ -91,6 +91,8 @@ public class Exercise7_28 {
 	 * 作成日:2024/04/08
 	 */
 	public static int[][] scanMultipleElement(int[][] firstArray) {
+		//Scannerクラスのインスタンスを作成
+		Scanner scanInteger = new Scanner(System.in);
 
 		//入力された要素数をもとに配列を宣言
 		int[][] secondArray = new int[firstArray.length][firstArray[0].length];

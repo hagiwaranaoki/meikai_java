@@ -10,8 +10,6 @@ import java.util.Scanner;
  * 作成日:2024/04/08
  */
 public class Exercise7_13 {
-	//ビット数を格納する定数を宣言
-	final static int BITS_NUMBER = 32;
 
 	/*
 	 * 関数名:printBits
@@ -22,6 +20,8 @@ public class Exercise7_13 {
 	 * 作成日:2024/04/08
 	 */
 	public static void printBits(int bitValue) {
+		//ビット数を格納する定数を宣言
+		final int BITS_NUMBER = 32;
 		//カウントが0を下回ったらループ抜け
 		for (int i = BITS_NUMBER - 1; i >= 0; i--) {
 			//1/0を表示
