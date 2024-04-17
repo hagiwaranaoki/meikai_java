@@ -144,14 +144,14 @@ public class Exercise8_2 {
 			// ユーザーにXの移動距離の入力を促す
 			System.out.print("x方向の移動距離：");
 			// X方向への移動距離を受け付ける
-			double dx = standardInput.nextDouble();
+			double movingX = standardInput.nextDouble();
 			// ユーザーにYの移動距離の入力を促す
 			System.out.print("y方向の移動距離：");
 			// Y方向への移動距離を受け付ける
-			double dy = standardInput.nextDouble();
+			double movingY = standardInput.nextDouble();
 
 			// 移動の成否を判定
-			if (!myCar.move(dx, dy)) {
+			if (!myCar.move(movingX, movingY)) {
 				// 燃料不足のメッセージ
 				System.out.println("燃料が足りません！");
 				// ユーザーに給油の意思を確認
