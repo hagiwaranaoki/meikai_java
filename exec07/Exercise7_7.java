@@ -1,15 +1,20 @@
 package exec07;
-
-// Scannerクラスのインポート
+// Scannerクラスをインポート
 import java.util.Scanner;
 
-/*
- * クラス名:Exercise7_7
- * 概要:putCharsメソッドを用いて左下直角の三角形を表示
- * 作成者:N.Hagiwara
- * 作成日:2024/04/08
- */
 public class Exercise7_7 {
+	/*
+	 * 関数名:putStars
+	 * 概要:putCharsを呼び出す
+	 * 引数:受け取った段数を格納するint型変数[n]
+	 * 戻り値:なし
+	 * 作成者:N.Hagiwara
+	 * 作成日:2024/04/08
+	 */
+	static void putStars(int n) {
+		// putCharsの呼び出し
+		putChars('*', n);
+	}
 
 	/*
 	 * 関数名:putChars
@@ -20,7 +25,7 @@ public class Exercise7_7 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/08
 	 */
-	public static void putChars(char c, int n) {
+	static void putChars(char c, int n) {
 		//受け取ったint型変数の値をデクリメントしながら値が0より大きい場合
 		while (n-- > 0) {
 			//char型の引数を表示
@@ -42,7 +47,7 @@ public class Exercise7_7 {
 		//入力値を代入する変数を宣言
 		int inputValue = 0;
 		//メッセージを表示
-		System.out.println("左下直角三角形を表示します。");
+		System.out.println("右下直角三角形を表示します。");
 		//後判定ループ文
 		do {
 			//整数の入力を促す
@@ -51,13 +56,11 @@ public class Exercise7_7 {
 			inputValue = scanInteger.nextInt();
 			//正の数が入力されたらループ抜け
 		} while (inputValue <= 0);
-		//入力値と等しくなればループ抜け
-		for (int i = 1; i <= inputValue; i++) {
-			// *を出力
-			putChars('*', i);
-			// 空白を出力
-			putChars(' ', inputValue - i);
-			// 改行する
+		//カウントが入力値と等しくなればループ抜け
+		for (int countValue = 1; countValue <= inputValue; countValue++) {
+			//putCharsメソッドを呼び出す
+			putStars(countValue);
+			//改行を出力
 			System.out.println();
 		}
 
