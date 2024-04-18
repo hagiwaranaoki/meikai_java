@@ -73,7 +73,7 @@ public class Exercise7_14 {
 	 * 作成日:2024/04/08
 	 */
 	public static int setN(int x, int pos, int n) {
-		//exponentiateBitShiftメソッドを呼び出して返り値をnに代入
+		//ビット数に対して、2のべき乗の合計値を計算する
 		n = exponentiateBitShift(n);
 		//nをposビット左シフトした値とxの論理和を戻り値に代入
 		int returnValue = (n << pos) | x;
@@ -90,7 +90,7 @@ public class Exercise7_14 {
 	 * 作成日:2024/04/08
 	 */
 	public static int resetN(int x, int pos, int n) {
-		//exponentiateBitShiftメソッドを呼び出して返り値をnに代入
+		//ビット数に対して、2のべき乗の合計値を計算する
 		n = exponentiateBitShift(n);
 		//nをposビット左シフトした値を反転させた値とxの論理積を戻り値に代入
 		int returnValue = (~(n << pos)) & x;
@@ -107,7 +107,7 @@ public class Exercise7_14 {
 	 * 作成日:2024/04/08
 	 */
 	public static int inverseN(int x, int pos, int n) {
-		//exponentiateBitShiftメソッドを呼び出して返り値をnに代入
+		//ビット数に対して、2のべき乗の合計値を計算する
 		n = exponentiateBitShift(n);
 		//nをposビット左シフトした値とxの排他的論理和を戻り値に代入
 		int returnValue = (n << pos) ^ x;

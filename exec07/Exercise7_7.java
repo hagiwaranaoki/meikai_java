@@ -13,6 +13,7 @@ public class Exercise7_7 {
 	 * 作成日:2024/04/08
 	 */
 	static void putStars(int n) {
+		// 受け取ったchar型の引数を表示
 		putChars('*', n);
 	}
 
@@ -58,7 +59,7 @@ public class Exercise7_7 {
 		} while (inputValue <= 0);
 		//カウントが入力値と等しくなればループ抜け
 		for (int countValue = 1; countValue <= inputValue; countValue++) {
-			//putCharsメソッドを呼び出す
+			//*を表示する
 			putStars(countValue);
 			//改行を出力
 			System.out.println();

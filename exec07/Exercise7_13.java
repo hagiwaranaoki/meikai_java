@@ -110,19 +110,19 @@ public class Exercise7_13 {
 			}
 		}
 
-		//メソッドを呼び出して戻り値を表示
+		//ビットの目を1にした時のタイトル表示
 		System.out.println(inputValue + "の" + bitsCount + "ビット目を1にした値は" + set(inputValue, bitsCount));
-		//printBitsメソッドを呼び出す
+		//ビットの目を1にしてビット表記で表示
 		printBits(set(inputValue, bitsCount));
 
-		//メソッドを呼び出して戻り値を表示
+		//ビットの目を0にした時のタイトル表示
 		System.out.println(inputValue + "の" + bitsCount + "ビット目を0にした値は" + reset(inputValue, bitsCount));
-		//printBitsメソッドを呼び出す
+		//ビットの目を0にしてビット表記で表示
 		printBits(reset(inputValue, bitsCount));
 
-		//メソッドを呼び出して戻り値を表示
+		//ビットの目を反転した時のタイトル表示
 		System.out.println(inputValue + "の" + bitsCount + "ビット目を反転した値は" + inverse(inputValue, bitsCount));
-		//printBitsメソッドを呼び出す
+		//ビットの目を反転してビット表記で表示
 		printBits(inverse(inputValue, bitsCount));
 	}
 }
