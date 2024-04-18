@@ -130,7 +130,7 @@ public class Exercise7_26 {
 
 		//メッセージを表示
 		System.out.print("配列a=");
-		//配列の全要素を表示
+		//配列aから指定したインデックスに値を挿入した配列の全要素を表示
 		outputArray(arrayInsOf(integerArray, insertIndex, insertValue));
 	}
 

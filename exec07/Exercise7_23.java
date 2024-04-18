@@ -126,7 +126,7 @@ public class Exercise7_23 {
 		int searchValue = (int) scanInteger.nextDouble();
 		//タイトルを表示
 		System.out.print("存在するインデックス:");
-		//配列の全要素を表示
+		//配列で値がxである全要素のインデックスを表示
 		outputArray(arraySrchIdx(integerArray, searchValue));
 	}
 
