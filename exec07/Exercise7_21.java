@@ -113,26 +113,26 @@ public class Exercise7_21 {
 	public static void main(String[] args) {
 		//表示の区別用の変数を宣言
 		final int OUTPUT_COUNT = 1;
-		//scanInputメソッドを呼び出して配列を宣言
+		//配列の要素数と全要素を入力させる
 		int[] firstArray = scanInput(OUTPUT_COUNT - OUTPUT_COUNT);
-		//outputArrayメソッドを呼び出す
+		//配列の全要素を表示
 		outputArray(firstArray);
-		//scanInputメソッドを呼び出して配列を宣言
+		//配列の要素数と全要素を入力させる
 		int[] secondArray = scanInput(OUTPUT_COUNT);
-		//outputArrayメソッドを呼び出す
+		//配列の全要素を表示
 		outputArray(secondArray);
 
 		//交換開始メッセージを表示
 		System.out.println("配列aと配列bの全要素の値を交換します。");
-		//aryExchngメソッドを呼び出す
+		//配列の値を交換する
 		aryExchng(firstArray, secondArray);
 		//配列a=を表示
 		System.out.print("配列a=");
-		//outputArrayメソッドを呼び出す
+		//配列の全要素を表示
 		outputArray(firstArray);
 		//配列b=を表示
 		System.out.print("配列b=");
-		//outputArrayメソッドを呼び出す
+		//配列の全要素を表示
 		outputArray(secondArray);
 	}
 

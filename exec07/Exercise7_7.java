@@ -1,4 +1,5 @@
 package exec07;
+
 // Scannerクラスをインポート
 import java.util.Scanner;
 
@@ -12,7 +13,6 @@ public class Exercise7_7 {
 	 * 作成日:2024/04/08
 	 */
 	static void putStars(int n) {
-		// putCharsの呼び出し
 		putChars('*', n);
 	}
 
@@ -47,7 +47,7 @@ public class Exercise7_7 {
 		//入力値を代入する変数を宣言
 		int inputValue = 0;
 		//メッセージを表示
-		System.out.println("右下直角三角形を表示します。");
+		System.out.println("左下直角三角形を表示します。");
 		//後判定ループ文
 		do {
 			//整数の入力を促す
@@ -63,7 +63,6 @@ public class Exercise7_7 {
 			//改行を出力
 			System.out.println();
 		}
-
 	}
 
 }

@@ -131,13 +131,13 @@ public class Exercise7_27 {
 	 * 作成日:2024/04/08
 	 */
 	public static void main(String[] args) {
-		//scanMultipleInputメソッドを呼び出す
+		//多次元配列の要素数と全要素を入力させる
 		int[][] firstArray = scanMultipleInput();
-		//scanMultipleInputメソッドを呼び出す
+		//多次元配列の要素数と全要素を入力させる
 		int[][] secondArray = scanMultipleInput();
-		//scanMultipleInputメソッドを呼び出す
+		//多次元配列の要素数と全要素を入力させる
 		int[][] thirdArray = scanMultipleInput();
-		//addMatrixメソッドを呼び出す
+		//配列の要素数が正しいかを調べて表示
 		System.out.println(addMatrix(firstArray, secondArray, thirdArray));
 	}
 }

@@ -110,7 +110,7 @@ public class Exercise7_25 {
 		int[] integerArray = scanInput();
 		//メッセージを表示
 		System.out.print("配列a=");
-		//outputArrayメソッドを呼び出し配列integerArrayを表示
+		//配列の全要素を表示
 		outputArray(integerArray);
 		//削除するインデックスを格納する変数を宣言
 		int deleteIndex = -1;
@@ -134,7 +134,7 @@ public class Exercise7_25 {
 		} while (deleteNumber < 0 || deleteNumber > integerArray.length - deleteIndex);
 		//メッセージを表示
 		System.out.print("配列a=");
-		//arrayRmvOfNメソッドを呼び出し値が削除された配列を表示
+		//配列から要素を消して表示
 		outputArray(arrayRmvOfN(integerArray, deleteIndex, deleteNumber));
 	}
 

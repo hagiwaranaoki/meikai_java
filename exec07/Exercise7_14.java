@@ -134,10 +134,10 @@ public class Exercise7_14 {
 		System.out.print("整数値:");
 		//インスタンスから入力された値を受け取る
 		inputValue = scanInteger.nextInt();
-		//printBitsメソッドを呼び出す
+		//入力された数値をビット表記にして表示
 		printBits(inputValue);
 
-		//を格納する変数を宣言ビット数を格納する変数を宣言
+		//捜査する最下位ビットを格納する変数を宣言ビット数を格納する変数を宣言
 		int bitsCount = 0;
 		//操作する最下位ビットを格納する変数を宣言
 		int bitRange = 0;
@@ -161,17 +161,17 @@ public class Exercise7_14 {
 		//メソッドを呼び出して戻り値を表示
 		System.out.println(
 				inputValue + "の" + bitsCount + "ビット目から連続する" + bitRange + "ビットを1にした値は" + setN(inputValue, bitsCount, bitRange));
-		//printBitsメソッドを呼び出す
+		//受け取った整数を操作する最下位ビットをもとに操作した値を表示
 		printBits(setN(inputValue, bitsCount, bitRange));
-		//メソッドを呼び出して戻り値を表示
+		//ビットを0にするタイトル表示
 		System.out.println(inputValue + "の" + bitsCount + "ビット目から連続する" + bitRange + "ビットを0にした値は"
 				+ resetN(inputValue, bitsCount, bitRange));
-		//printBitsメソッドを呼び出す
+		//0にした値のビットを表示
 		printBits(resetN(inputValue, bitsCount, bitRange));
-		//メソッドを呼び出して戻り値を表示
+		//ビットを反転するタイトル表示
 		System.out.println(inputValue + "の" + bitsCount + "ビット目から連続する" + bitRange + "ビットを反転した値は"
 				+ inverseN(inputValue, bitsCount, bitRange));
-		//printBitsメソッドを呼び出す
+		//判定した値のビットを表示
 		printBits(inverseN(inputValue, bitsCount, bitRange));
 
 	}

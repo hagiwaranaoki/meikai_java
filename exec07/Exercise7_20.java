@@ -41,8 +41,10 @@ public class Exercise7_20 {
 	 * 作成日:2024/04/08
 	 */
 	public static void aryIns(int[] a, int idx, int x) {
+		// 要素数の計算用の定数を定義
+		final int ELEMENT_TWO = 2;
 		//要素数-2からデクリメントし挿入するインデックスと等しくなったらループ抜け
-		for (int i = a.length - 2; i >= idx; i--) {
+		for (int i = a.length - ELEMENT_TWO; i >= idx; i--) {
 			//後方に1つずつ要素をずらしていく
 			a[i + 1] = a[i];
 		}
@@ -80,10 +82,10 @@ public class Exercise7_20 {
 			//インスタンスから入力された値を受け取る
 			integerArray[i] = (int) scanInteger.nextDouble();
 		}
-		//outputArrayメソッドを呼び出す
+		//配列の全要素を表示
 		outputArray(integerArray);
 		//削除するインデックスを格納する変数を宣言
-		int deleteIndex = -1;
+		int deleteIndex = 0;
 		//後判定ループ文
 		do {
 			//インデックスの入力を促す
@@ -96,9 +98,9 @@ public class Exercise7_20 {
 		System.out.print("挿入する値:");
 		//インスタンスから入力された値を受け取る
 		int insertValue = (int) scanInteger.nextDouble();
-		//aryInsメソッドを呼び出す
+		//受け取ったインデックスに要素を挿入する
 		aryIns(integerArray, deleteIndex, insertValue);
-		//outputArrayメソッドを呼び出す
+		//配列の全要素を表示
 		outputArray(integerArray);
 	}
 

@@ -114,11 +114,11 @@ public class Exercise7_23 {
 		Scanner scanInteger = new Scanner(System.in);
 		//タイトルを表示
 		System.out.println("配列aに存在するxの値のインデックスをすべて表示します。");
-		//scanInputメソッドを呼び出す
+		//配列の要素数と要素を入力させる
 		int[] integerArray = scanInput();
 		//配列名を表示
 		System.out.print("配列a=");
-		//outputArrayメソッドを呼び出し配列integerArrayを表示
+		//配列の全要素を表示
 		outputArray(integerArray);
 		//数値の入力を促す
 		System.out.print("xの値:");
@@ -126,7 +126,7 @@ public class Exercise7_23 {
 		int searchValue = (int) scanInteger.nextDouble();
 		//タイトルを表示
 		System.out.print("存在するインデックス:");
-		//arraySrchIdxメソッドを呼び出しインデックスが格納された配列を表示
+		//配列の全要素を表示
 		outputArray(arraySrchIdx(integerArray, searchValue));
 	}
 

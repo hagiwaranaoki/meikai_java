@@ -60,7 +60,7 @@ public class Exercise7_15 {
 			//インスタンスから入力された値を受け取る
 			integerArray[i] = (int) scanInteger.nextDouble();
 		}
-		//sumOfメソッドを呼び出して表示
+		//配列の全要素の合計を求めて表示
 		System.out.println("合計値:" + sumOf(integerArray));
 
 	}

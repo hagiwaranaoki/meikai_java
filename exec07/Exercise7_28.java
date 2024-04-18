@@ -141,13 +141,13 @@ public class Exercise7_28 {
 	 * 作成日:2024/04/08
 	 */
 	public static void main(String[] args) {
-		//scanMultipleInputメソッドを呼び出す
+		//多次元配列の要素数と全要素を入力させる
 		int[][] firstArray = scanMultipleInput();
 		//改行を出力
 		System.out.println();
-		//scanMultipleInputメソッドを呼び出す
+		//多次元配列の要素数と全要素を入力させ
 		int[][] secondArray = scanMultipleElement(firstArray);
-		//addMatrixメソッドを呼び出す
+		//配列の和を求めて表示
 		outputMultipleArray(addMatrix(firstArray, secondArray));
 	}
 

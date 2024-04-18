@@ -105,11 +105,11 @@ public class Exercise7_24 {
 		Scanner scanInteger = new Scanner(System.in);
 		//メッセージを表示
 		System.out.println("配列aから特定のインデックスの値を削除します。");
-		//scanInputメソッドを呼び出す
+		//配列の要素数と要素を入力させる
 		int[] integerArray = scanInput();
 		//メッセージを表示
 		System.out.print("配列a=");
-		//outputArrayメソッドを呼び出し配列integerArrayを表示
+		//配列の全要素を表示
 		outputArray(integerArray);
 		//削除するインデックスを格納する変数を宣言
 		int deleteIndex = -1;
@@ -124,7 +124,7 @@ public class Exercise7_24 {
 
 		//メッセージを表示
 		System.out.print("配列a=");
-		//arrayRmvOfメソッドを呼び出し値が削除された配列を表示
+		//配列から要素を消して表示
 		outputArray(arrayRmvOf(integerArray, deleteIndex));
 	}
 

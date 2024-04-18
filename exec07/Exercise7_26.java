@@ -107,11 +107,11 @@ public class Exercise7_26 {
 		Scanner scanInteger = new Scanner(System.in);
 		//メッセージを表示
 		System.out.println("配列aから特定のインデックスの値を挿入します。");
-		//scanInputメソッドを呼び出す
+		//配列の要素数と要素を入力させる
 		int[] integerArray = scanInput();
 		//メッセージを表示
 		System.out.print("配列a=");
-		//outputArrayメソッドを呼び出し配列integerArrayを表示
+		//配列の全要素を表示
 		outputArray(integerArray);
 		//挿入するインデックスを格納する変数を宣言
 		int insertIndex = -1;
@@ -130,7 +130,7 @@ public class Exercise7_26 {
 
 		//メッセージを表示
 		System.out.print("配列a=");
-		//arrayInsOfメソッドを呼び出し値が挿入された配列を表示
+		//配列の全要素を表示
 		outputArray(arrayInsOf(integerArray, insertIndex, insertValue));
 	}
 

@@ -94,15 +94,15 @@ public class Exercise7_22 {
 	 * 作成日:2024/04/05
 	 */
 	public static void main(String[] args) {
-		//scanInputメソッドを呼び出す
+		//配列の要素数と要素を入力させる
 		int[] integerArray = scanInput();
 		//配列名を表示
 		System.out.print("配列a(original)\t=");
-		//outputArrayメソッドを呼び出し配列integerArrayを表示
+		//配列の全要素を表示
 		outputArray(integerArray);
 		//配列名を表示
 		System.out.print("配列a(clone)\t=");
-		//integerArrayを引数にarrayCloneメソッドを呼び出しoutputArrayメソッドによって表示
+		//クローンの配列の全要素を表示
 		outputArray(arrayClone(integerArray));
 	}
 

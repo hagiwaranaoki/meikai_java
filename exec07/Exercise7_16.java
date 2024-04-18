@@ -63,7 +63,7 @@ public class Exercise7_16 {
 			//インスタンスから入力された値を受け取る
 			integerArray[i] = (int) scanInteger.nextDouble();
 		}
-		//minOfメソッドを呼び出して表示
+		//配列の要素の最小値を表示
 		System.out.println("最小値:" + minOf(integerArray));
 	}
 }

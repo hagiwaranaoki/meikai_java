@@ -55,7 +55,6 @@ public class Exercise7_13 {
 	 * 作成日:2024/04/08
 	 */
 	public static int reset(int x, int pos) {
-
 		//1をposビット左シフトした値を反転させた値とxの論理積を戻り値に代入
 		int returnValue = (~(1 << pos)) & x;
 		//戻り値を返す
@@ -94,24 +93,36 @@ public class Exercise7_13 {
 		System.out.print("整数値:");
 		//インスタンスから入力された値を受け取る
 		inputValue = scanInteger.nextInt();
+
 		//ビット数の入力を促す
-		System.out.print("操作するビット(最下位から0,1,2...):");
-		//インスタンスから入力された値を受け取る
-		int bitsCount = scanInteger.nextInt();
+		int bitsCount = -1;
+		// 意図しないビット数が入力されたら繰り返し
+		while (bitsCount < 0 || bitsCount >= 32) {
+			// 0~31での入力を促す
+			System.out.print("操作するビット(最下位から0,1,2...31):");
+			//インスタンスから入力された値を受け取る
+			bitsCount = scanInteger.nextInt();
+
+			//ビット数が不適切な場合にエラーメッセージを表示
+			if (bitsCount < 0 || bitsCount >= 32) {
+				// 不正なビット数が入力されたことを知らせる
+				System.out.println("不適切なビット数です。0から31の範囲で入力してください。");
+			}
+		}
 
 		//メソッドを呼び出して戻り値を表示
 		System.out.println(inputValue + "の" + bitsCount + "ビット目を1にした値は" + set(inputValue, bitsCount));
 		//printBitsメソッドを呼び出す
 		printBits(set(inputValue, bitsCount));
+
 		//メソッドを呼び出して戻り値を表示
 		System.out.println(inputValue + "の" + bitsCount + "ビット目を0にした値は" + reset(inputValue, bitsCount));
 		//printBitsメソッドを呼び出す
 		printBits(reset(inputValue, bitsCount));
+
 		//メソッドを呼び出して戻り値を表示
 		System.out.println(inputValue + "の" + bitsCount + "ビット目を反転した値は" + inverse(inputValue, bitsCount));
 		//printBitsメソッドを呼び出す
 		printBits(inverse(inputValue, bitsCount));
-
 	}
-
 }

@@ -111,13 +111,13 @@ public class Exercise7_29 {
 	 * 作成日:2024/04/09
 	 */
 	public static void main(String[] args) {
-		//scanMultipleInputメソッドを呼び出す
+		//多次元配列の要素数と全要素を入力させ
 		int[][] originalArray = scanMultipleInput();
 		// 配列を複製し、その結果を配列クローンに代入
 		int[][] cloneArray = aryClone2(originalArray);
 		// オリジナルというタイトルを表示
 		System.out.println("オリジナル");
-		// 配列originalArrayを出力
+		// 配列の全要素を出力
 		outputMultipleArray(originalArray);
 		//クローンというタイトルを表示
 		System.out.println("クローン");

@@ -70,7 +70,7 @@ public class Exercise7_17 {
 		System.out.print("探す値:");
 		//インスタンスから入力された値を受け取る
 		int searchValue = (int) scanInteger.nextDouble();
-		//linearSearchRメソッドを呼び出して表示
+		//探索したいキーの最も末尾を表示
 		int indexValue = linearSearchR(integerArray, searchValue);
 		//探索するキーが配列に存在しない場合
 		if (indexValue == -1) {
