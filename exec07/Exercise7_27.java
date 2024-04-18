@@ -46,7 +46,7 @@ public class Exercise7_27 {
 					totalArray[i][j] = x[i][j] + y[i][j] + z[i][j];
 				}
 			}
-			//outputMultipleArrayメソッドを呼び出す
+			//受け取った多次元配列の全要素を表示する
 			outputMultipleArray(totalArray);
 
 		}

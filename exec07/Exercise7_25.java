@@ -106,7 +106,7 @@ public class Exercise7_25 {
 		Scanner scanInteger = new Scanner(System.in);
 		//メッセージを表示
 		System.out.println("配列aから特定のインデックスの値を削除します。");
-		//scanInputメソッドを呼び出す
+		//配列の要素数と要素を入力させる
 		int[] integerArray = scanInput();
 		//メッセージを表示
 		System.out.print("配列a=");
