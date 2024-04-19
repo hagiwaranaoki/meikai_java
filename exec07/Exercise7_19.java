@@ -123,12 +123,14 @@ public class Exercise7_19 {
 			// 要素数より小さい正の数が入力されたらループ抜け
 		} while (deleteCount <= 0 || deleteCount > elementCount - deleteIndex);
 
-		// 配列の用ぞを削除
+		// 配列の要素を削除
 		aryRmvN(integerArray, deleteIndex, deleteCount);
 
-		// 要素数が1だった場合は空の配列を表示
+		// 要素数が1だった場合
 		if (elementCount == 1) {
-			System.out.println("{ }");
+			// 表示できる要素がないことを表示
+			System.out.println("表示できる要素はありません。");
+			// 要素数が1以外の場合
 		} else {
 			// 配列の全要素を表示
 			outputArray(integerArray);

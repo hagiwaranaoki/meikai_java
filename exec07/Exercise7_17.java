@@ -72,8 +72,10 @@ public class Exercise7_17 {
 		int searchValue = (int) scanInteger.nextDouble();
 		//探索したいキーの最も末尾を表示
 		int indexValue = linearSearchR(integerArray, searchValue);
+		//探索するキーが存在しないときの定数
+		final int NOT_SEARCH = -1;
 		//探索するキーが配列に存在しない場合
-		if (indexValue == -1) {
+		if (indexValue == NOT_SEARCH) {
 			//メッセージを表示
 			System.out.println("その値の要素は存在しません。");
 			//探索するキーが配列に存在する場合

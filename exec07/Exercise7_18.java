@@ -107,10 +107,14 @@ public class Exercise7_18 {
 
 		// 配列から要素を削除する
 		aryRmv(integerArray, deleteIndex);
-
+		
+		// 要素数が1の時の定数
+		final int ELEMENT_COUNT_ONE = 1;
 		// 要素数が1だった場合は空の配列を表示
-		if (elementCount == 1) {
-			System.out.println("{ }");
+		if (elementCount == ELEMENT_COUNT_ONE) {
+			// 空の配列を表示
+			System.out.println("表示できる要素はありません。");
+			// 要素数が1以外の場合
 		} else {
 			// 配列の全要素を表示する
 			outputArray(integerArray);
