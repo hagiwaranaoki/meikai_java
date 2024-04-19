@@ -68,7 +68,7 @@ public class Exercise7_33 {
 		// 表示のフォーマットを決定するための変数で幅を調整する
 		int formatNumber = String.valueOf(temporaryValue).length();
 		// 表示のフォーマットを設定
-		String formatSetting = "%" + formatNumber + "d ";
+		String formatSetting = "%-" + formatNumber + "d ";
 		// 配列の全ての行を順に調べる
 		for (int i = 0; i < a.length; i++) {
 			// 各行の全ての要素を順に調べる
