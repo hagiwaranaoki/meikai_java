@@ -220,6 +220,11 @@ public class Exercise8_2 {
 							fuelReplenishment = standardInput.nextInt();
 							// 0か1が入力されたら抜け出す
 						} while (fuelReplenishment > USER_RETRY || fuelReplenishment < USER_NOT_RETRY);
+						// 0を選んだ場合
+						if (fuelReplenishment == USER_NOT_RETRY) {
+							// ループから抜ける
+							break;
+						}
 						// ユーザーに給油量の入力を促す
 						System.out.print("給油量：");
 						// 燃料をチャージする量を受け付ける
