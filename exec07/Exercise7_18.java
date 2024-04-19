@@ -100,7 +100,7 @@ public class Exercise7_18 {
 		// 要素数が1の場合は削除を行わない
 		if (elementCount == ELEMENT_ONE) {
 			// 要素数が1の時のメッセージ表示
-			System.out.println("要素数が1の時は削除を行いません。");
+			System.out.println("要素数が1の時は削除を行っても値は変わらないので、省略します。");
 			// 要素数が1ではない場合
 		} else {
 			// 削除するインデックスを格納する変数を宣言

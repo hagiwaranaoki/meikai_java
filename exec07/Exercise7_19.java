@@ -98,7 +98,7 @@ public class Exercise7_19 {
 		final int DELETE_INDEX = -1;
 		// 要素数が1の場合は削除を行わない
 		if (elementCount == 1) {
-			System.out.println("要素数が1の時は削除を行いません。");
+			System.out.println("要素数が1の時は削除を行っても値は変わらないので、省略します。");
 		} else {
 			// 削除するインデックスを格納する変数を宣言
 			int deleteIndex = DELETE_INDEX;
