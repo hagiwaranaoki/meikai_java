@@ -150,4 +150,21 @@ public class Human {
 		return String.format("名前：%s\n身長：%s\n体重：%s\n誕生日：%s\n", humanName, getFormat(humanHeight), getFormat(humanWeight),
 				humanBirthday);
 	}
+
+	/*
+	* 関数名:getBirthday
+	* 概要:人間の誕生日を取得する
+	* 引数:なし
+	* 戻り値:誕生日を表すDay型オブジェクト
+	* 作成者:N.Hagiwara
+	* 作成日:2024/04/10
+	*/
+	/**
+	 * メソッドgetBirthdayは人間の誕生日を表すDay型オブジェクトを返却します。
+	 * @return 人間の誕生日を表すDay型オブジェクト
+	 */
+	public Day getBirthday() {
+		// 誕生日を表すDay型オブジェクトを返却
+		return new Day(humanBirthday);
+	}
 }

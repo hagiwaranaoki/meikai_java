@@ -32,7 +32,7 @@ public class Exercise10_4 {
 		// 一つ目のDayオブジェクトが閏年かどうかを判別して表示
 		System.out.println(firstDay.getYear() + "年は閏年" + (firstDay.isLeap() ? "です" : "ではありません"));
 		// 一つ目のdayオブジェクトが年内で何日経過しているかを表示
-		System.out.println(firstDay.toString() + "は" + firstDay.getYear() + "年の1月1日から" + firstDay.daysPast() + "日経過しています。");
+		System.out.println(firstDay.toString() + "は" + firstDay.getYear() + "年の1月1日から" + firstDay.elapsedDays() + "日経過しています。");
 		// 一つ目のdayオブジェクトの年内の残り日数を表示
 		System.out
 				.println(firstDay.getYear() + "年は残り" + firstDay.remainingDays(firstDay) + "日です。");
@@ -149,7 +149,7 @@ public class Exercise10_4 {
 			System.out.println(secondDay.getYear() + "年は閏年" + (secondDay.isLeap() ? "です" : "ではありません"));
 			// 二つ目のdayオブジェクトが年内で何日経過しているかを表示
 			System.out
-					.println(secondDay.toString() + "は" + secondDay.getYear() + "年の1月1日から" + secondDay.daysPast() + "日経過しています。");
+					.println(secondDay.toString() + "は" + secondDay.getYear() + "年の1月1日から" + secondDay.elapsedDays() + "日経過しています。");
 			// 二つ目のdayオブジェクトの年内の残り日数を表示
 			System.out
 					.println(secondDay.getYear() + "年は残り" + secondDay.remainingDays(secondDay) + "日です。");
@@ -243,9 +243,9 @@ public class Exercise10_4 {
 			// 五つ目のDayオブジェクトの中身を表示
 			System.out.println(fifthDay.toString());
 			// 五つ目のDayオブジェクトの一日後を表示
-			System.out.println("一日後は" + fifthDay.nextDay() + "です。");
+			System.out.println("一日後は" + fifthDay.getNextDay() + "です。");
 			// 五つ目のDayオブジェクトの一日前を表示
-			System.out.println("一日前は" + fifthDay.previousDay() + "です。");
+			System.out.println("一日前は" + fifthDay.getPreviousDay() + "です。");
 			// 五つ目のDayオブジェクトの中身を表示
 			System.out.println("現在は" + fifthDay.toString() + "です。");
 
@@ -261,9 +261,9 @@ public class Exercise10_4 {
 				dayNumber = standardInput.nextInt();
 			}
 			// 五つ目のDayオブジェクトの任意の日数後を表示
-			System.out.println(dayNumber + "日後は" + fifthDay.futureDays(dayNumber) + "です。");
+			System.out.println(dayNumber + "日後は" + fifthDay.getFutureDays(dayNumber) + "です。");
 			// 五つ目のDayオブジェクトの任意の日数前を表示
-			System.out.println(dayNumber + "日前は" + fifthDay.pastDays(dayNumber) + "です。");
+			System.out.println(dayNumber + "日前は" + fifthDay.getPastDays(dayNumber) + "です。");
 			// 五つ目のDayオブジェクトの中身を表示
 			System.out.println("現在は" + fifthDay.toString() + "です。");
 			//リトライするか尋ねる

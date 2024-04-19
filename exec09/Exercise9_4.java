@@ -34,5 +34,7 @@ public class Exercise9_4 {
 		Human firstHuman = new Human(HUMAN_NAME, HUMAN_HEIGHT, HUMAN_WEIGHT, new Day(YEAR_VALUE, MONTH_VALUE, DAY_VALUE));
 		// 人間クラスの中身を表示
 		System.out.print(firstHuman.toString());
+		// 誕生日を表示
+		System.out.println(firstHuman.getBirthday());
 	}
 }

@@ -7,12 +7,13 @@ import static java.util.Calendar.*;
 import java.util.GregorianCalendar;
 
 /*
- * クラス名:Day
- * 概要:日付を管理する
- * 作成者:N.Hagiwara
- * 作成日:2024/04/10
- */
+* クラス名:Day
+* 概要:日付を管理する
+* 作成者:N.Hagiwara
+* 作成日:2024/04/10
+*/
 public class Day {
+	// GregorianCalendarオブジェクトを生成
 	static GregorianCalendar today = new GregorianCalendar();
 	// 年を表すフィールド（初期値は本年）
 	private int year = today.get(YEAR);
@@ -20,6 +21,45 @@ public class Day {
 	private int month = today.get(MONTH) + 1;
 	// 日を表すフィールド（初期値は本日）
 	private int date = today.get(DATE);
+
+	// 4を表す定数
+	static final int FOUR_NUMBER = 4;
+	// 100を表す定数
+	static final int HUNDRED_NUMBER = 100;
+	// 400を表す定数
+	static final int FOUR_HUNDRED_NUMBER = 400;
+	// 1を表す定数
+	static final int FIRST_NUMBER = 1;
+	// 2を表す定数
+	static final int SECOND_NUMBER = 2;
+	// 3を表す定数
+	static final int THIRD_NUMBER = 3;
+	// 5を表す定数
+	static final int FIFTH_NUMBER = 5;
+	// 6を表す定数
+	static final int SIXTH_NUMBER = 6;
+	// 7を表す定数
+	static final int SEVENTH_NUMBER = 7;
+	// 8を表す定数
+	static final int EIGHTH_NUMBER = 8;
+	// 9を表す定数
+	static final int NINTH_NUMBER = 9;
+	// 10を表す定数
+	static final int TENTH_NUMBER = 10;
+	// 11を表す定数
+	static final int ELEVENTH_NUMBER = 11;
+	// 12を表す定数
+	static final int TWELFTH_NUMBER = 12;
+	// 13を表す定数
+	static final int THIRTEENTH_NUMBER = 13;
+	// 28を表す定数
+	static final int TWENTY_EIGHTH_NUMBER = 28;
+	// 29を表す定数
+	static final int TWENTY_NINTH_NUMBER = 29;
+	// 30を表す定数
+	static final int THIRTIETH_NUMBER = 30;
+	// 31を表す定数
+	static final int THIRTY_FIRST_NUMBER = 31;
 
 	/*
 	 * 関数名:isLeap
@@ -31,7 +71,7 @@ public class Day {
 	 */
 	public static boolean isLeap(int yearValue) {
 		// うるう年を計算して返す
-		return yearValue % 4 == 0 && yearValue % 100 != 0 || yearValue % 400 == 0;
+		return yearValue % FOUR_NUMBER == 0 && yearValue % HUNDRED_NUMBER != 0 || yearValue % FOUR_HUNDRED_NUMBER == 0;
 	}
 
 	/*
@@ -53,11 +93,11 @@ public class Day {
 	*/
 	public Day(int year) {
 		// 年が1より下だった場合
-		if (year < 1) {
+		if (year < FIRST_NUMBER) {
 			// 年を1に指定
-			year = 1;
+			year = FIRST_NUMBER;
 			// 年を1に指定
-			this.year = 1;
+			this.year = FIRST_NUMBER;
 			// 年が1より下ではなかった場合
 		} else {
 			// 引数の年を使用
@@ -76,17 +116,17 @@ public class Day {
 		// 年指定コンストラクタの呼び出し
 		this(year);
 		// 月が12より上だった場合
-		if (month > 12) {
+		if (month > TWELFTH_NUMBER) {
 			// 月を12に指定
-			month = 12;
+			month = TWELFTH_NUMBER;
 			// 月を12に指定
-			this.month = 12;
+			this.month = TWELFTH_NUMBER;
 			// 月が1より下だった場合
-		} else if (month < 1) {
+		} else if (month < FIRST_NUMBER) {
 			// 月を1に設定
-			month = 1;
+			month = FIRST_NUMBER;
 			// 月を1に設定
-			this.month = 1;
+			this.month = FIRST_NUMBER;
 			// それ以外の場合
 		} else {
 			// 引数で受け取った月でフィールドに設定
@@ -105,42 +145,44 @@ public class Day {
 		// 年、月指定コンストラクタの呼び出し
 		this(year, month);
 		// 1月か3月か5月か7月か8月か10月か12月に日にちが31日より上を受け取った場合
-		if ((month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12)
-				&& date > 31) {
+		if ((month == FIRST_NUMBER || month == THIRD_NUMBER || month == FIFTH_NUMBER || month == SEVENTH_NUMBER
+				|| month == EIGHTH_NUMBER || month == TENTH_NUMBER || month == TWELFTH_NUMBER)
+				&& date > THIRTY_FIRST_NUMBER) {
 			// 日を31に設定
-			date = 31;
+			date = THIRTY_FIRST_NUMBER;
 			// 日を31に設定
-			this.date = 31;
+			this.date = THIRTY_FIRST_NUMBER;
 			// 4月か6月か9月か11月に日にちが30日より上を受け取った場合
-		} else if ((month == 4 || month == 6 || month == 9 || month == 11) && date > 30) {
+		} else if ((month == FOUR_NUMBER || month == SIXTH_NUMBER || month == NINTH_NUMBER || month == ELEVENTH_NUMBER)
+				&& date > THIRTIETH_NUMBER) {
 			// 日にちを30日に設定
-			date = 30;
+			date = THIRTIETH_NUMBER;
 			// 日にちを30日に設定
-			this.date = 30;
+			this.date = THIRTIETH_NUMBER;
 			// うるう年の2月に日にちが29より上の値を受け取った場合
-		} else if (month == 2 && isLeap(year) == true && date > 29) {
+		} else if (month == SECOND_NUMBER && isLeap(year) == true && date > TWENTY_NINTH_NUMBER) {
 			// 日を29に設定
-			date = 29;
+			date = TWENTY_NINTH_NUMBER;
 			// 日を29に設定
-			this.date = 29;
+			this.date = TWENTY_NINTH_NUMBER;
 			// うるう年ではない2月に日にちが28より上の値を受け取った場合
-		} else if (month == 2 && isLeap(year) == false && date > 28) {
+		} else if (month == SECOND_NUMBER && isLeap(year) == false && date > TWENTY_EIGHTH_NUMBER) {
 			// 日を28に設定
-			date = 28;
+			date = TWENTY_EIGHTH_NUMBER;
 			// 日を28に設定
-			this.date = 28;
+			this.date = TWENTY_EIGHTH_NUMBER;
 			// 日が1未満の場合
-		} else if (date < 1) {
+		} else if (date < FIRST_NUMBER) {
 			// 日を1に設定
-			date = 1;
+			date = FIRST_NUMBER;
 			// 日を1に設定
-			this.date = 1;
+			this.date = FIRST_NUMBER;
 			// 月が12より上または1より下の時
-		} else if (month > 12 || month < 1) {
+		} else if (month > TWELFTH_NUMBER || month < FIRST_NUMBER) {
 			// 日を31に設定
-			date = 31;
+			date = THIRTY_FIRST_NUMBER;
 			// 日を1に設定
-			this.date = 31;
+			this.date = THIRTY_FIRST_NUMBER;
 			// それ以外の場合
 		} else {
 			// 日を引数の日に設定
@@ -209,9 +251,9 @@ public class Day {
 	 */
 	public void setYear(int year) {
 		// 年が1より下だった場合
-		if (year < 1) {
+		if (year < FIRST_NUMBER) {
 			// 年を1に指定
-			this.year = 1;
+			this.year = FIRST_NUMBER;
 			// 年が1より下ではなかった場合
 		} else {
 			// 引数の年を使用
@@ -229,13 +271,13 @@ public class Day {
 	 */
 	public void setMonth(int month) {
 		// 月が12より上だった場合
-		if (month > 12) {
+		if (month > TWELFTH_NUMBER) {
 			// 月を12に指定
-			this.month = 12;
+			this.month = TWELFTH_NUMBER;
 			// 月が1より下だった場合
-		} else if (month < 1) {
+		} else if (month < FIRST_NUMBER) {
 			// 月を1に設定
-			this.month = 1;
+			this.month = FIRST_NUMBER;
 			// それ以外の場合
 		} else {
 			// 引数で受け取った月でフィールドに設定
@@ -243,36 +285,38 @@ public class Day {
 		}
 
 		// 1月か3月か5月か7月か8月か10月か12月に日にちが31日より上を受け取った場合
-		if ((month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12)
-				&& date > 31) {
+		if ((month == FIRST_NUMBER || month == THIRD_NUMBER || month == FIFTH_NUMBER || month == SEVENTH_NUMBER
+				|| month == EIGHTH_NUMBER || month == TENTH_NUMBER || month == TWELFTH_NUMBER)
+				&& date > THIRTY_FIRST_NUMBER) {
 			// 日を31に設定
-			date = 31;
+			date = THIRTY_FIRST_NUMBER;
 			// 日を31に設定
-			this.date = 31;
+			this.date = THIRTY_FIRST_NUMBER;
 			// 4月か6月か9月か11月に日にちが30日より上を受け取った場合
-		} else if ((month == 4 || month == 6 || month == 9 || month == 11) && date > 30) {
+		} else if ((month == FOUR_NUMBER || month == SIXTH_NUMBER || month == NINTH_NUMBER || month == ELEVENTH_NUMBER)
+				&& date > THIRTIETH_NUMBER) {
 			// 日にちを30日に設定
-			date = 30;
+			date = THIRTIETH_NUMBER;
 			// 日にちを30日に設定
-			this.date = 30;
+			this.date = THIRTIETH_NUMBER;
 			// うるう年の2月に日にちが29より上の値を受け取った場合
-		} else if (month == 2 && isLeap(year) == true && date > 29) {
+		} else if (month == SECOND_NUMBER && isLeap(year) == true && date > TWENTY_NINTH_NUMBER) {
 			// 日を29に設定
-			date = 29;
+			date = TWENTY_NINTH_NUMBER;
 			// 日を29に設定
-			this.date = 29;
+			this.date = TWENTY_NINTH_NUMBER;
 			// うるう年ではない2月に日にちが28より上の値を受け取った場合
-		} else if (month == 2 && isLeap(year) == false && date > 28) {
+		} else if (month == SECOND_NUMBER && isLeap(year) == false && date > TWENTY_EIGHTH_NUMBER) {
 			// 日を28に設定
-			date = 28;
+			date = TWENTY_EIGHTH_NUMBER;
 			// 日を28に設定
-			this.date = 28;
+			this.date = TWENTY_EIGHTH_NUMBER;
 			// 日が1未満の場合
-		} else if (date < 1) {
+		} else if (date < FIRST_NUMBER) {
 			// 日を1に設定
-			date = 1;
+			date = FIRST_NUMBER;
 			// 日を1に設定
-			this.date = 1;
+			this.date = FIRST_NUMBER;
 		}
 
 	}
@@ -287,26 +331,28 @@ public class Day {
 	 */
 	public void setDate(int date) {
 		// 1月か3月か5月か7月か8月か10月か12月に日にちが31日より上を受け取った場合
-		if ((month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12)
-				&& date > 31) {
+		if ((month == FIRST_NUMBER || month == THIRD_NUMBER || month == FIFTH_NUMBER || month == SEVENTH_NUMBER
+				|| month == EIGHTH_NUMBER || month == TENTH_NUMBER || month == TWELFTH_NUMBER)
+				&& date > THIRTY_FIRST_NUMBER) {
 			// 日を31に設定
-			this.date = 31;
+			this.date = THIRTY_FIRST_NUMBER;
 			// 4月か6月か9月か11月に日にちが30日より上を受け取った場合
-		} else if ((month == 4 || month == 6 || month == 9 || month == 11) && date > 30) {
+		} else if ((month == FOUR_NUMBER || month == SIXTH_NUMBER || month == NINTH_NUMBER || month == ELEVENTH_NUMBER)
+				&& date > THIRTIETH_NUMBER) {
 			// 日にちを30日に設定
-			this.date = 30;
+			this.date = THIRTIETH_NUMBER;
 			// うるう年の2月に日にちが29より上の値を受け取った場合
-		} else if (month == 2 && isLeap(year) == true && date > 29) {
+		} else if (month == SECOND_NUMBER && isLeap(year) == true && date > TWENTY_NINTH_NUMBER) {
 			// 日を29に設定
-			this.date = 29;
+			this.date = TWENTY_NINTH_NUMBER;
 			// うるう年ではない2月に日にちが28より上の値を受け取った場合
-		} else if (month == 2 && isLeap(year) == false && date > 28) {
+		} else if (month == SECOND_NUMBER && isLeap(year) == false && date > TWENTY_EIGHTH_NUMBER) {
 			// 日を28に設定
-			this.date = 28;
+			this.date = TWENTY_EIGHTH_NUMBER;
 			// 日が1未満の場合
-		} else if (date < 1) {
+		} else if (date < FIRST_NUMBER) {
 			// 日を1に設定
-			this.date = 1;
+			this.date = FIRST_NUMBER;
 			// それ以外の場合
 		} else {
 			// 日を引数の日に設定
@@ -324,17 +370,17 @@ public class Day {
 	 */
 	public void set(int year, int month, int date) {
 		// 月が12より上だった場合
-		if (month > 12) {
+		if (month > TWELFTH_NUMBER) {
 			// 月を12に指定
-			month = 12;
+			month = TWELFTH_NUMBER;
 			// 月を12に指定
-			this.month = 12;
+			this.month = TWELFTH_NUMBER;
 			// 月が1より下だった場合
-		} else if (month < 1) {
+		} else if (month < FIRST_NUMBER) {
 			// 月を1に設定
-			month = 1;
+			month = FIRST_NUMBER;
 			// 月を1に設定
-			this.month = 1;
+			this.month = FIRST_NUMBER;
 			// それ以外の場合
 		} else {
 			// 引数で受け取った月でフィールドに設定
@@ -342,11 +388,11 @@ public class Day {
 		}
 
 		// 年が1より下だった場合
-		if (year < 1) {
+		if (year < FIRST_NUMBER) {
 			// 年を1に指定
-			year = 1;
+			year = FIRST_NUMBER;
 			// 年を1に指定
-			this.year = 1;
+			this.year = FIRST_NUMBER;
 			// 年が1より下ではなかった場合
 		} else {
 			// 引数の年を使用
@@ -354,36 +400,38 @@ public class Day {
 		}
 
 		// 1月か3月か5月か7月か8月か10月か12月に日にちが31日より上を受け取った場合
-		if ((month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12)
-				&& date > 31) {
+		if ((month == FIRST_NUMBER || month == THIRD_NUMBER || month == FIFTH_NUMBER || month == SEVENTH_NUMBER
+				|| month == EIGHTH_NUMBER || month == TENTH_NUMBER || month == TWELFTH_NUMBER)
+				&& date > THIRTY_FIRST_NUMBER) {
 			// 日を31に設定
-			date = 31;
+			date = THIRTY_FIRST_NUMBER;
 			// 日を31に設定
-			this.date = 31;
+			this.date = THIRTY_FIRST_NUMBER;
 			// 4月か6月か9月か11月に日にちが30日より上を受け取った場合
-		} else if ((month == 4 || month == 6 || month == 9 || month == 11) && date > 30) {
+		} else if ((month == FOUR_NUMBER || month == SIXTH_NUMBER || month == NINTH_NUMBER || month == ELEVENTH_NUMBER)
+				&& date > THIRTIETH_NUMBER) {
 			// 日にちを30日に設定
-			date = 30;
+			date = THIRTIETH_NUMBER;
 			// 日にちを30日に設定
-			this.date = 30;
+			this.date = THIRTIETH_NUMBER;
 			// うるう年の2月に日にちが29より上の値を受け取った場合
-		} else if (month == 2 && isLeap(year) == true && date > 29) {
+		} else if (month == SECOND_NUMBER && isLeap(year) == true && date > TWENTY_NINTH_NUMBER) {
 			// 日を29に設定
-			date = 29;
+			date = TWENTY_NINTH_NUMBER;
 			// 日を29に設定
-			this.date = 29;
+			this.date = TWENTY_NINTH_NUMBER;
 			// うるう年ではない2月に日にちが28より上の値を受け取った場合
-		} else if (month == 2 && isLeap(year) == false && date > 28) {
+		} else if (month == SECOND_NUMBER && isLeap(year) == false && date > TWENTY_EIGHTH_NUMBER) {
 			// 日を28に設定
-			date = 28;
+			date = TWENTY_EIGHTH_NUMBER;
 			// 日を28に設定
-			this.date = 28;
+			this.date = TWENTY_EIGHTH_NUMBER;
 			// 日が1未満の場合
-		} else if (date < 1) {
+		} else if (date < FIRST_NUMBER) {
 			// 日を1に設定
-			date = 1;
+			date = FIRST_NUMBER;
 			// 日を1に設定
-			this.date = 1;
+			this.date = FIRST_NUMBER;
 			// それ以外の場合
 		} else {
 			// 日を引数の日に設定
@@ -418,14 +466,15 @@ public class Day {
 		// 現在の付を代入
 		int m = month;
 		// 月が1または2のとき
-		if (m == 1 || m == 2) {
+		if (m == FIRST_NUMBER || m == SECOND_NUMBER) {
 			// 年をデクリメント
 			y--;
 			// 月に12を足す
-			m += 12;
+			m += TWELFTH_NUMBER;
 		}
 		// 年と月を使って曜日を計算して返す
-		return (y + y / 4 - y / 100 + y / 400 + (13 * m + 8) / 5 + date) % 7;
+		return (y + y / FOUR_NUMBER - y / HUNDRED_NUMBER + y / FOUR_HUNDRED_NUMBER
+				+ (THIRTEENTH_NUMBER * m + EIGHTH_NUMBER) / FIFTH_NUMBER + date) % SEVENTH_NUMBER;
 	}
 
 	/*
@@ -436,7 +485,7 @@ public class Day {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/11
 	 */
-	public int daysPast() {
+	public int elapsedDays() {
 		// 経過日数を初期化
 		int elapsedDays = 0;
 		// 年を初期化
@@ -445,54 +494,77 @@ public class Day {
 		int monthValue = month;
 		// 日を初期化
 		int dayValue = date;
+		// 31を表す定数
+		final int THIRTY_ONE_NUMBER = 31;
+		// 60を表す定数
+		final int SIXTY_NUMBER = 60;
+		// 91を表す定数
+		final int NINETY_ONE_NUMBER = 91;
+		// 121を表す定数
+		final int ONE_HUNDRED_TWENTY_ONE_NUMBER = 121;
+		// 152を表す定数
+		final int ONE_HUNDRED_FIFTY_TWO_NUMBER = 152;
+		// 182を表す定数
+		final int ONE_HUNDRED_EIGHTY_TWO_NUMBER = 182;
+		// 213を表す定数
+		final int TWO_HUNDRED_THIRTEEN_NUMBER = 213;
+		// 244を表す定数
+		final int TWO_HUNDRED_FORTY_FOUR_NUMBER = 244;
+		// 274を表す定数
+		final int TWO_HUNDRED_SEVENTY_FOUR_NUMBER = 274;
+		// 305を表す定数
+		final int THREE_HUNDRED_FIVE_NUMBER = 305;
+		// 335を表す定数
+		final int THREE_HUNDRED_THIRTY_FIVE_NUMBER = 335;
+		
 		// 1月の時
-		if (monthValue == 1) {
+		if (monthValue == FIRST_NUMBER) {
 			// 経過日数を今日の日にちにする
 			elapsedDays = dayValue;
 			// 2月の時
-		} else if (monthValue == 2) {
+		} else if (monthValue == SECOND_NUMBER) {
 			// 今日の日にちに31を足す
-			elapsedDays = dayValue + 31;
+			elapsedDays = dayValue + THIRTY_ONE_NUMBER;
 			// 3月の時
-		} else if (monthValue == 3) {
+		} else if (monthValue == THIRD_NUMBER) {
 			// 今日の日にちに60を足す
-			elapsedDays = dayValue + 60;
+			elapsedDays = dayValue + SIXTY_NUMBER;
 			// 4月の時
-		} else if (monthValue == 4) {
+		} else if (monthValue == FOUR_NUMBER) {
 			// 今日の日にちに91を足す
-			elapsedDays = dayValue + 91;
+			elapsedDays = dayValue + NINETY_ONE_NUMBER;
 			// 5月の時
-		} else if (monthValue == 5) {
+		} else if (monthValue == FIFTH_NUMBER) {
 			// 今日の日にちに121を足す
-			elapsedDays = dayValue + 121;
+			elapsedDays = dayValue + ONE_HUNDRED_TWENTY_ONE_NUMBER;
 			// 6月の時
-		} else if (monthValue == 6) {
+		} else if (monthValue == SIXTH_NUMBER) {
 			// 今日の日にちに152を足す
-			elapsedDays = dayValue + 152;
+			elapsedDays = dayValue + ONE_HUNDRED_FIFTY_TWO_NUMBER;
 			// 7月の時
-		} else if (monthValue == 7) {
+		} else if (monthValue == SEVENTH_NUMBER) {
 			// 今日の日にちに182を足す
-			elapsedDays = dayValue + 182;
+			elapsedDays = dayValue + ONE_HUNDRED_EIGHTY_TWO_NUMBER;
 			// 8月の時
-		} else if (monthValue == 8) {
+		} else if (monthValue == EIGHTH_NUMBER) {
 			// 今日の日にちに213を足す
-			elapsedDays = dayValue + 213;
+			elapsedDays = dayValue + TWO_HUNDRED_THIRTEEN_NUMBER;
 			// 9月の時
-		} else if (monthValue == 9) {
+		} else if (monthValue == NINTH_NUMBER) {
 			// 今日の日にちに244を足す
-			elapsedDays = dayValue + 244;
+			elapsedDays = dayValue + TWO_HUNDRED_FORTY_FOUR_NUMBER;
 			// 10月の時
-		} else if (monthValue == 10) {
+		} else if (monthValue == TENTH_NUMBER) {
 			// 今日の日にちに274を足す
-			elapsedDays = dayValue + 274;
+			elapsedDays = dayValue + TWO_HUNDRED_SEVENTY_FOUR_NUMBER;
 			// 11月の時
-		} else if (monthValue == 11) {
+		} else if (monthValue == ELEVENTH_NUMBER) {
 			// 今日の日にちに305を足す
-			elapsedDays = dayValue + 305;
+			elapsedDays = dayValue + THREE_HUNDRED_FIVE_NUMBER;
 			// 12月の時
 		} else {
 			// 今日の日にちに335を足す
-			elapsedDays = dayValue + 335;
+			elapsedDays = dayValue + THREE_HUNDRED_THIRTY_FIVE_NUMBER;
 		}
 		// 閏年ではないとき
 		if (isLeap(yearValue) == false) {
@@ -517,11 +589,11 @@ public class Day {
 		// 閏年であるとき
 		if (isLeap(dayObject.year) == true) {
 			// 366日から経過日数を引く
-			remainingDays = 366 - dayObject.daysPast();
+			remainingDays = 366 - dayObject.elapsedDays();
 			// 閏年ではないとき
 		} else {
 			// 365日から経過日数を引く
-			remainingDays = 365 - dayObject.daysPast();
+			remainingDays = 365 - dayObject.elapsedDays();
 		}
 		// 残り日数を返す
 		return remainingDays;
@@ -571,11 +643,11 @@ public class Day {
 		// 比較対象が引数のdayオブジェクト以上の年の場合
 		if (nowVariable.year >= dayValue.year) {
 			// 経過日数が与えたDayオブジェクトのほうが大きいとき
-			if (nowVariable.daysPast() > dayValue.daysPast()) {
+			if (nowVariable.elapsedDays() > dayValue.elapsedDays()) {
 				// 進んだ時間にいることを表示
 				comparisonDate = "今日のDayオブジェクトのほうが未来にいます";
 				// 経過日数が与えたDayオブジェクトのほうが小さいとき
-			} else if (nowVariable.daysPast() < dayValue.daysPast()) {
+			} else if (nowVariable.elapsedDays() < dayValue.elapsedDays()) {
 				// 過去にいることを表示
 				comparisonDate = "今日のDayオブジェクトのほうが過去にいます";
 				// 経過日数が同じ場合
@@ -602,42 +674,44 @@ public class Day {
 	 */
 	public void advanceDate() {
 		// 1月か3月か5月か7月か8月か10月に日にちが31日を受け取った場合
-		if ((month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10)
-				&& date == 31) {
+		if ((month == FIRST_NUMBER || month == THIRD_NUMBER || month == FIFTH_NUMBER || month == SEVENTH_NUMBER
+				|| month == EIGHTH_NUMBER || month == TENTH_NUMBER)
+				&& date == THIRTY_FIRST_NUMBER) {
 			// 月に1足す
-			this.month = month + 1;
+			this.month = month + FIRST_NUMBER;
 			// 日を1に設定
-			this.date = 1;
+			this.date = FIRST_NUMBER;
 			// 4月か6月か9月か11月に日にちが30日を受け取った場合
-		} else if ((month == 4 || month == 6 || month == 9 || month == 11) && date == 30) {
+		} else if ((month == FOUR_NUMBER || month == SIXTH_NUMBER || month == NINTH_NUMBER || month == ELEVENTH_NUMBER)
+				&& date == THIRTIETH_NUMBER) {
 			// 月に1足す
-			this.month = month + 1;
+			this.month = month + FIRST_NUMBER;
 			// 日にちを30日に設定
-			this.date = 1;
+			this.date = FIRST_NUMBER;
 			// うるう年の2月に日にちが29を受け取った場合
-		} else if (month == 2 && isLeap(year) == true && date == 29) {
+		} else if (month == SECOND_NUMBER && isLeap(year) == true && date == TWENTY_NINTH_NUMBER) {
 			// 月に1足す
-			this.month = month + 1;
+			this.month = month + FIRST_NUMBER;
 			// 日を29に設定
-			this.date = 1;
+			this.date = FIRST_NUMBER;
 			// うるう年ではない2月に日にちが28を受け取った場合
-		} else if (month == 2 && isLeap(year) == false && date == 28) {
+		} else if (month == SECOND_NUMBER && isLeap(year) == false && date == TWENTY_EIGHTH_NUMBER) {
 			// 月に1足す
-			this.month = month + 1;
+			this.month = month + FIRST_NUMBER;
 			// 日を28に設定
-			this.date = 1;
+			this.date = FIRST_NUMBER;
 			// 12月31日の場合
-		} else if (month == 12 && date == 31) {
+		} else if (month == TWELFTH_NUMBER && date == THIRTY_FIRST_NUMBER) {
 			//年に1を足す
-			this.year = year + 1;
+			this.year = year + FIRST_NUMBER;
 			// 月を1にする
-			this.month = 1;
+			this.month = FIRST_NUMBER;
 			// 日を28に設定
-			this.date = 1;
+			this.date = FIRST_NUMBER;
 			// それ以外の場合
 		} else {
 			// 日を1足す
-			this.date = date + 1;
+			this.date = date + FIRST_NUMBER;
 		}
 	}
 
@@ -649,7 +723,7 @@ public class Day {
 	* 作成者:N.Hagiwara
 	* 作成日:2024/04/12
 	*/
-	public Day nextDay() {
+	public Day getNextDay() {
 		// 新しいdayオブジェクトに今のDayオブジェクトを持たせる
 		Day nextDay = new Day(this);
 		// 一日進める
@@ -668,38 +742,38 @@ public class Day {
 	*/
 	public void retreatDate() {
 		// 日が1の時
-		if (date == 1) {
+		if (date == FIRST_NUMBER) {
 			// 月が1の時
-			if (month == 1) {
+			if (month == FIRST_NUMBER) {
 				// 年をデクリメント
 				year--;
 				//月を12にする
-				month = 12;
+				month = TWELFTH_NUMBER;
 				// 日を31にする
-				date = 31;
+				date = THIRTY_FIRST_NUMBER;
 				// 月が1以外の時
 			} else {
 				// 月をデクリメント
 				month--;
 				// 2月の時
-				if (month == 2) {
+				if (month == SECOND_NUMBER) {
 					// 閏年であれば
 					if (isLeap(year)) {
 						// 日を29に設定
-						date = 29;
+						date = TWENTY_NINTH_NUMBER;
 						// 閏年でなければ
 					} else {
 						// 日を28に設定
-						date = 28;
+						date = TWENTY_EIGHTH_NUMBER;
 					}
 					// 4,6,9,11月の時
-				} else if (month == 4 || month == 6 || month == 9 || month == 11) {
+				} else if (month == FOUR_NUMBER || month == SIXTH_NUMBER || month == NINTH_NUMBER || month == ELEVENTH_NUMBER) {
 					// 日を30に設定
-					date = 30;
+					date = THIRTIETH_NUMBER;
 					// それ以外の月
 				} else {
 					// 日を31に設定
-					date = 31;
+					date = THIRTY_FIRST_NUMBER;
 				}
 			}
 			// 日が1ではない
@@ -717,7 +791,7 @@ public class Day {
 	* 作成者:N.Hagiwara
 	* 作成日:2024/04/12
 	*/
-	public Day previousDay() {
+	public Day getPreviousDay() {
 		// 前の日付を入れるdayオブジェクト
 		Day previousDay = new Day(this);
 		// 一日戻す
@@ -750,7 +824,7 @@ public class Day {
 	* 作成者:N.Hagiwara
 	* 作成日:2024/04/12
 	*/
-	public Day futureDays(int dayNumber) {
+	public Day getFutureDays(int dayNumber) {
 		// n日後の日付を入れるDayオブジェクト
 		Day futureDays = new Day(this);
 		// n日進める
@@ -783,7 +857,7 @@ public class Day {
 	* 作成者:N.Hagiwara
 	* 作成日:2024/04/12
 	*/
-	public Day pastDays(int dayNumber) {
+	public Day getPastDays(int dayNumber) {
 		// n日前の日付を入れるオブジェクト
 		Day pastDays = new Day(this);
 		// n日戻す
