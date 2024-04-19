@@ -4,11 +4,11 @@ package exec07;
 import java.util.Scanner;
 
 /*
- * クラス名:Exercise7_33
- * 概要:一次元配列と二次元配列の全要素の値を表示する
- * 作成者:N.Hagiwara
- * 作成日:2024/04/09
- */
+* クラス名:Exercise7_33
+* 概要:一次元配列と二次元配列の全要素の値を表示する
+* 作成者:N.Hagiwara
+* 作成日:2024/04/09
+*/
 public class Exercise7_33 {
 	/*
 	 * 関数名:printArray
@@ -21,7 +21,7 @@ public class Exercise7_33 {
 	public static void printArray(int[] a) {
 		// 配列の全ての要素を順に調べる
 		for (int i = 0; i < a.length; i++) {
-			// 各要素を出力
+			// 各要素を出力し、要素間に1文字分のスペースを空ける
 			System.out.print(a[i] + " ");
 		}
 		// 配列の表示が終わったことを示すための改行
@@ -32,7 +32,7 @@ public class Exercise7_33 {
 	 * 関数名:findMax
 	 * 概要:2次元配列の最大値を求める
 	 * 引数:int型の二次元配列a
-	 * 戻り値:
+	 * 戻り値:最大値
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/09
 	 */
@@ -66,22 +66,14 @@ public class Exercise7_33 {
 		// 配列の最大値を求め、表示のフォーマットを決定するための基準値を決める
 		int temporaryValue = findMax(a);
 		// 表示のフォーマットを決定するための変数で幅を調整する
-		int formatNumber = 2;
-		// 後判定ループ文
-		do {
-			// 最大値を10で割る
-			temporaryValue /= 10;
-			// 表示の幅を増やす
-			formatNumber++;
-			// 最大値が1桁になるまで繰り返す
-		} while (temporaryValue > 10);
+		int formatNumber = String.valueOf(temporaryValue).length();
 		// 表示のフォーマットを設定
-		String formatSetting = "%" + formatNumber + "d";
+		String formatSetting = "%" + formatNumber + "d ";
 		// 配列の全ての行を順に調べる
 		for (int i = 0; i < a.length; i++) {
 			// 各行の全ての要素を順に調べる
 			for (int j = 0; j < a[i].length; j++) {
-				// 各要素を指定したフォーマットで出力
+				// 各要素を指定したフォーマットで出力し、列の数値の先頭がそろうようにスペースを空ける
 				System.out.printf(formatSetting, a[i][j]);
 			}
 			// 配列の各行を改行

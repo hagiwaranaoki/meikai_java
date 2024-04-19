@@ -4,7 +4,7 @@ package exec07;
 import java.util.Scanner;
 
 /*
-* クラス名:Exercise7_18
+* クラス名:Exercise7_18 
 * 概要:配列から入力されたインデックスの要素を前方にずらすことで削除するプログラム
 * 作成者:N.Hagiwara
 * 作成日:2024/04/08
@@ -43,10 +43,15 @@ public class Exercise7_18 {
 	 * 作成日:2024/04/08
 	 */
 	public static void aryRmv(int[] a, int idx) {
-		// 削除する要素からカウントが要素数-1になったらループ抜け
-		for (int i = idx; i < a.length - 1; i++) {
-			// 削除する要素から1要素ずつずらす
-			a[i] = a[i + 1];
+		// 要素数が1の時の定数
+		final int ELEMENT_ONE = 1;
+		// 要素数が1の場合は何もしない
+		if (a.length != ELEMENT_ONE) {
+			// 削除する要素からカウントが要素数-1になったらループ抜け
+			for (int i = idx; i < a.length - 1; i++) {
+				// 削除する要素から1要素ずつずらす
+				a[i] = a[i + 1];
+			}
 		}
 	}
 
@@ -87,35 +92,32 @@ public class Exercise7_18 {
 
 		// 配列の全要素を表示する
 		outputArray(integerArray);
-
-		// 削除するインデックスを格納する変数を宣言
-		int deleteIndex = -1;
-
-		// 後判定ループ文
-		do {
-			// インデックスの入力を促す
-			System.out.print("削除する要素のインデックス:");
-			// インスタンスから入力された値を受け取る
-			deleteIndex = (int) scanInteger.nextDouble();
-			// 要素数が1の場合は0以外の入力を再度求める
-			if (elementCount == 1 && deleteIndex != 0) {
-				System.out.println("要素数が1の場合、削除できるインデックスは0のみです。");
-				deleteIndex = -1;
-			}
-			// 要素数より小さい0以上の数が入力されたらループ抜け
-		} while (deleteIndex < 0 || deleteIndex >= elementCount);
-
-		// 配列から要素を削除する
-		aryRmv(integerArray, deleteIndex);
-		
 		// 要素数が1の時の定数
-		final int ELEMENT_COUNT_ONE = 1;
-		// 要素数が1だった場合は空の配列を表示
-		if (elementCount == ELEMENT_COUNT_ONE) {
-			// 空の配列を表示
-			System.out.println("表示できる要素はありません。");
-			// 要素数が1以外の場合
+		final int ELEMENT_ONE = 1;
+		// 削除するインデックスの定数
+		final int DELETE_INDEX = -1;
+
+		// 要素数が1の場合は削除を行わない
+		if (elementCount == ELEMENT_ONE) {
+			// 要素数が1の時のメッセージ表示
+			System.out.println("要素数が1の時は削除を行いません。");
+			// 要素数が1ではない場合
 		} else {
+			// 削除するインデックスを格納する変数を宣言
+			int deleteIndex = DELETE_INDEX;
+
+			// 後判定ループ文
+			do {
+				// インデックスの入力を促す
+				System.out.print("削除する要素のインデックス:");
+				// インスタンスから入力された値を受け取る
+				deleteIndex = (int) scanInteger.nextDouble();
+				// 要素数より小さい0以上の数が入力されたらループ抜け
+			} while (deleteIndex < 0 || deleteIndex >= elementCount);
+
+			// 配列から要素を削除する
+			aryRmv(integerArray, deleteIndex);
+
 			// 配列の全要素を表示する
 			outputArray(integerArray);
 		}

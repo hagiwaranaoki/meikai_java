@@ -44,10 +44,15 @@ public class Exercise7_19 {
 	 * 作成日:2024/04/08
 	 */
 	public static void aryRmvN(int[] a, int idx, int n) {
-		// 削除する要素からカウントが要素数-nになったらループ抜け
-		for (int i = idx; i < a.length - n; i++) {
-			// n個前方にずらす
-			a[i] = a[i + n];
+		// 要素数が1の定数
+		final int ELEMENT_ONE = 1;
+		// 要素数が1の場合は何もしない
+		if (a.length != ELEMENT_ONE) {
+			// 削除する要素からカウントが要素数-nになったらループ抜け
+			for (int i = idx; i < a.length - n; i++) {
+				// n個前方にずらす
+				a[i] = a[i + n];
+			}
 		}
 	}
 
@@ -88,50 +93,40 @@ public class Exercise7_19 {
 
 		// 配列の全要素を表示
 		outputArray(integerArray);
-
-		// 削除するインデックスを格納する変数を宣言
-		int deleteIndex = -1;
-
-		// 後判定ループ文
-		do {
-			// インデックスの入力を促す
-			System.out.print("削除する要素のインデックス:");
-			// インスタンスから入力された値を受け取る
-			deleteIndex = (int) scanInteger.nextDouble();
-			// 要素数が1の場合は0以外の入力を再度求める
-			if (elementCount == 1 && deleteIndex != 0) {
-				System.out.println("要素数が1の場合、削除できるインデックスは0のみです。");
-				deleteIndex = -1;
-			}
-			// 要素数より小さい0以上の数が入力されたらループ抜け
-		} while (deleteIndex < 0 || deleteIndex >= elementCount);
-
-		// 削除する要素数を格納する変数を宣言
-		int deleteCount = 0;
-
-		// 後判定ループ文
-		do {
-			// 個数の入力を促す
-			System.out.print("削除する要素の個数:");
-			// インスタンスから入力された値を受け取る
-			deleteCount = (int) scanInteger.nextDouble();
-			// 要素数が1の場合は1以外の入力を再度求める
-			if (elementCount == 1 && deleteCount != 1) {
-				System.out.println("要素数が1の場合、削除できる要素の個数は1のみです。");
-				deleteCount = 0;
-			}
-			// 要素数より小さい正の数が入力されたらループ抜け
-		} while (deleteCount <= 0 || deleteCount > elementCount - deleteIndex);
-
-		// 配列の要素を削除
-		aryRmvN(integerArray, deleteIndex, deleteCount);
-
-		// 要素数が1だった場合
+		
+		// 削除するインデックスの定数
+		final int DELETE_INDEX = -1;
+		// 要素数が1の場合は削除を行わない
 		if (elementCount == 1) {
-			// 表示できる要素がないことを表示
-			System.out.println("表示できる要素はありません。");
-			// 要素数が1以外の場合
+			System.out.println("要素数が1の時は削除を行いません。");
 		} else {
+			// 削除するインデックスを格納する変数を宣言
+			int deleteIndex = DELETE_INDEX;
+
+			// 後判定ループ文
+			do {
+				// インデックスの入力を促す
+				System.out.print("削除する要素のインデックス:");
+				// インスタンスから入力された値を受け取る
+				deleteIndex = (int) scanInteger.nextDouble();
+				// 要素数より小さい0以上の数が入力されたらループ抜け
+			} while (deleteIndex < 0 || deleteIndex >= elementCount);
+
+			// 削除する要素数を格納する変数を宣言
+			int deleteCount = 0;
+
+			// 後判定ループ文
+			do {
+				// 個数の入力を促す
+				System.out.print("削除する要素の個数:");
+				// インスタンスから入力された値を受け取る
+				deleteCount = (int) scanInteger.nextDouble();
+				// 要素数より小さい正の数が入力されたらループ抜け
+			} while (deleteCount <= 0 || deleteCount > elementCount - deleteIndex);
+
+			// 配列の要素を削除
+			aryRmvN(integerArray, deleteIndex, deleteCount);
+
 			// 配列の全要素を表示
 			outputArray(integerArray);
 		}

@@ -21,37 +21,43 @@ public class Exercise7_27 {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/08
 	 */
+	// 三つの二次元配列の要素数が等しければ加算を行い、等しくなければ加算を行わないメソッド
 	public static boolean addMatrix(int[][] x, int[][] y, int[][] z) {
-		//返り値を宣言しfalseを代入
-		boolean returnValue = false;
-		//要素数が等しいか判断
-		//行の要素数が等しい場合
-		if (x.length == y.length && x.length == z.length) {
-			//列の要素数が等しい場合
-			if (x[0].length == z[0].length && y[0].length == z[0].length) {
-				//戻り値にtrueを代入
-				returnValue = true;
+		// 加算が可能かどうかを示すフラグ変数
+		boolean canAdd = true;
+
+		// 配列のサイズ（行数）が等しいかどうかを確認
+		if (x.length != y.length || x.length != z.length || y.length != z.length) {
+			// サイズが等しくない場合は、加算不可能なのでフラグを false に設定
+			canAdd = false;
+			// 行数が等しくなければ
+		} else {
+			// 各行の要素数が等しいかどうかを確認
+			for (int i = 0; i < x.length; i++) {
+				//各行の要素数が等しくない場合
+				if (x[i].length != y[i].length || x[i].length != z[i].length || y[i].length != z[i].length) {
+					// 加算不可能なのでフラグを false に設定
+					canAdd = false;
+					// ループを中断
+					break;
+				}
 			}
 		}
-		//加算を行う
-		//要素数が等しい場合
-		if (returnValue == true) {
-			//加算した値を格納する配列を宣言
-			int[][] totalArray = new int[x.length][x[0].length];
+
+		// 加算が可能な場合のみ加算を行う
+		if (canAdd) {
 			//行カウントが要素数と等しくなったらループ抜け
 			for (int i = 0; i < x.length; i++) {
 				//列カウントが要素数と等しくなったらループ抜け
 				for (int j = 0; j < x[i].length; j++) {
-					//加算した値を代入
-					totalArray[i][j] = x[i][j] + y[i][j] + z[i][j];
+					 // 配列 x の各要素に、配列 y と配列 z の対応する要素の和を代入
+					x[i][j] = y[i][j] + z[i][j];
 				}
 			}
-			//受け取った多次元配列の全要素を表示する
-			outputMultipleArray(totalArray);
-
 		}
-		//戻り値を返す
-		return returnValue;
+
+		// 加算の可否を示すフラグの値を返す
+		return canAdd;
 	}
 
 	/*
