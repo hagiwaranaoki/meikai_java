@@ -23,15 +23,20 @@ class Car {
 	private double fuel;
 	// 車の燃費を保持するためのフィールド
 	private double carEconomy;
+	// 車のタンク容量を保持するためのフィールド
+	private double tankCapacity;
+	// 車のナンバーを保持するためのフィールド
+	private String carNumber;
 
 	/*
 	* コンストラクタ名:Car
 	* 概要:Carオブジェクトを作成する
-	* 引数:名前、幅、高さ、長さ、燃料、燃費
+	* 引数:名前、幅、高さ、長さ、燃料、燃費、タンク容量、ナンバー
 	* 作成者:N.Hagiwara
 	* 作成日:2024/04/09
 	*/
-	Car(String name, int width, int height, int length, double fuel, double carEconomy) {
+	Car(String name, int width, int height, int length, double fuel, double carEconomy, double tankCapacity,
+			String carNumber) {
 		// 引数で受け取った名前をフィールドに設定
 		this.name = name;
 		// 引数で受け取った幅をフィールドに設定
@@ -40,10 +45,14 @@ class Car {
 		this.height = height;
 		// 引数で受け取った長さをフィールドに設定
 		this.length = length;
-		 // 引数で受け取った燃料をフィールドに設定
+		// 引数で受け取った燃料をフィールドに設定
 		this.fuel = fuel;
 		// 引数で受け取った燃費をフィールドに設定
 		this.carEconomy = carEconomy;
+		// 引数で受け取ったタンク容量をフィールドに設定
+		this.tankCapacity = tankCapacity;
+		// 引数で受け取ったナンバーをフィールドに設定
+		this.carNumber = carNumber;
 		// 初期位置を(0,0)に設定
 		x = y = 0.0;
 	}
@@ -59,8 +68,8 @@ class Car {
 	double getX() {
 		// 現在のxの値を返す
 		return x;
-	} 
-	
+	}
+
 	/*
 	 * 関数名:getY
 	 * 概要:現在位置Y座標を取得
@@ -73,7 +82,7 @@ class Car {
 		// 現在のyの値を返す
 		return y;
 	}
-	
+
 	/*
 	 * 関数名:getFuel
 	 * 概要:残り燃料を取得
@@ -108,6 +117,10 @@ class Car {
 		System.out.printf("燃料：%f L\n", fuel);
 		// 燃費を表示
 		System.out.printf("燃費：%f km/L\n", carEconomy);
+		// タンク容量を表示
+		System.out.printf("タンク容量：%f L\n", tankCapacity);
+		// ナンバーを表示
+		System.out.printf("ナンバー：%s\n", carNumber);
 	}
 
 	/*
@@ -125,7 +138,7 @@ class Car {
 		double dist = Math.sqrt(dx * dx + dy * dy);
 		// 移動に必要な燃料が残りの燃料より多い場合
 		if ((dist / carEconomy) > fuel) {
-		// 移動ができないと判断する
+			// 移動ができないと判断する
 			isMove = false;
 			// 移動に必要な燃料が残りの燃料より少ない場合
 		} else {
@@ -133,7 +146,7 @@ class Car {
 			fuel -= dist / carEconomy;
 			// x座標を更新
 			x += dx;
-			 // y座標を更新
+			// y座標を更新
 			y += dy;
 		}
 		// 移動が可能かどうかを示すフラグを返す
@@ -144,12 +157,19 @@ class Car {
 	 * 関数名:chargeFuel
 	 * 概要:Carオブジェクトに燃料を給油する
 	 * 引数:補給する量
-	 * 戻り値:移動が可能かどうかを示すmoveFlag
+	 * 戻り値:なし
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/09
 	 */
 	void chargeFuel(double fuelQuantity) {
-		// 給油量を残りの燃料に加える
-		fuel += fuelQuantity;
+		// 給油後の燃料量がタンク容量を超えないように調整
+		if (fuel + fuelQuantity > tankCapacity) {
+			// 燃料をタンク容量と同値にする
+			fuel = tankCapacity;
+			// タンク容量を超えない場合
+		} else {
+			// 給油量を残りの燃料に加える
+			fuel += fuelQuantity;
+		}
 	}
 }

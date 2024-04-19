@@ -123,15 +123,9 @@ public class Human {
 	 * 					3.2と3の部分はそれぞれ与えられたdouble型の引数に応じた値です。
 	 */
 	public static String getFormat(double doubleNumber) {
-		// 小数点以下がない場合
-		if (doubleNumber == (int) doubleNumber) {
-			// 小数点をなくした実数値を返す
-			return String.format("%d", (int) doubleNumber);
-			//小数点がある場合
-		} else {
-			// 小数点がある実数値を返す
-			return String.format("%s", doubleNumber);
-		}
+		// 少数部があるときは小数点を出し、ない時は丸める
+		return doubleNumber == (int) doubleNumber ? String.format("%d", (int) doubleNumber)
+				: String.format("%s", doubleNumber);
 	}
 
 	/*
