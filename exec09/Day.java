@@ -485,7 +485,7 @@ public class Day {
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/11
 	 */
-	public int elapsedDays() {
+	public int elapseDays() {
 		// 経過日数を初期化
 		int elapsedDays = 0;
 		// 年を初期化
@@ -576,31 +576,31 @@ public class Day {
 	}
 
 	/*
-	 * 関数名:remainingDays
+	 * 関数名:remainDays
 	 * 概要:年内の残り日数を計算
 	 * 引数:なし
 	 * 戻り値:年内の残り日数
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/11
 	 */
-	public int remainingDays(Day dayObject) {
+	public int remainDays(Day dayObject) {
 		// 残り日数を初期化
 		int remainingDays = 0;
 		// 閏年であるとき
 		if (isLeap(dayObject.year) == true) {
 			// 366日から経過日数を引く
-			remainingDays = 366 - dayObject.elapsedDays();
+			remainingDays = 366 - dayObject.elapseDays();
 			// 閏年ではないとき
 		} else {
 			// 365日から経過日数を引く
-			remainingDays = 365 - dayObject.elapsedDays();
+			remainingDays = 365 - dayObject.elapseDays();
 		}
 		// 残り日数を返す
 		return remainingDays;
 	}
 
 	/*
-	 * 関数名:set
+	 * 関数名:equalTo
 	 * 概要:他のDayオブジェクトと等しいかを判定する
 	 * 引数:Dayオブジェクト[d]
 	 * 戻り値:等しければtrue,等しくなければfalse
@@ -643,11 +643,11 @@ public class Day {
 		// 比較対象が引数のdayオブジェクト以上の年の場合
 		if (nowVariable.year >= dayValue.year) {
 			// 経過日数が与えたDayオブジェクトのほうが大きいとき
-			if (nowVariable.elapsedDays() > dayValue.elapsedDays()) {
+			if (nowVariable.elapseDays() > dayValue.elapseDays()) {
 				// 進んだ時間にいることを表示
 				comparisonDate = "今日のDayオブジェクトのほうが未来にいます";
 				// 経過日数が与えたDayオブジェクトのほうが小さいとき
-			} else if (nowVariable.elapsedDays() < dayValue.elapsedDays()) {
+			} else if (nowVariable.elapseDays() < dayValue.elapseDays()) {
 				// 過去にいることを表示
 				comparisonDate = "今日のDayオブジェクトのほうが過去にいます";
 				// 経過日数が同じ場合
