@@ -20,10 +20,12 @@ public class Exercise7_17 {
 	 * 作成日:2024/04/08
 	 */
 	public static int linearSearchR(int[] a, int key) {
+		// 探索するときの定数
+		final int SEARCH_KEY = -1;
 		//戻り値を格納する変数を宣言
-		int returnValue = -1;
+		int returnValue = SEARCH_KEY;
 		//カウントが配列の要素数と等しくなったらループ抜け
-		for (int i = a.length - 1; i >= 0; i--) {
+		for (int i = a.length + SEARCH_KEY; i >= 0; i--) {
 			//探索キーが配列の要素と一致した場合
 			if (key == a[i]) {
 				//探索キーの場所を戻り値としてループ抜け
