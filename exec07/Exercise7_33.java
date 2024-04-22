@@ -29,32 +29,6 @@ public class Exercise7_33 {
 	}
 
 	/*
-	 * 関数名:findMax
-	 * 概要:2次元配列の最大値を求める
-	 * 引数:int型の二次元配列a
-	 * 戻り値:最大値
-	 * 作成者:N.Hagiwara
-	 * 作成日:2024/04/09
-	 */
-	public static int findMax(int[][] integerArray) {
-		// 配列の最初の要素を最大値とする
-		int maximumValue = integerArray[0][0];
-		// 配列の全ての行を順に調べる
-		for (int i = 0; i < integerArray.length; i++) {
-			// 各行の全ての要素を順に調べる
-			for (int j = 0; j < integerArray[i].length; j++) {
-				// 現在の要素が現在の最大値より大きい場合
-				if (integerArray[i][j] > maximumValue) {
-					// 最大値の値を変更する
-					maximumValue = integerArray[i][j];
-				}
-			}
-		}
-		// 最大値を返す
-		return maximumValue;
-	}
-
-	/*
 	 * 関数名:printArray
 	 * 概要:二次元配列の全要素の値を出力
 	 * 引数:int型の二次元配列a
