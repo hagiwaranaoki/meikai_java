@@ -174,13 +174,53 @@ public class Exercise7_27 {
 			// 二つ目の配列の中身を表示
 			printMatrix(secondArray);
 			// 三つ目の配列タイトル表示
-			System.out.println("三つ目の配列");
+			System.out.println("三つ目の配列(加算結果)");
 			// 三つの配列の中身を表示
 			printMatrix(thirdArray);
-			// 加算できない場合
+
+			// 加算結果が正しいかどうかを確認
+			System.out.println("加算結果が正しいかどうかを確認します。");
+			// 加算結果が正しいかどうかを判定するフラグ変数
+			boolean additionCorrect = true;
+			// 行数分繰り返し
+			for (int i = 0; i < firstArray.length; i++) {
+				// 列数分繰り返し
+				for (int j = 0; j < firstArray[i].length; j++) {
+					// 加算結果が正しくない場合
+					if (thirdArray[i][j] != firstArray[i][j] + secondArray[i][j]) {
+						// フラグ変数をfalseに設定
+						additionCorrect = false;
+						// 間違いを表示
+						System.out.printf("%d + %d != %d\n", firstArray[i][j], secondArray[i][j],
+								thirdArray[i][j]);
+					} else {
+						// 正解を表示
+						System.out.printf("%d + %d = %d\n", firstArray[i][j], secondArray[i][j],
+								thirdArray[i][j]);
+					}
+				}
+			}
+			// 加算結果が正しい場合
+			if (additionCorrect) {
+				// 加算結果を報告
+				System.out.println("加算結果は正しいです。");
+				// 加算結果が正しくない場合    
+			} else {
+				// 加算結果を報告
+				System.out.println("加算結果が正しくありません。");
+			}
+			// 加算ができない場合    
 		} else {
-			// falseを表示
-			System.out.println("false");
+			// エラーメッセージを表示
+			System.out.println("配列の要素数が等しくないため、加算できません。");
+			// 一つ目の配列タイトル表示
+			System.out.println("一つ目の配列");
+			// 一つ目の配列の中身を表示
+			printMatrix(firstArray);
+			// 二つ目の配列タイトル表示
+			System.out.println("二つ目の配列");
+			// 二つ目の配列の中身を表示
+			printMatrix(secondArray);
 		}
 		//Scannerオブジェクトの受付を終了
 		standardInput.close();
