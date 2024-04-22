@@ -37,8 +37,20 @@ public class Exercise7_33 {
 	 * 作成日:2024/04/09
 	 */
 	public static void printArray(int[][] a) {
+		// 各行の列数の最大値を求める
+		int maxColumns = 0;
+
+		// 配列のすべての行を順に調べる
+		for (int i = 0; i < a.length; i++) {
+			// 現在の行の列数が現在の最大列数より大きい場合
+			if (a[i].length > maxColumns) {
+				// 最大列数を現在の行の列数で更新する
+				maxColumns = a[i].length;
+			}
+		}
+
 		// 各列の最大値を格納する配列を初期化
-		int[] columnMax = new int[a[0].length];
+		int[] columnMax = new int[maxColumns];
 		// 配列のすべての行を順に調べる
 		for (int i = 0; i < a.length; i++) {
 			// 各行の全ての要素を順に調べる
@@ -52,17 +64,17 @@ public class Exercise7_33 {
 		}
 
 		// 各要素の最大桁数を求める
-		int[] maxDigits = new int[a[0].length];
+		int[] maxDigits = new int[maxColumns];
 		// 各列の最大値の桁数を求める
 		for (int i = 0; i < a.length; i++) {
 			// 各行の全ての要素を順に調べる
 			for (int j = 0; j < a[i].length; j++) {
 				// 各要素の桁数を求める
-				int digits = String.valueOf(a[i][j]).length();
+				int digitNumber = String.valueOf(a[i][j]).length();
 				// 現在の桁数が現在の列の最大桁数より大きい場合
-				if (digits > maxDigits[j]) {
+				if (digitNumber > maxDigits[j]) {
 					// 最大桁数の値を変更する
-					maxDigits[j] = digits;
+					maxDigits[j] = digitNumber;
 				}
 			}
 		}

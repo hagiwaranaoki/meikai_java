@@ -87,14 +87,34 @@ public class Exercise7_27 {
 	* 作成日:2024/04/08
 	*/
 	static int[][] inputMatrix(Scanner standardInput) {
+		//行を表す変数を定義
+		int arrayRows = 0;
+		// 列を表す変数を定義
+		int arrayCols = 0;
+
 		// 行数の入力を促す
 		System.out.print("行数を入力してください: ");
 		// 行数を受け付け
-		int arrayRows = standardInput.nextInt();
+		arrayRows = standardInput.nextInt();
+		// 行数が正の整数になるまで再入力を促す
+		while (arrayRows <= 0) {
+			// 正の整数値の入力を促す
+			System.out.print("正の整数を入力してください: ");
+			// 行数の入力を受け付け
+			arrayRows = standardInput.nextInt();
+		}
+
 		// 列数の入力を促す
 		System.out.print("列数を入力してください: ");
 		// 列数を受け付け
-		int arrayCols = standardInput.nextInt();
+		arrayCols = standardInput.nextInt();
+		// 列数が正の整数になるまで再入力を促す
+		while (arrayCols <= 0) {
+			// 正の整数の入力を促す
+			System.out.print("正の整数を入力してください: ");
+			// 列数の入力を受け付け
+			arrayCols = standardInput.nextInt();
+		}
 
 		// 入力した行数と列数の二次元配列を生成
 		int[][] arrayMatrix = new int[arrayRows][arrayCols];
@@ -126,23 +146,23 @@ public class Exercise7_27 {
 	public static void main(String[] args) {
 		// Scannerオブジェクトを生成
 		Scanner standardInput = new Scanner(System.in);
-		
+
 		// 一つ目の配列の入力を促す
 		System.out.println("一つ目の配列を入力してください:");
 		// 一つ目の配列を受付
 		int[][] firstArray = inputMatrix(standardInput);
-		
+
 		// 二つ目の配列の入力を促す
 		System.out.println("二つ目の配列を入力してください:");
 		// 二つ目の配列の入力を促す
 		int[][] secondArray = inputMatrix(standardInput);
-		
+
 		// 三つ目の二次元配列を生成
 		int[][] thirdArray = new int[firstArray.length][firstArray[0].length];
-		
+
 		// 加算できるかのフラグ変数
 		boolean plusFlag = addMatrix(firstArray, secondArray, thirdArray);
-		
+
 		// 加算ができる場合
 		if (plusFlag == true) {
 			// 一つ目の配列タイトル表示

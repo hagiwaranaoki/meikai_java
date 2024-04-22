@@ -138,13 +138,6 @@ public class Exercise8_2 {
 		System.out.print("ナンバー：");
 		// ナンバーを受け付け
 		String carNumber = standardInput.next();
-		// ナンバーが空文字または空白の場合
-		while (carNumber.isEmpty() || carNumber.trim().isEmpty()) {
-			// 正しいナンバーの入力を促す
-			System.out.print("ナンバーを正しく入力してください：");
-			// ナンバーを受け付け
-			carNumber = standardInput.next();
-		}
 
 		// Carオブジェクトを生成
 		Car myCar = new Car(carName, carWidth, carHeight, carLength, carFuel, carEconomy, carTankCapacity, carNumber);
