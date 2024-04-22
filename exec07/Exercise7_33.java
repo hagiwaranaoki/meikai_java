@@ -63,20 +63,46 @@ public class Exercise7_33 {
 	 * 作成日:2024/04/09
 	 */
 	public static void printArray(int[][] a) {
-		// 配列の最大値を求め、表示のフォーマットを決定するための基準値を決める
-		int temporaryValue = findMax(a);
-		// 表示のフォーマットを決定するための変数で幅を調整する
-		int formatNumber = String.valueOf(temporaryValue).length();
-		// 表示のフォーマットを設定
-		String formatSetting = "%-" + formatNumber + "d ";
-		// 配列の全ての行を順に調べる
+		// 各列の最大値を格納する配列を初期化
+		int[] columnMax = new int[a[0].length];
+		// 配列のすべての行を順に調べる
 		for (int i = 0; i < a.length; i++) {
 			// 各行の全ての要素を順に調べる
 			for (int j = 0; j < a[i].length; j++) {
-				// 各要素を指定したフォーマットで出力し、列の数値の先頭がそろうようにスペースを空ける
+				// 現在の要素が現在の列の最大値より大きい場合
+				if (a[i][j] > columnMax[j]) {
+					// 最大値の値を変更する
+					columnMax[j] = a[i][j];
+				}
+			}
+		}
+
+		// 各要素の最大桁数を求める
+		int[] maxDigits = new int[a[0].length];
+		// 各列の最大値の桁数を求める
+		for (int i = 0; i < a.length; i++) {
+			// 各行の全ての要素を順に調べる
+			for (int j = 0; j < a[i].length; j++) {
+				// 各要素の桁数を求める
+				int digits = String.valueOf(a[i][j]).length();
+				// 現在の桁数が現在の列の最大桁数より大きい場合
+				if (digits > maxDigits[j]) {
+					// 最大桁数の値を変更する
+					maxDigits[j] = digits;
+				}
+			}
+		}
+
+		// 各列の最大桁数に合わせて出力する
+		for (int i = 0; i < a.length; i++) {
+			// 各行の全ての要素を順に調べる
+			for (int j = 0; j < a[i].length; j++) {
+				// 各要素の桁数に合わせて出力する
+				String formatSetting = "%-" + maxDigits[j] + "d ";
+				// 各要素を出力する
 				System.out.printf(formatSetting, a[i][j]);
 			}
-			// 配列の各行を改行
+			// 改行する
 			System.out.println();
 		}
 	}
@@ -113,7 +139,7 @@ public class Exercise7_33 {
 		int[] integerArray = new int[integerNumber];
 		// ユーザーに1次元配列の要素の入力を促す
 		System.out.println("1次元配列の要素を入力してください:");
-		//要素数分繰り返し
+		// 要素数分繰り返し
 		for (int i = 0; i < integerNumber; i++) {
 			// ユーザーから入力された各要素を配列に格納
 			integerArray[i] = standardInput.nextInt();
