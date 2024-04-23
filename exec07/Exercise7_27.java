@@ -3,72 +3,104 @@ package exec07;
 import java.util.Scanner;
 
 /*
-* クラス名:Exercise7_27
-* 概要:3つの配列の要素数が等しければ加算を行いtrueを返し
-* そうでなければ加算を行わずfalseを返すプログラム
-* 作成者:N.Hagiwara
-* 作成日:2024/04/08
-*/
+ * クラス名:Exercise7_27
+ * 概要:3つの配列の要素数が等しければ加算を行いtrueを返し
+ * そうでなければ加算を行わずfalseを返すプログラム
+ * 作成者:N.Hagiwara
+ * 作成日:2024/04/08
+ */
 
 public class Exercise7_27 {
 
 	/*
-	* 関数名:addMatrix
-	* 概要:３つの配列の要素数が等しければ加算を行いtrueを返す
-	* 等しくなければ加算を行わずにfalseを返す
-	* 引数:受け取った配列を格納するint型配列[x[][]],[y[][]],[z[][]]
-	* 戻り値:false/trueを返すboolean型変数[returnValue]
-	* 作成者:N.Hagiwara
-	* 作成日:2024/04/08
-	*/
+	 * 関数名:addMatrix
+	 * 概要:３つの配列の要素数が等しければ加算を行いtrueを返す
+	 * 等しくなければ加算を行わずにfalseを返す
+	 * また、加算結果が正しいかどうかも判定し、結果をメッセージで出力する
+	 * 引数:受け取った配列を格納するint型配列[x[][]],[y[][]],[z[][]]
+	 * 戻り値:加算の成功/失敗を示すboolean型の値
+	 * 作成者:N.Hagiwara
+	 * 作成日:2024/04/08
+	 */
 	static boolean addMatrix(int[][] x, int[][] y, int[][] z) {
-		// フラグ変数の初期化
-		boolean isFlag = true;
-
+		// 配列のサイズが一致しない場合のフラグ
+		boolean mismatchedSizes = false;
+		// 加算結果が正しいかどうかを確認するフラグ変数を初期化
+		boolean additionCorrect = true;
 		// 配列の行数が等しいか確認
 		if ((x.length == y.length) && (x.length == z.length)) {
 			// 各行の列数が等しいか確認
 			for (int i = 0; i < x.length; i++) {
 				// 列数が正しくない場合
 				if (!((x[i].length == y[i].length) && (z[i].length == y[i].length))) {
-					// フラグ変数をfalseに変える
-					isFlag = false;
+					// フラグをtrueに設定
+					mismatchedSizes = true;
+					// ループを抜ける
+					break;
 				}
 			}
 			// 行数が等しくない場合
 		} else {
-			// フラグ変数をfalseにする
-			isFlag = false;
+			// フラグをtrueに設定
+			mismatchedSizes = true;
 		}
 
-		// 配列の要素数が等しい場合、加算を行う
-		if (isFlag == true) {
-			// 配列xの行数数分繰り返す
+		// 配列のサイズが一致する場合
+		if (!mismatchedSizes) {
+			// 配列の要素数が等しい場合、加算を行う
 			for (int i = 0; i < x.length; i++) {
-				// 配列xの列数分繰り返す
+				// 列数分繰り返す
 				for (int j = 0; j < x[i].length; j++) {
 					// 配列zをxとyの配列を加算した値に変更
 					z[i][j] = x[i][j] + y[i][j];
+					// 加算結果が正しくない場合
+					if (z[i][j] != x[i][j] + y[i][j]) {
+						// フラグ変数をfalseに設定
+						additionCorrect = false;
+						// ループを抜ける
+						break;
+					}
+				}
+				// 加算結果が正しくない場合
+				if (!additionCorrect) {
+					// ループを抜ける
+					break;
 				}
 			}
 		}
 
-		// フラグの値を返す
-		return isFlag;
+		// 配列のサイズが一致しない場合
+		if (mismatchedSizes) {
+			// エラーメッセージを出力
+			System.out.println("配列の要素数が等しくないため、加算できません。");
+		}
+
+		// 加算結果が正しい場合
+		if (additionCorrect && !mismatchedSizes) {
+			// 加算結果が正しいことを示すメッセージを出力
+			System.out.println("加算結果は正しいです。");
+			// 正しくない場合
+		} else if (!mismatchedSizes) {
+			// 加算結果が正しくないことを示すメッセージを出力
+			System.out.println("加算結果が正しくありません。");
+		}
+
+		// 配列のサイズが一致し、加算結果が正しい場合はtrue、そうでない場合はfalseを返す
+		return !mismatchedSizes && additionCorrect;
 	}
 
 	/*
-	* 関数名:addMatrix
-	* 概要:二次元配列を出力する
-	* 引数:二次元配列m
-	* 戻り値:なし
-	* 作成者:N.Hagiwara
-	* 作成日:2024/04/08
-	*/
+	 * 関数名:printMatrix
+	 * 概要:二次元配列を出力する
+	 * 引数:二次元配列m
+	 * 戻り値:なし
+	 * 作成者:N.Hagiwara
+	 * 作成日:2024/04/08
+	 */
 	static void printMatrix(int[][] m) {
-		// h熾烈の行数分繰り返す
+		// 行数分繰り返す
 		for (int i = 0; i < m.length; i++) {
-			// 配列の列数分繰り返す
+			// 列数分繰り返す
 			for (int j = 0; j < m[i].length; j++) {
 				// 配列の要素を出力
 				System.out.print(m[i][j] + " ");
@@ -79,21 +111,21 @@ public class Exercise7_27 {
 	}
 
 	/*
-	* 関数名:inputMatrix
-	* 概要:コンソールから二次元配列の要素数と要素を入力する
-	* 引数:Scannerオブジェクト
-	* 戻り値:二次元配列
-	* 作成者:N.Hagiwara
-	* 作成日:2024/04/08
-	*/
-	static int[][] inputMatrix(Scanner standardInput) {
-		//行を表す変数を定義
+	 * 関数名:inputMatrix
+	 * 概要:コンソールから二次元配列の要素数と要素を入力する
+	 * 引数:Scannerオブジェクト、配列の番号、配列の名前
+	 * 戻り値:二次元配列
+	 * 作成者:N.Hagiwara
+	 * 作成日:2024/04/08
+	 */
+	static int[][] inputMatrix(Scanner standardInput, int matrixNumber, String matrixName) {
+		// 行を表す変数を定義
 		int arrayRows = 0;
 		// 列を表す変数を定義
 		int arrayCols = 0;
 
 		// 行数の入力を促す
-		System.out.print("行数を入力してください: ");
+		System.out.print(matrixNumber + "つ目の配列の行数を入力してください: ");
 		// 行数を受け付け
 		arrayRows = standardInput.nextInt();
 		// 行数が正の整数になるまで再入力を促す
@@ -105,7 +137,7 @@ public class Exercise7_27 {
 		}
 
 		// 列数の入力を促す
-		System.out.print("列数を入力してください: ");
+		System.out.print(matrixNumber + "つ目の配列の列数を入力してください: ");
 		// 列数を受け付け
 		arrayCols = standardInput.nextInt();
 		// 列数が正の整数になるまで再入力を促す
@@ -120,11 +152,13 @@ public class Exercise7_27 {
 		int[][] arrayMatrix = new int[arrayRows][arrayCols];
 
 		// 配列の要素の入力を促す
-		System.out.println("配列の要素を入力してください:");
+		System.out.println(matrixNumber + "つ目の配列の要素を入力してください:");
 		// 行数分繰り返す
 		for (int i = 0; i < arrayRows; i++) {
 			// 列数分繰り返す
 			for (int j = 0; j < arrayCols; j++) {
+				// 配列の要素の入力を促す
+				System.out.print(matrixName + "[" + i + "][" + j + "] = ");
 				// 配列の要素を受け付け
 				arrayMatrix[i][j] = standardInput.nextInt();
 			}
@@ -135,67 +169,32 @@ public class Exercise7_27 {
 	}
 
 	/*
-	   * 関数名:isAdditionCorrect
-	   * 概要:三つの配列の加算結果が正しいかどうかを判定する
-	   * 引数:受け取った配列を格納するint型配列[x[][]],[y[][]],[z[][]]
-	   * 戻り値:加算結果の正誤を返すboolean型変数[additionCorrect]
-	   * 作成者:N.Hagiwara
-	   * 作成日:2024/04/23
-	   */
-	static boolean isAdditionCorrect(int[][] x, int[][] y, int[][] z) {
-		// 加算結果が正しいかどうかを判定するフラグ変数
-		boolean additionCorrect = true;
-
-		// 行数分繰り返し
-		for (int i = 0; i < x.length; i++) {
-			// 列数分繰り返し
-			for (int j = 0; j < x[i].length; j++) {
-				// 加算結果が正しくない場合
-				if (z[i][j] != x[i][j] + y[i][j]) {
-					// フラグ変数をfalseに設定
-					additionCorrect = false;
-				}
-			}
-		}
-
-		// 加算結果の正誤を返す
-		return additionCorrect;
-	}
-
-	/*
-	* 関数名:main
-	* 概要:3つの配列の要素数が等しければ加算を行いtrueを返し
-	* そうでなければ加算を行わずfalseを返すプログラム
-	* 引数:なし
-	* 戻り値:なし
-	* 作成者:N.Hagiwara
-	* 作成日:2024/04/08
-	*/
+	 * 関数名:main
+	 * 概要:3つの配列の要素数が等しければ加算を行いtrueを返し
+	 * そうでなければ加算を行わずfalseを返すプログラム
+	 * 引数:なし
+	 * 戻り値:なし
+	 * 作成者:N.Hagiwara
+	 * 作成日:2024/04/08
+	 */
 	public static void main(String[] args) {
 		// Scannerオブジェクトを生成
 		Scanner standardInput = new Scanner(System.in);
 
-		// 一つ目の配列の入力を促す
-		System.out.println("一つ目の配列を入力してください:");
 		// 一つ目の配列を受付
-		int[][] firstArray = inputMatrix(standardInput);
+		int[][] firstArray = inputMatrix(standardInput, 1, "firstArray");
 
-		// 二つ目の配列の入力を促す
-		System.out.println("二つ目の配列を入力してください:");
-		// 二つ目の配列の入力を促す
-		int[][] secondArray = inputMatrix(standardInput);
+		// 二つ目の配列を受付
+		int[][] secondArray = inputMatrix(standardInput, 2, "secondArray");
 
 		// 三つ目の二次元配列を生成
 		int[][] thirdArray = new int[firstArray.length][firstArray[0].length];
 
-		// 加算できるかのフラグ変数
-		boolean canAdd = addMatrix(firstArray, secondArray, thirdArray);
+		// 加算を行い、結果を取得
+		boolean additionSuccessful = addMatrix(firstArray, secondArray, thirdArray);
 
-		// addMatrixメソッドの戻り値を表示
-		System.out.println("addMatrix: " + canAdd);
-
-		// 加算ができる場合
-		if (canAdd) {
+		// 加算が成功した場合
+		if (additionSuccessful) {
 			// 一つ目の配列タイトル表示
 			System.out.println("一つ目の配列");
 			// 一つ目の配列の中身を表示
@@ -208,24 +207,8 @@ public class Exercise7_27 {
 			System.out.println("三つ目の配列(加算結果)");
 			// 三つの配列の中身を表示
 			printMatrix(thirdArray);
-
-			// 加算結果が正しいかどうかを確認
-			System.out.println("加算結果が正しいかどうかを確認します。");
-			// 加算結果が正しいかどうかを判定するフラグ変数
-			boolean additionCorrect = isAdditionCorrect(firstArray, secondArray, thirdArray);
-			// 加算結果が正しい場合
-			if (additionCorrect) {
-				// 加算結果を報告
-				System.out.println("加算結果は正しいです。");
-				// 加算結果が正しくない場合
-			} else {
-				// 加算結果を報告
-				System.out.println("加算結果が正しくありません。");
-			}
-			// 加算ができない場合
+			// 成功しなかった場合
 		} else {
-			// エラーメッセージを表示
-			System.out.println("配列の要素数が等しくないため、加算できません。");
 			// 一つ目の配列タイトル表示
 			System.out.println("一つ目の配列");
 			// 一つ目の配列の中身を表示
@@ -235,6 +218,7 @@ public class Exercise7_27 {
 			// 二つ目の配列の中身を表示
 			printMatrix(secondArray);
 		}
+
 		// Scannerオブジェクトの受付を終了
 		standardInput.close();
 	}
