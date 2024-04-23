@@ -23,43 +23,48 @@ public class Exercise7_27 {
 	 * 作成日:2024/04/08
 	 */
 	static boolean addMatrix(int[][] x, int[][] y, int[][] z) {
-		// 配列のサイズが一致しない場合のフラグ
-		boolean mismatchedSizes = false;
-		// 加算結果が正しいかどうかを確認するフラグ変数を初期化
+		// 配列の要素数を計算
+		int xElements = x.length * x[0].length;
+		// 配列の要素数を計算
+		int yElements = y.length * y[0].length;
+		// 配列の要素数を計算
+		int zElements = z.length * z[0].length;
+
+		// 配列の要素数が等しいかどうかを示すフラグ変数
+		boolean equalElements = true;
+		// 加算結果が正しいかどうかを示すフラグ変数
 		boolean additionCorrect = true;
-		// 配列の行数が等しいか確認
-		if ((x.length == y.length) && (x.length == z.length)) {
-			// 各行の列数が等しいか確認
+
+		// 配列の要素数が等しいか確認
+		if (xElements == yElements && xElements == zElements) {
+			// 配列の要素数が等しい場合、加算を行う
+			int arrayIndex = 0;
+			// 配列xの行数分繰り返す
 			for (int i = 0; i < x.length; i++) {
-				// 列数が正しくない場合
-				if (!((x[i].length == y[i].length) && (z[i].length == y[i].length))) {
-					// フラグをtrueに設定
-					mismatchedSizes = true;
-					// ループを抜ける
-					break;
+				// 配列xの列数分繰り返す
+				for (int j = 0; j < x[i].length; j++) {
+					// 配列zの要素を、配列xとyの対応する要素の和に設定
+					z[arrayIndex / z[0].length][arrayIndex % z[0].length] = x[i][j] + y[arrayIndex / y[0].length][arrayIndex % y[0].length];
+					// インデックスを増加
+					arrayIndex++;
 				}
 			}
-			// 行数が等しくない場合
-		} else {
-			// フラグをtrueに設定
-			mismatchedSizes = true;
-		}
 
-		// 配列のサイズが一致する場合
-		if (!mismatchedSizes) {
-			// 配列の要素数が等しい場合、加算を行う
+			// インデックスを初期化
+			arrayIndex = 0;
+			// 配列xの行数分繰り返す
 			for (int i = 0; i < x.length; i++) {
-				// 列数分繰り返す
+				// 配列xの列数分繰り返す
 				for (int j = 0; j < x[i].length; j++) {
-					// 配列zをxとyの配列を加算した値に変更
-					z[i][j] = x[i][j] + y[i][j];
-					// 加算結果が正しくない場合
-					if (z[i][j] != x[i][j] + y[i][j]) {
-						// フラグ変数をfalseに設定
+					// 配列zの要素が、配列xとyの対応する要素の和と等しくない場合
+					if (z[arrayIndex / z[0].length][arrayIndex % z[0].length] != x[i][j] + y[arrayIndex / y[0].length][arrayIndex % y[0].length]) {
+						// 加算結果が正しくないことを示すフラグ変数をfalseに設定
 						additionCorrect = false;
 						// ループを抜ける
 						break;
 					}
+					// インデックスを増加
+					arrayIndex++;
 				}
 				// 加算結果が正しくない場合
 				if (!additionCorrect) {
@@ -67,26 +72,29 @@ public class Exercise7_27 {
 					break;
 				}
 			}
+			// 要素数が等しくない場合
+		} else {
+			// 配列の要素数が等しくないことを示すフラグ変数をfalseに設定
+			equalElements = false;
 		}
 
-		// 配列のサイズが一致しない場合
-		if (mismatchedSizes) {
+		// 配列の要素数が等しくない場合
+		if (!equalElements) {
 			// エラーメッセージを出力
 			System.out.println("配列の要素数が等しくないため、加算できません。");
 		}
 
 		// 加算結果が正しい場合
-		if (additionCorrect && !mismatchedSizes) {
+		if (additionCorrect && equalElements) {
 			// 加算結果が正しいことを示すメッセージを出力
 			System.out.println("加算結果は正しいです。");
-			// 正しくない場合
-		} else if (!mismatchedSizes) {
+		} else if (equalElements) {
 			// 加算結果が正しくないことを示すメッセージを出力
 			System.out.println("加算結果が正しくありません。");
 		}
 
-		// 配列のサイズが一致し、加算結果が正しい場合はtrue、そうでない場合はfalseを返す
-		return !mismatchedSizes && additionCorrect;
+		// 配列の要素数が等しく、加算結果が正しい場合はtrue、そうでない場合はfalseを返す
+		return equalElements && additionCorrect;
 	}
 
 	/*
@@ -190,8 +198,16 @@ public class Exercise7_27 {
 		// 三つ目の二次元配列を生成
 		int[][] thirdArray = new int[firstArray.length][firstArray[0].length];
 
+		// 一つ目の配列の要素数を表示
+		System.out.println("一つ目の配列の要素数: " + (firstArray.length * firstArray[0].length));
+		// 二つ目の配列の要素数を表示
+		System.out.println("二つ目の配列の要素数: " + (secondArray.length * secondArray[0].length));
+
 		// 加算を行い、結果を取得
 		boolean additionSuccessful = addMatrix(firstArray, secondArray, thirdArray);
+
+		// addMatrixメソッドの戻り値を表示
+		System.out.println("addMatrix: " + additionSuccessful);
 
 		// 加算が成功した場合
 		if (additionSuccessful) {
@@ -207,7 +223,7 @@ public class Exercise7_27 {
 			System.out.println("三つ目の配列(加算結果)");
 			// 三つの配列の中身を表示
 			printMatrix(thirdArray);
-			// 成功しなかった場合
+			//加算が成功しなかった場合
 		} else {
 			// 一つ目の配列タイトル表示
 			System.out.println("一つ目の配列");
