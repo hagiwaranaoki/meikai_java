@@ -135,6 +135,34 @@ public class Exercise7_27 {
 	}
 
 	/*
+	   * 関数名:isAdditionCorrect
+	   * 概要:三つの配列の加算結果が正しいかどうかを判定する
+	   * 引数:受け取った配列を格納するint型配列[x[][]],[y[][]],[z[][]]
+	   * 戻り値:加算結果の正誤を返すboolean型変数[additionCorrect]
+	   * 作成者:N.Hagiwara
+	   * 作成日:2024/04/23
+	   */
+	static boolean isAdditionCorrect(int[][] x, int[][] y, int[][] z) {
+		// 加算結果が正しいかどうかを判定するフラグ変数
+		boolean additionCorrect = true;
+
+		// 行数分繰り返し
+		for (int i = 0; i < x.length; i++) {
+			// 列数分繰り返し
+			for (int j = 0; j < x[i].length; j++) {
+				// 加算結果が正しくない場合
+				if (z[i][j] != x[i][j] + y[i][j]) {
+					// フラグ変数をfalseに設定
+					additionCorrect = false;
+				}
+			}
+		}
+
+		// 加算結果の正誤を返す
+		return additionCorrect;
+	}
+
+	/*
 	* 関数名:main
 	* 概要:3つの配列の要素数が等しければ加算を行いtrueを返し
 	* そうでなければ加算を行わずfalseを返すプログラム
@@ -161,10 +189,13 @@ public class Exercise7_27 {
 		int[][] thirdArray = new int[firstArray.length][firstArray[0].length];
 
 		// 加算できるかのフラグ変数
-		boolean plusFlag = addMatrix(firstArray, secondArray, thirdArray);
+		boolean canAdd = addMatrix(firstArray, secondArray, thirdArray);
+
+		// addMatrixメソッドの戻り値を表示
+		System.out.println("addMatrix: " + canAdd);
 
 		// 加算ができる場合
-		if (plusFlag == true) {
+		if (canAdd) {
 			// 一つ目の配列タイトル表示
 			System.out.println("一つ目の配列");
 			// 一つ目の配列の中身を表示
@@ -181,35 +212,17 @@ public class Exercise7_27 {
 			// 加算結果が正しいかどうかを確認
 			System.out.println("加算結果が正しいかどうかを確認します。");
 			// 加算結果が正しいかどうかを判定するフラグ変数
-			boolean additionCorrect = true;
-			// 行数分繰り返し
-			for (int i = 0; i < firstArray.length; i++) {
-				// 列数分繰り返し
-				for (int j = 0; j < firstArray[i].length; j++) {
-					// 加算結果が正しくない場合
-					if (thirdArray[i][j] != firstArray[i][j] + secondArray[i][j]) {
-						// フラグ変数をfalseに設定
-						additionCorrect = false;
-						// 間違いを表示
-						System.out.printf("%d + %d != %d\n", firstArray[i][j], secondArray[i][j],
-								thirdArray[i][j]);
-					} else {
-						// 正解を表示
-						System.out.printf("%d + %d = %d\n", firstArray[i][j], secondArray[i][j],
-								thirdArray[i][j]);
-					}
-				}
-			}
+			boolean additionCorrect = isAdditionCorrect(firstArray, secondArray, thirdArray);
 			// 加算結果が正しい場合
 			if (additionCorrect) {
 				// 加算結果を報告
 				System.out.println("加算結果は正しいです。");
-				// 加算結果が正しくない場合    
+				// 加算結果が正しくない場合
 			} else {
 				// 加算結果を報告
 				System.out.println("加算結果が正しくありません。");
 			}
-			// 加算ができない場合    
+			// 加算ができない場合
 		} else {
 			// エラーメッセージを表示
 			System.out.println("配列の要素数が等しくないため、加算できません。");
@@ -222,7 +235,7 @@ public class Exercise7_27 {
 			// 二つ目の配列の中身を表示
 			printMatrix(secondArray);
 		}
-		//Scannerオブジェクトの受付を終了
+		// Scannerオブジェクトの受付を終了
 		standardInput.close();
 	}
 }
