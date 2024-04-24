@@ -149,40 +149,24 @@ public class Day {
 				|| month == EIGHTH_NUMBER || month == TENTH_NUMBER || month == TWELFTH_NUMBER)
 				&& date > THIRTY_FIRST_NUMBER) {
 			// 日を31に設定
-			date = THIRTY_FIRST_NUMBER;
-			// 日を31に設定
 			this.date = THIRTY_FIRST_NUMBER;
 			// 4月か6月か9月か11月に日にちが30日より上を受け取った場合
 		} else if ((month == FOUR_NUMBER || month == SIXTH_NUMBER || month == NINTH_NUMBER || month == ELEVENTH_NUMBER)
 				&& date > THIRTIETH_NUMBER) {
 			// 日にちを30日に設定
-			date = THIRTIETH_NUMBER;
-			// 日にちを30日に設定
 			this.date = THIRTIETH_NUMBER;
 			// うるう年の2月に日にちが29より上の値を受け取った場合
 		} else if (month == SECOND_NUMBER && isLeap(year) == true && date > TWENTY_NINTH_NUMBER) {
-			// 日を29に設定
-			date = TWENTY_NINTH_NUMBER;
 			// 日を29に設定
 			this.date = TWENTY_NINTH_NUMBER;
 			// うるう年ではない2月に日にちが28より上の値を受け取った場合
 		} else if (month == SECOND_NUMBER && isLeap(year) == false && date > TWENTY_EIGHTH_NUMBER) {
 			// 日を28に設定
-			date = TWENTY_EIGHTH_NUMBER;
-			// 日を28に設定
 			this.date = TWENTY_EIGHTH_NUMBER;
 			// 日が1未満の場合
 		} else if (date < FIRST_NUMBER) {
 			// 日を1に設定
-			date = FIRST_NUMBER;
-			// 日を1に設定
 			this.date = FIRST_NUMBER;
-			// 月が12より上または1より下の時
-		} else if (month > TWELFTH_NUMBER || month < FIRST_NUMBER) {
-			// 日を31に設定
-			date = THIRTY_FIRST_NUMBER;
-			// 日を1に設定
-			this.date = THIRTY_FIRST_NUMBER;
 			// それ以外の場合
 		} else {
 			// 日を引数の日に設定
