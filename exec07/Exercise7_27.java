@@ -11,16 +11,15 @@ import java.util.Scanner;
  */
 
 public class Exercise7_27 {
-
 	/*
-	 * 関数名:addMatrix
-	 * 概要:３つの配列の要素数が等しければ加算を行いtrueを返す
-	 * 等しくなければ加算を行わずにfalseを返す
-	 * 引数:受け取った配列を格納するint型配列[x[][]],[y[][]],[z[][]]
-	 * 戻り値:加算の成功/失敗を示すboolean型の値
-	 * 作成者:N.Hagiwara
-	 * 作成日:2024/04/08
-	 */
+	* 関数名:addMatrix
+	* 概要:３つの配列の要素数が等しければ加算を行いtrueを返す
+	* 等しくなければ加算を行わずにfalseを返す
+	* 引数:受け取った配列を格納するint型配列[x[][]],[y[][]],[z[][]]
+	* 戻り値:加算の成功/失敗を示すboolean型の値
+	* 作成者:N.Hagiwara
+	* 作成日:2024/04/08
+	*/
 	static boolean addMatrix(int[][] x, int[][] y, int[][] z) {
 		// 加算が可能かどうかを示すフラグ
 		boolean canAdd = true;
@@ -105,75 +104,82 @@ public class Exercise7_27 {
 		System.out.print("行列aの行数を入力してください: ");
 		// 行列aの行数を入力
 		int firstRows = standardInput.nextInt();
+		// 行列aの行数が正の整数かどうかを確認
+		while (firstRows <= 0) {
+			// 正の整数でない場合はメッセージを表示し、再入力を促す
+			System.out.print("行数は正の整数で入力してください。再入力してください: ");
+			// 行列aの行数を再入力
+			firstRows = standardInput.nextInt();
+		}
+
 		// 行列aの列数を入力するようメッセージを表示
 		System.out.print("行列aの列数を入力してください: ");
 		// 行列aの列数を入力
 		int firstCols = standardInput.nextInt();
-
-		// 入力が有効かどうかを示すフラグ
-		boolean validInput = true;
-
-		// 行列aの行数と列数が正の整数かどうかを確認
-		if (firstRows <= 0 || firstCols <= 0) {
-			// 正の整数でない場合はメッセージを表示
-			System.out.println("行数と列数は正の整数で入力してください。");
-			// 入力が無効であることを示すためフラグをfalseに設定
-			validInput = false;
+		// 行列aの列数が正の整数かどうかを確認
+		while (firstCols <= 0) {
+			// 正の整数でない場合はメッセージを表示し、再入力を促す
+			System.out.print("列数は正の整数で入力してください。再入力してください: ");
+			// 行列aの列数を再入力
+			firstCols = standardInput.nextInt();
 		}
 
-		// 行列aを格納する変数を宣言
-		int[][] firstArray = null;
-		// 入力が有効な場合
-		if (validInput) {
-			// 行列aの要素を入力するようメッセージを表示
-			System.out.println("行列aの要素を入力してください:");
-			// 行列aの要素を入力
-			firstArray = inputMatrix(standardInput, firstRows, firstCols);
-		}
+		// 行列aの要素を入力するようメッセージを表示
+		System.out.println("行列aの要素を入力してください:");
+		// 行列aの要素を入力
+		int[][] firstArray = inputMatrix(standardInput, firstRows, firstCols);
 
 		// 行列bの行数を入力するようメッセージを表示
 		System.out.print("行列bの行数を入力してください: ");
 		// 行列bの行数を入力
 		int secondRows = standardInput.nextInt();
+		// 行列bの行数が正の整数かどうかを確認
+		while (secondRows <= 0) {
+			// 正の整数でない場合はメッセージを表示し、再入力を促す
+			System.out.print("行数は正の整数で入力してください。再入力してください: ");
+			// 行列bの行数を再入力
+			secondRows = standardInput.nextInt();
+		}
+
 		// 行列bの列数を入力するようメッセージを表示
 		System.out.print("行列bの列数を入力してください: ");
 		// 行列bの列数を入力
 		int secondCols = standardInput.nextInt();
-
-		// 行列bの行数と列数が正の整数かどうかを確認
-		if (secondRows <= 0 || secondCols <= 0) {
-			// 正の整数でない場合はメッセージを表示
-			System.out.println("行数と列数は正の整数で入力してください。");
-			// 入力が無効であることを示すためフラグをfalseに設定
-			validInput = false;
+		// 行列bの列数が正の整数かどうかを確認
+		while (secondCols <= 0) {
+			// 正の整数でない場合はメッセージを表示し、再入力を促す
+			System.out.print("列数は正の整数で入力してください。再入力してください: ");
+			// 行列bの列数を再入力
+			secondCols = standardInput.nextInt();
 		}
 
-		// 行列bを格納する変数を宣言
-		int[][] secondArray = null;
-		// 入力が有効な場合
-		if (validInput) {
-			// 行列bの要素を入力するようメッセージを表示
-			System.out.println("行列bの要素を入力してください:");
-			// 行列bの要素を入力
-			secondArray = inputMatrix(standardInput, secondRows, secondCols);
-		}
+		// 行列bの要素を入力するようメッセージを表示
+		System.out.println("行列bの要素を入力してください:");
+		// 行列bの要素を入力
+		int[][] secondArray = inputMatrix(standardInput, secondRows, secondCols);
 
-		// 入力が有効な場合
-		if (validInput) {
-			// 加算結果を格納する行列cを宣言
-			int[][] thirdArray = new int[firstRows][firstCols];
+		// 行列aの文字列を出力
+		System.out.println("行列a");
+		// 行列aを出力
+		printMatrix(firstArray);
+		// 行列bの文字列を出力
+		System.out.println("行列b");
+		// 行列bを出力
+		printMatrix(secondArray);
+
+		// 行列cの行数を行列aと同じに設定
+		int thirdRows = firstRows;
+		// 行列cの列数を行列aと同じに設定
+		int thirdCols = firstCols;
+		
+		// 加算結果を格納する行列cを宣言
+		int[][] thirdArray = new int[thirdRows][thirdCols];
+		// 行列a、行列b、行列cのサイズが等しい場合
+		if (firstRows == secondRows && firstCols == secondCols &&
+				firstRows == thirdRows && firstCols == thirdCols) {
 
 			// 行列の加算を行う
 			boolean addResult = addMatrix(firstArray, secondArray, thirdArray);
-
-			// 行列aの文字列を出力
-			System.out.println("行列a");
-			// 行列aを出力
-			printMatrix(firstArray);
-			// 行列bの文字列を出力
-			System.out.println("行列b");
-			// 行列bを出力
-			printMatrix(secondArray);
 
 			// 行列の加算が成功した場合
 			if (addResult) {
@@ -183,11 +189,15 @@ public class Exercise7_27 {
 				printMatrix(thirdArray);
 				// 加算が成功したことを示すメッセージを表示
 				System.out.println("行列の加算が成功しました。");
-				// 行列の加算が成功しなかった場合
-			} else {
-				// 加算ができない場合はメッセージを表示
-				System.out.println("行数と列数の両方が一致する場合でないと行列の加算は行うことができません。");
 			}
+			// 成功しなかった場合
+		} else {
+			// 行列cの文字列を出力
+			System.out.println("行列c");
+			// 行列bを出力
+			printMatrix(thirdArray);
+			// 加算ができない場合はメッセージを表示
+			System.out.println("行列a、行列b、行列cのサイズが異なるため、行列の加算を行うことができません。");
 		}
 	}
 }
