@@ -366,7 +366,7 @@ public class Exercise10_4 {
 	 * 作成者:Assistant
 	 * 作成日:2024/04/24
 	 */
-	private static void testDayComparison() {
+	public static void testDayComparison() {
 		// 日付の比較テストをするか尋ねる
 		System.out.print("日付の比較テストをする？1=yes,それ以外=no:");
 		// リトライ変数を受け付け
