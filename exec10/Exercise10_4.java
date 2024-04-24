@@ -3,9 +3,6 @@ package exec10;
 // Scannerクラスをインポート
 import java.util.Scanner;
 
-// dayクラスをインポート
-import exec09.Day;
-
 /*
  * クラス名:Exercise10_4
  * 概要:新Dayクラスの確認
