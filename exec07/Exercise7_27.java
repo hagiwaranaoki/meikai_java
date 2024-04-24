@@ -164,31 +164,29 @@ public class Exercise7_27 {
 			int[][] thirdArray = new int[firstRows][firstCols];
 
 			// 行列の加算を行う
-			if (addMatrix(firstArray, secondArray, thirdArray)) {
-				// 行列aの文字列を出力
-				System.out.println("行列a");
-				// 行列aを出力
-				printMatrix(firstArray);
-				// 行列bの文字列を出力
-				System.out.println("行列b");
-				// 行列bを出力
-				printMatrix(secondArray);
+			boolean addResult = addMatrix(firstArray, secondArray, thirdArray);
+
+			// 行列aの文字列を出力
+			System.out.println("行列a");
+			// 行列aを出力
+			printMatrix(firstArray);
+			// 行列bの文字列を出力
+			System.out.println("行列b");
+			// 行列bを出力
+			printMatrix(secondArray);
+
+			// 行列の加算が成功した場合
+			if (addResult) {
 				// 行列cの文字列を出力
 				System.out.println("行列c");
 				// 行列cを出力
 				printMatrix(thirdArray);
-				// 行列の加算ができない場合
+				// 加算が成功したことを示すメッセージを表示
+				System.out.println("行列の加算が成功しました。");
+				// 行列の加算が成功しなかった場合
 			} else {
 				// 加算ができない場合はメッセージを表示
-				System.out.println("行列の加算ができません。行列のサイズが異なります。");
-				// 行列aの文字列を出力
-				System.out.println("行列a");
-				// 行列aを出力
-				printMatrix(firstArray);
-				// 行列bの文字列を出力
-				System.out.println("行列b");
-				// 行列bを出力
-				printMatrix(secondArray);
+				System.out.println("行数と列数の両方が一致する場合でないと行列の加算は行うことができません。");
 			}
 		}
 	}

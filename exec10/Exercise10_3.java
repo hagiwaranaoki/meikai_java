@@ -21,11 +21,11 @@ public class Exercise10_3 {
 	public static void main(String[] args) {
 		// Scannerオブジェクトを生成
 		Scanner standardInput = new Scanner(System.in);
-		// 二値用の定数
+		// 二値での数値を求める時用の定数
 		final int TWO_VALUE = 1;
-		// 配列用の定数
+		// 配列での数値を求める時用の定数
 		final int ARRAY_VALUE = 3;
-		// 三値用の定数
+		// 三値での数値を求めるとき用の定数
 		final int THREE_VALUE = 2;
 		// 数値の入力を促す
 		System.out.print("二値...1/三値...2/配列...3:");

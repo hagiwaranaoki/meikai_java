@@ -22,7 +22,7 @@ public class Day {
 	// 日を表すフィールド（初期値は本日）
 	private int date = today.get(DATE);
 
-	// 4を表す定数
+	// 4月を表す定数
 	static final int FOUR_NUMBER = 4;
 	// 100を表す定数
 	static final int HUNDRED_NUMBER = 100;
@@ -488,89 +488,34 @@ public class Day {
 	public int elapseDays() {
 		// 経過日数を初期化
 		int elapsedDays = 0;
-		// 年を初期化
-		int yearValue = year;
-		// 月を初期化
-		int monthValue = month;
-		// 日を初期化
-		int dayValue = date;
-		// 31を表す定数
-		final int THIRTY_ONE_NUMBER = 31;
-		// 60を表す定数
-		final int SIXTY_NUMBER = 60;
-		// 91を表す定数
-		final int NINETY_ONE_NUMBER = 91;
-		// 121を表す定数
-		final int ONE_HUNDRED_TWENTY_ONE_NUMBER = 121;
-		// 152を表す定数
-		final int ONE_HUNDRED_FIFTY_TWO_NUMBER = 152;
-		// 182を表す定数
-		final int ONE_HUNDRED_EIGHTY_TWO_NUMBER = 182;
-		// 213を表す定数
-		final int TWO_HUNDRED_THIRTEEN_NUMBER = 213;
-		// 244を表す定数
-		final int TWO_HUNDRED_FORTY_FOUR_NUMBER = 244;
-		// 274を表す定数
-		final int TWO_HUNDRED_SEVENTY_FOUR_NUMBER = 274;
-		// 305を表す定数
-		final int THREE_HUNDRED_FIVE_NUMBER = 305;
-		// 335を表す定数
-		final int THREE_HUNDRED_THIRTY_FIVE_NUMBER = 335;
-		
-		// 1月の時
-		if (monthValue == FIRST_NUMBER) {
-			// 経過日数を今日の日にちにする
-			elapsedDays = dayValue;
-			// 2月の時
-		} else if (monthValue == SECOND_NUMBER) {
-			// 今日の日にちに31を足す
-			elapsedDays = dayValue + THIRTY_ONE_NUMBER;
-			// 3月の時
-		} else if (monthValue == THIRD_NUMBER) {
-			// 今日の日にちに60を足す
-			elapsedDays = dayValue + SIXTY_NUMBER;
-			// 4月の時
-		} else if (monthValue == FOUR_NUMBER) {
-			// 今日の日にちに91を足す
-			elapsedDays = dayValue + NINETY_ONE_NUMBER;
-			// 5月の時
-		} else if (monthValue == FIFTH_NUMBER) {
-			// 今日の日にちに121を足す
-			elapsedDays = dayValue + ONE_HUNDRED_TWENTY_ONE_NUMBER;
-			// 6月の時
-		} else if (monthValue == SIXTH_NUMBER) {
-			// 今日の日にちに152を足す
-			elapsedDays = dayValue + ONE_HUNDRED_FIFTY_TWO_NUMBER;
-			// 7月の時
-		} else if (monthValue == SEVENTH_NUMBER) {
-			// 今日の日にちに182を足す
-			elapsedDays = dayValue + ONE_HUNDRED_EIGHTY_TWO_NUMBER;
-			// 8月の時
-		} else if (monthValue == EIGHTH_NUMBER) {
-			// 今日の日にちに213を足す
-			elapsedDays = dayValue + TWO_HUNDRED_THIRTEEN_NUMBER;
-			// 9月の時
-		} else if (monthValue == NINTH_NUMBER) {
-			// 今日の日にちに244を足す
-			elapsedDays = dayValue + TWO_HUNDRED_FORTY_FOUR_NUMBER;
-			// 10月の時
-		} else if (monthValue == TENTH_NUMBER) {
-			// 今日の日にちに274を足す
-			elapsedDays = dayValue + TWO_HUNDRED_SEVENTY_FOUR_NUMBER;
-			// 11月の時
-		} else if (monthValue == ELEVENTH_NUMBER) {
-			// 今日の日にちに305を足す
-			elapsedDays = dayValue + THREE_HUNDRED_FIVE_NUMBER;
-			// 12月の時
-		} else {
-			// 今日の日にちに335を足す
-			elapsedDays = dayValue + THREE_HUNDRED_THIRTY_FIVE_NUMBER;
+
+		// 1月から現在の月の前月までの日数を加算
+		for (int i = FIRST_NUMBER; i < month; i++) {
+			// 4,6,9,11月の場合
+			if (i == FOUR_NUMBER || i == SIXTH_NUMBER || i == NINTH_NUMBER || i == ELEVENTH_NUMBER) {
+				// 30を足す
+				elapsedDays += THIRTIETH_NUMBER;
+				// 2月の場合
+			} else if (i == SECOND_NUMBER) {
+				// 閏年であれば
+				if (isLeap(year)) {
+					// 29日を足す
+					elapsedDays += TWENTY_NINTH_NUMBER;
+					// 閏年では無ければ
+				} else {
+					// 28を足す
+					elapsedDays += TWENTY_EIGHTH_NUMBER;
+				}
+				// 2,4,6,9,11月以外であれば
+			} else {
+				// 31を足す
+				elapsedDays += THIRTY_FIRST_NUMBER;
+			}
 		}
-		// 閏年ではないとき
-		if (isLeap(yearValue) == false) {
-			// 経過日数をデクリメント
-			elapsedDays--;
-		}
+
+		// 現在の日を加算
+		elapsedDays += date;
+
 		// 経過日数を返す
 		return elapsedDays;
 	}
