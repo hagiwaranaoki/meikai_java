@@ -28,7 +28,6 @@ public class Exercise7_27 {
 		if (x.length != y.length || x.length != z.length || x[0].length != y[0].length || x[0].length != z[0].length) {
 			// サイズが等しくない場合はフラグをfalseに設定
 			canAdd = false;
-			// 等しい場合
 		} else {
 			// 行数分繰り返し
 			for (int i = 0; i < x.length; i++) {
@@ -190,33 +189,30 @@ public class Exercise7_27 {
 		System.out.println("行列b");
 		// 行列bを出力
 		printMatrix(secondArray);
-		// 加算結果を格納する行列cを宣言
+
+		// 行列cの文字列を出力
+		System.out.println("行列c");
+		// 行列cを出力
 		int[][] thirdArray = new int[thirdRows][thirdCols];
+		// 行列cを出力
+		printMatrix(thirdArray);
 
-		// 行列a、行列b、行列cのサイズが等しい場合
-		if (firstRows == secondRows && firstCols == secondCols &&
-				firstRows == thirdRows && firstCols == thirdCols) {
+		// 行列の加算を行う
+		boolean addResult = addMatrix(firstArray, secondArray, thirdArray);
 
-			// 行列の加算を行う
-			boolean addResult = addMatrix(firstArray, secondArray, thirdArray);
-
-			// 行列の加算が成功した場合
-			if (addResult) {
-				// 行列cの文字列を出力
-				System.out.println("行列c");
-				// 行列cを出力
-				printMatrix(thirdArray);
-				// 加算が成功したことを示すメッセージを表示
-				System.out.println("3つの行列のサイズが等しいため、行列の加算が成功しました。");
-			}
-			// 加算が成功しなかった場合
-		} else {
+		// 行列の加算が成功した場合
+		if (addResult) {
 			// 行列cの文字列を出力
-			System.out.println("行列c");
+			System.out.println("行列c (加算後)");
 			// 行列cを出力
 			printMatrix(thirdArray);
+			// 加算が成功したことを示すメッセージを表示
+			System.out.println("3つの行列のサイズが等しいため、行列の加算が成功しました。");
+			// 成功していない場合
+		} else {
+			System.out.println("addMatrix:" + addResult);
 			// 加算ができない場合はメッセージを表示
-			System.out.println("3つの行列のサイズが異なるため、行列の加算を行うことができません。");
+			System.out.println("3つの行列のサイズが異なるため、行列の加算を行うことができませんでした。");
 		}
 	}
 }

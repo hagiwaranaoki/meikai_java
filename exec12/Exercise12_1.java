@@ -1,4 +1,5 @@
 package exec12;
+
 // Scannerクラスをインポート
 import java.util.Scanner;
 
@@ -31,10 +32,14 @@ public class Exercise12_1 {
 		while (true) {
 			// 走行するか聞く
 			System.out.print("走行しますか？(0...No,1...Yes):");
-			// Noを選んだ場合
-			if (standardInput.nextInt() == 0) {
-				// 繰り返しから抜ける
-				break;
+			// 走行するかの入力を受け付け
+			int canRun = standardInput.nextInt();
+			// 0,1以外の場合繰り返し
+			while (canRun < 0 || canRun > 1) {
+				// 再入力を促す
+				System.out.println("0か1を入力してください。");
+				// 再入力を受け付け
+				canRun = standardInput.nextInt();
 			}
 			// 何km走行するか聞く
 			System.out.println("何km走行しますか？");
