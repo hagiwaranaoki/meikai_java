@@ -207,8 +207,6 @@ public class Exercise10_4 {
 			System.out.println(newDay.toString() + "は" + newDay.getYear() + "年の1月1日から" + newDay.elapseDays() + "日経過しています。");
 			// 新しいdayオブジェクトの年内の残り日数を表示
 			System.out.println(newDay.getYear() + "年は残り" + newDay.remainDays(newDay) + "日です。");
-			// 現在のdayオブジェクトと新しいdayオブジェクトの比較を表示
-			System.out.println(newDay.compareDate(dayObject));
 
 			// リトライするか尋ねる
 			System.out.print("もう一度=1,次へ=1以外:");
