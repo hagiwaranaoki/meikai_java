@@ -210,9 +210,10 @@ public class Exercise7_27 {
 			System.out.println("3つの行列のサイズが等しいため、行列の加算が成功しました。");
 			// 成功していない場合
 		} else {
+			// addMatrixメソッドの戻り値を表示
 			System.out.println("addMatrix:" + addResult);
 			// 加算ができない場合はメッセージを表示
-			System.out.println("3つの行列のサイズが異なるため、行列の加算を行うことができませんでした。");
+			System.out.println("行数及び列数が同一でないと加算することはできません。");
 		}
 	}
 }
