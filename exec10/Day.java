@@ -573,40 +573,125 @@ public class Day {
 	}
 
 	/*
-	 * 関数名:compareDate
-	 * 概要:前後関係を比較する
-	 * 引数:なし
-	 * 戻り値:比較の文字列
-	 * 作成者:N.Hagiwara
-	 * 作成日:2024/04/11
-	 */
+	  * 関数名:compareDate
+	  * 概要:前後関係を比較する
+	  * 引数:Dayオブジェクト[dayValue]
+	  * 戻り値:比較の文字列
+	  * 作成者:N.Hagiwara
+	  * 作成日:2024/04/11
+	  * 修正者:Assistant
+	  * 修正日:2024/04/24
+	  */
 	public String compareDate(Day dayValue) {
-		// 比較した後の文字列用変数を宣言
-		String comparisonDate = " ";
-		// Dayオブジェクトを生成
-		Day nowVariable = new Day(year, month, date);
-		// 比較対象が引数のdayオブジェクト以上の年の場合
-		if (nowVariable.year >= dayValue.year) {
-			// 経過日数が与えたDayオブジェクトのほうが大きいとき
-			if (nowVariable.elapseDays() > dayValue.elapseDays()) {
-				// 進んだ時間にいることを表示
-				comparisonDate = "今日のDayオブジェクトのほうが未来にいます";
-				// 経過日数が与えたDayオブジェクトのほうが小さいとき
-			} else if (nowVariable.elapseDays() < dayValue.elapseDays()) {
-				// 過去にいることを表示
-				comparisonDate = "今日のDayオブジェクトのほうが過去にいます";
-				// 経過日数が同じ場合
-			} else {
-				// 同じ日にいることを知らせる
-				comparisonDate = "二つのDayオブジェクトは同じ日にいます";
-			}
-			// 比較対象が引数のdayオブジェクト未満の年の場合
+		// 比較結果を格納する変数
+		String compareResult = "";
+		// 比較対象のDayオブジェクトの方が未来の場合
+		if (isDateAfter(dayValue, this)) {
+			// 結果に文字列を代入
+			compareResult = "比較対象のDayオブジェクトのほうが未来にいます";
+			// 比較対象のDayオブジェクトの方が過去の場合
+		} else if (isDateBefore(dayValue, this)) {
+			// 結果に文字列を代入
+			compareResult = "比較対象のDayオブジェクトのほうが過去にいます";
+			// 同じ日付の場合
 		} else {
-			// 過去にいることを表示
-			comparisonDate = "今日のDayオブジェクトのほうが過去にいます";
+			// 結果に文字列を代入
+			compareResult = "二つのDayオブジェクトは同じ日にいます";
 		}
-		// 前後比較の文字列を返す
-		return comparisonDate;
+		// 結果を返す
+		return compareResult;
+	}
+
+	/*
+	  * 関数名:isDateAfter
+	  * 概要:day1がday2より未来かどうかを判定する
+	  * 引数:Dayオブジェクト[day1], Dayオブジェクト[day2]
+	  * 戻り値:day1がday2より未来ならtrue, そうでなければfalse
+	  * 作成者:Assistant
+	  * 作成日:2024/04/24
+	  */
+	public static boolean isDateAfter(Day day1, Day day2) {
+		// 過去かどうかを判断する用の変数
+		boolean temporaryVariable = false;
+		// day1の年がday2の年より大きい場合
+		if (day1.year > day2.year) {
+			// trueを格納
+			temporaryVariable = true;
+			// day1の年がday2の年と等しい場合
+		} else if (day1.year == day2.year) {
+			// day1の月がday2の月より大きい場合
+			if (day1.month > day2.month) {
+				// trueを格納
+				temporaryVariable = true;
+				// day1の月がday2の月と等しい場合
+			} else if (day1.month == day2.month) {
+				// day1の日がday2の日より大きい場合
+				if (day1.date > day2.date) {
+					// trueを格納
+					temporaryVariable = true;
+				}
+			}
+		}
+		// 上記以外の場合はfalseを返す
+		return temporaryVariable;
+	}
+
+	/*
+	  * 関数名:isDateBefore
+	  * 概要:day1がday2より過去かどうかを判定する
+	  * 引数:Dayオブジェクト[day1], Dayオブジェクト[day2]
+	  * 戻り値:day1がday2より過去ならtrue, そうでなければfalse
+	  * 作成者:Assistant
+	  * 作成日:2024/04/24
+	  */
+	public static boolean isDateBefore(Day firstDay, Day secondDay) {
+		// 過去かどうかを判断する用の変数
+		boolean temporaryVariable = false;
+		// day1の年がday2の年より小さい場合
+		if (firstDay.year < secondDay.year) {
+			// trueを格納
+			temporaryVariable = true;
+			// day1の年がday2の年と等しい場合
+		} else if (firstDay.year == secondDay.year) {
+			// day1の月がday2の月より小さい場合
+			if (firstDay.month < secondDay.month) {
+				// trueを格納
+				temporaryVariable = true;
+				// day1の月がday2の月と等しい場合
+			} else if (firstDay.month == secondDay.month) {
+				// day1の日がday2の日より小さい場合
+				if (firstDay.date < secondDay.date) {
+					/// trueを格納
+					temporaryVariable = true;
+				}
+			}
+		}
+		// 上記以外の場合はfalseを返す
+		return temporaryVariable;
+	}
+
+	/*
+	  * 関数名:compareDates
+	  * 概要:二つのDayオブジェクトの前後関係を比較する
+	  * 引数:Dayオブジェクト[day1], Dayオブジェクト[day2]
+	  * 戻り値:day1がday2より未来なら1, 等しければ0, 過去なら-1
+	  * 作成者:Assistant
+	  * 作成日:2024/04/24
+	  */
+	public static int compareDates(Day firstDay, Day secondDay) {
+		// 前後関係の値を入れる用の変数
+		int temporaryVariable = 0;
+		// day1がday2より未来の場合
+		if (isDateAfter(firstDay, secondDay)) {
+			// 1を入れる
+			temporaryVariable = 1;
+			// day1がday2より過去の場合
+		} else if (isDateBefore(firstDay, secondDay)) {
+			// -1を入れる
+			temporaryVariable = -1;
+		}
+		// dayオブジェクトが前後どちらにいるかを返す
+		return temporaryVariable;
 	}
 
 	/*

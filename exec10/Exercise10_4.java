@@ -4,271 +4,432 @@ package exec10;
 import java.util.Scanner;
 
 /*
- * クラス名:Exercise10_4
- * 概要:新Dayクラスの確認
- * 作成者:N.Hagiwara
- * 作成日:2024/04/11
- */
+* クラス名:Exercise10_4
+* 概要:新Dayクラスの確認
+* 作成者:N.Hagiwara
+* 作成日:2024/04/11
+*/
 public class Exercise10_4 {
+	// Scannerオブジェクトの生成
+	public static Scanner standardInput = new Scanner(System.in);
+	// Dayオブジェクトの生成
+	public static Day dayObject = new Day();
+
 	/*
 	 * 関数名:main
 	 * 概要:新Dayクラスの確認
 	 * 引数:なし
 	 * 戻り値:なし
 	 * 作成者:N.Hagiwara
-	 * 作成日:2024/04/11
+	 * 作成日:2024/04/24
 	 */
 	public static void main(String[] args) {
-		// Scannerオブジェクトの生成
-		Scanner standardInput = new Scanner(System.in);
+		// すべてのテストを実行
+		runAllTests();
+		// テストが終了したことを知らせる
+		System.out.println("すべてのテストを終了しました");
+	}
 
-		// 一つ目のDayオブジェクトの生成
-		Day firstDay = new Day();
-		// 一つ目のDayオブジェクトの中身を表示
-		System.out.println(firstDay.toString());
-		// 一つ目のDayオブジェクトが閏年かどうかを判別して表示
-		System.out.println(firstDay.getYear() + "年は閏年" + (firstDay.isLeap() ? "です" : "ではありません"));
-		// 一つ目のdayオブジェクトが年内で何日経過しているかを表示
-		System.out.println(firstDay.toString() + "は" + firstDay.getYear() + "年の1月1日から" + firstDay.elapseDays() + "日経過しています。");
-		// 一つ目のdayオブジェクトの年内の残り日数を表示
+	/*
+	 * 関数名:runAllTests
+	 * 概要:すべてのテストを実行する
+	 * 引数:なし
+	 * 戻り値:なし
+	 * 作成者:N.Hagiwara
+	 * 作成日:2024/04/24
+	 */
+	public static void runAllTests() {
+		// Dayクラスの基本情報をテスト
+		testDayBasicInfo();
+		// setメソッド(単体)をテスト
+		testSetMethods();
+		// setメソッド(全体)をテスト
+		testSetAllMethod();
+		// オブジェクト作成をテスト
+		testObjectCreation();
+		// 日付を進めるメソッドをテスト
+		testAdvanceDate();
+		// 日付を戻すメソッドをテスト
+		testRetreatDate();
+		// 前後の日付を取得するメソッドをテスト
+		testGetPreviousAndNextDay();
+		// 日付の比較テストを実行
+		testDayComparison();
+	}
+
+	/*
+	 * 関数名:testDayBasicInfo
+	 * 概要:Dayクラスの基本情報をテストする
+	 * 引数:なし
+	 * 戻り値:なし
+	 * 作成者:N.Hagiwara
+	 * 作成日:2024/04/24
+	 */
+	public static void testDayBasicInfo() {
+		// Dayオブジェクトの中身を表示
+		System.out.println(dayObject.toString());
+		// Dayオブジェクトが閏年かどうかを判別して表示
+		System.out.println(dayObject.getYear() + "年は閏年" + (dayObject.isLeap() ? "です" : "ではありません"));
+		// dayオブジェクトが年内で何日経過しているかを表示
 		System.out
-				.println(firstDay.getYear() + "年は残り" + firstDay.remainDays(firstDay) + "日です。");
+				.println(dayObject.toString() + "は" + dayObject.getYear() + "年の1月1日から" + dayObject.elapseDays() + "日経過しています。");
+		// dayオブジェクトの年内の残り日数を表示
+		System.out.println(dayObject.getYear() + "年は残り" + dayObject.remainDays(dayObject) + "日です。");
+	}
 
-		// コンティニュー用定数
-		final int USER_CONTINUE = 1;
-		// テストをするか尋ねる
+	/*
+	 * 関数名:testSetMethods
+	 * 概要:setメソッド(単体)をテストする
+	 * 引数:なし
+	 * 戻り値:なし
+	 * 作成者:N.Hagiwara
+	 * 作成日:2024/04/24
+	 */
+	public static void testSetMethods() {
+		// setメソッド(単体)テストをするか尋ねる
 		System.out.print("setメソッド(単体)テストをする？1=yes,それ以外=no:");
-		// リトライ変数をコンティニュー定数で初期化
+		// リトライ変数を受け付け
 		int userRetry = standardInput.nextInt();
 
-		// 年の変数作成
-		int setYearValue = 0;
-		// 月の変数作成
-		int setMonthValue = 0;
-		// 日の変数作成
-		int setDateValue = 0;
 		// リトライ変数が1の場合繰り返し
-		while (userRetry == USER_CONTINUE) {
+		while (userRetry == 1) {
 			// タイトル出力
-			System.out.println("setメソッド(全体)テスト");
+			System.out.println("setメソッド(単体)テスト");
 			// 年の入力を促す
 			System.out.print("年:");
-			// 年を受け付け
-			setYearValue = standardInput.nextInt();
 			// 年を設定
-			firstDay.setYear(setYearValue);
-			// 一つ目のDayオブジェクトの中身出力
-			System.out.println(firstDay.toString());
+			dayObject.setYear(standardInput.nextInt());
+			// Dayオブジェクトの中身を表示
+			System.out.println(dayObject.toString());
 
 			// 月の入力を促す
 			System.out.print("月:");
-			// 月を受け付け
-			setMonthValue = standardInput.nextInt();
 			// 月を設定
-			firstDay.setMonth(setMonthValue);
-			// 一つ目のDayオブジェクトの中身を出力
-			System.out.println(firstDay.toString());
+			dayObject.setMonth(standardInput.nextInt());
+			// Dayオブジェクトの中身を表示
+			System.out.println(dayObject.toString());
 
 			// 日の入力を促す
 			System.out.print("日:");
-			// 日を受け付け
-			setDateValue = standardInput.nextInt();
 			// 日を設定
-			firstDay.setDate(setDateValue);
-			// 一つ目のDayオブジェクトの中身を出力
-			System.out.println(firstDay.toString());
+			dayObject.setDate(standardInput.nextInt());
+			// Dayオブジェクトの中身を表示
+			System.out.println(dayObject.toString());
 
-			//リトライするか聞く
-			System.out.print("もう一度=1,次へ=1以外:");
-			// リトライ受付
-			userRetry = standardInput.nextInt();
-		}
-
-		// setメソッド(全体)テストをするか尋ねる
-		System.out.print("setメソッド(全体)テストをする？1=yes,それ以外=no:");
-		// リトライ変数をコンティニュー定数で初期化
-		userRetry = standardInput.nextInt();
-
-		// リトライ変数が1の場合繰り返し
-		while (userRetry == USER_CONTINUE) {
-			// タイトル出力
-			System.out.println("setメソッド(全体)テスト");
-			// 年の入力を促す
-			System.out.print("年:");
-			// 年を受け付け
-			setYearValue = standardInput.nextInt();
-
-			// 月の入力を促す
-			System.out.print("月:");
-			// 月を受け付け
-			setMonthValue = standardInput.nextInt();
-
-			// 日の入力を促す
-			System.out.print("日:");
-			// 日を受け付け
-			setDateValue = standardInput.nextInt();
-
-			// 年、月、日を設定
-			firstDay.set(setYearValue, setMonthValue, setDateValue);
-			// 一つ目のDayオブジェクトの中身出力
-			System.out.println(firstDay.toString());
-
-			//リトライするか尋ねる
-			System.out.print("もう一度=1,次へ=1以外:");
-			// リトライ受付
-			userRetry = standardInput.nextInt();
-		}
-
-		// オブジェクト作成テストをするか尋ねる
-		System.out.print("オブジェクト作成テストをする？1=yes,それ以外=no:");
-		// リトライ変数をコンティニュー定数で初期化
-		userRetry = standardInput.nextInt();
-		// リトライ変数が1の場合繰り返し
-		while (userRetry == USER_CONTINUE) {
-			// 年の入力を促す
-			System.out.print("年:");
-			// 年を受け付け
-			int yearValue = standardInput.nextInt();
-			// 月の入力を促す
-			System.out.print("月:");
-			// 月を受け付け
-			int monthValue = standardInput.nextInt();
-			// 日の入力を促す
-			System.out.print("日:");
-			// 日を受け付け
-			int dayValue = standardInput.nextInt();
-
-			// 二つ目のDayオブジェクトを生成
-			Day secondDay = new Day(yearValue, monthValue, dayValue);
-			// 二つ目のDayオブジェクトの中身を生成
-			System.out.println(secondDay.toString());
-			// 二つ目のDayオブジェクトが閏年かどうかを判別して表示
-			System.out.println(secondDay.getYear() + "年は閏年" + (secondDay.isLeap() ? "です" : "ではありません"));
-			// 二つ目のdayオブジェクトが年内で何日経過しているかを表示
-			System.out
-					.println(secondDay.toString() + "は" + secondDay.getYear() + "年の1月1日から" + secondDay.elapseDays() + "日経過しています。");
-			// 二つ目のdayオブジェクトの年内の残り日数を表示
-			System.out
-					.println(secondDay.getYear() + "年は残り" + secondDay.remainDays(secondDay) + "日です。");
-			// 一つ目と二つ目のdayオブジェクトの比較を表示
-			System.out.println(secondDay.compareDate(firstDay));
 			// リトライするか尋ねる
 			System.out.print("もう一度=1,次へ=1以外:");
 			// リトライ受付
 			userRetry = standardInput.nextInt();
 		}
+	}
 
-		// テストをするか尋ねる
-		System.out.print("日付を進めるテストをする？1=yes,それ以外=no:");
-		// リトライ変数をコンティニュー定数で初期化
-		userRetry = standardInput.nextInt();
-		// 三つ目のDayオブジェクトを初期値で生成
-		Day thirdDay = new Day();
+	/*
+	 * 関数名:testSetAllMethod
+	 * 概要:setメソッド(全体)をテストする
+	 * 引数:なし
+	 * 戻り値:なし
+	 * 作成者:N.Hagiwara
+	 * 作成日:2024/04/24
+	 */
+	public static void testSetAllMethod() {
+		// setメソッド(全体)テストをするか尋ねる
+		System.out.print("setメソッド(全体)テストをする？1=yes,それ以外=no:");
+		// リトライ変数を受け付け
+		int userRetry = standardInput.nextInt();
+
 		// リトライ変数が1の場合繰り返し
-		while (userRetry == USER_CONTINUE) {
-			// 三つ目のDayオブジェクトの中身を表示
-			System.out.println(thirdDay.toString());
-			// 三つ目のDayオブジェクトの日付を一つ進める
-			thirdDay.advanceDate();
-			// 三つ目のDayオブジェクトの中身を表示
-			System.out.println("今の日付は" + thirdDay.toString() + "です。");
+		while (userRetry == 1) {
+			// タイトル出力
+			System.out.println("setメソッド(全体)テスト");
+			// 年の入力を促す
+			System.out.print("年:");
+			// 年を受け付け
+			int yearVariable = standardInput.nextInt();
+
+			// 月の入力を促す
+			System.out.print("月:");
+			// 月を受け付け
+			int monthVariable = standardInput.nextInt();
+
+			// 日の入力を促す
+			System.out.print("日:");
+			// 日を受け付け
+			int dateVariable = standardInput.nextInt();
+
+			// 年、月、日を設定
+			dayObject.set(yearVariable, monthVariable, dateVariable);
+			// Dayオブジェクトの中身を表示
+			System.out.println(dayObject.toString());
+
+			// リトライするか尋ねる
+			System.out.print("もう一度=1,次へ=1以外:");
+			// リトライ受付
+			userRetry = standardInput.nextInt();
+		}
+	}
+
+	/*
+	 * 関数名:testObjectCreation
+	 * 概要:オブジェクト作成をテストする
+	 * 引数:なし
+	 * 戻り値:なし
+	 * 作成者:N.Hagiwara
+	 * 作成日:2024/04/24
+	 */
+	public static void testObjectCreation() {
+		// オブジェクト作成テストをするか尋ねる
+		System.out.print("オブジェクト作成テストをする？1=yes,それ以外=no:");
+		// リトライ変数を受け付け
+		int userRetry = standardInput.nextInt();
+
+		// リトライ変数が1の場合繰り返し
+		while (userRetry == 1) {
+			// 年の入力を促す
+			System.out.print("年:");
+			// 年を受け付け
+			int yearVariable = standardInput.nextInt();
+			// 月の入力を促す
+			System.out.print("月:");
+			// 月を受け付け
+			int monthVariable = standardInput.nextInt();
+			// 日の入力を促す
+			System.out.print("日:");
+			// 日を受け付け
+			int dateVariable = standardInput.nextInt();
+
+			// 新しいDayオブジェクトを生成
+			Day newDay = new Day(yearVariable, monthVariable, dateVariable);
+			// 新しいDayオブジェクトの中身を表示
+			System.out.println(newDay.toString());
+			// 新しいDayオブジェクトが閏年かどうかを判別して表示
+			System.out.println(newDay.getYear() + "年は閏年" + (newDay.isLeap() ? "です" : "ではありません"));
+			// 新しいdayオブジェクトが年内で何日経過しているかを表示
+			System.out.println(newDay.toString() + "は" + newDay.getYear() + "年の1月1日から" + newDay.elapseDays() + "日経過しています。");
+			// 新しいdayオブジェクトの年内の残り日数を表示
+			System.out.println(newDay.getYear() + "年は残り" + newDay.remainDays(newDay) + "日です。");
+			// 現在のdayオブジェクトと新しいdayオブジェクトの比較を表示
+			System.out.println(newDay.compareDate(dayObject));
+
+			// リトライするか尋ねる
+			System.out.print("もう一度=1,次へ=1以外:");
+			// リトライ受付
+			userRetry = standardInput.nextInt();
+		}
+	}
+
+	/*
+	 * 関数名:testAdvanceDate
+	 * 概要:日付を進めるメソッドをテストする
+	 * 引数:なし
+	 * 戻り値:なし
+	 * 作成者:N.Hagiwara
+	 * 作成日:2024/04/24
+	 */
+	public static void testAdvanceDate() {
+		// 日付を進めるテストをするか尋ねる
+		System.out.print("日付を進めるテストをする？1=yes,それ以外=no:");
+		// リトライ変数を受け付け
+		int userRetry = standardInput.nextInt();
+
+		// リトライ変数が1の場合繰り返し
+		while (userRetry == 1) {
+			// 現在のDayオブジェクトの情報を表示
+			System.out.println("現在のDayオブジェクト: " + dayObject.toString());
+			// Dayオブジェクトの日付を一つ進める
+			dayObject.advanceDate();
+			// Dayオブジェクトの中身を表示
+			System.out.println("今の日付は" + dayObject.toString() + "です。");
+
 			// 何日進めるか尋ねる
 			System.out.print("何日進める？:");
 			// 何日進めるかを受け付け
 			int dayNumber = standardInput.nextInt();
 			// 0以下の時
 			while (dayNumber < 0) {
-				//0以上の数値を入力するように促す
+				// 0以上の数値を入力するように促す
 				System.out.print("0以上の数値を入力してください：");
 				// 何日進めるか受付
 				dayNumber = standardInput.nextInt();
 			}
-			// 三つ目のDayオブジェクトを任意の日数進める
-			thirdDay.advanceDays(dayNumber);
-			// 三つ目のDayオブジェクトの中身を表示
-			System.out.println("今の日付は" + thirdDay.toString() + "です。");
-			//リトライするか尋ねる
+			// Dayオブジェクトを任意の日数進める
+			dayObject.advanceDays(dayNumber);
+			// Dayオブジェクトの中身を表示
+			System.out.println("今の日付は" + dayObject.toString() + "です。");
+
+			// リトライするか尋ねる
 			System.out.print("もう一度=1,次へ=1以外:");
 			// リトライ受付
 			userRetry = standardInput.nextInt();
 		}
+	}
 
-		// テストをするか尋ねる
+	/*
+	 * 関数名:testRetreatDate
+	 * 概要:日付を戻すメソッドをテストする
+	 * 引数:なし
+	 * 戻り値:なし
+	 * 作成者:N.Hagiwara
+	 * 作成日:2024/04/24
+	 */
+	public static void testRetreatDate() {
+		// 日付を戻すテストをするか尋ねる
 		System.out.print("日付を戻すテストをする？1=yes,それ以外=no:");
-		// リトライ変数をコンティニュー定数で初期化
-		userRetry = standardInput.nextInt();
-		// 四つ目のDayオブジェクトを初期値で生成
-		Day forthDay = new Day();
+		// リトライ変数を受け付け
+		int userRetry = standardInput.nextInt();
+
 		// リトライ変数が1の場合繰り返し
-		while (userRetry == USER_CONTINUE) {
-			// 四つ目のDayオブジェクトの中身を表示
-			System.out.println(forthDay.toString());
-			// 四つ目のDayオブジェクトの日付を一つ戻す
-			forthDay.retreatDate();
-			// 四つ目のDayオブジェクトの中身を表示
-			System.out.println("今の日付は" + forthDay.toString() + "です。");
-			
+		while (userRetry == 1) {
+			// 現在のDayオブジェクトの情報を表示
+			System.out.println("現在のDayオブジェクト: " + dayObject.toString());
+			// Dayオブジェクトの日付を一つ戻す
+			dayObject.retreatDate();
+			// Dayオブジェクトの中身を表示
+			System.out.println("今の日付は" + dayObject.toString() + "です。");
+
 			// 何日戻すか尋ねる
 			System.out.print("何日戻す？:");
 			// 何日戻すかを受け付け
 			int dayNumber = standardInput.nextInt();
 			// 0以下の時
 			while (dayNumber < 0) {
-				//0以上の数値を入力するように促す
+				// 0以上の数値を入力するように促す
 				System.out.print("0以上の数値を入力してください：");
 				// 何日戻すか受付
 				dayNumber = standardInput.nextInt();
 			}
-			// 四つ目のDayオブジェクトを任意の日数戻す
-			forthDay.retreatDays(dayNumber);
-			// 四つ目のDayオブジェクトの中身を表示
-			System.out.println("今の日付は" + forthDay.toString() + "です。");
-			//リトライするか尋ねる
+			// Dayオブジェクトを任意の日数戻す
+			dayObject.retreatDays(dayNumber);
+			// Dayオブジェクトの中身を表示
+			System.out.println("今の日付は" + dayObject.toString() + "です。");
+
+			// リトライするか尋ねる
 			System.out.print("もう一度=1,次へ=1以外:");
 			// リトライ受付
 			userRetry = standardInput.nextInt();
 		}
+	}
 
-		// テストをするか尋ねる
+	/*
+	 * 関数名:testGetPreviousAndNextDay
+	 * 概要:前後の日付を取得するメソッドをテストする
+	 * 引数:なし
+	 * 戻り値:なし
+	 * 作成者:N.Hagiwara
+	 * 作成日:2024/04/24
+	 */
+	public static void testGetPreviousAndNextDay() {
+		// 前後の日付を確認するテストをするか尋ねる
 		System.out.print("前後の日付を確認するテストをする？1=yes,それ以外=no:");
-		// リトライ変数をコンティニュー定数で初期化
-		userRetry = standardInput.nextInt();
-		// 五つ目のDayオブジェクトを初期値で生成
-		Day fifthDay = new Day();
-		// リトライ変数が1の場合繰り返し
-		while (userRetry == USER_CONTINUE) {
-			// 五つ目のDayオブジェクトの中身を表示
-			System.out.println(fifthDay.toString());
-			// 五つ目のDayオブジェクトの一日後を表示
-			System.out.println("一日後は" + fifthDay.getNextDay() + "です。");
-			// 五つ目のDayオブジェクトの一日前を表示
-			System.out.println("一日前は" + fifthDay.getPreviousDay() + "です。");
-			// 五つ目のDayオブジェクトの中身を表示
-			System.out.println("現在は" + fifthDay.toString() + "です。");
+		// リトライ変数を受け付け
+		int userRetry = standardInput.nextInt();
 
-			// テストをするか尋ねる
+		// リトライ変数が1の場合繰り返し
+		while (userRetry == 1) {
+			// 現在のDayオブジェクトの情報を表示
+			System.out.println("現在のDayオブジェクト: " + dayObject.toString());
+			// Dayオブジェクトの一日後を表示
+			System.out.println("一日後は" + dayObject.getNextDay() + "です。");
+			// Dayオブジェクトの一日前を表示
+			System.out.println("一日前は" + dayObject.getPreviousDay() + "です。");
+			// Dayオブジェクトの中身を表示
+			System.out.println("現在は" + dayObject.toString() + "です。");
+			// 何日前後の日付を知りたいか尋ねる
 			System.out.print("何日前後の日付を知りたい？:");
 			// 何日前後かを受け付け
 			int dayNumber = standardInput.nextInt();
 			// 0以下の時
 			while (dayNumber < 0) {
-				//0以上の数値を入力するように促す
+				// 0以上の数値を入力するように促す
 				System.out.print("0以上の数値を入力してください：");
 				// 何日前後か受付
 				dayNumber = standardInput.nextInt();
 			}
-			// 五つ目のDayオブジェクトの任意の日数後を表示
-			System.out.println(dayNumber + "日後は" + fifthDay.getFutureDays(dayNumber) + "です。");
-			// 五つ目のDayオブジェクトの任意の日数前を表示
-			System.out.println(dayNumber + "日前は" + fifthDay.getPastDays(dayNumber) + "です。");
-			// 五つ目のDayオブジェクトの中身を表示
-			System.out.println("現在は" + fifthDay.toString() + "です。");
-			//リトライするか尋ねる
+			// Dayオブジェクトの任意の日数後を表示
+			System.out.println(dayNumber + "日後は" + dayObject.getFutureDays(dayNumber) + "です。");
+			// Dayオブジェクトの任意の日数前を表示
+			System.out.println(dayNumber + "日前は" + dayObject.getPastDays(dayNumber) + "です。");
+			// Dayオブジェクトの中身を表示
+			System.out.println("現在は" + dayObject.toString() + "です。");
+
+			// リトライするか尋ねる
 			System.out.print("もう一度=1,次へ=1以外:");
 			// リトライ受付
 			userRetry = standardInput.nextInt();
 		}
-		// テストが終了したことを知らせる
-		System.out.println("すべてのテストを終了しました");
+	}
+
+	/*
+	 * 関数名:testDayComparison
+	 * 概要:日付の比較をテストする
+	 * 引数:なし
+	 * 戻り値:なし
+	 * 作成者:Assistant
+	 * 作成日:2024/04/24
+	 */
+	private static void testDayComparison() {
+		// 日付の比較テストをするか尋ねる
+		System.out.print("日付の比較テストをする？1=yes,それ以外=no:");
+		// リトライ変数を受け付け
+		int userRetry = standardInput.nextInt();
+
+		// リトライ変数が1の場合繰り返し
+		while (userRetry == 1) {
+			// 比較元のDayオブジェクトの情報を表示
+			System.out.println("比較元のDayオブジェクト: " + dayObject.toString());
+
+			// 比較対象の日付を入力するように促す
+			System.out.println("比較対象の日付を入力してください");
+			// 年の入力を促す
+			System.out.print("年:");
+			// 年を受け付け
+			int yearVariable = standardInput.nextInt();
+			// 月の入力を促す
+			System.out.print("月:");
+			// 月を受け付け
+			int monthVariable = standardInput.nextInt();
+			// 日の入力を促す
+			System.out.print("日:");
+			// 日を受け付け
+			int dateVariable = standardInput.nextInt();
+
+			// 比較対象のDayオブジェクトを生成
+			Day comparisonDay = new Day(yearVariable, monthVariable, dateVariable);
+			// 比較対象のDayオブジェクトの情報を表示
+			System.out.println("比較対象のDayオブジェクト: " + comparisonDay.toString());
+
+			// 比較元のDayオブジェクトと比較対象のDayオブジェクトの比較結果を表示
+			System.out.println(dayObject.compareDate(comparisonDay));
+
+			// 比較元のDayオブジェクトが比較対象のDayオブジェクトより未来かどうかを表示
+			System.out.println("比較元のDayオブジェクトが比較対象より未来かどうか: " + (Day.isDateAfter(dayObject, comparisonDay) ? "はい" : "いいえ"));
+
+			// 比較元のDayオブジェクトが比較対象のDayオブジェクトより過去かどうかを表示
+			System.out.println("比較元のDayオブジェクトが比較対象より過去かどうか: " + (Day.isDateBefore(dayObject, comparisonDay) ? "はい" : "いいえ"));
+
+			// 比較元のDayオブジェクトと比較対象のDayオブジェクトの前後関係を表示
+			int comparison = Day.compareDates(dayObject, comparisonDay);
+			// 比較結果の文字列を入れる用の変数を定義
+			String comparisonResult = "";
+			// 比較結果が0より上の場合
+			if (comparison > 0) {
+				// 未来にいることを知らせる
+				comparisonResult = "比較元のDayオブジェクトのほうが未来にいます";
+				// 0より下の場合
+			} else if (comparison < 0) {
+				// 過去にいることを知らせる
+				comparisonResult = "比較元のDayオブジェクトのほうが過去にいます";
+				// ０の場合
+			} else {
+				// 同じ日にいることを知らせる
+				comparisonResult = "二つのDayオブジェクトは同じ日にいます";
+			}
+			// 前後関係の結果を出力
+			System.out.println("比較元のDayオブジェクトと比較対象の前後関係: " + comparisonResult);
+
+			// リトライするか尋ねる
+			System.out.print("もう一度=1,次へ=1以外:");
+			// リトライ受付
+			userRetry = standardInput.nextInt();
+		}
 	}
 }
