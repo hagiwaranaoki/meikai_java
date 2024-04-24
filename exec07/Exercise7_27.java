@@ -158,6 +158,30 @@ public class Exercise7_27 {
 		// 行列bの要素を入力
 		int[][] secondArray = inputMatrix(standardInput, secondRows, secondCols);
 
+		// 行列cの行数を入力するようメッセージを表示
+		System.out.print("行列cの行数を入力してください: ");
+		// 行列cの行数を入力
+		int thirdRows = standardInput.nextInt();
+		// 行列cの行数が正の整数かどうかを確認
+		while (thirdRows <= 0) {
+			// 正の整数でない場合はメッセージを表示し、再入力を促す
+			System.out.print("行数は正の整数で入力してください。再入力してください: ");
+			// 行列cの行数を再入力
+			thirdRows = standardInput.nextInt();
+		}
+
+		// 行列cの列数を入力するようメッセージを表示
+		System.out.print("行列cの列数を入力してください: ");
+		// 行列cの列数を入力
+		int thirdCols = standardInput.nextInt();
+		// 行列cの列数が正の整数かどうかを確認
+		while (thirdCols <= 0) {
+			// 正の整数でない場合はメッセージを表示し、再入力を促す
+			System.out.print("列数は正の整数で入力してください。再入力してください: ");
+			// 行列cの列数を再入力
+			thirdCols = standardInput.nextInt();
+		}
+
 		// 行列aの文字列を出力
 		System.out.println("行列a");
 		// 行列aを出力
@@ -166,14 +190,9 @@ public class Exercise7_27 {
 		System.out.println("行列b");
 		// 行列bを出力
 		printMatrix(secondArray);
-
-		// 行列cの行数を行列aと同じに設定
-		int thirdRows = firstRows;
-		// 行列cの列数を行列aと同じに設定
-		int thirdCols = firstCols;
-		
 		// 加算結果を格納する行列cを宣言
 		int[][] thirdArray = new int[thirdRows][thirdCols];
+
 		// 行列a、行列b、行列cのサイズが等しい場合
 		if (firstRows == secondRows && firstCols == secondCols &&
 				firstRows == thirdRows && firstCols == thirdCols) {
@@ -188,16 +207,16 @@ public class Exercise7_27 {
 				// 行列cを出力
 				printMatrix(thirdArray);
 				// 加算が成功したことを示すメッセージを表示
-				System.out.println("行列の加算が成功しました。");
+				System.out.println("3つの行列のサイズが等しいため、行列の加算が成功しました。");
 			}
-			// 成功しなかった場合
+			// 加算が成功しなかった場合
 		} else {
 			// 行列cの文字列を出力
 			System.out.println("行列c");
-			// 行列bを出力
+			// 行列cを出力
 			printMatrix(thirdArray);
 			// 加算ができない場合はメッセージを表示
-			System.out.println("行列a、行列b、行列cのサイズが異なるため、行列の加算を行うことができません。");
+			System.out.println("3つの行列のサイズが異なるため、行列の加算を行うことができません。");
 		}
 	}
 }
