@@ -514,7 +514,7 @@ public class Day {
 		}
 
 		// 現在の日を加算
-		elapsedDays += date;
+		elapsedDays += date - FIRST_NUMBER;
 
 		// 経過日数を返す
 		return elapsedDays;
