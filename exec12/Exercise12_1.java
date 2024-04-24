@@ -41,6 +41,11 @@ public class Exercise12_1 {
 				// 再入力を受け付け
 				canRun = standardInput.nextInt();
 			}
+			// 0が入力された場合
+			if (canRun == 0) {
+				// ループから抜ける
+				break;
+			}
 			// 何km走行するか聞く
 			System.out.println("何km走行しますか？");
 			// x方向の移動距離の入力を促す
