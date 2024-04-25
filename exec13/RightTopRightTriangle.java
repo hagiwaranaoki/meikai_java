@@ -31,7 +31,7 @@ public class RightTopRightTriangle extends RightTriangle {
 		// 右上直角二等辺三角形に関する図形情報を表す文字列を返す
 		return "RTopRightTriangle(length：" + getLength() + ")";
 	}
-	
+
 	/*
 	 * 関数名:draw
 	 * 概要:右上二等辺三角形を描画する

@@ -1,6 +1,8 @@
 package exec13;
+
 // Scannerクラスをインポート
 import java.util.Scanner;
+
 /*
  * クラス名:HumanPlayer
  * 概要:人間プレーヤが出す手を選ぶ
@@ -11,8 +13,14 @@ public class HumanPlayer extends Player {
 	// Scannerオブジェクトを生成
 	Scanner standardInput = new Scanner(System.in);
 	// 人間プレーヤが出す手のフィールド
-	private int numberVariable;
-	
+	private int numberVariable = 0;
+	// 1を表す定数
+	static final int FIRST_NUMBER = 1;
+	// 2を表す定数
+	static final int SECOND_NUMBER = 2;
+	// 3を表す定数
+	static final int THIRD_NUMBER = 3;
+
 	/*
 	* コンストラクタ名:HumanPlayer
 	* 概要:人間プレーヤを生成する
@@ -26,7 +34,7 @@ public class HumanPlayer extends Player {
 		// 人間プレーヤが選ぶ手を受け付け
 		int humanNumber = standardInput.nextInt();
 		// 1~3以外の数値が入力された場合
-		while (humanNumber < 1 || humanNumber > 3) {
+		while (humanNumber < FIRST_NUMBER || humanNumber > THIRD_NUMBER) {
 			// 1~3の入力を促す
 			System.out.print("1~3の整数を入力してください：");
 			// 人間プレーヤが選ぶ手を受け付け
@@ -35,7 +43,7 @@ public class HumanPlayer extends Player {
 		// 人間プレーヤが出す手を設定
 		this.numberVariable = humanNumber;
 	}
-	
+
 	/*
 	 * 関数名:getNumber
 	 * 概要:人間プレーヤが出す手を取得
@@ -48,7 +56,7 @@ public class HumanPlayer extends Player {
 		// 人間プレーヤが出す手を返す
 		return numberVariable;
 	}
-	
+
 	/*
 	 * 関数名:toString
 	 * 概要:人間プレーヤが出す手を文字列で返す
@@ -58,24 +66,24 @@ public class HumanPlayer extends Player {
 	 * 作成日:2024/04/15
 	 */
 	public String toString() {
+		// 人間の手を入れる変数
+		String humanHand = "";
 		// 人間プレーヤが出す手が1の時
-		if (numberVariable == 1) {
-			// グーを返す
-			return "あなた：グー";
+		if (numberVariable == FIRST_NUMBER) {
+			// グーを格納
+			humanHand = "あなた：グー";
 		}
 		// 人間プレーヤが出す手が2の時
-		if (numberVariable == 2) {
-			// チョキを返す
-			return "あなた：チョキ";
+		if (numberVariable == SECOND_NUMBER) {
+			// チョキを格納
+			humanHand = "あなた：チョキ";
 		}
 		// 人間プレーヤが出す手が3の時
-		if (numberVariable == 3) {
-			// パーを返す
-			return "あなた：パー";
-			// それ以外の時
-		} else {
-			// エラーを返す
-			return "エラー: 指定された値を入力してください";
+		if (numberVariable == THIRD_NUMBER) {
+			// パーを格納
+			humanHand = "あなた：パー";
 		}
+		// 人間の手を返す
+		return humanHand;
 	}
 }

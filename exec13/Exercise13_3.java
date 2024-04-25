@@ -30,14 +30,26 @@ public class Exercise13_3 {
 		int humanNumber = humanPlayer.getNumber();
 		// コンピュータプレーヤが出す手を取得
 		int computerNumber = computerPlayer.getNumber();
+
+		//0を表す定数
+		final int ZERO_NUMBER = 0;
+		// 1を表す定数
+		final int FIRST_NUMBER = 1;
+		// 2を表す定数
+		final int SECOND_NUMBER = 2;
+		// 3を表す定数
+		final int THIRD_NUMBER = 3;
+
 		// 人間プレーヤが勝ちの場合
-		if ((humanNumber == 1 && computerNumber == 1) || (humanNumber == 2 && computerNumber == 2)
-				|| (humanNumber == 3 && computerNumber == 0)) {
+		if ((humanNumber == FIRST_NUMBER && computerNumber == FIRST_NUMBER)
+				|| (humanNumber == SECOND_NUMBER && computerNumber == SECOND_NUMBER)
+				|| (humanNumber == THIRD_NUMBER && computerNumber == ZERO_NUMBER)) {
 			// 勝ちメッセージ表示
 			System.out.println("あなたの勝ちです！");
 			// 人間が負けの場合
-		} else if ((humanNumber == 1 && computerNumber == 2) || (humanNumber == 2 && computerNumber == 0)
-				|| (humanNumber == 3 && computerNumber == 1)) {
+		} else if ((humanNumber == FIRST_NUMBER && computerNumber == SECOND_NUMBER)
+				|| (humanNumber == SECOND_NUMBER && computerNumber == ZERO_NUMBER)
+				|| (humanNumber == THIRD_NUMBER && computerNumber == FIRST_NUMBER)) {
 			// 負けメッセージ表示
 			System.out.println("あなたの負けです…");
 			// それ以外の場合

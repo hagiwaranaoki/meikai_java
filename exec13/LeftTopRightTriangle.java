@@ -16,8 +16,8 @@ public class LeftTopRightTriangle extends RightTriangle {
 	*/
 	public LeftTopRightTriangle(int triangleLength) {
 		// 親コンストラクタを呼び出す
-    super(triangleLength);
-  }
+		super(triangleLength);
+	}
 
 	/*
 	 * 関数名:toString
@@ -31,7 +31,7 @@ public class LeftTopRightTriangle extends RightTriangle {
 		// 左上直角二等辺三角形に関する図形情報を表す文字列を返す
 		return "LTopRightTriangle(length：" + getLength() + ")";
 	}
-	
+
 	/*
 	 * 関数名:draw
 	 * 概要:左上直角二等辺三角形を描画

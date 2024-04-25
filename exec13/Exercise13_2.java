@@ -37,14 +37,23 @@ public class Exercise13_2 {
 		// Shape型の配列を図形の個数分の要素数で生成
 		Shape[] variousShape = new Shape[numberVariable];
 
+		// 左下直角を表す定数
+		final int LEFT_BOTTOM = 1;
+		// 左上直角を表す定数
+		final int LEFT_TOP = 2;
+		// 右下直角を表す定数
+		final int RIGHT_BOTTOM = 3;
+		// 右上直角を表す定数
+		final int RIGHT_TOP = 4;
+
 		// 図形の個数だけ繰り返す
 		for (int i = 0; i < numberVariable; i++) {
 			// 三角形の種類の入力を促す
-			System.out.print((i + 1) + "番の図形の種類 (1…左上直角二等辺三角形/2…右下直角二等辺三角形/3…右上直角二等辺三角形)：");
+			System.out.print((i + 1) + "番の図形の種類 (1…左下直角二等辺三角形/2…左上直角二等辺三角形/3…右下直角二等辺三角形/4…右上直角二等辺三角形)：");
 			// 種類の数値を受け付け
 			int typeNumber = standardInput.nextInt();
 			// 1~4以外が入力された場合
-			while (typeNumber < 1 || typeNumber > 3) {
+			while (typeNumber < 1 || typeNumber > 4) {
 				// 1~4の整数値の入力を促す
 				System.out.print("1~3の整数値を入力してください：");
 				// 図形の種類番号を受け付け
@@ -52,7 +61,24 @@ public class Exercise13_2 {
 			}
 
 			// 種類で1が選択された場合
-			if (typeNumber == 1) {
+			if (typeNumber == LEFT_BOTTOM) {
+				// 一辺の長さの入力を促す
+				System.out.print("一辺の長さ:");
+				// 一辺の長さを受け付け
+				int triangleLength = standardInput.nextInt();
+				// 受け取った値が1未満の時
+				while (triangleLength < 1) {
+					// 正の整数値の入力を促す
+					System.out.print("正の整数値を入力してください：");
+					// 長さを受け付け
+					triangleLength = standardInput.nextInt();
+				}
+				// 新しい左下直角二等辺三角形オブジェクトを生成
+				variousShape[i] = new LeftBottomRightTriangle(triangleLength);
+			}
+
+			// 種類で2が選択された場合
+			if (typeNumber == LEFT_TOP) {
 				// 一辺の長さの入力を促す
 				System.out.print("一辺の長さ:");
 				// 一辺の長さを受け付け
@@ -68,8 +94,8 @@ public class Exercise13_2 {
 				variousShape[i] = new LeftTopRightTriangle(triangleLength);
 			}
 
-			// 種類で2が選択された場合
-			if (typeNumber == 2) {
+			// 種類で3が選択された場合
+			if (typeNumber == RIGHT_BOTTOM) {
 				// 一辺の長さの入力を促す
 				System.out.print("一辺の長さ:");
 				// 一辺の長さを受け付け
@@ -84,9 +110,9 @@ public class Exercise13_2 {
 				// 新しい右下直角二等辺三角形オブジェクトを生成
 				variousShape[i] = new RightBottomRightTriangle(triangleLength);
 			}
-			
-			// 種類で3が選択された場合
-			if (typeNumber == 3) {
+
+			// 種類で4が選択された場合
+			if (typeNumber == RIGHT_TOP) {
 				// 一辺の長さの入力を促す
 				System.out.print("一辺の長さ:");
 				// 一辺の長さを受け付け
