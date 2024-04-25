@@ -48,15 +48,24 @@ public class Exercise13_1 {
 				// 図形の種類番号を受け付け
 				typeNumber = standardInput.nextInt();
 			}
-
+			
+			// 点を表す定数
+			final int POINT_NUMBER = 1;
+			// 水平直線を表す定数
+			final int HORZ_LINE_NUMBER = 2;
+			// 垂直直線を表す定数
+			final int VIRT_LINE_NUMBER = 3;
+			// 長方形を表す定数
+			final int RECTANGLE_NUMBER = 4;
+			
 			// 図形の種類が1の時
-			if (typeNumber == 1) {
+			if (typeNumber == POINT_NUMBER) {
 				// 点を生成
 				variousShape[i] = new Point();
 			}
 
 			// 図形の種類が2の時
-			if (typeNumber == 2) {
+			if (typeNumber == HORZ_LINE_NUMBER) {
 				// 長さの入力を促す
 				System.out.print("長さ：");
 				// 長さの入力を受け付け
@@ -73,7 +82,7 @@ public class Exercise13_1 {
 			}
 
 			// 図形の種類が3の時
-			if (typeNumber == 3) {
+			if (typeNumber == VIRT_LINE_NUMBER) {
 				// 長さの入力を促す
 				System.out.print("長さ：");
 				// 長さの入力を受け付け
@@ -90,7 +99,7 @@ public class Exercise13_1 {
 			}
 
 			// 図形の種類が4の時
-			if (typeNumber == 4) {
+			if (typeNumber == RECTANGLE_NUMBER) {
 				// 幅の入力を促す
 				System.out.print("幅：");
 				// 幅の入力を受け付け
