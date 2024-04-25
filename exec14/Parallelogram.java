@@ -1,7 +1,5 @@
 package exec14;
 
-// 図形クラスをインポート
-import exec13.Shape;
 /*
  * クラス名:Parallelogram
  * 概要:平行四辺形を表す
@@ -66,7 +64,7 @@ public class Parallelogram extends Shape implements Plane2D {
 			System.out.println();
 		}
 	}
-	
+
 	/*
 	 * 関数名:getArea
 	 * 概要:平行四辺形をの面積を求める
