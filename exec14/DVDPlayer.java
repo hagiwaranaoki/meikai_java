@@ -16,6 +16,7 @@ public class DVDPlayer implements ExPlayer{
 	 * 作成日:2024/04/16
 	 */
 	public void play() {
+		//再生開始メッセージを表示
 		System.out.println("■DVD再生開始！");
 	}
 	
@@ -28,7 +29,8 @@ public class DVDPlayer implements ExPlayer{
 	 * 作成日:2024/04/16
 	 */
 	public void stop() {
-		System.out.println("■DVD停止！");
+		// 再生終了メッセージを表示
+		System.out.println("■DVD再生終了！");
 	}
 	
 	/*
@@ -40,6 +42,7 @@ public class DVDPlayer implements ExPlayer{
 	 * 作成日:2024/04/16
 	 */
 	public void slow() {
+		// スロー再生開始メッセージを表示
 		System.out.println("■DVDスロー再生開始！");
 	}
 }
