@@ -23,7 +23,7 @@ public class Odometer extends Car {
 	 */
 	public double odometer(double dx, double dy) {
 		// 移動が可能であれば
-		if (super.move(dx, dy)) {
+		if (super.moveCar(dx, dy)) {
 			// 総走行距離を経遺恨を用いて計算
 			double dist = Math.sqrt(dx * dx + dy * dy);
 			// 総走行距離に計算結果を入れる
@@ -44,9 +44,9 @@ public class Odometer extends Car {
 	* 作成者:N.Hagiwara
 	* 作成日:2024/04/12
 	*/
-	Odometer(String name, int width, int height, int length, double fuel, Day purchaseDay, double odometer) {
+	Odometer(String name, int width, int height, int length, double fuel, Day purchaseDay, double odometer, double totalTravelDistance) {
 		// 親クラスのコンストラクタを呼び出す
-		super(name, width, height, length, fuel, purchaseDay);
+		super(name, width, height, length, fuel, purchaseDay, totalTravelDistance);
 		// 総走行距離を初期化
 		this.odometer = odometer;
 	}

@@ -24,7 +24,9 @@ public class Car {
 	// 残り燃料のフィールド
 	public double fuel; 
 	// 購入日のフィールド
-	private Day purchaseDay; 
+	private Day purchaseDay;
+	// 総走行距離を表すフィールド
+	public double totalTravelDistance = 0;
 
 	/*
 	* コンストラクタ名:ExId
@@ -34,7 +36,7 @@ public class Car {
 	* 作成日:2024/04/12
 	*/
 	public Car(String name, int width, int height, int length, double fuel,
-			Day purchaseDay) {
+			Day purchaseDay, double totalTravelDistance) {
 		// 名前は引数の名前に設定
 		this.name = name;
 		// 幅は引数の幅に設定
@@ -49,6 +51,8 @@ public class Car {
 		x = y = 0.0;
 		// 購入日は新しいDayオブジェクトで設定
 		this.purchaseDay = new Day(purchaseDay);
+		// 総走行距離は引数の総走行距離に設定
+		this.totalTravelDistance = totalTravelDistance;
 	}
 	
 	/*
@@ -91,6 +95,19 @@ public class Car {
 	}
 	
 	/*
+	 * 関数名:getTotalTravelDistance
+	 * 概要:総走行距離を取得
+	 * 引数:なし
+	 * 戻り値:総走行距離
+	 * 作成者:N.Hagiwara
+	 * 作成日:2024/04/12
+	 */
+	public double getTotalTravelDistance() {
+		// 総走行距離を返す
+		return totalTravelDistance;
+	}
+	
+	/*
 	 * 関数名:getPurchaseDay
 	 * 概要:購入日を取得
 	 * 引数:なし
@@ -123,31 +140,36 @@ public class Car {
 	}
 
 	/*
-	 * 関数名:move
+	 * 関数名:moveCar
 	 * 概要:Ｘ方向にdx・Ｙ方向にdy移動
 	 * 引数:x座標の移動距離、y座標の移動距離
 	 * 戻り値:なし
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/12
 	 */
-	public boolean move(double dx, double dy) {
+	public boolean moveCar(double distanceX, double distanceY) {
 		// 移動距離を平方根を使って計算
-		double dist = Math.sqrt(dx * dx + dy * dy);
+		double movingDistance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
+		//走れるかどうかのフラグ
+		boolean isRun = false;
 		
 		// 燃料より移動距離のほうが大きいとき
-		if (dist > fuel) {
+		if (movingDistance > fuel) {
 			// 燃料不足で移動不可なのでfalseを返す
-			return false;
+			isRun = false;
 			// 燃料のほうが大きいとき
 		} else {
 			// 移動距離の分だけ燃料が減る
-			fuel -= dist;
+			fuel -= movingDistance;
 			// x座標に引数分動く
-			x += dx;
+			x += distanceX;
 			// y座標に引数分動く
-			y += dy;
+			y += distanceY;
+			// 総走行距離を加算
+			totalTravelDistance += movingDistance;
 			// 移動完了
-			return true;
+			isRun = true;
 		}
+		return isRun;
 	}
 }

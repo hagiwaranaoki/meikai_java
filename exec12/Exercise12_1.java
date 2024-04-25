@@ -24,10 +24,14 @@ public class Exercise12_1 {
 	public static void main(String[] args) {
 		// Scannerオブジェクトを生成
 		Scanner standardInput = new Scanner(System.in);
-		// Odomatorオブジェクトを生成
-		Odometer firstOdomator = new Odometer("myCar", 1885, 1490, 5220, 90.0, new Day(), 0);
+		// Carオブジェクトを生成
+		Car firstCar = new Car("myCar", 1885, 1490, 5220, 90.0, new Day(), 0.0);
 		// 生成したOdomatorオブジェクトの車のスペックを表示
-		firstOdomator.putSpec();
+		firstCar.putSpec();
+		// ユーザーが走行するとき用の定数
+		final int USER_CONTINUE = 1;
+		// ユーザーが奏功しないとき用の定数
+		final int USER_NOT_CONTINUE = 0;
 		//while文の中で抜ける処理があるまで繰り返す
 		while (true) {
 			// 走行するか聞く
@@ -35,14 +39,14 @@ public class Exercise12_1 {
 			// 走行するかの入力を受け付け
 			int canRun = standardInput.nextInt();
 			// 0,1以外の場合繰り返し
-			while (canRun < 0 || canRun > 1) {
+			while (canRun < USER_NOT_CONTINUE || canRun > USER_CONTINUE) {
 				// 再入力を促す
 				System.out.println("0か1を入力してください。");
 				// 再入力を受け付け
 				canRun = standardInput.nextInt();
 			}
 			// 0が入力された場合
-			if (canRun == 0) {
+			if (canRun == USER_NOT_CONTINUE) {
 				// ループから抜ける
 				break;
 			}
@@ -56,8 +60,11 @@ public class Exercise12_1 {
 			System.out.print("y方向:");
 			// y方向の移動距離の入力を促す
 			double movingToY = standardInput.nextDouble();
+			
+			//燃料があれば車を移動させる
+			firstCar.moveCar(movingToX, movingToY);
 			// 総走行距離をメソッドで計算して表示
-			System.out.println("総走行距離:" + firstOdomator.odometer(movingToX, movingToY) + "km");
+			System.out.println("総走行距離:" + firstCar.getTotalTravelDistance() + "km");
 		}
 	}
 }
