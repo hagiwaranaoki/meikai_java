@@ -26,10 +26,14 @@ public class Exercise12_2 {
 
 		// 口座タイプの入力
 		System.out.print("口座タイプを入力してください（1: Account, 2: TimeAccount）: ");
+		// 口座タイプがAccountの場合の定数
+		final int ACCOUNT_TYPE = 1;
+		// 口座タイプがTimeAccountの場合の定数
+		final int TIME_ACCOUNT_TYPE = 2;
 		// アカウントのタイプを受付
 		int firstAccountType = standardInput.nextInt();
 		// 口座タイプが1でも0でもない場合繰り返し
-		while (firstAccountType != 1 && firstAccountType != 2) {
+		while (firstAccountType != ACCOUNT_TYPE && firstAccountType != TIME_ACCOUNT_TYPE) {
 			// 0か1での入力を受け付け
 			System.out.print("口座タイプは1か2の整数で入力してください：");
 			// 口座タイプの入力を受け付け
@@ -61,7 +65,7 @@ public class Exercise12_2 {
 		// Accountオブジェクトを初期化
 		Account firstAccount = new Account();
 		// 預金残高が1の場合
-		if (firstAccountType == 1) {
+		if (firstAccountType == ACCOUNT_TYPE) {
 			// Accountオブジェクトを生成
 			 firstAccount = new Account(firstName, firstNumber, firstBalance);
 			// 預金残高が0ではない場合
@@ -82,7 +86,7 @@ public class Exercise12_2 {
 		// 口座タイプの入力を受け付け
 		int secondAccountType = standardInput.nextInt();
 		// 口座タイプが1でも0でもない場合繰り返し
-		while (secondAccountType != 1 && secondAccountType != 2) {
+		while (secondAccountType != ACCOUNT_TYPE && secondAccountType != TIME_ACCOUNT_TYPE) {
 			// 0か1での入力を受け付け
 			System.out.print("口座タイプは1か2の整数で入力してください：");
 			// 口座タイプの入力を受け付け
@@ -114,7 +118,7 @@ public class Exercise12_2 {
 		// Accountオブジェクトを初期化
 		Account secondAccount = new Account();
 		// 口座タイプが1の場合
-		if (secondAccountType == 1) {
+		if (secondAccountType == ACCOUNT_TYPE) {
 			// Accountオブジェクトを生成
 			secondAccount = new Account(secondName, secondNumber, secondBalance);
 			// 口座番号が1でhなかった場合
