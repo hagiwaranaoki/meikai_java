@@ -21,7 +21,7 @@ public class Exercise14_2 {
 		// 自己紹介を出力
 		skinPet.introduce();
 		// 色を変える
-		skinPet.changeSkin(Skinnable.redNumber);
+		skinPet.changeSkin(Skinnable.RED_NUMBER);
 		// 自己紹介を出力
 		skinPet.introduce();
 	}
