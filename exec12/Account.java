@@ -29,6 +29,16 @@ class Account {
 		// 預金残高を引数で受け取った値に設定
 		balance = z;
 	}
+	
+	/*
+	* コンストラクタ名:Account
+	* 概要:Accountオブジェクトを作成
+	* 引数:なし
+	* 作成者:N.Hagiwara
+	* 作成日:2024/04/12
+	*/
+	Account(){
+	}
 
 	/*
 	 * 関数名:getName

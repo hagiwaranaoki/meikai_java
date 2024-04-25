@@ -1,5 +1,10 @@
 package exec12;
-
+/*
+* クラス名:TimeAccount
+* 概要:定期預金つき銀行口座を表す
+* 作成者:N.Hagiwara
+* 作成日:2024/04/10
+*/
 class TimeAccount extends Account {
 	// 定期預金の残高を表すフィールド
 	private long timeBalance;
@@ -29,6 +34,19 @@ class TimeAccount extends Account {
 	long getBalance() {
 		// 定期預金の残高と普通預金の残高を足した結果を戻す
 		return timeBalance + super.getBalance();
+	}
+	
+	/*
+	 * 関数名:getBalance
+	 * 概要:定期預金の残高を足す
+	 * 引数:なし
+	 * 戻り値:定期預金の残高
+	 * 作成者:N.Hagiwara
+	 * 作成日:2024/04/12
+	 */
+	long getTimeBalance() {
+		// 定期預金の残高を戻す
+		return timeBalance;
 	}
 
 	/*

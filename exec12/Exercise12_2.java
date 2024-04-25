@@ -1,5 +1,7 @@
 package exec12;
 
+import java.util.Scanner;
+
 /*
  * クラス名:Exercise12_2
  * 概要:TimeAccountクラスのテスト
@@ -16,23 +18,138 @@ public class Exercise12_2 {
 	 * 作成日:2024/04/12
 	 */
 	public static void main(String[] args) {
-		// 一つ目のTimeAccountオブジェクトを生成
-		TimeAccount firstTimeAccount = new TimeAccount("定期預金", "123456", 5, 1234567);
-		// 一つ目のTimeAccountオブジェクトの口座名義をメソッドで取得し出力
-		System.out.println("口座名義 : " + firstTimeAccount.getName());
-		// 一つ目のTimeAccountオブジェクトの口座番号をメソッドで取得し出力
-		System.out.println("口座番号 : " + firstTimeAccount.getNo());
-		// 一つ目のTimeAccountオブジェクトの口座残高をメソッドで取得し出力
-		System.out.println("口座残高 : " + firstTimeAccount.getBalance());
-		// 二つ目のTimeAccountオブジェクトを生成
-		Account secondTimeAccount = new Account("普通預金", "654321", 1234572);
-		// 二つ目のTimeAccountオブジェクトの口座名義をメソッドで取得し出力
-		System.out.println("口座名義 : " + secondTimeAccount.getName());
-		// 二つ目のTimeAccountオブジェクトの口座番号をメソッドで取得し出力
-		System.out.println("口座番号 : " + secondTimeAccount.getNo());
-		// 二つ目のTimeAccountオブジェクトの口座残高をメソッドで取得し出力
-		System.out.println("口座残高 : " + secondTimeAccount.getBalance());
-		// 二つの口座残高を比べた結果を表示
-		System.out.println(TimeAccount.compBalance(firstTimeAccount, secondTimeAccount));
+		// Scannerオブジェクトを生成
+		Scanner standardInput = new Scanner(System.in);
+
+		// 1つ目のオブジェクトの作成
+		System.out.println("1つ目の口座情報を入力してください。");
+
+		// 口座タイプの入力
+		System.out.print("口座タイプを入力してください（1: Account, 2: TimeAccount）: ");
+		// アカウントのタイプを受付
+		int firstAccountType = standardInput.nextInt();
+		// 口座タイプが1でも0でもない場合繰り返し
+		while (firstAccountType != 1 && firstAccountType != 2) {
+			// 0か1での入力を受け付け
+			System.out.print("口座タイプは1か2の整数で入力してください：");
+			// 口座タイプの入力を受け付け
+			firstAccountType = standardInput.nextInt();
+		}
+
+		// 口座名義の入力を促す
+		System.out.print("口座名義を入力してください: ");
+		// 口座名義を受け付け
+		String firstName = standardInput.next();
+
+		// 口座番号の入力
+		System.out.print("口座番号を入力してください: ");
+		// 口座番号を受け付け
+		String firstNumber = standardInput.next();
+
+		// 預金残高の入力
+		System.out.print("預金残高を入力してください: ");
+		// 預金残高を受け付け
+		long firstBalance = standardInput.nextLong();
+		// 預金残高が0未満の時繰り返し
+		while (firstBalance < 0) {
+			// 0以上の整数の入力を促し
+			System.out.print("0以上の整数を入力してください");
+			// 預金残高を受け付け
+			firstBalance= standardInput.nextLong();
+		}
+		
+		// Accountオブジェクトを初期化
+		Account firstAccount = new Account();
+		// 預金残高が1の場合
+		if (firstAccountType == 1) {
+			// Accountオブジェクトを生成
+			 firstAccount = new Account(firstName, firstNumber, firstBalance);
+			// 預金残高が0ではない場合
+		} else {
+			// 定期預金残高の入力を促す
+			System.out.print("定期預金残高を入力してください: ");
+			// 定期預金残高を受け付け
+			long firstTimeBalance = standardInput.nextLong();
+			// TimeAccountオブジェクトの生成
+			firstAccount = new TimeAccount(firstName, firstNumber, firstBalance, firstTimeBalance);
+		}
+
+		// 2つ目のオブジェクトの作成
+		System.out.println("2つ目の口座情報を入力してください。");
+
+		// 口座タイプの入力を促す
+		System.out.print("口座タイプを入力してください（1: Account, 2: TimeAccount）: ");
+		// 口座タイプの入力を受け付け
+		int secondAccountType = standardInput.nextInt();
+		// 口座タイプが1でも0でもない場合繰り返し
+		while (secondAccountType != 1 && secondAccountType != 2) {
+			// 0か1での入力を受け付け
+			System.out.print("口座タイプは1か2の整数で入力してください：");
+			// 口座タイプの入力を受け付け
+			secondAccountType = standardInput.nextInt();
+		}
+		
+		// 口座名義の入力を促す
+		System.out.print("口座名義を入力してください: ");
+		// 口座名義の入力を受け付け
+		String secondName = standardInput.next();
+
+		// 口座番号の入力を促す
+		System.out.print("口座番号を入力してください: ");
+		// 口座番号を受け付け
+		String secondNumber = standardInput.next();
+
+		// 預金残高の入力を促す
+		System.out.print("預金残高を入力してください: ");
+		// 預金残高を受け付け
+		long secondBalance = standardInput.nextLong();
+		// 預金残高が0未満の時繰り返し
+		while (secondBalance < 0) {
+			// 0以上の整数の入力を促し
+			System.out.print("0以上の整数を入力してください");
+			// 預金残高を受け付け
+			secondBalance= standardInput.nextLong();
+		}
+		
+		// Accountオブジェクトを初期化
+		Account secondAccount = new Account();
+		// 口座タイプが1の場合
+		if (secondAccountType == 1) {
+			// Accountオブジェクトを生成
+			secondAccount = new Account(secondName, secondNumber, secondBalance);
+			// 口座番号が1でhなかった場合
+		} else {
+			// 定期預金残高の入力を促す
+			System.out.print("定期預金残高を入力してください: ");
+			// 定期預金を受け付け
+			long secondTimeBalance = standardInput.nextLong();
+			// TimeAccountオブジェクトを生成
+			secondAccount = new TimeAccount(secondName, secondNumber, secondBalance, secondTimeBalance);
+		}
+
+		// 残高の比較
+		int comparisonResult = TimeAccount.compBalance(firstAccount, secondAccount);
+
+		// 比較結果の表示
+		if (comparisonResult > 0) {
+			// 一つ目の口座のほうが残高多いことを表示
+			System.out.println(firstAccount.getName() + "の残高のほうが多いです。");
+			// 0未満の場合
+		} else if (comparisonResult < 0) {
+			// 二つ目の口座のほうが残高が多いことを表示
+			System.out.println(secondAccount.getName() + "の残高のほうが多いです。");
+			// それ以外の場合
+		} else {
+			// 口座の残高が同じということを表示
+			System.out.println("両方の口座の残高は同じです。");
+		}
+
+		// 一つ目の口座の残高を表示
+		System.out.println(firstAccount.getName() + "の残高: " + firstAccount.getBalance());
+		// 二つ目の口座の残高を表示
+		System.out.println(secondAccount.getName() + "の残高: " + secondAccount.getBalance());
+		
+		// 入力の受付を終了
+		standardInput.close();
 	}
 }
