@@ -35,6 +35,15 @@ public class Exercise13_1 {
 		// Shape型の配列を作成
 		Shape[] variousShape = new Shape[numberVariable];
 
+		// 点を表す定数
+		final int POINT_NUMBER = 1;
+		// 水平直線を表す定数
+		final int HORZ_LINE_NUMBER = 2;
+		// 垂直直線を表す定数
+		final int VIRT_LINE_NUMBER = 3;
+		// 長方形を表す定数
+		final int RECTANGLE_NUMBER = 4;
+
 		// 図形の個数分繰り返し
 		for (int i = 0; i < numberVariable; i++) {
 			// 図形の種類の入力を促す
@@ -42,22 +51,13 @@ public class Exercise13_1 {
 			// 図形の種類番号を受け付け
 			int typeNumber = standardInput.nextInt();
 			// 1~4以外が入力された場合
-			while (typeNumber < 1 || typeNumber > 4) {
+			while (typeNumber < POINT_NUMBER || typeNumber > RECTANGLE_NUMBER) {
 				// 1~4の整数値の入力を促す
 				System.out.print("1~4の整数値を入力してください：");
 				// 図形の種類番号を受け付け
 				typeNumber = standardInput.nextInt();
 			}
-			
-			// 点を表す定数
-			final int POINT_NUMBER = 1;
-			// 水平直線を表す定数
-			final int HORZ_LINE_NUMBER = 2;
-			// 垂直直線を表す定数
-			final int VIRT_LINE_NUMBER = 3;
-			// 長方形を表す定数
-			final int RECTANGLE_NUMBER = 4;
-			
+
 			// 図形の種類が1の時
 			if (typeNumber == POINT_NUMBER) {
 				// 点を生成
