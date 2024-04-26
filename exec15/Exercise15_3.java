@@ -33,8 +33,11 @@ public class Exercise15_3 {
 		// 文字列2が文字列1に含まれるかを調べる
 		int indexVariable = firstString.indexOf(secondString);
 		
+		// 文字列が含まれない場合の定数
+		final int NOT_INCLUDED = -1;
+		
 		// 文字列2が文字列1に含まれる場合
-		if (indexVariable != -1) {
+		if (indexVariable != NOT_INCLUDED) {
 			// 文字列1出力
 			System.out.println("文字列1:" + firstString);
 			// 文字列2出力

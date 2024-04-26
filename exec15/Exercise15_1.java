@@ -46,23 +46,23 @@ public class Exercise15_1 {
 	public static String reverseString(String stringVariable) {
 		// char型の配列を生成
 		char[] charArray = stringVariable.toCharArray();
-		// 配列の左側の変数を定義
-		int leftArray = 0;
-		// 配列の右側の変数を定義
-		int rightArray = charArray.length - 1;
+		// 配列の先頭の変数を定義
+		int startIndex = 0;
+		// 配列の末尾の変数を定義
+		int endIndex = charArray.length - 1;
 		
-		// 左側が右側より小さい時
-		while (leftArray < rightArray) {
-			// char型の変数に一時的に配列の一番左を入れる
-			char temporaryVariable = charArray[leftArray];
-			// 左側を右側と入れ替える
-			charArray[leftArray] = charArray[rightArray];
-			// 右側を左側と入れ替える
-			charArray[rightArray] = temporaryVariable;
-			// 左側をインクリメント
-			leftArray++;
-			// 右側をデクリメント
-			rightArray--;
+		// 先頭が末尾より小さい時
+		while (startIndex < endIndex) {
+			// 先頭の文字を一時的な変数に保存
+			char temporaryVariable = charArray[startIndex];
+			// 先頭の文字を末尾の文字で置き換える
+			charArray[startIndex] = charArray[endIndex];
+			// 末尾の文字を一時的な変数（元の先頭の文字）で置き換える
+			charArray[endIndex] = temporaryVariable;
+			// 先頭のインデックスを1つ進める
+			startIndex++;
+			// 末尾のインデックスを1つ戻す
+			endIndex--;
 		}
 		
 		// 反転した文字の配列を新しい文字列に変換して返す
