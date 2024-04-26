@@ -16,12 +16,14 @@ public class Exercise14_2 {
 	 * 作成日:2024/04/10
 	 */
 	public static void main(String[] args) {
+		// ペットの色を表す定数
+		final int PET_COLOR = 0;
 		// 着せ替え可能ロボットペットのオブジェクトを生成
-		SkinnableRobotPet skinPet = new SkinnableRobotPet(2, "クロ", "黒マスター");
+		SkinnableRobotPet skinPet = new SkinnableRobotPet(PET_COLOR, "クロ", "黒マスター");
 		// 自己紹介を出力
 		skinPet.introduce();
 		// 色を変える
-		skinPet.changeSkin(Skinnable.RED_NUMBER);
+		skinPet.changeSkin(Skinnable.LEOPARD_NUMBER);
 		// 自己紹介を出力
 		skinPet.introduce();
 	}

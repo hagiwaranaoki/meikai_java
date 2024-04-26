@@ -8,15 +8,15 @@ package exec14;
  */
 public interface Skinnable {
 	// 黒の数値を設定
-	static final int BLACK_NUMBER = 0;
+	int BLACK_NUMBER = 0;
 	// 赤の数値を設定
-	final int RED_NUMBER = 1;
+	int RED_NUMBER = 1;
 	// 緑の数値を設定
-	final int GREEN_NUMBER = 2;
+	int GREEN_NUMBER = 2;
 	// 青の数値を設定
-	final int BLUE_NUMBER = 3;
+	int BLUE_NUMBER = 3;
 	// ヒョウ色の数値を設定
-	final int LEOPARD_NUMBER = 4;
+	int LEOPARD_NUMBER = 4;
 
 	/*
 	 * 関数名:changeSkin
