@@ -142,35 +142,76 @@ public class Day {
 	* 作成日:2024/04/10
 	*/
 	public Day(int year, int month, int date) {
-		// 年、月指定コンストラクタの呼び出し
-		this(year, month);
-		// 1月か3月か5月か7月か8月か10月か12月に日にちが31日より上を受け取った場合
-		if ((month == FIRST_NUMBER || month == THIRD_NUMBER || month == FIFTH_NUMBER || month == SEVENTH_NUMBER
-				|| month == EIGHTH_NUMBER || month == TENTH_NUMBER || month == TWELFTH_NUMBER)
-				&& date > THIRTY_FIRST_NUMBER) {
-			// 日を31に設定
-			this.date = THIRTY_FIRST_NUMBER;
-			// 4月か6月か9月か11月に日にちが30日より上を受け取った場合
-		} else if ((month == FOUR_NUMBER || month == SIXTH_NUMBER || month == NINTH_NUMBER || month == ELEVENTH_NUMBER)
-				&& date > THIRTIETH_NUMBER) {
-			// 日にちを30日に設定
-			this.date = THIRTIETH_NUMBER;
-			// うるう年の2月に日にちが29より上の値を受け取った場合
-		} else if (month == SECOND_NUMBER && isLeap(year) == true && date > TWENTY_NINTH_NUMBER) {
-			// 日を29に設定
-			this.date = TWENTY_NINTH_NUMBER;
-			// うるう年ではない2月に日にちが28より上の値を受け取った場合
-		} else if (month == SECOND_NUMBER && isLeap(year) == false && date > TWENTY_EIGHTH_NUMBER) {
-			// 日を28に設定
-			this.date = TWENTY_EIGHTH_NUMBER;
-			// 日が1未満の場合
-		} else if (date < FIRST_NUMBER) {
-			// 日を1に設定
-			this.date = FIRST_NUMBER;
+		// 年のチェックと設定
+		if (year < FIRST_NUMBER) {
+			// 年が1未満の場合、1年に設定
+			this.year = FIRST_NUMBER; 
 			// それ以外の場合
 		} else {
-			// 日を引数の日に設定
+			//引数の年で指定
+			this.year = year;
+		}
+
+		// 月のチェックと設定
+		if (month < FIRST_NUMBER) {
+			// 月が1未満の場合、1月に設定
+			this.month = FIRST_NUMBER; 
+			// 月が12を超える場合
+		} else if (month > TWELFTH_NUMBER) {
+			// 12月に設定
+			this.month = TWELFTH_NUMBER; 
+			// それ以外の場合
+		} else {
+			// 月をそのまま指定
+			this.month = month;
+		}
+
+		// 月の日数を取得
+		int maxDate = getMaxDate(this.year, this.month);
+		// 日が1未満の場合
+		if (date < FIRST_NUMBER) {
+			// 1日に設定
+			this.date = FIRST_NUMBER; 
+			// 日がその月の最大日数を超える場合
+		} else if (date > maxDate) {
+			//その月の最大日に設定
+			this.date = maxDate; 
+			// 日が1未満ではない場合
+		} else {
+			// 日を引数で設定
 			this.date = date;
+		}
+	}
+
+	/*
+	 * 関数名:getMaxDate
+	 * 概要:月の最大日数を返す
+	 * 引数:なし
+	 * 戻り値:月の最大日数
+	 * 作成者:N.Hagiwara
+	 * 作成日:2024/04/26
+	 */
+	private int getMaxDate(int yearVariable, int monthVariable) {
+		// 月によって返す値を変える
+		switch (monthVariable) {
+		// 4月の場合
+		case FOUR_NUMBER:
+		// 6月の場合
+		case SIXTH_NUMBER:
+		// 9月の場合
+		case NINTH_NUMBER:
+		// 11月の場合
+		case ELEVENTH_NUMBER:
+			// 30を返す
+			return THIRTIETH_NUMBER;
+		// 2月の場合
+		case SECOND_NUMBER:
+			// 閏年であれば29を返し、そうでなければ28を返す
+			return isLeap(yearVariable) ? TWENTY_NINTH_NUMBER : TWENTY_EIGHTH_NUMBER;
+			// それ以外は31を返す
+		default:
+			// 31を返す
+			return THIRTY_FIRST_NUMBER;
 		}
 	}
 
