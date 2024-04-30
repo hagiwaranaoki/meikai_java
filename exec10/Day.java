@@ -145,7 +145,7 @@ public class Day {
 		// 年のチェックと設定
 		if (year < FIRST_NUMBER) {
 			// 年が1未満の場合、1年に設定
-			this.year = FIRST_NUMBER; 
+			this.year = FIRST_NUMBER;
 			// それ以外の場合
 		} else {
 			//引数の年で指定
@@ -155,11 +155,11 @@ public class Day {
 		// 月のチェックと設定
 		if (month < FIRST_NUMBER) {
 			// 月が1未満の場合、1月に設定
-			this.month = FIRST_NUMBER; 
+			this.month = FIRST_NUMBER;
 			// 月が12を超える場合
 		} else if (month > TWELFTH_NUMBER) {
 			// 12月に設定
-			this.month = TWELFTH_NUMBER; 
+			this.month = TWELFTH_NUMBER;
 			// それ以外の場合
 		} else {
 			// 月をそのまま指定
@@ -171,11 +171,11 @@ public class Day {
 		// 日が1未満の場合
 		if (date < FIRST_NUMBER) {
 			// 1日に設定
-			this.date = FIRST_NUMBER; 
+			this.date = FIRST_NUMBER;
 			// 日がその月の最大日数を超える場合
 		} else if (date > maxDate) {
 			//その月の最大日に設定
-			this.date = maxDate; 
+			this.date = maxDate;
 			// 日が1未満ではない場合
 		} else {
 			// 日を引数で設定
@@ -196,11 +196,11 @@ public class Day {
 		switch (monthVariable) {
 		// 4月の場合
 		case FOUR_NUMBER:
-		// 6月の場合
+			// 6月の場合
 		case SIXTH_NUMBER:
-		// 9月の場合
+			// 9月の場合
 		case NINTH_NUMBER:
-		// 11月の場合
+			// 11月の場合
 		case ELEVENTH_NUMBER:
 			// 30を返す
 			return THIRTIETH_NUMBER;
@@ -208,7 +208,7 @@ public class Day {
 		case SECOND_NUMBER:
 			// 閏年であれば29を返し、そうでなければ28を返す
 			return isLeap(yearVariable) ? TWENTY_NINTH_NUMBER : TWENTY_EIGHTH_NUMBER;
-			// それ以外は31を返す
+		// それ以外は31を返す
 		default:
 			// 31を返す
 			return THIRTY_FIRST_NUMBER;
@@ -800,13 +800,16 @@ public class Day {
 		if (date == FIRST_NUMBER) {
 			// 月が1の時
 			if (month == FIRST_NUMBER) {
-				// 年をデクリメント
-				year--;
-				//月を12にする
-				month = TWELFTH_NUMBER;
-				// 日を31にする
-				date = THIRTY_FIRST_NUMBER;
-				// 月が1以外の時
+				// 年が1より大きい場合
+				if (year > FIRST_NUMBER) {
+					// 年をデクリメント
+					year--;
+					// 月を12に設定
+					month = TWELFTH_NUMBER;
+					// 日を31にする
+					date = THIRTY_FIRST_NUMBER;
+				}
+				// 年が1の場合は何もしない（年を0以下にしない）
 			} else {
 				// 月をデクリメント
 				month--;
@@ -816,7 +819,6 @@ public class Day {
 					if (isLeap(year)) {
 						// 日を29に設定
 						date = TWENTY_NINTH_NUMBER;
-						// 閏年でなければ
 					} else {
 						// 日を28に設定
 						date = TWENTY_EIGHTH_NUMBER;
@@ -825,17 +827,17 @@ public class Day {
 				} else if (month == FOUR_NUMBER || month == SIXTH_NUMBER || month == NINTH_NUMBER || month == ELEVENTH_NUMBER) {
 					// 日を30に設定
 					date = THIRTIETH_NUMBER;
-					// それ以外の月
+					// それ以外の月の場合
 				} else {
 					// 日を31に設定
 					date = THIRTY_FIRST_NUMBER;
 				}
 			}
-			// 日が1ではない
 		} else {
 			// 日をデクリメント
 			date--;
 		}
+
 	}
 
 	/*
