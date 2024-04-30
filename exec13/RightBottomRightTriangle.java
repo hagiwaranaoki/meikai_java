@@ -41,10 +41,12 @@ public class RightBottomRightTriangle extends RightTriangle {
 	 * 作成日:2024/04/15
 	 */
 	public void draw() {
+		// 1を表す定数
+		final int ONE_NUMBER = 1;
 		// 直角二等辺三角形の高さ分繰り返す
 		for (int i = getLength(); i > 0; i--) {
 			// 各行の空白の数を決定するループ
-			for (int j = i; j - 1 > 0; j--) {
+			for (int j = i; j - ONE_NUMBER > 0; j--) {
 				// 空白を出力
 				System.out.print(' ');
 			}

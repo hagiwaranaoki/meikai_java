@@ -45,6 +45,8 @@ public class Exercise13_2 {
 		final int RIGHT_BOTTOM = 3;
 		// 右上直角を表す定数
 		final int RIGHT_TOP = 4;
+		// 1を表す定数
+		final int ONE_NUMBER = 1;
 
 		// 図形の個数だけ繰り返す
 		for (int i = 0; i < numberVariable; i++) {
@@ -53,9 +55,9 @@ public class Exercise13_2 {
 			// 種類の数値を受け付け
 			int typeNumber = standardInput.nextInt();
 			// 1~4以外が入力された場合
-			while (typeNumber < 1 || typeNumber > 4) {
+			while (typeNumber < LEFT_BOTTOM || typeNumber > LEFT_BOTTOM) {
 				// 1~4の整数値の入力を促す
-				System.out.print("1~3の整数値を入力してください：");
+				System.out.print("1~4の整数値を入力してください：");
 				// 図形の種類番号を受け付け
 				typeNumber = standardInput.nextInt();
 			}
@@ -67,7 +69,7 @@ public class Exercise13_2 {
 				// 一辺の長さを受け付け
 				int triangleLength = standardInput.nextInt();
 				// 受け取った値が1未満の時
-				while (triangleLength < 1) {
+				while (triangleLength < ONE_NUMBER) {
 					// 正の整数値の入力を促す
 					System.out.print("正の整数値を入力してください：");
 					// 長さを受け付け
@@ -84,7 +86,7 @@ public class Exercise13_2 {
 				// 一辺の長さを受け付け
 				int triangleLength = standardInput.nextInt();
 				// 受け取った値が1未満の時
-				while (triangleLength < 1) {
+				while (triangleLength < ONE_NUMBER) {
 					// 正の整数値の入力を促す
 					System.out.print("正の整数値を入力してください：");
 					// 長さを受け付け
@@ -101,7 +103,7 @@ public class Exercise13_2 {
 				// 一辺の長さを受け付け
 				int triangleLength = standardInput.nextInt();
 				// 受け取った値が1未満の時
-				while (triangleLength < 1) {
+				while (triangleLength < ONE_NUMBER) {
 					// 正の整数値の入力を促す
 					System.out.print("正の整数値を入力してください：");
 					// 長さを受け付け
@@ -118,7 +120,7 @@ public class Exercise13_2 {
 				// 一辺の長さを受け付け
 				int triangleLength = standardInput.nextInt();
 				// 受け取った値が1未満の時
-				while (triangleLength < 1) {
+				while (triangleLength < ONE_NUMBER) {
 					// 正の整数値の入力を促す
 					System.out.print("正の整数値を入力してください：");
 					// 長さを受け付け

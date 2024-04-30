@@ -112,22 +112,28 @@ class RobotPet extends Pet {
 	 * 作成日:2024/04/16
 	 */
 	public void work(int sw) {
+		// 掃除するときの定数
+		final int DO_CLEAN = 0;
+		// 洗濯するときの定数
+		final int DO_WASH = 1;
+		// 炊事するときの定数
+		final int DO_COOK = 2;
 		// 引数によって実行を変える
 		switch (sw) {
 		// 引数が0の時
-		case 0:
+		case DO_CLEAN:
 			// 掃除をする
 			System.out.println("掃除します。");
 			// switchから抜け出す
 			break;
 			//引数が1の時
-		case 1:
+		case DO_WASH:
 			// 洗濯をする
 			System.out.println("洗濯します。");
 			// switchから抜け出す
 			break;
 			// 引数が2の時
-		case 2:
+		case DO_COOK:
 			// 炊事をする
 			System.out.println("炊事します。");
 			// switchから抜け出す

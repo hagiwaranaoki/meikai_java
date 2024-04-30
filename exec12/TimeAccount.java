@@ -8,6 +8,8 @@ package exec12;
 class TimeAccount extends Account {
 	// 定期預金の残高を表すフィールド
 	private long timeBalance;
+	// 0を表す定数
+	static final int ZERO_NUMBER = 0;
 
 	/*
 	* コンストラクタ名:TimeAccount
@@ -61,7 +63,7 @@ class TimeAccount extends Account {
 		// 定期預金の残高を普通預金に移動させるために、deposit()メソッドを呼び出す
 		deposit(timeBalance);
 		// timeBalanceを0にリセットする
-		timeBalance = 0;
+		timeBalance = ZERO_NUMBER;
 	}
 
 	/*
@@ -73,8 +75,12 @@ class TimeAccount extends Account {
 	 * 作成日:2024/04/12
 	 */
 	static int compBalance(Account a, Account b) {
+		// 比較結果-1を表す定数
+		final int COMPARSION_RESULT_MINUS_ONE = -1;
+		// 比較結果1を表す定数
+		final int COMPARSION_RESULT_ONE = 1;
 		// 比較結果をリセット
-		int comparisonResult = 0;
+		int comparisonResult = ZERO_NUMBER;
 		//一つ目の預金残高をメソッドを使用して取得
 		long firstBalance = a.getBalance();
 		//二つ目の預金残高をメソッドを使用して取得
@@ -82,15 +88,15 @@ class TimeAccount extends Account {
 		// 一つ目の預金残高のほうが大きいとき
 		if (firstBalance > secondBalance) {
 			// 比較結果に1を入れる
-			comparisonResult = 1;
+			comparisonResult = COMPARSION_RESULT_ONE;
 			// 一つ目の預金残高のほうが少ないとき
 		} else if (firstBalance < secondBalance) {
 			// 比較結果に2を入れる
-			comparisonResult = -1;
+			comparisonResult = COMPARSION_RESULT_MINUS_ONE;
 			// 一つ目と二つ目の預金残高が同じとき
 		} else {
 			// 比較結果に0を入れる
-			comparisonResult = 0;
+			comparisonResult = ZERO_NUMBER;
 		}
 		// 比較結果を返す
 		return comparisonResult;

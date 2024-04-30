@@ -41,8 +41,10 @@ public class VirtLine extends AbstLine {
 	 * 作成日:2024/04/15
 	 */
 	public void draw() {
+		// 1を表す定数
+		final int ONE_NUMBER = 1;
 		// 長さの数だけ繰り返し
-		for (int i = 1; i <= getLength(); i++) {
+		for (int i = ONE_NUMBER; i <= getLength(); i++) {
 			// |を表示する
 			System.out.println('|');
 		}

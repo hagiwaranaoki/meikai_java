@@ -48,10 +48,12 @@ public class Rectangle extends Shape implements Plane2D {
 	 * 作成日:2024/04/15
 	 */
 	public void draw() {
+		// 1を表す定数
+		final int ONE_NUMBER = 1;
 		// 高さの数値分繰り返す
-		for (int i = 1; i <= height; i++) {
+		for (int i = ONE_NUMBER; i <= height; i++) {
 			// 幅の数値分繰り返す
-			for (int j = 1; j <= width; j++) {
+			for (int j = ONE_NUMBER; j <= width; j++) {
 				// *を表示
 				System.out.print('*');
 			}

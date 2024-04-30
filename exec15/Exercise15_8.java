@@ -66,7 +66,7 @@ public class Exercise15_8 {
 			// 年の値をコマンドライン引数0番目から受け取る
 			int yearVariable = Integer.parseInt(args[0]);
 			// 月の値をコマンドライン引数1番目から受け取る
-			int monthVariable = Integer.parseInt(args[FIRST_ARGUMENT]) - 1;
+			int monthVariable = Integer.parseInt(args[FIRST_ARGUMENT]) - FIRST_ARGUMENT;
 			// 年または月が0未満の場合
 			if (yearVariable < 0 || monthVariable < 0) {
 				// エラーメッセージを返す
@@ -132,7 +132,7 @@ public class Exercise15_8 {
 		// カレンダークラスのオブジェクトを生成
 		Calendar calenderVariable = Calendar.getInstance();
 		// 年と月を指定し、1日から表示
-		calenderVariable.set(setYear, setMonth, 1);
+		calenderVariable.set(setYear, setMonth, FIRST_ARGUMENT);
 
 		// その月がとりえる最大の日を取得
 		int daysInMonth = calenderVariable.getActualMaximum(Calendar.DAY_OF_MONTH);
@@ -145,7 +145,7 @@ public class Exercise15_8 {
 		System.out.println("Su Mo Tu We Th Fr Sa");
 
 		// 曜日の数だけ繰り返す
-		for (int i = 1; i < startingDayOfWeek; i++) {
+		for (int i = FIRST_ARGUMENT; i < startingDayOfWeek; i++) {
 			// 空白を出力
 			System.out.print("   ");
 		}
