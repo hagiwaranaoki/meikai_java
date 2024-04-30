@@ -57,23 +57,30 @@ public class Exercise12_2 {
 		// 預金残高が0未満の時繰り返し
 		while (firstBalance < 0) {
 			// 0以上の整数の入力を促し
-			System.out.print("0以上の整数を入力してください");
+			System.out.print("0以上の整数を入力してください：");
 			// 預金残高を受け付け
-			firstBalance= standardInput.nextLong();
+			firstBalance = standardInput.nextLong();
 		}
-		
+
 		// Accountオブジェクトを初期化
 		Account firstAccount = new Account();
 		// 預金残高が1の場合
 		if (firstAccountType == ACCOUNT_TYPE) {
 			// Accountオブジェクトを生成
-			 firstAccount = new Account(firstName, firstNumber, firstBalance);
+			firstAccount = new Account(firstName, firstNumber, firstBalance);
 			// 預金残高が0ではない場合
 		} else {
 			// 定期預金残高の入力を促す
 			System.out.print("定期預金残高を入力してください: ");
 			// 定期預金残高を受け付け
 			long firstTimeBalance = standardInput.nextLong();
+			// 預金残高が0未満の時繰り返し
+			while (firstTimeBalance < 0) {
+				// 0以上の整数の入力を促し
+				System.out.print("0以上の整数を入力してください：");
+				// 預金残高を受け付け
+				firstTimeBalance = standardInput.nextLong();
+			}
 			// TimeAccountオブジェクトの生成
 			firstAccount = new TimeAccount(firstName, firstNumber, firstBalance, firstTimeBalance);
 		}
@@ -92,7 +99,7 @@ public class Exercise12_2 {
 			// 口座タイプの入力を受け付け
 			secondAccountType = standardInput.nextInt();
 		}
-		
+
 		// 口座名義の入力を促す
 		System.out.print("口座名義を入力してください: ");
 		// 口座名義の入力を受け付け
@@ -110,11 +117,11 @@ public class Exercise12_2 {
 		// 預金残高が0未満の時繰り返し
 		while (secondBalance < 0) {
 			// 0以上の整数の入力を促し
-			System.out.print("0以上の整数を入力してください");
+			System.out.print("0以上の整数を入力してください：");
 			// 預金残高を受け付け
-			secondBalance= standardInput.nextLong();
+			secondBalance = standardInput.nextLong();
 		}
-		
+
 		// Accountオブジェクトを初期化
 		Account secondAccount = new Account();
 		// 口座タイプが1の場合
@@ -127,6 +134,13 @@ public class Exercise12_2 {
 			System.out.print("定期預金残高を入力してください: ");
 			// 定期預金を受け付け
 			long secondTimeBalance = standardInput.nextLong();
+			// 預金残高が0未満の時繰り返し
+			while (secondTimeBalance < 0) {
+				// 0以上の整数の入力を促し
+				System.out.print("0以上の整数を入力してください：");
+				// 預金残高を受け付け
+				secondTimeBalance = standardInput.nextLong();
+			}
 			// TimeAccountオブジェクトを生成
 			secondAccount = new TimeAccount(secondName, secondNumber, secondBalance, secondTimeBalance);
 		}
@@ -152,7 +166,7 @@ public class Exercise12_2 {
 		System.out.println(firstAccount.getName() + "の残高: " + firstAccount.getBalance());
 		// 二つ目の口座の残高を表示
 		System.out.println(secondAccount.getName() + "の残高: " + secondAccount.getBalance());
-		
+
 		// 入力の受付を終了
 		standardInput.close();
 	}
