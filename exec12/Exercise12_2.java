@@ -21,15 +21,17 @@ public class Exercise12_2 {
 		// Scannerオブジェクトを生成
 		Scanner standardInput = new Scanner(System.in);
 
-		// 1つ目のオブジェクトの作成
-		System.out.println("1つ目の口座情報を入力してください。");
-
-		// 口座タイプの入力
-		System.out.print("口座タイプを入力してください（1: Account, 2: TimeAccount）: ");
 		// 口座タイプがAccountの場合の定数
 		final int ACCOUNT_TYPE = 1;
 		// 口座タイプがTimeAccountの場合の定数
 		final int TIME_ACCOUNT_TYPE = 2;
+		// 0を表す定数
+		final int ZERO_NUMBER = 0;
+
+		// 1つ目のオブジェクトの作成
+		System.out.println("1つ目の口座情報を入力してください。");
+		// 口座タイプの入力
+		System.out.print("口座タイプを入力してください（1: Account, 2: TimeAccount）: ");
 		// アカウントのタイプを受付
 		int firstAccountType = standardInput.nextInt();
 		// 口座タイプが1でも0でもない場合繰り返し
@@ -55,7 +57,7 @@ public class Exercise12_2 {
 		// 預金残高を受け付け
 		long firstBalance = standardInput.nextLong();
 		// 預金残高が0未満の時繰り返し
-		while (firstBalance < 0) {
+		while (firstBalance < ZERO_NUMBER) {
 			// 0以上の整数の入力を促し
 			System.out.print("0以上の整数を入力してください：");
 			// 預金残高を受け付け
@@ -75,7 +77,7 @@ public class Exercise12_2 {
 			// 定期預金残高を受け付け
 			long firstTimeBalance = standardInput.nextLong();
 			// 預金残高が0未満の時繰り返し
-			while (firstTimeBalance < 0) {
+			while (firstTimeBalance < ZERO_NUMBER) {
 				// 0以上の整数の入力を促し
 				System.out.print("0以上の整数を入力してください：");
 				// 預金残高を受け付け
@@ -115,7 +117,7 @@ public class Exercise12_2 {
 		// 預金残高を受け付け
 		long secondBalance = standardInput.nextLong();
 		// 預金残高が0未満の時繰り返し
-		while (secondBalance < 0) {
+		while (secondBalance < ZERO_NUMBER) {
 			// 0以上の整数の入力を促し
 			System.out.print("0以上の整数を入力してください：");
 			// 預金残高を受け付け
@@ -135,7 +137,7 @@ public class Exercise12_2 {
 			// 定期預金を受け付け
 			long secondTimeBalance = standardInput.nextLong();
 			// 預金残高が0未満の時繰り返し
-			while (secondTimeBalance < 0) {
+			while (secondTimeBalance < ZERO_NUMBER) {
 				// 0以上の整数の入力を促し
 				System.out.print("0以上の整数を入力してください：");
 				// 預金残高を受け付け
@@ -149,11 +151,11 @@ public class Exercise12_2 {
 		int comparisonResult = TimeAccount.compBalance(firstAccount, secondAccount);
 
 		// 比較結果の表示
-		if (comparisonResult > 0) {
+		if (comparisonResult > ZERO_NUMBER) {
 			// 一つ目の口座のほうが残高多いことを表示
 			System.out.println(firstAccount.getName() + "の残高のほうが多いです。");
 			// 0未満の場合
-		} else if (comparisonResult < 0) {
+		} else if (comparisonResult < ZERO_NUMBER) {
 			// 二つ目の口座のほうが残高が多いことを表示
 			System.out.println(secondAccount.getName() + "の残高のほうが多いです。");
 			// それ以外の場合
