@@ -14,6 +14,8 @@ public class Exercise10_4 {
 	public static Scanner standardInput = new Scanner(System.in);
 	// Dayオブジェクトの生成
 	public static Day dayObject = new Day();
+	// ユーザーがリトライするときの変数
+	static final int USER_RETRY = 1;
 
 	/*
 	 * 関数名:main
@@ -92,7 +94,7 @@ public class Exercise10_4 {
 		int userRetry = standardInput.nextInt();
 
 		// リトライ変数が1の場合繰り返し
-		while (userRetry == 1) {
+		while (userRetry == USER_RETRY) {
 			// タイトル出力
 			System.out.println("setメソッド(単体)テスト");
 			// 年の入力を促す
@@ -138,7 +140,7 @@ public class Exercise10_4 {
 		int userRetry = standardInput.nextInt();
 
 		// リトライ変数が1の場合繰り返し
-		while (userRetry == 1) {
+		while (userRetry == USER_RETRY) {
 			// タイトル出力
 			System.out.println("setメソッド(全体)テスト");
 			// 年の入力を促す
@@ -183,7 +185,7 @@ public class Exercise10_4 {
 		int userRetry = standardInput.nextInt();
 
 		// リトライ変数が1の場合繰り返し
-		while (userRetry == 1) {
+		while (userRetry == USER_RETRY) {
 			// 年の入力を促す
 			System.out.print("年:");
 			// 年を受け付け
@@ -230,7 +232,7 @@ public class Exercise10_4 {
 		int userRetry = standardInput.nextInt();
 
 		// リトライ変数が1の場合繰り返し
-		while (userRetry == 1) {
+		while (userRetry == USER_RETRY) {
 			// 現在のDayオブジェクトの情報を表示
 			System.out.println("現在のDayオブジェクト: " + dayObject.toString());
 			// Dayオブジェクトの日付を一つ進める
@@ -276,7 +278,7 @@ public class Exercise10_4 {
 		int userRetry = standardInput.nextInt();
 
 		// リトライ変数が1の場合繰り返し
-		while (userRetry == 1) {
+		while (userRetry == USER_RETRY) {
 			// 現在のDayオブジェクトの情報を表示
 			System.out.println("現在のDayオブジェクト: " + dayObject.toString());
 			// Dayオブジェクトの日付を一つ戻す
@@ -320,9 +322,11 @@ public class Exercise10_4 {
 		System.out.print("前後の日付を確認するテストをする？1=yes,それ以外=no:");
 		// リトライ変数を受け付け
 		int userRetry = standardInput.nextInt();
+		// 1を表す定数
+		final int FIRST_NUMBER = 1;
 
 		// リトライ変数が1の場合繰り返し
-		while (userRetry == 1) {
+		while (userRetry == USER_RETRY) {
 			// 現在のDayオブジェクトの情報を表示
 			System.out.println("現在のDayオブジェクト: " + dayObject.toString());
 			// Dayオブジェクトの一日後を表示
@@ -344,8 +348,14 @@ public class Exercise10_4 {
 			}
 			// Dayオブジェクトの任意の日数後を表示
 			System.out.println(dayNumber + "日後は" + dayObject.getFutureDays(dayNumber) + "です。");
-			// Dayオブジェクトの任意の日数前を表示
-			System.out.println(dayNumber + "日前は" + dayObject.getPastDays(dayNumber) + "です。");
+			// Dayオブジェクトの任意の日数前を取得
+			Day pastDay = dayObject.getPastDays(dayNumber);
+			// 1年1月1日より前に戻ることができない場合のメッセージを表示しないようにする
+			if (!(pastDay.getYear() == FIRST_NUMBER && pastDay.getMonth() == FIRST_NUMBER
+					&& pastDay.getDate() == FIRST_NUMBER)) {
+				// 任意の日数前の日付を表示
+				System.out.println(dayNumber + "日前は" + pastDay + "です。");
+			}
 			// Dayオブジェクトの中身を表示
 			System.out.println("現在は" + dayObject.toString() + "です。");
 
@@ -371,7 +381,7 @@ public class Exercise10_4 {
 		int userRetry = standardInput.nextInt();
 
 		// リトライ変数が1の場合繰り返し
-		while (userRetry == 1) {
+		while (userRetry == USER_RETRY) {
 			// 比較元のDayオブジェクトの情報を表示
 			System.out.println("比較元のDayオブジェクト: " + dayObject.toString());
 

@@ -554,16 +554,20 @@ public class Day {
 	 * 作成日:2024/04/11
 	 */
 	public int remainDays(Day dayObject) {
+		// 1年の日数を表す定数
+		final int ONE_YEARS_DAYS = 365;
+		// 閏年の1年の日数を表す定数
+		final int ONE_LEAP_YEARS_DAYS = 366;
 		// 残り日数を初期化
 		int remainingDays = 0;
 		// 閏年であるとき
 		if (isLeap(dayObject.year) == true) {
 			// 366日から経過日数を引く
-			remainingDays = 366 - dayObject.elapseDays();
+			remainingDays = ONE_LEAP_YEARS_DAYS - dayObject.elapseDays();
 			// 閏年ではないとき
 		} else {
 			// 365日から経過日数を引く
-			remainingDays = 365 - dayObject.elapseDays();
+			remainingDays = ONE_YEARS_DAYS - dayObject.elapseDays();
 		}
 		// 残り日数を返す
 		return remainingDays;
@@ -704,16 +708,18 @@ public class Day {
 	  * 作成日:2024/04/24
 	  */
 	public static int compareDates(Day firstDay, Day secondDay) {
+		// -1を表す定数
+		final int MINUS_ONE_NUMBER = -1;
 		// 前後関係の値を入れる用の変数
 		int temporaryVariable = 0;
 		// day1がday2より未来の場合
 		if (isDateAfter(firstDay, secondDay)) {
 			// 1を入れる
-			temporaryVariable = 1;
+			temporaryVariable = FIRST_NUMBER;
 			// day1がday2より過去の場合
 		} else if (isDateBefore(firstDay, secondDay)) {
 			// -1を入れる
-			temporaryVariable = -1;
+			temporaryVariable = MINUS_ONE_NUMBER;
 		}
 		// dayオブジェクトが前後どちらにいるかを返す
 		return temporaryVariable;
@@ -796,48 +802,29 @@ public class Day {
 	* 作成日:2024/04/12
 	*/
 	public void retreatDate() {
-		// 日が1の時
-		if (date == FIRST_NUMBER) {
-			// 月が1の時
-			if (month == FIRST_NUMBER) {
-				// 年が1より大きい場合
-				if (year > FIRST_NUMBER) {
-					// 年をデクリメント
-					year--;
-					// 月を12に設定
-					month = TWELFTH_NUMBER;
-					// 日を31にする
-					date = THIRTY_FIRST_NUMBER;
-				}
-				// 年が1の場合は何もしない（年を0以下にしない）
-			} else {
-				// 月をデクリメント
-				month--;
-				// 2月の時
-				if (month == SECOND_NUMBER) {
-					// 閏年であれば
-					if (isLeap(year)) {
-						// 日を29に設定
-						date = TWENTY_NINTH_NUMBER;
-					} else {
-						// 日を28に設定
-						date = TWENTY_EIGHTH_NUMBER;
-					}
-					// 4,6,9,11月の時
-				} else if (month == FOUR_NUMBER || month == SIXTH_NUMBER || month == NINTH_NUMBER || month == ELEVENTH_NUMBER) {
-					// 日を30に設定
-					date = THIRTIETH_NUMBER;
-					// それ以外の月の場合
-				} else {
-					// 日を31に設定
-					date = THIRTY_FIRST_NUMBER;
-				}
-			}
+		// 年が1年で月が1月で日が1日の場合
+		if (year == FIRST_NUMBER && month == FIRST_NUMBER && date == FIRST_NUMBER) {
+			// 「1年1月1日より前に戻ることはできません」と表示
+			System.out.println("1年1月1日より前に戻ることはできません。");
+			// 日付を戻すことができる場合
 		} else {
-			// 日をデクリメント
+			// 日付を1日戻す
 			date--;
+			// 日付が0になった場合
+			if (date == 0) {
+				// 月を1つ戻す
+				month--;
+				// 月が0になった場合
+				if (month == 0) {
+					// 年を1つ戻す
+					year--;
+					// 月を12月に設定
+					month = TWELFTH_NUMBER;
+				}
+				// 日付をその月の最終日に設定
+				date = getMaxDate(year, month);
+			}
 		}
-
 	}
 
 	/*
@@ -899,10 +886,19 @@ public class Day {
 	* 作成日:2024/04/12
 	*/
 	public void retreatDays(int dayNumber) {
-		// 引数の数分繰り返す
+		// 指定日数分繰り返す
 		for (int i = 0; i < dayNumber; i++) {
-			// 一日戻す
-			retreatDate();
+			// 年が1年で月が1月で日が1日の場合
+			if (year == FIRST_NUMBER && month == FIRST_NUMBER && date == FIRST_NUMBER) {
+				// 「1年1月1日より前に戻ることはできません」と表示
+				System.out.println("1年1月1日より前に戻ることはできません。");
+				// ループを抜ける
+				break;
+				// 日付を戻すことができる場合
+			} else {
+				// 日付を1日戻す
+				retreatDate();
+			}
 		}
 	}
 
@@ -915,11 +911,28 @@ public class Day {
 	* 作成日:2024/04/12
 	*/
 	public Day getPastDays(int dayNumber) {
-		// n日前の日付を入れるオブジェクト
+		// 任意の日数前を入れるDayオブジェクトを生成
 		Day pastDays = new Day(this);
-		// n日戻す
-		pastDays.retreatDays(dayNumber);
-		// n日前の日付を返却
+		// 戻れるかどうかのフラグ
+		boolean canRetreat = true;
+		// 指定日数分繰り返す
+		for (int i = 0; i < dayNumber; i++) {
+			// 年が1年で月が1月で日が1日の場合
+			if (pastDays.year == FIRST_NUMBER && pastDays.month == FIRST_NUMBER && pastDays.date == FIRST_NUMBER) {
+				// 戻ることができないことを知らせる
+				System.out.println("1年1月1日より前に戻ることはできません。");
+				// フラグを戻ることができないことを表すfalseに変更
+				canRetreat = false;
+				// ループから抜ける
+				break;
+			}
+			// もし戻ることができる場合
+			if (canRetreat) {
+				// 日付を1日戻す
+				pastDays.retreatDate();
+			}
+		}
+		// 任意の日数前の日付を返却
 		return pastDays;
 	}
 }
