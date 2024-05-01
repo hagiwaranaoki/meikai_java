@@ -1,5 +1,7 @@
 package exec14;
 
+import java.util.Scanner;
+
 /*
  * クラス名:Exercise14_2
  * 概要:着せ替え可能ロボットペットのテスト
@@ -16,14 +18,26 @@ public class Exercise14_2 {
 	 * 作成日:2024/04/10
 	 */
 	public static void main(String[] args) {
-		// ペットの色を表す定数
-		final int PET_COLOR = 0;
+		// Scannerオブジェクト生成
+		Scanner standardInput = new Scanner(System.in);
+		// ペットの色の入力を促すメッセージを表示
+		System.out.println("ペットの色を入力してください。");
+		// ペットの色の入力を促す
+		System.out.print("0:黒、1:赤、2:緑、3:青、4:ヒョウ柄, それ以外:無地:");
+		// ペットの色を受け付ける
+		int petColor = standardInput.nextInt();
 		// 着せ替え可能ロボットペットのオブジェクトを生成
-		SkinnableRobotPet skinPet = new SkinnableRobotPet(PET_COLOR, "クロ", "黒マスター");
+		SkinnableRobotPet skinPet = new SkinnableRobotPet(petColor, "クロ", "黒マスター");
 		// 自己紹介を出力
 		skinPet.introduce();
+		// ペットの色の入力を促すメッセージを表示
+		System.out.println("何色に変えますか。");
+		// ペットの色の入力を促す
+		System.out.print("0:黒、1:赤、2:緑、3:青、4:ヒョウ柄, それ以外:無地:");
+		// ペットの色を入れる変数
+		int changePetColor = standardInput.nextInt();
 		// 色を変える
-		skinPet.changeSkin(Skinnable.LEOPARD_NUMBER);
+		skinPet.changeSkin(changePetColor);
 		// 自己紹介を出力
 		skinPet.introduce();
 	}
