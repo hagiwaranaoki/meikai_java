@@ -806,6 +806,8 @@ public class Day {
 		if (year == FIRST_NUMBER && month == FIRST_NUMBER && date == FIRST_NUMBER) {
 			// 「1年1月1日より前に戻ることはできません」と表示
 			System.out.println("1年1月1日より前に戻ることはできません。");
+			// 1年1月1日に設定することを表示
+			System.out.println("1年1月1日に設定します。");
 			// 日付を戻すことができる場合
 		} else {
 			// 日付を1日戻す
@@ -838,8 +840,29 @@ public class Day {
 	public Day getPreviousDay() {
 		// 前の日付を入れるdayオブジェクト
 		Day previousDay = new Day(this);
-		// 一日戻す
-		previousDay.retreatDate();
+		// 年が1年で月が1月で日が1日の場合
+		if (previousDay.year == FIRST_NUMBER && previousDay.month == FIRST_NUMBER && previousDay.date == FIRST_NUMBER) {
+			// 1年1月1日より前は存在しないことを表示
+			System.out.println("1年1月1日より前の日付は存在しないため、現在の日付を表示します。");
+			// 日付を戻すことができる場合
+		} else {
+			// 日付を1日戻す
+			previousDay.date--;
+			// 日付が0になった場合
+			if (previousDay.date == 0) {
+				// 月を1つ戻す
+				previousDay.month--;
+				// 月が0になった場合
+				if (previousDay.month == 0) {
+					// 年を1つ戻す
+					previousDay.year--;
+					// 月を12月に設定
+					previousDay.month = TWELFTH_NUMBER;
+				}
+				// 日付をその月の最終日に設定
+				previousDay.date = getMaxDate(previousDay.year, previousDay.month);
+			}
+		}
 		// 一日前の日付を返す
 		return previousDay;
 	}
@@ -892,6 +915,8 @@ public class Day {
 			if (year == FIRST_NUMBER && month == FIRST_NUMBER && date == FIRST_NUMBER) {
 				// 「1年1月1日より前に戻ることはできません」と表示
 				System.out.println("1年1月1日より前に戻ることはできません。");
+				// 1年1月1日に設定することを表示
+				System.out.println("1年1月1日に設定します。");
 				// ループを抜ける
 				break;
 				// 日付を戻すことができる場合
@@ -920,7 +945,7 @@ public class Day {
 			// 年が1年で月が1月で日が1日の場合
 			if (pastDays.year == FIRST_NUMBER && pastDays.month == FIRST_NUMBER && pastDays.date == FIRST_NUMBER) {
 				// 戻ることができないことを知らせる
-				System.out.println("1年1月1日より前に戻ることはできません。");
+				System.out.println("1年1月1日より前は存在しないので、現在の日付を返却します。");
 				// フラグを戻ることができないことを表すfalseに変更
 				canRetreat = false;
 				// ループから抜ける

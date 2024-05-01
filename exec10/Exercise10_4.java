@@ -331,8 +331,14 @@ public class Exercise10_4 {
 			System.out.println("現在のDayオブジェクト: " + dayObject.toString());
 			// Dayオブジェクトの一日後を表示
 			System.out.println("一日後は" + dayObject.getNextDay() + "です。");
-			// Dayオブジェクトの一日前を表示
-			System.out.println("一日前は" + dayObject.getPreviousDay() + "です。");
+			// 日付を一日戻す
+			dayObject.getPreviousDay();
+			// 1年1月1日より前に戻ることができない場合のメッセージを表示しないようにする
+			if (!(dayObject.getYear() == FIRST_NUMBER && dayObject.getMonth() == FIRST_NUMBER
+					&& dayObject.getDate() == FIRST_NUMBER)) {
+				// Dayオブジェクトの一日前を表示
+				System.out.println("一日前は" + dayObject + "です。");
+			}
 			// Dayオブジェクトの中身を表示
 			System.out.println("現在は" + dayObject.toString() + "です。");
 			// 何日前後の日付を知りたいか尋ねる
