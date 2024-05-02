@@ -16,6 +16,12 @@ public class Exercise10_4 {
 	public static Day dayObject = new Day();
 	// ユーザーがリトライするときの変数
 	static final int USER_RETRY = 1;
+	// 年の最小値の定数
+	static final int MINIMUM_YEAR = 1;
+	// 月の最小値の定数
+	static final int MINIMUM_MONTH = 1;
+	// 日の最小値の定数
+	static final int MINIMUM_DATE = 1;
 
 	/*
 	 * 関数名:main
@@ -29,7 +35,7 @@ public class Exercise10_4 {
 		// すべてのテストを実行
 		runAllTests();
 		// テストが終了したことを知らせる
-		System.out.println("すべてのテストを終了しました");
+		System.out.print("すべてのテストを終了しました");
 	}
 
 	/*
@@ -71,10 +77,9 @@ public class Exercise10_4 {
 		// Dayオブジェクトの中身を表示
 		System.out.println(dayObject.toString());
 		// Dayオブジェクトが閏年かどうかを判別して表示
-		System.out.println(dayObject.getYear() + "年は閏年" + (dayObject.isLeap() ? "です" : "ではありません"));
+		System.out.println(dayObject.getYear() + "年は閏年" + (dayObject.isLeap() ? "です。" : "ではありません。"));
 		// dayオブジェクトが年内で何日経過しているかを表示
-		System.out
-				.println(dayObject.toString() + "は" + dayObject.getYear() + "年の1月1日から" + dayObject.elapseDays() + "日経過しています。");
+		System.out.println(dayObject.toString() + "は" + dayObject.getYear() + "年の1月1日から" + dayObject.elapseDays() + "日経過しています。");
 		// dayオブジェクトの年内の残り日数を表示
 		System.out.println(dayObject.getYear() + "年は残り" + dayObject.remainDays(dayObject) + "日です。");
 	}
@@ -322,8 +327,6 @@ public class Exercise10_4 {
 		System.out.print("前後の日付を確認するテストをする？1=yes,それ以外=no:");
 		// リトライ変数を受け付け
 		int userRetry = standardInput.nextInt();
-		// 1を表す定数
-		final int FIRST_NUMBER = 1;
 
 		// リトライ変数が1の場合繰り返し
 		while (userRetry == USER_RETRY) {
@@ -334,8 +337,8 @@ public class Exercise10_4 {
 			// 日付を一日戻す
 			dayObject.getPreviousDay();
 			// 1年1月1日より前に戻ることができない場合のメッセージを表示しないようにする
-			if (!(dayObject.getYear() == FIRST_NUMBER && dayObject.getMonth() == FIRST_NUMBER
-					&& dayObject.getDate() == FIRST_NUMBER)) {
+			if (!(dayObject.getYear() == MINIMUM_YEAR && dayObject.getMonth() == MINIMUM_MONTH
+					&& dayObject.getDate() == MINIMUM_DATE)) {
 				// Dayオブジェクトの一日前を表示
 				System.out.println("一日前は" + dayObject + "です。");
 			}
@@ -357,8 +360,8 @@ public class Exercise10_4 {
 			// Dayオブジェクトの任意の日数前を取得
 			Day pastDay = dayObject.getPastDays(dayNumber);
 			// 1年1月1日より前に戻ることができない場合のメッセージを表示しないようにする
-			if (!(pastDay.getYear() == FIRST_NUMBER && pastDay.getMonth() == FIRST_NUMBER
-					&& pastDay.getDate() == FIRST_NUMBER)) {
+			if (!(pastDay.getYear() == MINIMUM_YEAR && pastDay.getMonth() == MINIMUM_MONTH
+					&& pastDay.getDate() == MINIMUM_DATE)) {
 				// 任意の日数前の日付を表示
 				System.out.println(dayNumber + "日前は" + pastDay + "です。");
 			}
