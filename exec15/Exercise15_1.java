@@ -46,7 +46,7 @@ public class Exercise15_1 {
 	public static String reverseString(String stringVariable) {
 		// char型の配列を生成
 		char[] charArray = stringVariable.toCharArray();
-		// 配列の末尾を求める定数
+		// 配列の末尾を求める際に使用する定数
 		final int ARRAY_END = -1;
 		// 配列の先頭の変数を定義
 		int startIndex = 0;

@@ -48,17 +48,17 @@ public class Parallelogram extends Shape implements Plane2D {
 	 * 作成日:2024/04/15
 	 */
 	public void draw() {
-		// 1を表す定数
-		final int ONE_NUMBER = 1;
+		// ループのスタート値を表す定数
+		final int START_LOOP = 1;
 		// 高さの値の回数分繰り返し
-		for (int i = ONE_NUMBER; i <= height; i++) {
+		for (int i = START_LOOP; i <= height; i++) {
 			// 空白を出力する回数を決定する
-			for (int j = ONE_NUMBER; j <= height - i; j++) {
+			for (int j = START_LOOP; j <= height - i; j++) {
 				// 空白を出力
 				System.out.print(' ');
 			}
 			// 幅の値の回数分繰り返し
-			for (int j = ONE_NUMBER; j <= width; j++) {
+			for (int j = START_LOOP; j <= width; j++) {
 				// #を出力
 				System.out.print('#');
 			}

@@ -1,4 +1,4 @@
-package exec13;
+package exec15;
 
 // Scannerクラスをインポート
 import java.util.Scanner;

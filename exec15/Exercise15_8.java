@@ -21,10 +21,10 @@ public class Exercise15_8 {
 	static final int THIRD_ARGUMENT = 3;
 
 	// 月の最大値を表す定数
-	static final int MONTH_RANGE = 12;
+	static final int MAXIMUM_MONTH = 12;
 
-	// 月の最大値を表す定数
-	static final int WEEK_RANGE = 7;
+	// 週の最大値を表す定数
+	static final int MAXIMUM_WEEK = 7;
 
 	/*
 	 * 関数名:main
@@ -112,7 +112,7 @@ public class Exercise15_8 {
 	 */
 	private static void displayYearCalendar(int setYear) {
 		// 12回繰り返す
-		for (int month = 0; month < MONTH_RANGE; month++) {
+		for (int month = 0; month < MAXIMUM_MONTH; month++) {
 			// 年と月のカレンダーを表示
 			displayMonthCalendar(setYear, month);
 			// 改行を入れる
@@ -155,7 +155,7 @@ public class Exercise15_8 {
 			// 最大2文字のスペースで日にちを表示
 			System.out.printf("%2d ", day);
 			// 現在の日付が土曜日または現在の日付がその月の最終日であれば
-			if ((startingDayOfWeek + day - FIRST_ARGUMENT) % WEEK_RANGE == 0 || day == daysInMonth) {
+			if ((startingDayOfWeek + day - FIRST_ARGUMENT) % MAXIMUM_WEEK == 0 || day == daysInMonth) {
 				// 改行を出力
 				System.out.println();
 			}

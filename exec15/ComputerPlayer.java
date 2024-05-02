@@ -1,8 +1,7 @@
-package exec13;
+package exec15;
 
 // Randomクラスをインポート
 import java.util.Random;
-
 /*
  * クラス名:ComputerPlayer
  * 概要:コンピュータプレーヤが出す手を選ぶ

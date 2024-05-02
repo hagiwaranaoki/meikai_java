@@ -31,25 +31,29 @@ public class Exercise13_3 {
 		// コンピュータプレーヤが出す手を取得
 		int computerNumber = computerPlayer.getNumber();
 
-		//0を表す定数
-		final int ZERO_NUMBER = 0;
-		// 1を表す定数
-		final int FIRST_NUMBER = 1;
-		// 2を表す定数
-		final int SECOND_NUMBER = 2;
-		// 3を表す定数
-		final int THIRD_NUMBER = 3;
+		// 人間プレーヤのグーを表す定数
+		final int HUMAN_ROCK = 1;
+		// 人間プレーヤのチョキを表す定数
+		final int HUMAN_SCISSORS = 2;
+		// 人間プレーヤのパーを表す定数
+		final int HUMAN_PAPER = 3;
 
+		// コンピュータプレーヤのグーを表す定数
+		final int COMPUTER_ROCK = 0;
+		// コンピュータプレーヤのチョキを表す定数
+		final int COMPUTER_SCISSORS = 1;
+		// コンピュータプレーヤのパーを表す定数
+		final int COMPUTER_PAPER = 2;
 		// 人間プレーヤが勝ちの場合
-		if ((humanNumber == FIRST_NUMBER && computerNumber == FIRST_NUMBER)
-				|| (humanNumber == SECOND_NUMBER && computerNumber == SECOND_NUMBER)
-				|| (humanNumber == THIRD_NUMBER && computerNumber == ZERO_NUMBER)) {
+		if ((humanNumber == HUMAN_ROCK && computerNumber == COMPUTER_SCISSORS)
+				|| (humanNumber == HUMAN_SCISSORS && computerNumber == COMPUTER_PAPER)
+				|| (humanNumber == HUMAN_PAPER && computerNumber == COMPUTER_ROCK)) {
 			// 勝ちメッセージ表示
 			System.out.println("あなたの勝ちです！");
 			// 人間が負けの場合
-		} else if ((humanNumber == FIRST_NUMBER && computerNumber == SECOND_NUMBER)
-				|| (humanNumber == SECOND_NUMBER && computerNumber == ZERO_NUMBER)
-				|| (humanNumber == THIRD_NUMBER && computerNumber == FIRST_NUMBER)) {
+		} else if ((humanNumber == HUMAN_ROCK && computerNumber == COMPUTER_PAPER)
+				|| (humanNumber == HUMAN_SCISSORS && computerNumber == COMPUTER_ROCK)
+				|| (humanNumber == HUMAN_PAPER && computerNumber == COMPUTER_SCISSORS)) {
 			// 負けメッセージ表示
 			System.out.println("あなたの負けです…");
 			// それ以外の場合

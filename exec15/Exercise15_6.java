@@ -16,14 +16,14 @@ public class Exercise15_6 {
 	 * 作成日:2024/04/16
 	 */
 	public static void main(String[] args) {
-		// 引数が1の時の定数
-		final int ONE_ARGUMENT = 1;
+		// 引数の数を表す定数
+		final int ARGUMENT_COUNT = 1;
 		// コマンドライン引数が1つ以外の場合
-		if (args.length != ONE_ARGUMENT) {
+		if (args.length != ARGUMENT_COUNT) {
 			// 使用方法を出力
 			System.out.println("使用方法: java Circle 半径");
 			// プログラムを終了する
-			System.exit(ONE_ARGUMENT);
+			System.exit(ARGUMENT_COUNT);
 		}
 		
 		// コマンドライン引数0番目を半径に設定
@@ -34,13 +34,14 @@ public class Exercise15_6 {
 			// 正の整数値ではないことを知らせる
 			System.out.println("正の整数を引数に入力してください");
 			// プログラムを終了
-			System.exit(ONE_ARGUMENT);
+			System.exit(ARGUMENT_COUNT);
 		}
-		// 2を表す定数
-		final int TWO_NUMBER = 2;
+		
+		// 直径を表す定数
+		final double DIAMETER_CONSTANT = circleRadius * 2;
 		
 		// 円周を計算
-		double circumferenceVariable = TWO_NUMBER * Math.PI * circleRadius;
+		double circumferenceVariable = DIAMETER_CONSTANT * Math.PI;
 		// 面積を計算
 		double circleArea = Math.PI * circleRadius * circleRadius;
 		

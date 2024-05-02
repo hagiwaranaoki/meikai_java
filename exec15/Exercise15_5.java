@@ -1,10 +1,5 @@
 package exec15;
 
-// コンピュータプレーヤクラスをインポート
-import exec13.ComputerPlayer;
-// プレーヤクラスをインポート
-import exec13.HumanPlayer;
-
 /*
  * クラス名:Exercise15_5
  * 概要:三人でじゃんけんをする
@@ -12,12 +7,12 @@ import exec13.HumanPlayer;
  * 作成日:2024/04/16
  */
 public class Exercise15_5 {
-	// 1を表す定数
-	static final int FIRST_NUMBER = 1;
-	// 2を表す定数
-	static final int SECOND_NUMBER = 2;
-	// 3を表す定数
-	static final int THIRD_NUMBER = 3;
+	// プレーヤがグーを出すときの定数
+	static final int PLAYER_ROCK = 1;
+	// プレーヤがチョキを出すときの定数
+	static final int PLAYER_SCISSORS = 2;
+	// プレーヤがパーを出すときの定数
+	static final int PLAYER_PAPER = 3;
 
 	/*
 	 * 関数名:main
@@ -38,42 +33,42 @@ public class Exercise15_5 {
 		// 人間プレーヤの手を取得
 		int humanChoice = humanPlayer.getNumber();
 		// コンピュータ1の手を取得
-		int firstComputerHands = firstComputerPlayer.getNumber() + FIRST_NUMBER;
+		int firstComputerHands = firstComputerPlayer.getNumber() + 1;
 		// コンピュータ2の手を取得
-		int computerChoice2 = secondComputerPlayer.getNumber() + FIRST_NUMBER;
+		int secondComputerHands = secondComputerPlayer.getNumber() + 1;
 
 		// 人間プレーヤの手を表示
 		System.out.println(humanPlayer);
 		// コンピュータ１の手を表示
 		System.out.println("コンピュータ1：" + getHand(firstComputerHands));
 		// コンピュータ2の手を表示
-		System.out.println("コンピュータ2：" + getHand(computerChoice2));
+		System.out.println("コンピュータ2：" + getHand(secondComputerHands));
 
 		// じゃんけん結果を取得して表示
-		getResult(humanChoice, firstComputerHands, computerChoice2);
+		getResult(humanChoice, firstComputerHands, secondComputerHands);
 	}
 
 	/*
 	 * 関数名:getHand
-	 * 概要:コンピュータの手を取得
-	 * 引数:コンピュータが選択した手
+	 * 概要:プレーヤ手を取得
+	 * 引数:プレーヤが選択した手
 	 * 戻り値:じゃんけんで出した手の文字列
 	 * 作成者:N.Hagiwara
 	 * 作成日:2024/04/26
 	 */
 	private static String getHand(int userChoice) {
-		// コンピュータの手によって切り替える
+		// 手によって切り替える
 		switch (userChoice) {
-		// コンピュータの手が1の時
-		case 1:
+		// 手が1の時
+		case PLAYER_ROCK:
 			// グーを返す
 			return "グー";
-		// コンピュータの手が2の時
-		case 2:
+		// 手が2の時
+		case PLAYER_SCISSORS:
 			//チョキを返す
 			return "チョキ";
-		// コンピュータの手が3の時
-		case 3:
+		// 手が3の時
+		case PLAYER_PAPER:
 			// パーを返す
 			return "パー";
 		// どれでもない値が来たとき
@@ -103,6 +98,7 @@ public class Exercise15_5 {
 
 		// 全員の手が違う場合
 		if (humanPlayer != firstComputer && firstComputer != secondComputer && humanPlayer != secondComputer) {
+			// あいこ判定にする
 			isDraw = true;
 		}
 
@@ -150,7 +146,7 @@ public class Exercise15_5 {
 			}
 		}
 	}
-	
+
 	/*
 	 * 関数名:isWinner
 	 * 概要:２人の勝敗を調べる
@@ -161,6 +157,8 @@ public class Exercise15_5 {
 	 */
 	private static boolean isWinner(int firstPlayer, int secondPlayer) {
 		// じゃんけんの結果により、勝敗を返す
-		return (firstPlayer == FIRST_NUMBER && secondPlayer == SECOND_NUMBER) || (firstPlayer == SECOND_NUMBER && secondPlayer == THIRD_NUMBER) || (firstPlayer == THIRD_NUMBER && secondPlayer == FIRST_NUMBER);
+		return (firstPlayer == PLAYER_ROCK && secondPlayer == PLAYER_SCISSORS)
+				|| (firstPlayer == PLAYER_SCISSORS && secondPlayer == PLAYER_PAPER)
+				|| (firstPlayer == PLAYER_PAPER && secondPlayer == PLAYER_ROCK);
 	}
 }

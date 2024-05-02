@@ -26,6 +26,7 @@ public class Point extends Shape{
 	 * 作成日:2024/04/15
 	 */
 	public String toString() {
+		// Pointの文字列を返す
 		return "Point";
 	}
 	
@@ -38,6 +39,7 @@ public class Point extends Shape{
 	 * 作成日:2024/04/15
 	 */
 	public void draw() {
+		// 点を出力
 		System.out.println('+');
 	}
 }

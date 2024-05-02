@@ -41,10 +41,10 @@ public class HorzLine extends AbstLine {
 	 * 作成日:2024/04/15
 	 */
 	public void draw() {
-		// 1を表す定数
-		final int ONE_NUMBER = 1;
+		// ループをスタートする数値を表す定数
+		final int START_LOOP = 1;
 		// 長さの数だけ繰り返し
-		for (int i = ONE_NUMBER; i <= getLength(); i++) {
+		for (int i = START_LOOP; i <= getLength(); i++) {
 			// -を表示
 			System.out.print('-');
 		}
