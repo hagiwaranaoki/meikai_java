@@ -74,7 +74,7 @@ public class Exercise14_1 {
 			// 配列の0番目の図形を描画
 			shapeArray[RECTANGLE_NUMBER].print();
 			// 面積を表示
-			System.out.println("Area=" + ((Plane2D) shapeArray[0]).getArea());
+			System.out.println("Area=" + ((Plane2D) shapeArray[RECTANGLE_NUMBER]).getArea());
 
 			//再度テストするかの入力を促す
 			System.out.print("もう一度テストしますか？ (1=はい, 1以外=いいえ): ");
@@ -116,7 +116,7 @@ public class Exercise14_1 {
 			// 配列1番目の図形を描画
 			shapeArray[PARALLELOGRAM_NUMBER].print();
 			// 面積を表示
-			System.out.println("Area=" + ((Plane2D) shapeArray[1]).getArea());
+			System.out.println("Area=" + ((Plane2D) shapeArray[PARALLELOGRAM_NUMBER]).getArea());
 
 			// リトライするかを聞く
 			System.out.print("もう一度テストしますか？ (1=はい, 1以外=いいえ): ");

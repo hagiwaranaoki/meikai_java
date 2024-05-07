@@ -20,6 +20,8 @@ public class ComputerPlayer extends Player {
 	static final int COMPUTER_ROCK = 0;
 	// コンピュータプレーヤのチョキを表す定数
 	static final int COMPUTER_SCISSORS = 1;
+	// コンピュータプレーヤのパーを表す定数
+	static final int COMPUTER_PAPER = 2;
 
 	// コンピュータが出す手の乱数の範囲用の定数
 	private final int RANDOM_RANGE = 3;
@@ -68,11 +70,12 @@ public class ComputerPlayer extends Player {
 			computerHand = "コンピュータ：グー";
 		}
 		// コンピュータの出す手が1の時
-		if (numberVariable == COMPUTER_SCISSORS) {
+		else if (numberVariable == COMPUTER_SCISSORS) {
 			// チョキの文字列を格納
 			computerHand = "コンピュータ：チョキ";
-			// コンピュータの出す手が2の時
-		} else {
+		}
+		// コンピュータの出す手が2の時
+		else if (numberVariable == COMPUTER_PAPER) {
 			// パーの文字列を格納
 			computerHand = "コンピュータ：パー";
 		}
