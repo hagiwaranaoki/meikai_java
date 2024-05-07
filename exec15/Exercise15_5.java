@@ -14,6 +14,7 @@ public class Exercise15_5 {
 	// プレーヤがパーを出すときの定数
 	static final int PLAYER_PAPER = 3;
 	// ComputerPlayerの手の補正値を表す定数
+	// 人間プレーヤと同じ1,2,3で値が返るようにする
 	static final int COMPUTER_HAND_ADJUSTMENT = 1;
 
 	/*
