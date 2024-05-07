@@ -13,6 +13,8 @@ public class Exercise15_5 {
 	static final int PLAYER_SCISSORS = 2;
 	// プレーヤがパーを出すときの定数
 	static final int PLAYER_PAPER = 3;
+	// ComputerPlayerの手の補正値を表す定数
+	static final int COMPUTER_HAND_ADJUSTMENT = 1;
 
 	/*
 	 * 関数名:main
@@ -33,9 +35,9 @@ public class Exercise15_5 {
 		// 人間プレーヤの手を取得
 		int humanChoice = humanPlayer.getNumber();
 		// コンピュータ1の手を取得
-		int firstComputerHands = firstComputerPlayer.getNumber() + 1;
+		int firstComputerHands = firstComputerPlayer.getNumber() + COMPUTER_HAND_ADJUSTMENT;
 		// コンピュータ2の手を取得
-		int secondComputerHands = secondComputerPlayer.getNumber() + 1;
+		int secondComputerHands = secondComputerPlayer.getNumber() + COMPUTER_HAND_ADJUSTMENT;
 
 		// 人間プレーヤの手を表示
 		System.out.println(humanPlayer);
