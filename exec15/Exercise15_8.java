@@ -48,10 +48,10 @@ public class Exercise15_8 {
 		if (args.length == FIRST_ARGUMENT) {
 			// 年の値をコマンドラインの0番目の引数から受け取る
 			int yearVariable = Integer.parseInt(args[0]);
-			// 年が0未満の場合
-			if (yearVariable < 0) {
+			// 年が0以下の場合
+			if (yearVariable <= 0) {
 				// エラーメッセージを返す
-				System.out.println("不正な値が入力されました: 年に負の値が指定されています。");
+				System.out.println("不正な値が入力されました: 年には正の値を指定してください。");
 				// エラーフラグをtrueにする
 				hasError = true;
 				// 年が0未満ではない場合
@@ -67,10 +67,10 @@ public class Exercise15_8 {
 			int yearVariable = Integer.parseInt(args[0]);
 			// 月の値をコマンドライン引数1番目から受け取る
 			int monthVariable = Integer.parseInt(args[FIRST_ARGUMENT]) - FIRST_ARGUMENT;
-			// 年または月が0未満の場合
+			// 年または月が0以下の場合
 			if (yearVariable < 0 || monthVariable < 0) {
 				// エラーメッセージを返す
-				System.out.println("不正な値が入力されました: 年は0以上の値、月は正の値を入力してください。");
+				System.out.println("不正な値が入力されました: 年と月は正の値を入力してください。");
 				// フラグをtrueにする
 				hasError = true;
 				// 年も月も正常な値の場合
@@ -97,6 +97,10 @@ public class Exercise15_8 {
 				// 引数が2つの場合
 			} else if (args.length == SECOND_ARGUMENT) {
 				// 指定された年と月のカレンダーを表示
+				displayMonthCalendar(currentYear, currentMonth);
+				// 引数がない場合
+			} else {
+				// 現在の月のカレンダーを表示
 				displayMonthCalendar(currentYear, currentMonth);
 			}
 		}
@@ -129,6 +133,8 @@ public class Exercise15_8 {
 	 * 作成日:2024/04/16
 	 */
 	private static void displayMonthCalendar(int setYear, int setMonth) {
+		// 最初の日を表す定数
+		final int FIRST_DAY = 1;
 		// カレンダークラスのオブジェクトを生成
 		Calendar calenderVariable = Calendar.getInstance();
 		// 年と月を指定し、1日から表示
@@ -151,7 +157,7 @@ public class Exercise15_8 {
 		}
 
 		// 指定月の日にちの数だけ繰り返し
-		for (int day = 1; day <= daysInMonth; day++) {
+		for (int day = FIRST_DAY; day <= daysInMonth; day++) {
 			// 最大2文字のスペースで日にちを表示
 			System.out.printf("%2d ", day);
 			// 現在の日付が土曜日または現在の日付がその月の最終日であれば
