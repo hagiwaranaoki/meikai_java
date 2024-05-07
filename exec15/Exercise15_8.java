@@ -66,9 +66,11 @@ public class Exercise15_8 {
 			// 年の値をコマンドライン引数0番目から受け取る
 			int yearVariable = Integer.parseInt(args[0]);
 			// 月の値をコマンドライン引数1番目から受け取る
-			int monthVariable = Integer.parseInt(args[FIRST_ARGUMENT]) - FIRST_ARGUMENT;
-			// 年または月が0以下の場合
-			if (yearVariable < 0 || monthVariable < 0) {
+			int monthVariable = Integer.parseInt(args[FIRST_ARGUMENT]);
+			// Calendarクラスでは月は0から始まるため、1を引いて調整
+			monthVariable--;
+			// 年が0未満または月が0以下の場合
+			if (yearVariable <= 0 || monthVariable < 0) {
 				// エラーメッセージを返す
 				System.out.println("不正な値が入力されました: 年と月は正の値を入力してください。");
 				// フラグをtrueにする
