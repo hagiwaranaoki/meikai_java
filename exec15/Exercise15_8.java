@@ -69,10 +69,16 @@ public class Exercise15_8 {
 			int monthVariable = Integer.parseInt(args[FIRST_ARGUMENT]);
 			// Calendarクラスでは月は0から始まるため、1を引いて調整
 			monthVariable--;
-			// 年が0未満または月が0以下の場合
-			if (yearVariable <= 0 || monthVariable < 0) {
+			// 年が0未満
+			if (yearVariable <= 0) {
 				// エラーメッセージを返す
-				System.out.println("不正な値が入力されました: 年と月は正の値を入力してください。");
+				System.out.println("不正な値が入力されました: 年は正の値で入力してください。");
+				// フラグをtrueにする
+				hasError = true;
+				//月が1~12以外の場合
+			} else if (monthVariable < 0 || monthVariable > 11) {
+				// エラーメッセージを返す
+				System.out.println("不正な値が入力されました: 月は1~12の間で入力してください。");
 				// フラグをtrueにする
 				hasError = true;
 				// 年も月も正常な値の場合
@@ -147,10 +153,10 @@ public class Exercise15_8 {
 		// 曜日を取得
 		int startingDayOfWeek = calenderVariable.get(Calendar.DAY_OF_WEEK);
 
-		// 月の英名と指定年を表示
-		System.out.println(getMonthName(setMonth) + " " + setYear);
+		// 何月かと指定年を表示
+		System.out.println(getMonthName(setMonth) + " " + setYear + "年");
 		// カレンダーのヘッダー曜日を略して表示
-		System.out.println("Su Mo Tu We Th Fr Sa");
+		System.out.println("日 月 火 水 木 金 土");
 
 		// 曜日の数だけ繰り返す
 		for (int i = FIRST_ARGUMENT; i < startingDayOfWeek; i++) {
@@ -181,8 +187,8 @@ public class Exercise15_8 {
 	private static String getMonthName(int setMonth) {
 		// 月の名前の配列を作成し、月の英名を格納
 		String[] monthNames = {
-				"January", "February", "March", "April", "May", "June",
-				"July", "August", "September", "October", "November", "December"
+				"1月", "2月", "3月", "4月", "5月", "6月",
+				"7月", "8月", "9月", "10月", "11月", "12月"
 		};
 		// 指定された月の英名を返却
 		return monthNames[setMonth];
