@@ -73,6 +73,13 @@ public class Exercise15_8 {
 			if (yearVariable <= 0) {
 				// エラーメッセージを返す
 				System.out.println("不正な値が入力されました: 年は正の値で入力してください。");
+
+				//月が1~12以外の場合
+				if (monthVariable < 0 || monthVariable > 11) {
+					// エラーメッセージを返す
+					System.out.println("不正な値が入力されました: 月は1~12の間で入力してください。");
+				}
+
 				// フラグをtrueにする
 				hasError = true;
 				//月が1~12以外の場合
