@@ -12,19 +12,27 @@ import java.util.Calendar;
 public class Exercise15_8 {
 
 	// 引数の個数が1の場合の定数
-	static final int FIRST_ARGUMENT = 1;
+	static final int ONE_ARGUMENT = 1;
 
 	// 引数の個数が2の場合の定数
-	static final int SECOND_ARGUMENT = 2;
+	static final int TWO_ARGUMENT = 2;
 
 	// 引数の個数が3の場合の定数
-	static final int THIRD_ARGUMENT = 3;
+	static final int THREE_ARGUMENT = 3;
 
 	// 月の最大値を表す定数
 	static final int MAXIMUM_MONTH = 12;
 
 	// 週の最大値を表す定数
 	static final int MAXIMUM_WEEK = 7;
+
+	// 一番目の引数を表す定数
+	static final int FIRST_ARGUMENT = 1;
+
+	// 月の最大インデックスを表す定数
+	static final int MAXIMUM_MONTH_INDEX = 11;
+	// 月の最小インデックスを表す定数
+	static final int MINIMUM_MONTH_INDEX = 0;
 
 	/*
 	 * 関数名:main
@@ -45,7 +53,7 @@ public class Exercise15_8 {
 		boolean hasError = false;
 
 		// コマンドライン引数が一つの場合
-		if (args.length == FIRST_ARGUMENT) {
+		if (args.length == ONE_ARGUMENT) {
 			// 年の値をコマンドラインの0番目の引数から受け取る
 			int yearVariable = Integer.parseInt(args[0]);
 			// 年が0以下の場合
@@ -62,7 +70,7 @@ public class Exercise15_8 {
 				currentMonth = 0;
 			}
 			// コマンドライン引数が2つの時
-		} else if (args.length == SECOND_ARGUMENT) {
+		} else if (args.length == TWO_ARGUMENT) {
 			// 年の値をコマンドライン引数0番目から受け取る
 			int yearVariable = Integer.parseInt(args[0]);
 			// 月の値をコマンドライン引数1番目から受け取る
@@ -75,7 +83,7 @@ public class Exercise15_8 {
 				System.out.println("不正な値が入力されました: 年は正の値で入力してください。");
 
 				//月が1~12以外の場合
-				if (monthVariable < 0 || monthVariable > 11) {
+				if (monthVariable < MINIMUM_MONTH_INDEX || monthVariable > MAXIMUM_MONTH_INDEX) {
 					// エラーメッセージを返す
 					System.out.println("不正な値が入力されました: 月は1~12の間で入力してください。");
 				}
@@ -83,7 +91,7 @@ public class Exercise15_8 {
 				// フラグをtrueにする
 				hasError = true;
 				//月が1~12以外の場合
-			} else if (monthVariable < 0 || monthVariable > 11) {
+			} else if (monthVariable < MINIMUM_MONTH_INDEX || monthVariable > MAXIMUM_MONTH_INDEX) {
 				// エラーメッセージを返す
 				System.out.println("不正な値が入力されました: 月は1~12の間で入力してください。");
 				// フラグをtrueにする
@@ -96,7 +104,7 @@ public class Exercise15_8 {
 				currentMonth = monthVariable;
 			}
 			// 引数が3つ以上の場合
-		} else if (args.length >= THIRD_ARGUMENT) {
+		} else if (args.length >= THREE_ARGUMENT) {
 			// エラーメッセージを表示
 			System.out.println("エラー: 引数は2つまでです。");
 			// エラーフラグをtrueにする
@@ -106,11 +114,11 @@ public class Exercise15_8 {
 		// エラーがなければカレンダーを表示
 		if (!hasError) {
 			// 引数が1つの場合
-			if (args.length == FIRST_ARGUMENT) {
+			if (args.length == ONE_ARGUMENT) {
 				// 年の1月から12月までのカレンダーを表示
 				displayYearCalendar(currentYear);
 				// 引数が2つの場合
-			} else if (args.length == SECOND_ARGUMENT) {
+			} else if (args.length == TWO_ARGUMENT) {
 				// 指定された年と月のカレンダーを表示
 				displayMonthCalendar(currentYear, currentMonth);
 				// 引数がない場合
@@ -153,7 +161,7 @@ public class Exercise15_8 {
 		// カレンダークラスのオブジェクトを生成
 		Calendar calenderVariable = Calendar.getInstance();
 		// 年と月を指定し、1日から表示
-		calenderVariable.set(setYear, setMonth, FIRST_ARGUMENT);
+		calenderVariable.set(setYear, setMonth, ONE_ARGUMENT);
 
 		// その月がとりえる最大の日を取得
 		int daysInMonth = calenderVariable.getActualMaximum(Calendar.DAY_OF_MONTH);
@@ -166,7 +174,7 @@ public class Exercise15_8 {
 		System.out.println("日 月 火 水 木 金 土");
 
 		// 曜日の数だけ繰り返す
-		for (int i = FIRST_ARGUMENT; i < startingDayOfWeek; i++) {
+		for (int i = ONE_ARGUMENT; i < startingDayOfWeek; i++) {
 			// 空白を出力
 			System.out.print("   ");
 		}
@@ -176,7 +184,7 @@ public class Exercise15_8 {
 			// 最大2文字のスペースで日にちを表示
 			System.out.printf("%2d ", day);
 			// 現在の日付が土曜日または現在の日付がその月の最終日であれば
-			if ((startingDayOfWeek + day - FIRST_ARGUMENT) % MAXIMUM_WEEK == 0 || day == daysInMonth) {
+			if ((startingDayOfWeek + day - ONE_ARGUMENT) % MAXIMUM_WEEK == 0 || day == daysInMonth) {
 				// 改行を出力
 				System.out.println();
 			}
