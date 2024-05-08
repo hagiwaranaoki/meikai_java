@@ -158,10 +158,14 @@ public class Exercise15_8 {
 	private static void displayMonthCalendar(int setYear, int setMonth) {
 		// 最初の日を表す定数
 		final int FIRST_DAY = 1;
+		// 曜日の調整値を表す定数
+		final int WEEKDAY_ADJUSTMENT = -1;
+		// 初めの曜日を表す定数
+		final int FIRST_WEEKDAY = 1;
 		// カレンダークラスのオブジェクトを生成
 		Calendar calenderVariable = Calendar.getInstance();
 		// 年と月を指定し、1日から表示
-		calenderVariable.set(setYear, setMonth, ONE_ARGUMENT);
+		calenderVariable.set(setYear, setMonth, FIRST_DAY);
 
 		// その月がとりえる最大の日を取得
 		int daysInMonth = calenderVariable.getActualMaximum(Calendar.DAY_OF_MONTH);
@@ -174,7 +178,7 @@ public class Exercise15_8 {
 		System.out.println("日 月 火 水 木 金 土");
 
 		// 曜日の数だけ繰り返す
-		for (int i = ONE_ARGUMENT; i < startingDayOfWeek; i++) {
+		for (int i = FIRST_WEEKDAY; i < startingDayOfWeek; i++) {
 			// 空白を出力
 			System.out.print("   ");
 		}
@@ -184,7 +188,7 @@ public class Exercise15_8 {
 			// 最大2文字のスペースで日にちを表示
 			System.out.printf("%2d ", day);
 			// 現在の日付が土曜日または現在の日付がその月の最終日であれば
-			if ((startingDayOfWeek + day - ONE_ARGUMENT) % MAXIMUM_WEEK == 0 || day == daysInMonth) {
+			if ((startingDayOfWeek + day + WEEKDAY_ADJUSTMENT) % MAXIMUM_WEEK == 0 || day == daysInMonth) {
 				// 改行を出力
 				System.out.println();
 			}
