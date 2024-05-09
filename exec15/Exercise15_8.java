@@ -10,30 +10,30 @@ import java.util.Calendar;
  * 作成日:2024/04/16
  */
 public class Exercise15_8 {
-
-	// 引数の個数が1の場合の定数
-	static final int ONE_ARGUMENT = 1;
-
-	// 引数の個数が2の場合の定数
-	static final int TWO_ARGUMENT = 2;
-
-	// 引数の個数が3の場合の定数
-	static final int THREE_ARGUMENT = 3;
-
+	// 0番目の引数を表す定数
+	public static final int ZERO_TH_ARGUMENT = 0;
+	// 1番目の引数を表す定数
+	public static final int FIRST_ARGUMENT = 1;
+	
+	// 引数が一つを表す定数
+	public static final int ONE_ARGUMENT = 1;
+	// 引数が二つを表す定数
+	public static final int TWO_ARGUMENT = 2;
+	// 引数が三つを表す定数
+	public static final int THREE_ARGUMENT = 3;
+	
 	// 月の最大値を表す定数
-	static final int MAXIMUM_MONTH = 12;
-
-	// 週の最大値を表す定数
-	static final int MAXIMUM_WEEK = 7;
-
-	// 一番目の引数を表す定数
-	static final int FIRST_ARGUMENT = 1;
-
-	// 月の最大インデックスを表す定数
-	static final int MAXIMUM_MONTH_INDEX = 11;
-	// 月の最小インデックスを表す定数
-	static final int MINIMUM_MONTH_INDEX = 0;
-
+	public static final int MAXIMUM_MONTH = 11;
+	// 月の最小値を表す定数
+	public static final int MINIMUM_MONTH = 0;
+	
+	// 1日を表す定数
+	public static final int FIRST_DATE = 1;
+	// 最初の曜日を表す定数
+	public static final int FIRST_WEEKDAY = 1;
+	
+	// 1週間の日にちの最大値を表す定数
+	public static final int MAXIMUM_WEEKDAY = 7;
 	/*
 	 * 関数名:main
 	 * 概要:コマンドライン引数の値でカレンダーの表示
@@ -55,7 +55,7 @@ public class Exercise15_8 {
 		// コマンドライン引数が一つの場合
 		if (args.length == ONE_ARGUMENT) {
 			// 年の値をコマンドラインの0番目の引数から受け取る
-			int yearVariable = Integer.parseInt(args[0]);
+			int yearVariable = Integer.parseInt(args[ZERO_TH_ARGUMENT]);
 			// 年が0以下の場合
 			if (yearVariable <= 0) {
 				// エラーメッセージを返す
@@ -72,7 +72,7 @@ public class Exercise15_8 {
 			// コマンドライン引数が2つの時
 		} else if (args.length == TWO_ARGUMENT) {
 			// 年の値をコマンドライン引数0番目から受け取る
-			int yearVariable = Integer.parseInt(args[0]);
+			int yearVariable = Integer.parseInt(args[ZERO_TH_ARGUMENT]);
 			// 月の値をコマンドライン引数1番目から受け取る
 			int monthVariable = Integer.parseInt(args[FIRST_ARGUMENT]);
 			// Calendarクラスでは月は0から始まるため、1を引いて調整
@@ -83,7 +83,7 @@ public class Exercise15_8 {
 				System.out.println("不正な値が入力されました: 年は正の値で入力してください。");
 
 				//月が1~12以外の場合
-				if (monthVariable < MINIMUM_MONTH_INDEX || monthVariable > MAXIMUM_MONTH_INDEX) {
+				if (monthVariable < MINIMUM_MONTH || monthVariable > MAXIMUM_MONTH) {
 					// エラーメッセージを返す
 					System.out.println("不正な値が入力されました: 月は1~12の間で入力してください。");
 				}
@@ -91,7 +91,7 @@ public class Exercise15_8 {
 				// フラグをtrueにする
 				hasError = true;
 				//月が1~12以外の場合
-			} else if (monthVariable < MINIMUM_MONTH_INDEX || monthVariable > MAXIMUM_MONTH_INDEX) {
+			} else if (monthVariable < MINIMUM_MONTH || monthVariable > MAXIMUM_MONTH) {
 				// エラーメッセージを返す
 				System.out.println("不正な値が入力されました: 月は1~12の間で入力してください。");
 				// フラグをtrueにする
@@ -139,7 +139,7 @@ public class Exercise15_8 {
 	 */
 	private static void displayYearCalendar(int setYear) {
 		// 12回繰り返す
-		for (int month = 0; month < MAXIMUM_MONTH; month++) {
+		for (int month = MINIMUM_MONTH; month <= MAXIMUM_MONTH; month++) {
 			// 年と月のカレンダーを表示
 			displayMonthCalendar(setYear, month);
 			// 改行を入れる
@@ -156,16 +156,12 @@ public class Exercise15_8 {
 	 * 作成日:2024/04/16
 	 */
 	private static void displayMonthCalendar(int setYear, int setMonth) {
-		// 最初の日を表す定数
-		final int FIRST_DAY = 1;
-		// 曜日の調整値を表す定数
-		final int WEEKDAY_ADJUSTMENT = -1;
-		// 初めの曜日を表す定数
-		final int FIRST_WEEKDAY = 1;
+		// 曜日の補正値を表す定数
+		final int WEEKDAY_OFFSET = -1;
 		// カレンダークラスのオブジェクトを生成
 		Calendar calenderVariable = Calendar.getInstance();
 		// 年と月を指定し、1日から表示
-		calenderVariable.set(setYear, setMonth, FIRST_DAY);
+		calenderVariable.set(setYear, setMonth, FIRST_DATE);
 
 		// その月がとりえる最大の日を取得
 		int daysInMonth = calenderVariable.getActualMaximum(Calendar.DAY_OF_MONTH);
@@ -184,11 +180,11 @@ public class Exercise15_8 {
 		}
 
 		// 指定月の日にちの数だけ繰り返し
-		for (int day = FIRST_DAY; day <= daysInMonth; day++) {
+		for (int day = FIRST_DATE; day <= daysInMonth; day++) {
 			// 最大2文字のスペースで日にちを表示
 			System.out.printf("%2d ", day);
 			// 現在の日付が土曜日または現在の日付がその月の最終日であれば
-			if ((startingDayOfWeek + day + WEEKDAY_ADJUSTMENT) % MAXIMUM_WEEK == 0 || day == daysInMonth) {
+			if ((startingDayOfWeek + day + WEEKDAY_OFFSET) % MAXIMUM_WEEKDAY == 0 || day == daysInMonth) {
 				// 改行を出力
 				System.out.println();
 			}
