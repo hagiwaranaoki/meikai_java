@@ -19,8 +19,6 @@ public class Exercise15_8 {
 	public static final int ONE_ARGUMENT = 1;
 	// 引数が二つを表す定数
 	public static final int TWO_ARGUMENT = 2;
-	// 引数が三つを表す定数
-	public static final int THREE_ARGUMENT = 3;
 	
 	// 月の最大値を表す定数
 	public static final int MAXIMUM_MONTH = 11;
@@ -106,8 +104,8 @@ public class Exercise15_8 {
 				// 現在の念を引数の月に変更
 				currentMonth = monthVariable;
 			}
-			// 引数が3つ以上の場合
-		} else if (args.length >= THREE_ARGUMENT) {
+			// 引数が2つより多い場合
+		} else if (args.length > TWO_ARGUMENT) {
 			// エラーメッセージを表示
 			System.out.println("エラー: 引数は2つまでです。");
 			// エラーフラグをtrueにする
